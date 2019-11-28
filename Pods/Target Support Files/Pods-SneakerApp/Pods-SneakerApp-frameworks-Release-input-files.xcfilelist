@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-SneakerApp/Pods-SneakerApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework

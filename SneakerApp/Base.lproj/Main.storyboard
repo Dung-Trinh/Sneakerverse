@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profil-->
+        <scene sceneID="tVM-X8-FkE">
+            <objects>
+                <viewController id="d6H-rD-cSS" customClass="MyProfilViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l6v-S8-h7H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63P-LR-KqS" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
+                                <rect key="frame" x="124" y="578" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ph3-IR-SUr">
+                                <rect key="frame" x="87" y="202" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Rlm-p7-v2B"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profil" image="person.crop.circle" catalog="system" id="WND-NH-yI4"/>
+                    <connections>
+                        <outlet property="img" destination="Ph3-IR-SUr" id="cjM-aL-LsQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf2-Ol-mOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2926.0869565217395" y="-354.24107142857139"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="V8w-Ef-IdG">
+            <objects>
+                <tabBarController id="RKM-tW-Yw2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Pb-LI-mqJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mo3-ED-pKl" kind="relationship" relationship="viewControllers" id="3Jd-xZ-rAe"/>
+                        <segue destination="lrb-YN-NCr" kind="relationship" relationship="viewControllers" id="bAA-lF-4Xi"/>
+                        <segue destination="d6H-rD-cSS" kind="relationship" relationship="viewControllers" id="iB8-Ro-dov"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWl-b2-U26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1223" y="-1293"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="6Uo-lQ-VKY">
+            <objects>
+                <navigationController id="mo3-ED-pKl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="book" catalog="system" id="JDF-S3-qdf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vcM-yr-P2g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zv8-pU-fni" kind="relationship" relationship="rootViewController" id="R5n-IK-gYu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUa-HE-ZE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="-1293"/>
+        </scene>
+        <!--Calender-->
+        <scene sceneID="paS-7R-b8G">
+            <objects>
+                <viewController id="lrb-YN-NCr" customClass="ViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Kr-cT-6mb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;STILL LOADING&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piC-yC-V3n">
+                                <rect key="frame" x="20" y="106" width="374" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCl-A6-7c7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Release Calender" id="Y87-sS-he7"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8bN-AT-EhI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calender" image="calendar" catalog="system" id="PQg-D9-PJ2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptC-Yw-oSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1223.1884057971015" y="-354.24107142857139"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="xOf-qC-053">
+            <objects>
+                <viewController id="zv8-pU-fni" customClass="NewsViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ch-Zk-goV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-cv-DD0">
+                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blogpostCell" rowHeight="184" id="V9t-9X-aUV" customClass="BlogPostTableViewCell" customModule="SneakerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="184"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9t-9X-aUV" id="bIa-sS-fHf">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="184"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPs-50-CIc">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="141"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
+                                                            <rect key="frame" x="0.0" y="8" width="326" height="124"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="124" id="Qo0-9E-eIa"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="236" id="TK2-Ii-TIQ"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="124" id="oAK-lK-VoU"/>
+                                                                <constraint firstAttribute="width" constant="326" id="qYj-my-bNc"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="rsf-P4-d0i" secondAttribute="bottom" constant="9" id="4rH-mC-Jkq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rsf-P4-d0i" secondAttribute="trailing" constant="8" id="ibo-kt-8kI"/>
+                                                        <constraint firstItem="rsf-P4-d0i" firstAttribute="leading" secondItem="UPs-50-CIc" secondAttribute="leading" id="jaK-1z-fXr"/>
+                                                        <constraint firstItem="rsf-P4-d0i" firstAttribute="top" secondItem="UPs-50-CIc" secondAttribute="top" constant="8" id="tm8-KY-dLg"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEI-DT-ojm">
+                                                    <rect key="frame" x="20" y="148" width="261" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UPs-50-CIc" secondAttribute="bottom" constant="32" id="0cM-zG-0QW"/>
+                                                <constraint firstItem="UPs-50-CIc" firstAttribute="leading" secondItem="bIa-sS-fHf" secondAttribute="leadingMargin" id="EQe-5G-XgO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UPs-50-CIc" secondAttribute="trailing" id="atT-q7-cFz"/>
+                                                <constraint firstItem="UPs-50-CIc" firstAttribute="top" secondItem="bIa-sS-fHf" secondAttribute="topMargin" constant="-11" id="m3N-D0-CTS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="img" destination="rsf-P4-d0i" id="7XM-W5-MTe"/>
+                                            <outlet property="title" destination="NEI-DT-ojm" id="QNq-QX-Jzp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RDH-cv-DD0" firstAttribute="bottom" secondItem="C2Z-7R-jTV" secondAttribute="bottom" id="0rR-ly-1d6"/>
+                            <constraint firstItem="RDH-cv-DD0" firstAttribute="trailing" secondItem="6ch-Zk-goV" secondAttribute="trailingMargin" id="Cdd-HD-cnR"/>
+                            <constraint firstItem="RDH-cv-DD0" firstAttribute="top" secondItem="C2Z-7R-jTV" secondAttribute="top" id="cnm-Me-oWk"/>
+                            <constraint firstItem="RDH-cv-DD0" firstAttribute="leading" secondItem="6ch-Zk-goV" secondAttribute="leadingMargin" id="gDl-v5-6u5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C2Z-7R-jTV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="News" id="lEc-YP-zTo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="RDH-cv-DD0" id="aew-eK-zlo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NN1-UA-Nm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.50724637681162" y="-1293.0803571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

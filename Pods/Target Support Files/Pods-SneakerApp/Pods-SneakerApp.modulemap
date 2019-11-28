@@ -1,0 +1,6 @@
+framework module Pods_SneakerApp {
+  umbrella header "Pods-SneakerApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
