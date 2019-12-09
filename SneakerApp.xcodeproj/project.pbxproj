@@ -8,16 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */; };
-		B60A2077238B2B27009F617E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A2076238B2B27009F617E /* SwiftUIView.swift */; };
 		B614800C23881E810018DA71 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800B23881E810018DA71 /* Post.swift */; };
 		B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800D238821960018DA71 /* NewsArticleRequest.swift */; };
 		B6148010238829F40018DA71 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800F238829F40018DA71 /* NewsViewController.swift */; };
 		B6148013238890900018DA71 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148012238890900018DA71 /* RoundButton.swift */; };
 		B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */; };
+		B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */; };
 		B699B31B2389628C00837D37 /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B31A2389628C00837D37 /* MyProfilViewController.swift */; };
+		B6BAB904239D9BB800EF61E5 /* NikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAB903239D9BB800EF61E5 /* NikeViewController.swift */; };
+		B6BAB906239DA05B00EF61E5 /* AdidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAB905239DA05B00EF61E5 /* AdidasViewController.swift */; };
+		B6BAB908239DAB8700EF61E5 /* PumaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAB907239DAB8700EF61E5 /* PumaViewController.swift */; };
+		B6D7183D2390708D00E2C0A2 /* CellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7183C2390708D00E2C0A2 /* CellDetailViewController.swift */; };
+		B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */; };
+		B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */; };
+		B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */; };
+		B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F71239320B4007FDB10 /* Sneaker.swift */; };
 		B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71B92384734B002DA281 /* AppDelegate.swift */; };
 		B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71BB2384734B002DA281 /* SceneDelegate.swift */; };
-		B6FA71BE2384734B002DA281 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71BD2384734B002DA281 /* ViewController.swift */; };
 		B6FA71C12384734B002DA281 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FA71BF2384734B002DA281 /* Main.storyboard */; };
 		B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71C22384734B002DA281 /* SneakerApp.xcdatamodeld */; };
 		B6FA71C62384734E002DA281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FA71C52384734E002DA281 /* Assets.xcassets */; };
@@ -30,18 +37,25 @@
 		291FCB0E6C83781688CF6259 /* Pods-SneakerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.release.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.release.xcconfig"; sourceTree = "<group>"; };
 		938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SneakerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.debug.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.debug.xcconfig"; sourceTree = "<group>"; };
-		B60A2076238B2B27009F617E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		B614800B23881E810018DA71 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B614800D238821960018DA71 /* NewsArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleRequest.swift; sourceTree = "<group>"; };
 		B614800F238829F40018DA71 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B6148012238890900018DA71 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostTableViewCell.swift; sourceTree = "<group>"; };
+		B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDetailViewController.swift; sourceTree = "<group>"; };
 		B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SneakerApp.entitlements; sourceTree = "<group>"; };
 		B699B31A2389628C00837D37 /* MyProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
+		B6BAB903239D9BB800EF61E5 /* NikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikeViewController.swift; sourceTree = "<group>"; };
+		B6BAB905239DA05B00EF61E5 /* AdidasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidasViewController.swift; sourceTree = "<group>"; };
+		B6BAB907239DAB8700EF61E5 /* PumaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumaViewController.swift; sourceTree = "<group>"; };
+		B6D7183C2390708D00E2C0A2 /* CellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailViewController.swift; sourceTree = "<group>"; };
+		B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6F14F71239320B4007FDB10 /* Sneaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sneaker.swift; sourceTree = "<group>"; };
 		B6FA71B62384734B002DA281 /* SneakerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FA71B92384734B002DA281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FA71BB2384734B002DA281 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6FA71BD2384734B002DA281 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B6FA71C02384734B002DA281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6FA71C32384734B002DA281 /* SneakerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SneakerApp.xcdatamodel; sourceTree = "<group>"; };
 		B6FA71C52384734E002DA281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +82,7 @@
 			children = (
 				B614800B23881E810018DA71 /* Post.swift */,
 				B614800D238821960018DA71 /* NewsArticleRequest.swift */,
+				B6F14F71239320B4007FDB10 /* Sneaker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -75,10 +90,51 @@
 		B614801123888F940018DA71 /* UI_Elements */ = {
 			isa = PBXGroup;
 			children = (
+				B6F14F6E23931B49007FDB10 /* CollectionViewCell */,
 				B6148012238890900018DA71 /* RoundButton.swift */,
 				B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */,
+				B6D7183C2390708D00E2C0A2 /* CellDetailViewController.swift */,
 			);
 			path = UI_Elements;
+			sourceTree = "<group>";
+		};
+		B6204D6B239433DF003B8E81 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6D24B51239693A700D4D6AC /* News */,
+				B6204D6C23943690003B8E81 /* Calender */,
+				B699B31A2389628C00837D37 /* MyProfilViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B6204D6C23943690003B8E81 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */,
+				B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */,
+				B6BAB903239D9BB800EF61E5 /* NikeViewController.swift */,
+				B6BAB905239DA05B00EF61E5 /* AdidasViewController.swift */,
+				B6BAB907239DAB8700EF61E5 /* PumaViewController.swift */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		B6D24B51239693A700D4D6AC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				B614800F238829F40018DA71 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		B6F14F6E23931B49007FDB10 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */,
+				B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		B6FA71AD2384734B002DA281 = {
@@ -102,22 +158,19 @@
 		B6FA71B82384734B002DA281 /* SneakerApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6FA71CA2384734E002DA281 /* Info.plist */,
 				B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */,
+				B6FA71C22384734B002DA281 /* SneakerApp.xcdatamodeld */,
+				B6204D6B239433DF003B8E81 /* ViewController */,
 				B614801123888F940018DA71 /* UI_Elements */,
 				B614800A23881E3C0018DA71 /* Models */,
 				B6FA71D223847B34002DA281 /* nike.gif */,
 				B6FA71D023847B07002DA281 /* DispatchQueueHelper.swift */,
 				B6FA71B92384734B002DA281 /* AppDelegate.swift */,
 				B6FA71BB2384734B002DA281 /* SceneDelegate.swift */,
-				B6FA71BD2384734B002DA281 /* ViewController.swift */,
 				B6FA71BF2384734B002DA281 /* Main.storyboard */,
 				B6FA71C52384734E002DA281 /* Assets.xcassets */,
 				B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */,
-				B6FA71CA2384734E002DA281 /* Info.plist */,
-				B6FA71C22384734B002DA281 /* SneakerApp.xcdatamodeld */,
-				B614800F238829F40018DA71 /* NewsViewController.swift */,
-				B699B31A2389628C00837D37 /* MyProfilViewController.swift */,
-				B60A2076238B2B27009F617E /* SwiftUIView.swift */,
 			);
 			path = SneakerApp;
 			sourceTree = "<group>";
@@ -255,17 +308,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
+				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
-				B6FA71BE2384734B002DA281 /* ViewController.swift in Sources */,
-				B60A2077238B2B27009F617E /* SwiftUIView.swift in Sources */,
+				B6BAB904239D9BB800EF61E5 /* NikeViewController.swift in Sources */,
+				B6D7183D2390708D00E2C0A2 /* CellDetailViewController.swift in Sources */,
 				B699B31B2389628C00837D37 /* MyProfilViewController.swift in Sources */,
+				B6BAB906239DA05B00EF61E5 /* AdidasViewController.swift in Sources */,
+				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
+				B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */,
 				B6FA71D123847B07002DA281 /* DispatchQueueHelper.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */,
 				B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */,
+				B6BAB908239DAB8700EF61E5 /* PumaViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
+				B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */,
 				B6148010238829F40018DA71 /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,11 +12,18 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+//    static var coreDataContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+//
+//    static var viewContext: NSManagedObjectContext {
+//        return coreDataContainer.viewContext
+//    }
+//    let context = AppDelegate.viewContext
+    
+     func applicationDidBecomeActive(_ application: UIApplication) {
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print("START")
+        
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge])
         { (grandted, error) in
@@ -25,13 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         }
-        
+        /// creating notification message
         let content = UNMutableNotificationContent()
-        content.title = "Hey👋🏻"
-        content.body = "Sneaker Releases & more"
-        
+        content.title = "Verpasse nicht den Schuh um 11 Uhr!👀"
+        content.body = "Öffne die App für mehr Infosl!👟"
         let date = Date().addingTimeInterval(5)
-        let dateComponetns = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        //let dateComponetns = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponetns, repeats: false)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
         let uuidString = UUID().uuidString
@@ -85,7 +91,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
+    func saveContext () {
+    let context = persistentContainer.viewContext
+    if context.hasChanges {
+    do {
+    try context.save()
+    } catch {
+    let nserror = error as NSError
+    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+    }
+    }
+    }
+    
+    func saveState(state : String){
+        let newEntry = SneakerObj(context: persistentContainer.viewContext)
+        newEntry.name = state
+        newEntry.img = "Scott"
+        newEntry.date = "12.12.12"
+           saveContext()
+        
+    }
 
 }
 

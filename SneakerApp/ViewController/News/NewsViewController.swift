@@ -9,8 +9,6 @@
 import UIKit
 
 class NewsViewController: UIViewController {
- 
-    
     @IBOutlet weak var tableView: UITableView!
     var blogPosts : [BlogPost] = []
     var gradientLayer: CAGradientLayer!
@@ -18,30 +16,34 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         
         tableView.dataSource = self
-        var newBlogPost = BlogPost(imageURL: "https://cdn.imgbin.com/5/5/20/imgbin-slipper-crocs-shoe-clog-sandal-minions-cartoon-K2cLspqdiDUbUUZh6TxBD7LDt.jpg", title: "SNEAKER OF THE YEAR")
+        let newBlogPost = BlogPost(imageURL: "https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/14/2019/03/sneakercon.jpg", title: "SNEAKER CON")
        
         blogPosts.append(newBlogPost)
-               fetchCoursesJSON { (res) in
-                    switch res {
-                    case .success(let article):
-                        article.forEach({ (article) in
-                            print(article.title)
-                            print(article.imageURL)
-                            self.blogPosts.append(article)
-                        })
-                    case .failure(let err):
-                        print("Failed to fetch courses:", err)
-                    }
-                }
+
         tableView.delegate = self
         createGradientBackground()
+        
+        fetchCoursesJSON { (res) in
+             switch res {
+             case .success(let article):
+                 article.forEach({ (article) in
+                     print(article.title)
+                     print(article.imageURL)
+                     self.blogPosts.append(article)
+                 })
+             case .failure(let err):
+                 print("Failed to fetch courses:", err)
+             }
+            self.tableView.reloadData()
+         }
+ 
             }
     
   
-            
+           
             fileprivate func fetchCoursesJSON(completion: @escaping (Result<[BlogPost], Error>) -> ()) {
                 let urlString = "http://127.0.0.1:5000/news"
                 guard let url = URL(string: urlString) else { return }
@@ -72,9 +74,9 @@ class NewsViewController: UIViewController {
         gradientLayer = CAGradientLayer()
      
         gradientLayer.frame = self.view.bounds
-        var blau = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
-        var pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
-        var blau2 = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
+        let blau = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
+        let pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
+        let blau2 = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
 
         gradientLayer.colors = [pink,blau,blau2]
      
@@ -87,23 +89,25 @@ class NewsViewController: UIViewController {
 }
 extension NewsViewController:UITableViewDataSource{
     
-    // Anzahl der TableViews
+    /// Anzahl der Zellen
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //blogPosts.count
         return 3
     }
     
+    /// befüllen der Zellen
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("erster")
         let cell = tableView.dequeueReusableCell(withIdentifier: "blogpostCell") as! BlogPostTableViewCell
             
         cell.modell = blogPosts[0]
         cell.layer.masksToBounds = false
-      
+
+
         
         
         return cell
     }
+ 
     
 }
     
@@ -111,12 +115,14 @@ extension NewsViewController:UITableViewDataSource{
 extension NewsViewController: UITableViewDelegate{
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
              let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
-             
              if currentCell is BlogPostTableViewCell {
                  let cell = currentCell as! BlogPostTableViewCell
                 
              }
+            
          }
+   
+    
     }
     
     

@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import CoreData
 
 struct BlogPost:Decodable{
+
     var imageURL : String
     var title : String
 }

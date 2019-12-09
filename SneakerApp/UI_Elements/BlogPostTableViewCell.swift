@@ -9,9 +9,11 @@
 import UIKit
 
 class BlogPostTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var textBox: UIView!
+    
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var backgroundLayer: UIView!
     
     var modell : BlogPost?{
         didSet{
@@ -25,13 +27,21 @@ class BlogPostTableViewCell: UITableViewCell {
     }
     
     func loadImage(url:String) {
-            let imageURL = URL(string: url)!
+        let imageURL = URL(string: url)!
         img.kf.indicatorType = .activity
         img.kf.setImage(with: imageURL)
-        img.layer.cornerRadius = 40
-        img.clipsToBounds = true
-
+        //img.layer.cornerRadius = 40
+        //img.clipsToBounds = true
+        contentView.bringSubviewToFront(title)
         
+        
+        self.layer.cornerRadius = 30
+        self.textBox.layer.cornerRadius = 30
+        self.layer.masksToBounds = true
+
+
+        //backgroundLayer.layer.cornerRadius = 40
+        //backgroundLayer.clipsToBounds = true
         }
     
     override func awakeFromNib() {
