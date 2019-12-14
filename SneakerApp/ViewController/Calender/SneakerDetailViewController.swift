@@ -9,6 +9,9 @@
 import UIKit
 import EventKit
 class SneakerDetailViewController: UIViewController {
+    
+    
+    
     @IBOutlet weak var img: UIImageView!
     
     override func viewDidLoad() {
@@ -18,7 +21,7 @@ class SneakerDetailViewController: UIViewController {
     
     @IBAction func addCalenderReminder(_ sender: Any) {
         let eventStore:EKEventStore = EKEventStore()
-        
+
         eventStore.requestAccess(to: .event) { (granted,error) in
             if(granted) && (error == nil)
             {
@@ -37,14 +40,41 @@ class SneakerDetailViewController: UIViewController {
             try eventStore.save(event, span: .thisEvent)
         }catch let error as NSError{
             print("Fehler1 NSERROR: \(error)")
+            return
         }
-        print("save Event")
-        
-            }else{
-                print("Fehler2: \(error)")
             }
         }
+        showText(message: "Der Release ist in deinem Kalender vermerkt!")
+
                    
+    }
+    
+}
+
+extension SneakerDetailViewController{
+    func showText(message: String) {
+        let textLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.height-90, width: self.view.frame.width, height: 60))
+        textLabel.font = UIFont.systemFont(ofSize: 15)
+        textLabel.textAlignment = .center
+        textLabel.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        textLabel.textColor = UIColor.red
+        textLabel.layer.cornerRadius = 5
+        textLabel.clipsToBounds = true
+        textLabel.text = message
+        self.view.addSubview(textLabel)
+        
+        UIView.animate(withDuration: 0.6,delay: 0,options: .curveEaseInOut, animations: {
+            textLabel.frame = CGRect(x: 0, y: self.view.frame.height - 130, width: self.view.frame.width, height: 60)
+        })
+        
+    
+        UIView.animate(withDuration: 0.8, delay: 1.0, options: .curveEaseInOut, animations: {
+            textLabel.alpha = 0.0
+        }) {(isCompleted) in
+            textLabel.removeFromSuperview()
+            
+        }
+      
     }
     
 }

@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BlogPostTableViewCell: UITableViewCell {
     @IBOutlet weak var textBox: UIView!
     
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var backgroundLayer: UIView!
     
     var modell : BlogPost?{
@@ -22,17 +22,13 @@ class BlogPostTableViewCell: UITableViewCell {
     }
     
     func updateUI(){
-        self.title.text = modell?.title
         loadImage(url: modell!.imageURL)
     }
     
     func loadImage(url:String) {
-        let imageURL = URL(string: url)!
-        img.kf.indicatorType = .activity
-        img.kf.setImage(with: imageURL)
+        img.load(url: NSURL(string: url) as! URL)
         //img.layer.cornerRadius = 40
         //img.clipsToBounds = true
-        contentView.bringSubviewToFront(title)
         
         
         self.layer.cornerRadius = 30
@@ -55,4 +51,17 @@ class BlogPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

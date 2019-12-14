@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 import UserNotifications
 
 class MyProfilViewController: UIViewController {
