@@ -11,20 +11,18 @@ import UIKit
 class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var blogPosts : [BlogPost] = []
-    var gradientLayer: CAGradientLayer!
-    
+    var background = BackgroundColor()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        background.createGradientBackground(view: self.view)
         tableView.dataSource = self
         let newBlogPost = BlogPost(imageURL: "https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/14/2019/03/sneakercon.jpg", title: "SNEAKER CON")
        
         blogPosts.append(newBlogPost)
 
         tableView.delegate = self
-        createGradientBackground()
         
         fetchCoursesJSON { (res) in
              switch res {
@@ -37,7 +35,9 @@ class NewsViewController: UIViewController {
              case .failure(let err):
                  print("Failed to fetch courses:", err)
              }
+            DispatchQueue.main.async {
             self.tableView.reloadData()
+            }
          }
  
             }
@@ -70,32 +70,19 @@ class NewsViewController: UIViewController {
                 }.resume()
             }
     
-    func createGradientBackground() {
-        gradientLayer = CAGradientLayer()
-     
-        gradientLayer.frame = self.view.bounds
-        let blau = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
-        let pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
-        let blau2 = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
 
-        gradientLayer.colors = [pink,blau,blau2]
-     
-        self.view.layer.addSublayer(gradientLayer)
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-
-    }
 
 
 }
 extension NewsViewController:UITableViewDataSource{
     
-    /// Anzahl der Zellen
+    /// number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //blogPosts.count
         return 3
     }
     
-    /// befüllen der Zellen
+    /// fill the cell with content
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "blogpostCell") as! BlogPostTableViewCell
             

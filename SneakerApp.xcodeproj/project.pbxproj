@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */; };
 		B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */; };
+		B611902823A845610067E0A5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902523A845600067E0A5 /* CameraViewController.swift */; };
+		B611902923A845610067E0A5 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902623A845610067E0A5 /* CameraPreviewViewController.swift */; };
+		B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902723A845610067E0A5 /* MyProfilViewController.swift */; };
+		B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902B23A846820067E0A5 /* BackgroundColor.swift */; };
+		B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902D23A846A40067E0A5 /* ToastMessage.swift */; };
 		B614800C23881E810018DA71 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800B23881E810018DA71 /* Post.swift */; };
 		B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800D238821960018DA71 /* NewsArticleRequest.swift */; };
 		B6148010238829F40018DA71 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800F238829F40018DA71 /* NewsViewController.swift */; };
@@ -22,7 +27,6 @@
 		B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64868D123A7E47200D2496A /* LoadingViewController.swift */; };
 		B64868D623A7E50700D2496A /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B64868D523A7E4D100D2496A /* intro.mp4 */; };
 		B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670CEDF239EF04C00648B38 /* SearchViewController.swift */; };
-		B699B31B2389628C00837D37 /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699B31A2389628C00837D37 /* MyProfilViewController.swift */; };
 		B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */; };
 		B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */; };
 		B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */; };
@@ -41,6 +45,11 @@
 		938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SneakerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.debug.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetail2ViewController.swift; sourceTree = "<group>"; };
+		B611902523A845600067E0A5 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B611902623A845610067E0A5 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
+		B611902723A845610067E0A5 /* MyProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
+		B611902B23A846820067E0A5 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
+		B611902D23A846A40067E0A5 /* ToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		B614800B23881E810018DA71 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B614800D238821960018DA71 /* NewsArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleRequest.swift; sourceTree = "<group>"; };
 		B614800F238829F40018DA71 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +61,9 @@
 		B633129F23A04827001A63E1 /* VideoTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTestViewController.swift; sourceTree = "<group>"; };
 		B64868CF23A7E41100D2496A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B64868D123A7E47200D2496A /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		B64868D323A7E49000D2496A /* Profil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profil; sourceTree = "<group>"; };
 		B64868D523A7E4D100D2496A /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		B670CEDF239EF04C00648B38 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SneakerApp.entitlements; sourceTree = "<group>"; };
-		B699B31A2389628C00837D37 /* MyProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
 		B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B611902423A845400067E0A5 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				B611902623A845610067E0A5 /* CameraPreviewViewController.swift */,
+				B611902523A845600067E0A5 /* CameraViewController.swift */,
+				B611902723A845610067E0A5 /* MyProfilViewController.swift */,
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
 		B614800A23881E3C0018DA71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,8 @@
 				B6F14F6E23931B49007FDB10 /* CollectionViewCell */,
 				B6148012238890900018DA71 /* RoundButton.swift */,
 				B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */,
+				B611902D23A846A40067E0A5 /* ToastMessage.swift */,
+				B611902B23A846820067E0A5 /* BackgroundColor.swift */,
 			);
 			path = UI_Elements;
 			sourceTree = "<group>";
@@ -108,10 +127,10 @@
 		B6204D6B239433DF003B8E81 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B611902423A845400067E0A5 /* Profil */,
 				B6D24B51239693A700D4D6AC /* News */,
 				B6204D6C23943690003B8E81 /* Calender */,
 				B670CEDE239EF02F00648B38 /* Search */,
-				B699B31A2389628C00837D37 /* MyProfilViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -176,7 +195,6 @@
 				B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */,
 				B6FA71C22384734B002DA281 /* SneakerApp.xcdatamodeld */,
 				B6204D6B239433DF003B8E81 /* ViewController */,
-				B64868D323A7E49000D2496A /* Profil */,
 				B614801123888F940018DA71 /* UI_Elements */,
 				B614800A23881E3C0018DA71 /* Models */,
 				B6FA71D223847B34002DA281 /* nike.gif */,
@@ -331,7 +349,6 @@
 				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
-				B699B31B2389628C00837D37 /* MyProfilViewController.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
 				B63312A023A04827001A63E1 /* VideoTestViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
@@ -339,15 +356,20 @@
 				B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */,
 				B6FA71D123847B07002DA281 /* DispatchQueueHelper.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,
+				B611902823A845610067E0A5 /* CameraViewController.swift in Sources */,
+				B611902923A845610067E0A5 /* CameraPreviewViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
+				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
+				B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */,
 				B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */,
 				B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */,
 				B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */,
 				B633129A23A01A2C001A63E1 /* FetchData.swift in Sources */,
+				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
 				B6148010238829F40018DA71 /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

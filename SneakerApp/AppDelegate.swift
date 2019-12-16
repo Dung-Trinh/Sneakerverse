@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Verpasse nicht den Schuh um 11 Uhr!👀"
         content.body = "Öffne die App für mehr Infosl!👟"
-        let date = Date().addingTimeInterval(5)
         //let dateComponetns = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponetns, repeats: false)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)

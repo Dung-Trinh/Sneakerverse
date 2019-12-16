@@ -9,17 +9,20 @@
 import UIKit
 import WebKit
 import AVKit
+import EventKit
 
 class NewsDetailViewController: UIViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!
-    
+    var background = BackgroundColor()
+
     
     var imgArray = [UIImage(named: "sneakercon"),UIImage(named: "sneakermesse"),UIImage(named: "sneakermesse2")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.createGradientBackground(view: self.view)
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
         navigationBar.title = "Sneakercon"
@@ -72,7 +75,33 @@ class NewsDetailViewController: UIViewController {
           self.present(vc,animated: true, completion: nil)
     }
 
+    @IBAction func calenderReminder(_ sender: UIButton) {
+        let eventStore:EKEventStore = EKEventStore()
 
+        eventStore.requestAccess(to: .event) { (granted,error) in
+            if(granted) && (error == nil)
+            {
+                print("\n granted: \(granted)\n")
+
+           
+        
+        let event:EKEvent = EKEvent(eventStore:eventStore)
+        event.title = "Jordan 1 Calender Notification"
+        event.startDate = Date()
+        event.endDate = Date()
+        event.notes = "this is a note"
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do{
+            try eventStore.save(event, span: .thisEvent)
+        }catch let error as NSError{
+            print("Fehler1 NSERROR: \(error)")
+            return
+        }
+            }
+        }
+        var message = ToastMessage(message: "Der Release ist in deinem Kalender vermerkt! ✅", view: self.view)
+    }
+    
 }
 
 
@@ -114,3 +143,4 @@ extension NewsDetailViewController : UICollectionViewDelegateFlowLayout{
     }
     
 }
+
