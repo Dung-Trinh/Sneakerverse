@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class Sneaker {
     init(title:String,date:String,img:UIImage,brand:String) {

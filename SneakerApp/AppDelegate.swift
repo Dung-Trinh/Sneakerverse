@@ -24,25 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge])
-        { (grandted, error) in
-            if grandted{
-                print("User gave permission ")
-            }
-            
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "SneakerObj", in: context)
+        let sneaker = NSManagedObject(entity: entity!, insertInto: context)
+        sneaker.setValue("Travis Scott AF1", forKey: "name")
+        sneaker.setValue("Nike", forKey: "brand")
+        sneaker.setValue("12.12.2020", forKey: "date")
+        do {
+           try context.save()
+            print("safe")
+          } catch {
+           print("Failed saving")
         }
-        /// creating notification message
-        let content = UNMutableNotificationContent()
-        content.title = "Verpasse nicht den Schuh um 11 Uhr!👀"
-        content.body = "Öffne die App für mehr Infosl!👟"
-        //let dateComponetns = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponetns, repeats: false)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         
-        center.add(request){(error) in}
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SneakerObj")
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+               print(data.value(forKey: "name") as! String)
+          }
+            
+        } catch {
+            
+            print("Failed")
+        }
         return true
     }
 
@@ -103,12 +111,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func saveState(state : String){
+        /*
         let newEntry = SneakerObj(context: persistentContainer.viewContext)
         newEntry.name = state
         newEntry.img = "Scott"
         newEntry.date = "12.12.12"
            saveContext()
-        
+ */
     }
 
 }
