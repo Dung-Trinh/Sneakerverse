@@ -18,6 +18,7 @@ struct Sneaker:Decodable{
     var releaseDate : String
     var imgArray : [String]
     var brand : String
+    var description : String
 }
 //class Sneaker {
 //    init(title:String,date:String,img:UIImage,brand:String) {

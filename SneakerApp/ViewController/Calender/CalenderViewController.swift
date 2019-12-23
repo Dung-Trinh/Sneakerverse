@@ -39,10 +39,8 @@ class CalenderViewController: UIViewController {
             case .success(let article):
                article.forEach({ (article) in
                     print(article.title)
-                    print(article.imageURL)
-                   print(article.retailPrice)
-                   print(article.releaseDate)
-                   print(article.priceSpan)
+                print(article.description)
+
                     self.allSneaker.append(article)
                 })
             case .failure(let err):
@@ -58,7 +56,7 @@ class CalenderViewController: UIViewController {
         
     }
     
-
+  
     
     fileprivate func fetchSneaker(completion:@escaping(Result<[Sneaker],Error>)-> Void){
         let urlString = "https://flasksneakerapi.herokuapp.com/news"
@@ -134,11 +132,16 @@ extension CalenderViewController : UICollectionViewDataSource{
     
     
 }
+//TODO: zur detail view wechseln
 extension CalenderViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "SneakerDetailViewController") as? SneakerDetailViewController
+
         /// push the DetailViewController on the stack
-        self.navigationController?.pushViewController(vc!,animated:true)
+        vc?.sneaker = showSneakerList[indexPath.row]
+self.navigationController?.pushViewController(vc!,animated:true)
+
+
     }
 }
 

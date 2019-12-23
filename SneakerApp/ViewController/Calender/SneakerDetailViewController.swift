@@ -9,8 +9,34 @@
 import UIKit
 import EventKit
 class SneakerDetailViewController: UIViewController {
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var sneakerName: UILabel!
+    @IBOutlet weak var textBox: UITextView!
+    @IBOutlet var images: [UIImageView]!
+    
+    
     var background = BackgroundColor()
+    var sneaker : Sneaker?
+    
+    func updateUI(){
+        textBox.text = sneaker?.description
+        sneakerName.text = sneaker?.title
+        
+        let url = URL(string:sneaker!.imageURL)
+        let data = try? Data(contentsOf: url!)
+        images[0].image = UIImage(data: data!)
+        
+        var k : Int = 1
+        for i in sneaker!.imgArray{
+            let url = URL(string: i)
+             // TODO: try catch einbauen !
+            let data = try? Data(contentsOf: url!)
+            images[k].image = UIImage(data: data!)
+            k = k+1
+            
+        }
+
+        
+    }
     
     @IBAction func turnOnNotification(_ sender: Any) {
         var popUpMessage = ToastMessage(message: "Benachrichtigung wurden angeschaltet👟✅ ", view: self.view)
@@ -50,7 +76,7 @@ class SneakerDetailViewController: UIViewController {
         /// for notification in forderground
         UNUserNotificationCenter.current().delegate = self
        
-
+        updateUI()
     }
 
     
