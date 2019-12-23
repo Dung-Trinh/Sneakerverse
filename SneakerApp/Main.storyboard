@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -1023,8 +1023,8 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago1" translatesAutoresizingMaskIntoConstraints="NO" id="6Wm-dR-08S">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="273.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="273.5" id="OZ3-Rj-I8f"/>
-                                                    <constraint firstAttribute="width" constant="414" id="qoW-WZ-rmD"/>
+                                                    <constraint firstAttribute="height" constant="273.5" id="Kn1-gK-VtW"/>
+                                                    <constraint firstAttribute="width" constant="414" id="zkO-2l-1m9"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jordan 1 Retro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-6R-iPM">
@@ -1042,8 +1042,8 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="arrowshape.turn.up.right.circle.fill" catalog="system"/>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-eF-SIq">
-                                                <rect key="frame" x="8" y="343" width="398" height="166.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-eF-SIq">
+                                                <rect key="frame" x="8" y="343" width="398" height="183"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1051,7 +1051,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="j1" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-G9-LoS">
-                                                <rect key="frame" x="0.0" y="517" width="414" height="255"/>
+                                                <rect key="frame" x="0.0" y="549" width="414" height="255"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="255" id="iFD-SM-q3S"/>
                                                 </constraints>
@@ -1078,13 +1078,13 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago3" translatesAutoresizingMaskIntoConstraints="NO" id="WTw-nw-nmD">
-                                                <rect key="frame" x="0.0" y="773" width="414" height="272"/>
+                                                <rect key="frame" x="0.0" y="803" width="414" height="272"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="801" id="1Vj-tV-0pL"/>
-                                            <constraint firstAttribute="bottom" secondItem="WTw-nw-nmD" secondAttribute="bottom" constant="29.5" id="5h5-LK-Q2y"/>
+                                            <constraint firstAttribute="bottom" secondItem="WTw-nw-nmD" secondAttribute="bottom" constant="-0.5" id="5h5-LK-Q2y"/>
                                             <constraint firstAttribute="trailing" secondItem="6Wm-dR-08S" secondAttribute="trailing" id="7hn-XU-Z45"/>
                                             <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="d3k-bD-shQ" secondAttribute="bottom" constant="22" id="G84-CS-Cbv"/>
                                             <constraint firstItem="6Wm-dR-08S" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="J0P-BE-Pxj"/>
@@ -1103,12 +1103,12 @@
                                             <constraint firstItem="CxU-6R-iPM" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" constant="8" id="fwQ-vr-Vf3"/>
                                             <constraint firstItem="WTw-nw-nmD" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="g2z-d8-Kw8"/>
                                             <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="VJp-Pm-jAC" secondAttribute="bottom" constant="21" id="gyV-N3-T5S"/>
-                                            <constraint firstItem="1jR-G9-LoS" firstAttribute="top" secondItem="wfU-eF-SIq" secondAttribute="bottom" constant="7.5" id="hnH-nh-gkP"/>
-                                            <constraint firstItem="WTw-nw-nmD" firstAttribute="top" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="1" id="jbg-Uk-qsz"/>
+                                            <constraint firstItem="1jR-G9-LoS" firstAttribute="top" secondItem="wfU-eF-SIq" secondAttribute="bottom" constant="23" id="hnH-nh-gkP"/>
+                                            <constraint firstItem="WTw-nw-nmD" firstAttribute="top" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="-1" id="jbg-Uk-qsz"/>
                                             <constraint firstItem="CxU-6R-iPM" firstAttribute="top" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="18" id="lnH-PH-vJJ"/>
                                             <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="ka8-sk-LSQ" secondAttribute="bottom" constant="22" id="n8x-r7-LrV"/>
                                             <constraint firstItem="1jR-G9-LoS" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="pEf-qN-bjo"/>
-                                            <constraint firstAttribute="bottom" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="302.5" id="pL5-zq-dVg"/>
+                                            <constraint firstAttribute="bottom" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="270.5" id="pL5-zq-dVg"/>
                                             <constraint firstItem="d3k-bD-shQ" firstAttribute="leading" secondItem="ka8-sk-LSQ" secondAttribute="trailing" constant="-66" id="tn2-ve-Xv2"/>
                                             <constraint firstAttribute="trailing" secondItem="WTw-nw-nmD" secondAttribute="trailing" id="yfX-f7-aJU"/>
                                         </constraints>
