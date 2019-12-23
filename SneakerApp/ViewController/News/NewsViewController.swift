@@ -12,15 +12,15 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var blogPosts : [BlogPost] = []
     var background = BackgroundColor()
+    
+    var refreshControl: UIRefreshControl!
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         background.createGradientBackground(view: self.view)
         tableView.dataSource = self
-        let newBlogPost = BlogPost(imageURL: "https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/14/2019/03/sneakercon.jpg", title: "SNEAKER CON")
-       
-        blogPosts.append(newBlogPost)
 
         tableView.delegate = self
         
@@ -28,24 +28,36 @@ class NewsViewController: UIViewController {
              switch res {
              case .success(let article):
                  article.forEach({ (article) in
-                     print(article.title)
-                     print(article.imageURL)
                      self.blogPosts.append(article)
                  })
              case .failure(let err):
-                 print("Failed to fetch courses:", err)
+            print("Failed to fetch courses:", err)
              }
             DispatchQueue.main.async {
             self.tableView.reloadData()
             }
          }
- 
+        self.tableView.reloadData()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
             }
-    
+
+
+     @objc func refresh(_ sender: Any) {
+        tableView.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.refreshControl.endRefreshing()
+        })
+
+        }
   
            
             fileprivate func fetchCoursesJSON(completion: @escaping (Result<[BlogPost], Error>) -> ()) {
-                let urlString = "http://127.0.0.1:5000/news"
+                let urlString = "https://flasksneakerapi.herokuapp.com/blog"
                 guard let url = URL(string: urlString) else { return }
                 
                 URLSession.shared.dataTask(with: url) { (data, resp, err) in
@@ -70,6 +82,12 @@ class NewsViewController: UIViewController {
                 }.resume()
             }
     
+    // MARK: - Tranfer the BlogPost to NewsDetail2VC
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if let dest = segue.destination as? NewsDetailViewController, let cell = sender as? BlogPostTableViewCell, let indexPath = tableView.indexPath(for: cell){
+            dest.blogPost = blogPosts[indexPath.row]
+        }
+       }
 
 
 
@@ -79,14 +97,15 @@ extension NewsViewController:UITableViewDataSource{
     /// number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //blogPosts.count
-        return 3
+        return blogPosts.count
+        
     }
     
     /// fill the cell with content
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "blogpostCell") as! BlogPostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "blogpostCell",for: indexPath) as! BlogPostTableViewCell
             
-        cell.modell = blogPosts[0]
+        cell.modell = blogPosts[indexPath.row]
         cell.layer.masksToBounds = false
 
 
@@ -111,6 +130,7 @@ extension NewsViewController: UITableViewDelegate{
    
     
     }
-    
+
+
     
 

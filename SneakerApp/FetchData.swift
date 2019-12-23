@@ -17,7 +17,6 @@ class FetchData{
               case .success(let article):
                   article.forEach({ (article) in
                       print(article.title)
-                      print(article.imageURL)
                       self.blogPosts.append(article)
                   })
               case .failure(let err):

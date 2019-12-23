@@ -12,50 +12,43 @@ import AVKit
 import EventKit
 
 class NewsDetailViewController: UIViewController {
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     var background = BackgroundColor()
-
+    var blogPost : BlogPost?
     
-    var imgArray = [UIImage(named: "sneakercon"),UIImage(named: "sneakermesse"),UIImage(named: "sneakermesse2")]
+    var imgArray : [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         background.createGradientBackground(view: self.view)
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
-        navigationBar.title = "Sneakercon"
-        loadYoutube(videoID: "QuyO_-LA-YU")
+        updateUI()
+        //navigationBar.title = "Sneakercon"
+        //YoutubeVideoPlayer(videoID: "QMUsqxF_AZk", webView: self.webView)
     }
     
-    func loadYoutube(videoID:String) {
-        guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)") else {
-            return
-        }
-        webView.load(URLRequest(url: youtubeURL))
-    }
-    
-    func genarateThumbnailFromYouTubeID(youTubeID: String) {
-          let urlString = "http://img.youtube.com/vi/\(youTubeID)/1.jpg"
-          let image = try! (UIImage(withContentsOfUrl: urlString))!
-      }
-    
-    func getThumbnailFromVideoUrl(urlString: String) {
-        DispatchQueue.global().async {
-            let asset = AVAsset(url: URL(string: urlString)!)
-            let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-            assetImgGenerate.appliesPreferredTrackTransform = true
-            let time = CMTimeMake(value: 1, timescale: 20)
-            let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
-            if img != nil {
-                let frameImg  = UIImage(cgImage: img!)
-                DispatchQueue.main.async(execute: {
-                    // assign your image to UIImageView
-                })
-            }
+    //MARK:- Set the Content of the View
+    func updateUI(){
+        navigationBar.title = blogPost?.title
+        textView.text = blogPost?.description
+        YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)
+        
+        let url = URL(string: blogPost!.cover)
+        let data = try? Data(contentsOf: url!)
+        imgArray.insert(UIImage(data: data!)!, at: 0)
+        
+        for i in blogPost!.contentPictures{
+            let url = URL(string: i)
+             // TODO: try catch einbauen !
+            let data = try? Data(contentsOf: url!)
+            imgArray.append(UIImage(data: data!)!)
         }
     }
+
     
     override func didReceiveMemoryWarning() {
          super.didReceiveMemoryWarning()

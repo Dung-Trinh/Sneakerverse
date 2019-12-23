@@ -14,6 +14,9 @@ class CalenderViewController: UIViewController {
     @IBOutlet weak var calenderBottom: UICollectionView!
     var allSneaker : [Sneaker] = []
     var showSneakerList : [Sneaker] = []
+   //  var sneakers: [SneakerDetail] = []
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +28,67 @@ class CalenderViewController: UIViewController {
         
         calenderBottom.dataSource = self
         calenderBottom.delegate = self
-        allSneaker.append(Sneaker(title: "Nike schuh", date: "12.12", img: UIImage(named: "j1")!,brand:"Nike"))
         
-        allSneaker.append(Sneaker(title: "adidas schuh", date: "12.12", img: UIImage(named: "y1")!,brand:"Adidas"))
-        allSneaker.append(Sneaker(title: "puma schuh", date: "12.12", img: UIImage(named: "p1")!,brand:"Puma"))
+//        allSneaker.append(Sneaker(title: "Nike schuh", date: "12.12", img: UIImage(named: "j1")!,brand:"Nike"))
+//        allSneaker.append(Sneaker(title: "adidas schuh", date: "12.12", img: UIImage(named: "y1")!,brand:"Adidas"))
+//        allSneaker.append(Sneaker(title: "puma schuh", date: "12.12", img: UIImage(named: "p1")!,brand:"Puma"))
         
+
+        fetchSneaker { (res) in
+            switch res {
+            case .success(let article):
+               article.forEach({ (article) in
+                    print(article.title)
+                    print(article.imageURL)
+                   print(article.retailPrice)
+                   print(article.releaseDate)
+                   print(article.priceSpan)
+                    self.allSneaker.append(article)
+                })
+            case .failure(let err):
+                print("Failed to fetch courses:", err)
+            }
+            self.calenderTop.reloadData()
+            self.calenderBottom.reloadData()
+        }
+        
+       
         self.showSneakerList=allSneaker
 
+        
     }
+    
+
+    
+    fileprivate func fetchSneaker(completion:@escaping(Result<[Sneaker],Error>)-> Void){
+        let urlString = "https://flasksneakerapi.herokuapp.com/news"
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+                       
+                       if let err = err {
+                           completion(.failure(err))
+                           return
+                       }
+                       
+                       // successful
+                       do {
+                        let article = try JSONDecoder().decode([Sneaker].self, from: data!)
+                           completion(.success(article))
+           //                completion(courses, nil)
+                           
+                       } catch let jsonError {
+                           completion(.failure(jsonError))
+           //                completion(nil, jsonError)
+                       }
+                       
+                       
+                   }.resume()
+    }
+     
 
     @IBAction func switchViews(_ sender: UISegmentedControl) {
+        
+        
         if sender.selectedSegmentIndex == 0{
             self.showSneakerList = allSneaker;
             calenderTop.reloadData()
@@ -64,12 +118,16 @@ class CalenderViewController: UIViewController {
 
 extension CalenderViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        showSneakerList.count
+        //allSneaker.count
+        return showSneakerList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SneakerCell", for: indexPath) as! SneakerCollectionViewCell
+        // cell.sneaker = allSneaker[indexPath.row]
+        if(showSneakerList.count>0){
         cell.sneaker = showSneakerList[indexPath.row]
+        }
         return cell
     }
     

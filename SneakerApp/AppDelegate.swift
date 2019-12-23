@@ -23,34 +23,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "SneakerObj", in: context)
-        let sneaker = NSManagedObject(entity: entity!, insertInto: context)
-        sneaker.setValue("Travis Scott AF1", forKey: "name")
-        sneaker.setValue("Nike", forKey: "brand")
-        sneaker.setValue("12.12.2020", forKey: "date")
-        do {
-           try context.save()
-            print("safe")
-          } catch {
-           print("Failed saving")
-        }
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SneakerObj")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-               print(data.value(forKey: "name") as! String)
-          }
-            
-        } catch {
-            
-            print("Failed")
-        }
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+//
+//        var dataController = DataController()
+//        dataController.initalizeStack()
+//        dataController.createSneaker(name: "Dung", brand: "Nike", date: "1.1.2020")
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let entity = NSEntityDescription.entity(forEntityName: "SneakerObj", in: context)
+//        let sneaker = SneakerObj(context: context)
+//        sneaker.brand = "Nike"
+//        sneaker.date = "12.12.12"
+//        sneaker.name = "travis "
+//
+//
+//
+//        do {
+//           try context.save()
+//            print("safe")
+//          } catch {
+//           print("Failed saving")
+//        }
+//
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SneakerObj")
+//        //request.predicate = NSPredicate(format: "age = %@", "12")
+//        request.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(request)
+//            for data in result as! [NSManagedObject] {
+//              //print(data.value(forKey: "name") as! String)
+//          }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
         return true
     }
 
@@ -120,5 +127,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  */
     }
 
+    
 }
 

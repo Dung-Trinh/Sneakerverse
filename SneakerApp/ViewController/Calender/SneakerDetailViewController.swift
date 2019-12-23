@@ -46,6 +46,8 @@ class SneakerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         background.createGradientBackground(view: self.view)
+        
+        /// for notification in forderground
         UNUserNotificationCenter.current().delegate = self
        
 
@@ -76,40 +78,14 @@ class SneakerDetailViewController: UIViewController {
         }
             }
         }
-        showText(message: "Der Release ist in deinem Kalender vermerkt!")
+        _ = ToastMessage(message: "Der Release ist in deinem Kalender vermerkt!", view: self.view)
 
                    
     }
     
 }
 
-extension SneakerDetailViewController{
-    func showText(message: String) {
-        let textLabel = UILabel(frame: CGRect(x: 0, y: self.view.frame.height-90, width: self.view.frame.width, height: 60))
-        textLabel.font = UIFont.systemFont(ofSize: 15)
-        textLabel.textAlignment = .center
-        textLabel.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
-        textLabel.textColor = UIColor.red
-        textLabel.layer.cornerRadius = 5
-        textLabel.clipsToBounds = true
-        textLabel.text = message
-        self.view.addSubview(textLabel)
-        
-        UIView.animate(withDuration: 0.6,delay: 0,options: .curveEaseInOut, animations: {
-            textLabel.frame = CGRect(x: 0, y: self.view.frame.height - 130, width: self.view.frame.width, height: 60)
-        })
-        
-    
-        UIView.animate(withDuration: 0.8, delay: 1.0, options: .curveEaseInOut, animations: {
-            textLabel.alpha = 0.0
-        }) {(isCompleted) in
-            textLabel.removeFromSuperview()
-            
-        }
-      
-    }
-    
-}
+
 
 extension SneakerDetailViewController: UNUserNotificationCenterDelegate {
 

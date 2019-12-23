@@ -1,5 +1,5 @@
 //
-//  SneakerObj+CoreDataProperties.swift
+//  SneakerData+CoreDataProperties.swift
 //  
 //
 //  Created by Dung  on 17.12.19.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension SneakerObj {
+extension SneakerData {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<SneakerObj> {
-        return NSFetchRequest<SneakerObj>(entityName: "SneakerObj")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<SneakerData> {
+        return NSFetchRequest<SneakerData>(entityName: "SneakerData")
     }
 
     @NSManaged public var name: String?

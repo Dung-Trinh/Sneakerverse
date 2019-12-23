@@ -21,7 +21,7 @@ class CameraPreviewViewController: UIViewController,UIImagePickerControllerDeleg
     @IBAction func uploadButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
             let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
             imagePicker.allowsEditing = true
             imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             self.present(imagePicker, animated: true, completion: nil)

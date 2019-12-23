@@ -20,12 +20,12 @@ class SneakerCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI(){
+        let url = URL(string: sneaker.imageURL)
+         // TODO: try catch einbauen !
+        let data = try? Data(contentsOf: url!)
+            img.image = UIImage(data: data!)
+            title.text = sneaker.title
         
-        if let sneaker = sneaker{
-            img.image = sneaker.img
-            title.text = sneaker.titel
-            
-        }
         
         backgroundLayer.layer.cornerRadius = 10
         backgroundLayer.layer.masksToBounds = true

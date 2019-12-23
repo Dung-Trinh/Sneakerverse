@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SneakerObj+CoreDataClass.swift">
+      location = "group:SneakerData+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:SneakerObj+CoreDataProperties.swift">
+      location = "group:SneakerData+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:SneakerApp.xcodeproj">

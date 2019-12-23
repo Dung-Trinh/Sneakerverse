@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Kingfisher
 
 class BlogPostTableViewCell: UITableViewCell {
-    @IBOutlet weak var textBox: UIView!
-    
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var backgroundLayer: UIView!
+    @IBOutlet weak var Imagetext: UILabel!
+    @IBOutlet weak var textBox: UIView!
+    @IBOutlet weak var title: UILabel!
     
     var modell : BlogPost?{
         didSet{
@@ -22,7 +22,10 @@ class BlogPostTableViewCell: UITableViewCell {
     }
     
     func updateUI(){
-        loadImage(url: modell!.imageURL)
+        loadImage(url: modell!.cover)
+        Imagetext.text = modell?.description
+        title.text = modell?.title
+        
     }
     
     func loadImage(url:String) {

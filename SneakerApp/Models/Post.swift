@@ -10,7 +10,11 @@ import Foundation
 import CoreData
 
 struct BlogPost:Decodable{
-
-    var imageURL : String
     var title : String
+    var cover : String
+    var category:String
+    var description:String
+    var contentPictures:[String]
+    var shareLink:String
+    var contentVideo :String
 }
