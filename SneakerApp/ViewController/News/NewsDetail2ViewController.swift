@@ -16,19 +16,23 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!
-    var background = BackgroundColor()
+    @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var reminderBtn: UIButton!
+    
     var blogPost : BlogPost?
-    
     var imgArray : [UIImage] = []
-    
+    var reminderOn:Bool = false
+    let animator = CustomAnimator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let background = BackgroundColor()
         background.createGradientBackground(view: self.view)
+        
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
         updateUI()
-        //navigationBar.title = "Sneakercon"
-        //YoutubeVideoPlayer(videoID: "QMUsqxF_AZk", webView: self.webView)
+        
     }
     
     //MARK:- Set the Content of the View
@@ -37,12 +41,12 @@ class NewsDetailViewController: UIViewController {
         textView.text = blogPost?.description
         YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)
         
-        let url = URL(string: blogPost!.cover)
+        var url = URL(string: blogPost!.cover)
         let data = try? Data(contentsOf: url!)
         imgArray.insert(UIImage(data: data!)!, at: 0)
         
         for i in blogPost!.contentPictures{
-            let url = URL(string: i)
+            var url = URL(string: i)
              // TODO: try catch einbauen !
             let data = try? Data(contentsOf: url!)
             imgArray.append(UIImage(data: data!)!)
@@ -55,11 +59,13 @@ class NewsDetailViewController: UIViewController {
          // Dispose of any resources that can be recreated.
         
     }
+    
+    // TODO:- shar funktion optimieren mit bilder und link werden noch nicht angezeigt
     @IBAction func sharePost(_ sender: Any) {
-        let text = "my demo text"
+        let text = navigationBar.title
           let URL:NSURL = NSURL(string:"https://stockx.com/de-de/")!
-          let image = UIImage(named: "j1.png")
-          let vc = UIActivityViewController(activityItems:[ text,URL], applicationActivities: [])
+          let image = imgArray[0]
+          let vc = UIActivityViewController(activityItems:[ text,URL,image], applicationActivities: [])
           if let popoverController = vc.popoverPresentationController{
               popoverPresentationController!.sourceView = self.view
               popoverPresentationController!.sourceRect = self.view.bounds
@@ -67,19 +73,26 @@ class NewsDetailViewController: UIViewController {
           }
           self.present(vc,animated: true, completion: nil)
     }
-
+    
+    // TODO Kalenderfunktion so programmieren das es genau an dem Release ein eintrag macht
+    ///create a calendar reminder for special events
     @IBAction func calenderReminder(_ sender: UIButton) {
+        if(reminderOn == true){
+            reminderBtn.tintColor = .lightGray
+            reminderOn = false
+            return
+        }
+        reminderOn = true
+
+        animator.buttonScaleAnimation(notificationBtn: self.reminderBtn,color: UIColor(red:0.16, green:0.55, blue:0.30, alpha:1.0)
+)
         let eventStore:EKEventStore = EKEventStore()
 
         eventStore.requestAccess(to: .event) { (granted,error) in
             if(granted) && (error == nil)
             {
-                print("\n granted: \(granted)\n")
-
-           
-        
         let event:EKEvent = EKEvent(eventStore:eventStore)
-        event.title = "Jordan 1 Calender Notification"
+                event.title = self.navigationBar.title
         event.startDate = Date()
         event.endDate = Date()
         event.notes = "this is a note"
@@ -92,7 +105,12 @@ class NewsDetailViewController: UIViewController {
         }
             }
         }
-        var message = ToastMessage(message: "Der Release ist in deinem Kalender vermerkt! ✅", view: self.view)
+        var message = ToastMessage(message: "Das Event ist in deinem Kalender vermerkt! ✅", view: self.view)
+    }
+   
+    @IBAction func savePost(_ sender: UIButton) {
+        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+        // TODO Speichern von BlogPost
     }
     
 }

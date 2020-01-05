@@ -12,6 +12,7 @@ class SneakerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var backgroundLayer: UIView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     var sneaker: Sneaker!{
         didSet{
@@ -26,6 +27,13 @@ class SneakerCollectionViewCell: UICollectionViewCell {
             img.image = UIImage(data: data!)
             title.text = sneaker.title
         
+        let array : [String]?
+        if sneaker.releaseDate.contains("."){
+            array = sneaker.releaseDate.components(separatedBy: ".")
+        }else{
+            array = sneaker.releaseDate.components(separatedBy: "/")
+        }
+        date.text = array?[1]
         
         backgroundLayer.layer.cornerRadius = 10
         backgroundLayer.layer.masksToBounds = true

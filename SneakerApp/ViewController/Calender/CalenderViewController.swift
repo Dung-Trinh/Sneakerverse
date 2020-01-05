@@ -46,10 +46,10 @@ class CalenderViewController: UIViewController {
             case .failure(let err):
                 print("Failed to fetch courses:", err)
             }
-            self.calenderTop.reloadData()
-            self.calenderBottom.reloadData()
+          
         }
-        
+        self.calenderTop.reloadData()
+        self.calenderBottom.reloadData()
        
         self.showSneakerList=allSneaker
 
@@ -89,6 +89,25 @@ class CalenderViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0{
             self.showSneakerList = allSneaker;
+            self.showSneakerList.sort {
+                let splitLine: [String]?
+                let splitLine2 : [String]?
+
+                if $0.releaseDate.contains("."){
+                    splitLine = $0.releaseDate.components(separatedBy: ".")
+                }else{
+                    splitLine = $0.releaseDate.components(separatedBy: "/")
+                }
+                
+                
+                if $1.releaseDate.contains("."){
+                    splitLine2 = $1.releaseDate.components(separatedBy: ".")
+                }else{
+                    splitLine2 = $1.releaseDate.components(separatedBy: "/")
+                }
+                return splitLine![1] < splitLine2![1]
+                
+            }
             calenderTop.reloadData()
             calenderBottom.reloadData()
         }
@@ -116,6 +135,9 @@ class CalenderViewController: UIViewController {
 
 extension CalenderViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(collectionView == calenderBottom){
+            return 2
+        }
         //allSneaker.count
         return showSneakerList.count
     }
@@ -127,8 +149,16 @@ extension CalenderViewController : UICollectionViewDataSource{
         cell.sneaker = showSneakerList[indexPath.row]
         }
         return cell
+        
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                cell.alpha=0
+        UIView.animate(withDuration: 0.4, animations: {
+            cell.alpha=1
+        })
+
+    }
     
     
 }

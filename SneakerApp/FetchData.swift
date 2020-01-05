@@ -16,39 +16,38 @@ class FetchData{
               switch res {
               case .success(let article):
                   article.forEach({ (article) in
-                      print(article.title)
                       self.blogPosts.append(article)
                   })
               case .failure(let err):
-                  print("Failed to fetch courses:", err)
+             print("Failed to fetch courses:", err)
               }
+         
           }
     }
     
-        fileprivate func fetchCoursesJSON(completion: @escaping (Result<[BlogPost], Error>) -> ()) {
-            let urlString = "http://127.0.0.1:5000/news"
-            guard let url = URL(string: urlString) else { return }
-            
-            URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            fileprivate func fetchCoursesJSON(completion: @escaping (Result<[BlogPost], Error>) -> ()) {
+                let urlString = "https://flasksneakerapi.herokuapp.com/blog"
+                guard let url = URL(string: urlString) else { return }
                 
-                if let err = err {
-                    completion(.failure(err))
-                    return
-                }
-                
-                // successful
-                do {
-                    let article = try JSONDecoder().decode([BlogPost].self, from: data!)
-                    completion(.success(article))
-    //                completion(courses, nil)
+                URLSession.shared.dataTask(with: url) { (data, resp, err) in
                     
-                } catch let jsonError {
-                    completion(.failure(jsonError))
-    //                completion(nil, jsonError)
-                }
-                
-                
-            }.resume()
-        }
-    
+                    if let err = err {
+                        completion(.failure(err))
+                        return
+                    }
+                    
+                    // successful
+                    do {
+                        let article = try JSONDecoder().decode([BlogPost].self, from: data!)
+                        completion(.success(article))
+        //                completion(courses, nil)
+                        
+                    } catch let jsonError {
+                        completion(.failure(jsonError))
+        //                completion(nil, jsonError)
+                    }
+                    
+                    
+                }.resume()
+            }
 }

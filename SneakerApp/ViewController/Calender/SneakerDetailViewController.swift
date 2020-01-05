@@ -12,6 +12,10 @@ class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var sneakerName: UILabel!
     @IBOutlet weak var textBox: UITextView!
     @IBOutlet var images: [UIImageView]!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var priceSpan: UILabel!
+    @IBOutlet weak var retailPrice: UILabel!
+    @IBOutlet weak var notificationBtn: UIButton!
     
     
     var background = BackgroundColor()
@@ -20,6 +24,9 @@ class SneakerDetailViewController: UIViewController {
     func updateUI(){
         textBox.text = sneaker?.description
         sneakerName.text = sneaker?.title
+        releaseDate.text = sneaker?.releaseDate
+        priceSpan.text = sneaker?.priceSpan
+        retailPrice.text = sneaker?.retailPrice
         
         let url = URL(string:sneaker!.imageURL)
         let data = try? Data(contentsOf: url!)
@@ -39,6 +46,13 @@ class SneakerDetailViewController: UIViewController {
     }
     
     @IBAction func turnOnNotification(_ sender: Any) {
+
+//        UIView.animate(withDuration: 0.4) {
+//                self.notificationBtn.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+//             }
+//        UIView.animate(withDuration: 0.4) {
+//           self.notificationBtn.transform = CGAffineTransform.identity
+//        }
         var popUpMessage = ToastMessage(message: "Benachrichtigung wurden angeschaltet👟✅ ", view: self.view)
         let center = UNUserNotificationCenter.current()
 
@@ -107,6 +121,18 @@ class SneakerDetailViewController: UIViewController {
         _ = ToastMessage(message: "Der Release ist in deinem Kalender vermerkt!", view: self.view)
 
                    
+    }
+    @IBAction func shareBtn(_ sender: UIButton) {
+        let text = sneaker?.title
+        let URL:NSURL = NSURL(string:"https://stockx.com/de-de/")!
+        let image = images[0]
+        let vc = UIActivityViewController(activityItems:[ text,URL,image], applicationActivities: [])
+        if let popoverController = vc.popoverPresentationController{
+            popoverPresentationController!.sourceView = self.view
+            popoverPresentationController!.sourceRect = self.view.bounds
+            
+        }
+        self.present(vc,animated: true, completion: nil)
     }
     
 }

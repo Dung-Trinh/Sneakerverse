@@ -23,17 +23,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "67B7C080-6D31-4603-8EBB-EB9E2227F6CA"
-            shouldBeEnabled = "No"
+            uuid = "C9DB9F0C-2C88-498F-9578-747D09061106"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SneakerApp/ViewController/Calender/CalenderViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "CalenderViewController"
-            landmarkType = "21">
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "switchViews(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F606E02E-D135-4399-BA70-CBB07C38E995"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SneakerApp/ViewController/Calender/CalenderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "switchViews(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F606E02E-D135-4399-BA70-CBB07C38E995 - ab07277283f802bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SneakerApp.CalenderViewController.switchViews(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "SneakerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dung/Desktop/Xcode_Workspace/SneakerverseClone/SneakerApp/ViewController/Calender/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "F606E02E-D135-4399-BA70-CBB07C38E995 - af5c1f0ea78825a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SneakerApp.Sneaker, SneakerApp.Sneaker) -&gt; Swift.Bool in SneakerApp.CalenderViewController.switchViews(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "SneakerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dung/Desktop/Xcode_Workspace/SneakerverseClone/SneakerApp/ViewController/Calender/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

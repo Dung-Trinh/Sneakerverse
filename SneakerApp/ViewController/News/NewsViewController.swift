@@ -11,19 +11,20 @@ import UIKit
 class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var blogPosts : [BlogPost] = []
-    var background = BackgroundColor()
-    
     var refreshControl: UIRefreshControl!
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        background.createGradientBackground(view: self.view)
         tableView.dataSource = self
-
-        tableView.delegate = self
+    
+        ///create background color
+        let background = BackgroundColor()
+        background.createGradientBackground(view: self.view)
         
+        
+        ///fetch data
         fetchCoursesJSON { (res) in
              switch res {
              case .success(let article):
@@ -39,13 +40,17 @@ class NewsViewController: UIViewController {
          }
         self.tableView.reloadData()
         
+
+            }
+    /// create "Pull to refresh"
+    func createRefreshGesture(){
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-            }
-
-
+    }
+    
+    /// function for refreshing
      @objc func refresh(_ sender: Any) {
         tableView.reloadData()
         
@@ -93,7 +98,18 @@ class NewsViewController: UIViewController {
 
 }
 extension NewsViewController:UITableViewDataSource{
-    
+    /// animation if the cell is displayed
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha=0
+        UIView.animate(withDuration: 0.4, animations: {
+            cell.alpha=1
+        })
+        
+        cell.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.6) {
+            cell.transform = CGAffineTransform.identity
+        }
+    }
     /// number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //blogPosts.count
@@ -118,18 +134,6 @@ extension NewsViewController:UITableViewDataSource{
 }
     
 
-extension NewsViewController: UITableViewDelegate{
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-             let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
-             if currentCell is BlogPostTableViewCell {
-                 let cell = currentCell as! BlogPostTableViewCell
-                
-             }
-            
-         }
-   
-    
-    }
 
 
     
