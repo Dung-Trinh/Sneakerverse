@@ -7,10 +7,6 @@ target 'SneakerApp' do
 
   # Pods for SneakerApp
 
-pod 'TinyConstraints', '~>4.0.0'
-pod 'Gifu', '~>3.2.0'
-pod 'Kingfisher'
-
 
 
 end

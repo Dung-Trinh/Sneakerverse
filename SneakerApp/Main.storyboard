@@ -1086,7 +1086,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago3" translatesAutoresizingMaskIntoConstraints="NO" id="WTw-nw-nmD">
-                                                <rect key="frame" x="0.0" y="903" width="414" height="272"/>
+                                                <rect key="frame" x="0.0" y="903" width="414" height="274"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-P5-WiP">
                                                 <rect key="frame" x="8" y="546" width="208" height="21"/>
@@ -1146,7 +1146,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="903.5" id="1Vj-tV-0pL"/>
-                                            <constraint firstAttribute="bottom" secondItem="WTw-nw-nmD" secondAttribute="bottom" constant="2" id="5h5-LK-Q2y"/>
+                                            <constraint firstAttribute="bottom" secondItem="WTw-nw-nmD" secondAttribute="bottom" id="5h5-LK-Q2y"/>
                                             <constraint firstAttribute="trailing" secondItem="6Wm-dR-08S" secondAttribute="trailing" id="7hn-XU-Z45"/>
                                             <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="d3k-bD-shQ" secondAttribute="bottom" constant="22" id="G84-CS-Cbv"/>
                                             <constraint firstItem="6Wm-dR-08S" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="J0P-BE-Pxj"/>

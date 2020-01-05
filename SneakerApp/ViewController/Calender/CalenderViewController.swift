@@ -135,9 +135,9 @@ class CalenderViewController: UIViewController {
 
 extension CalenderViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == calenderBottom){
-            return 2
-        }
+//        if(collectionView == calenderBottom){
+//            return 2
+//        }
         //allSneaker.count
         return showSneakerList.count
     }

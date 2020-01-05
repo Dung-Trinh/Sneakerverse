@@ -260,7 +260,6 @@
 				B6FA71B22384734B002DA281 /* Sources */,
 				B6FA71B32384734B002DA281 /* Frameworks */,
 				B6FA71B42384734B002DA281 /* Resources */,
-				BDBEB8A04D92E8456B86EFC9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,23 +319,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BDBEB8A04D92E8456B86EFC9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SneakerApp/Pods-SneakerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SneakerApp/Pods-SneakerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SneakerApp/Pods-SneakerApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EB592DD2377BB4448F8781E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -1,26 +1,3 @@
-PODS:
-  - Gifu (3.2.0)
-  - Kingfisher (5.10.1):
-    - Kingfisher/Core (= 5.10.1)
-  - Kingfisher/Core (5.10.1)
-  - TinyConstraints (4.0.1)
-
-DEPENDENCIES:
-  - Gifu (~> 3.2.0)
-  - Kingfisher
-  - TinyConstraints (~> 4.0.0)
-
-SPEC REPOS:
-  trunk:
-    - Gifu
-    - Kingfisher
-    - TinyConstraints
-
-SPEC CHECKSUMS:
-  Gifu: 7bcb6427457d85e0b4dff5a84ec5947ac19a93ea
-  Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
-  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
-
-PODFILE CHECKSUM: c7440c039b14051c58681863981264aec8e601da
+PODFILE CHECKSUM: 453e832b88f835f08a5439eb89d1b1318318d586
 
 COCOAPODS: 1.8.4
