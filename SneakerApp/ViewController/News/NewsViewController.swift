@@ -17,8 +17,10 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createRefreshGesture()
         tableView.dataSource = self
-    
+        tableView.delegate = self
+        
         ///create background color
         let background = BackgroundColor()
         background.createGradientBackground(view: self.view)
@@ -135,6 +137,15 @@ extension NewsViewController:UITableViewDataSource{
     
 
 
+extension NewsViewController: UITableViewDelegate{
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+          if currentCell is BlogPostTableViewCell {
+              let cell = currentCell as! BlogPostTableViewCell
+             
+          }
+         
+      }
 
-    
-
+ 
+ }

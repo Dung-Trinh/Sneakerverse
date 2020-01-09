@@ -79,7 +79,6 @@ class SneakerDetailViewController: UIViewController {
         center.add(request)
         
         print(dateComponents)
-        print("NOTIFY")
     }
     
     

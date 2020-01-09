@@ -19,6 +19,7 @@ struct Sneaker:Decodable{
     var imgArray : [String]
     var brand : String
     var description : String
+    var position:String //top oder bottom für die zuordnung der CollectionViews
 }
 //class Sneaker {
 //    init(title:String,date:String,img:UIImage,brand:String) {

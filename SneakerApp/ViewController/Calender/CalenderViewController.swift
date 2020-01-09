@@ -13,9 +13,24 @@ class CalenderViewController: UIViewController {
     @IBOutlet weak var calenderTop: UICollectionView!
     @IBOutlet weak var calenderBottom: UICollectionView!
     var allSneaker : [Sneaker] = []
-    var showSneakerList : [Sneaker] = []
-   //  var sneakers: [SneakerDetail] = []
+    var sneakerCalenderTop : [Sneaker] = []
+    var sneakerCalenderBottom: [Sneaker] = []
    
+    func setSneakerArray(){
+        var top: [Sneaker] = []
+        var bottom: [Sneaker] = []
+
+            for s in allSneaker{
+                if(s.position=="top"){
+                    top.append(s)
+                }
+                if(s.position=="bottom"){
+                    bottom.append(s)
+                }
+            }
+        sneakerCalenderTop=top
+        sneakerCalenderBottom=bottom
+        }
     
     
     override func viewDidLoad() {
@@ -38,20 +53,29 @@ class CalenderViewController: UIViewController {
             switch res {
             case .success(let article):
                article.forEach({ (article) in
-                    print(article.title)
-                print(article.description)
+                print(article.position)
 
                     self.allSneaker.append(article)
                 })
             case .failure(let err):
                 print("Failed to fetch courses:", err)
             }
-          
+            //einfügen der schuhe
+            for s in self.allSneaker{
+              if s.position == "bottom"{
+                self.sneakerCalenderBottom.append(s)
+              }else if s.position == "top"{
+                self.sneakerCalenderTop.append(s)
+                }
+          }
+            DispatchQueue.main.async {
+            self.calenderTop.reloadData()
+            self.calenderBottom.reloadData()
+            }
         }
-        self.calenderTop.reloadData()
-        self.calenderBottom.reloadData()
+
        
-        self.showSneakerList=allSneaker
+        //self.sneakerCalenderTop=allSneaker
 
         
     }
@@ -59,7 +83,7 @@ class CalenderViewController: UIViewController {
   
     
     fileprivate func fetchSneaker(completion:@escaping(Result<[Sneaker],Error>)-> Void){
-        let urlString = "https://flasksneakerapi.herokuapp.com/news"
+        let urlString = "https://flasksneakerapi.herokuapp.com/sneakers"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
                        
@@ -88,8 +112,9 @@ class CalenderViewController: UIViewController {
         
         
         if sender.selectedSegmentIndex == 0{
-            self.showSneakerList = allSneaker;
-            self.showSneakerList.sort {
+            setSneakerArray()
+            //self.sneakerCalenderTop = allSneaker;
+            self.sneakerCalenderTop.sort {
                 let splitLine: [String]?
                 let splitLine2 : [String]?
 
@@ -112,18 +137,27 @@ class CalenderViewController: UIViewController {
             calenderBottom.reloadData()
         }
         else if sender.selectedSegmentIndex == 1{
-            self.showSneakerList=allSneaker.filter{$0.brand == "Nike"}
+            setSneakerArray()
+
+            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Nike"}
+            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Nike"}
             calenderTop.reloadData()
             calenderBottom.reloadData()
         }
         else if sender.selectedSegmentIndex == 2{
-            self.showSneakerList=allSneaker.filter{$0.brand == "Adidas"
-            }
+            setSneakerArray()
+
+            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Adidas"}
+            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Adidas"}
             calenderTop.reloadData()
             calenderBottom.reloadData()
         }
         else if sender.selectedSegmentIndex == 3{
-            self.showSneakerList=allSneaker.filter{$0.brand == "Puma"}
+            setSneakerArray()
+
+            self.sneakerCalenderTop=allSneaker.filter{$0.brand == "Puma"}
+            self.sneakerCalenderBottom=allSneaker.filter{$0.brand == "Puma"}
+
             calenderTop.reloadData()
             calenderBottom.reloadData()
                }
@@ -135,18 +169,21 @@ class CalenderViewController: UIViewController {
 
 extension CalenderViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if(collectionView == calenderBottom){
-//            return 2
-//        }
-        //allSneaker.count
-        return showSneakerList.count
+        if(collectionView == calenderBottom){
+            return sneakerCalenderBottom.count
+        }
+        return sneakerCalenderTop.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SneakerCell", for: indexPath) as! SneakerCollectionViewCell
-        // cell.sneaker = allSneaker[indexPath.row]
-        if(showSneakerList.count>0){
-        cell.sneaker = showSneakerList[indexPath.row]
+        if collectionView == calenderBottom{
+            cell.sneaker = sneakerCalenderBottom[indexPath.row]
+            return cell
+        }
+        
+        if(sneakerCalenderTop.count>0){
+        cell.sneaker = sneakerCalenderTop[indexPath.row]
         }
         return cell
         
@@ -168,7 +205,7 @@ extension CalenderViewController : UICollectionViewDelegate{
         let vc = storyboard?.instantiateViewController(withIdentifier: "SneakerDetailViewController") as? SneakerDetailViewController
 
         /// push the DetailViewController on the stack
-        vc?.sneaker = showSneakerList[indexPath.row]
+        vc?.sneaker = sneakerCalenderTop[indexPath.row]
 self.navigationController?.pushViewController(vc!,animated:true)
 
 
