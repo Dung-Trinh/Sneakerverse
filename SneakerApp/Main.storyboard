@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -334,46 +334,59 @@
             </objects>
             <point key="canvasLocation" x="-1223" y="-1293"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="DII-zP-P3e">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Unx-FH-2fd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDF-qd-H3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4442" y="-2042"/>
+        </scene>
         <!--Item-->
         <scene sceneID="hKV-38-TWj">
             <objects>
-                <viewController id="Brk-5I-qlJ" customClass="GuideViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1" id="Brk-5I-qlJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKb-oK-OWG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hip-sv-Irw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="556"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="oK3-sV-yJt"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="GLE-ia-eg7"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-1u-THq">
-                                <rect key="frame" x="188" y="564" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pageChange:" destination="Brk-5I-qlJ" eventType="valueChanged" id="mgH-CM-2pE"/>
-                                </connections>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vr-h5-b9n">
-                                <rect key="frame" x="158" y="737" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GET STARTED"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="grG-Pi-wCb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3an-CH-T6u"/>
-                    <connections>
-                        <outlet property="pageControl" destination="jn4-1u-THq" id="LuI-eG-hPI"/>
-                        <outlet property="scrollView" destination="hip-sv-Irw" id="kKH-1W-vZT"/>
-                        <outlet property="startBtn" destination="1Vr-h5-b9n" id="ZZp-Sx-7Na"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1U3-rP-Vqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2017" y="-2040"/>
+            <point key="canvasLocation" x="-3707" y="-2042"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cet-f2-EEg">
+            <objects>
+                <viewController storyboardIdentifier="page2" id="t7w-Sm-cYx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HB5-BI-H2L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="naq-4m-BSN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFv-J7-JIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3030" y="-2042"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cfZ-6x-QLa">
+            <objects>
+                <viewController storyboardIdentifier="page3" id="dey-ve-97V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ss-Ff-tDa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="YwV-td-zcx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wne-0v-Cqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2325" y="-2042"/>
         </scene>
         <!--Search-->
         <scene sceneID="XSp-zg-thK">

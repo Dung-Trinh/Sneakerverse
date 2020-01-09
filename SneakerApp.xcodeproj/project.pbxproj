@@ -27,7 +27,7 @@
 		B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64868D123A7E47200D2496A /* LoadingViewController.swift */; };
 		B64868D623A7E50700D2496A /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B64868D523A7E4D100D2496A /* intro.mp4 */; };
 		B6558E4223A8EC4000776BDA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558E4123A8EC4000776BDA /* DataController.swift */; };
-		B65619B423C7A88200E03364 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B323C7A88200E03364 /* GuideViewController.swift */; };
+		B65619B623C7AF6600E03364 /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B523C7AF6600E03364 /* PageControlViewController.swift */; };
 		B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670CEDF239EF04C00648B38 /* SearchViewController.swift */; };
 		B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2A23B0DF8500C6287E /* RefreshView.xib */; };
 		B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */; };
@@ -67,7 +67,7 @@
 		B64868D123A7E47200D2496A /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B64868D523A7E4D100D2496A /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		B6558E4123A8EC4000776BDA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		B65619B323C7A88200E03364 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		B65619B523C7AF6600E03364 /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		B670CEDF239EF04C00648B38 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B68EEF2A23B0DF8500C6287E /* RefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		B65619B223C7A84A00E03364 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				B65619B323C7A88200E03364 /* GuideViewController.swift */,
+				B65619B523C7AF6600E03364 /* PageControlViewController.swift */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -369,10 +369,10 @@
 				B611902823A845610067E0A5 /* CameraViewController.swift in Sources */,
 				B611902923A845610067E0A5 /* CameraPreviewViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
-				B65619B423C7A88200E03364 /* GuideViewController.swift in Sources */,
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
+				B65619B623C7AF6600E03364 /* PageControlViewController.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
 				B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */,
