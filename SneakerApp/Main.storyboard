@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wk-lg-QAe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2365.217391304348" y="-1293.0803571428571"/>
+            <point key="canvasLocation" x="-2865" y="-1293"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="V8w-Ef-IdG">
@@ -333,6 +333,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWl-b2-U26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1223" y="-1293"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hKV-38-TWj">
+            <objects>
+                <viewController id="Brk-5I-qlJ" customClass="GuideViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKb-oK-OWG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hip-sv-Irw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="556"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="oK3-sV-yJt"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GLE-ia-eg7"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-1u-THq">
+                                <rect key="frame" x="188" y="564" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageChange:" destination="Brk-5I-qlJ" eventType="valueChanged" id="mgH-CM-2pE"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vr-h5-b9n">
+                                <rect key="frame" x="158" y="737" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GET STARTED"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="grG-Pi-wCb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3an-CH-T6u"/>
+                    <connections>
+                        <outlet property="pageControl" destination="jn4-1u-THq" id="LuI-eG-hPI"/>
+                        <outlet property="scrollView" destination="hip-sv-Irw" id="kKH-1W-vZT"/>
+                        <outlet property="startBtn" destination="1Vr-h5-b9n" id="ZZp-Sx-7Na"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1U3-rP-Vqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2017" y="-2040"/>
         </scene>
         <!--Search-->
         <scene sceneID="XSp-zg-thK">
@@ -554,7 +595,6 @@
                     <connections>
                         <outlet property="imageCollectionView" destination="DOZ-NQ-wPp" id="NMm-wh-INt"/>
                         <outlet property="navigationBar" destination="gSp-MQ-WTn" id="ThL-qB-Rtb"/>
-                        <outlet property="reminderBtn" destination="Fg6-17-Eya" id="aE8-qd-LAD"/>
                         <outlet property="shareBtn" destination="qkY-ed-p5z" id="J5m-fl-xq3"/>
                         <outlet property="textView" destination="MFF-tb-Owe" id="DL9-BS-Hj0"/>
                         <outlet property="webView" destination="vfU-c6-cR4" id="TgD-Xf-8GP"/>
@@ -915,7 +955,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sneakercon" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373.00000000000011" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="174" id="cbx-So-Zrg"/>
                                                     </constraints>
@@ -1072,6 +1112,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="star.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="save:" destination="jSa-zg-nuY" eventType="touchUpInside" id="VLO-IH-Fks"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-bD-shQ">
                                                 <rect key="frame" x="341" y="289.5" width="29" height="31.5"/>

@@ -28,3 +28,4 @@ class NewsPost:Decodable{
             self.contentVideos = contentVideos
     }
 }
+

@@ -50,19 +50,9 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadVideo()
-        DispatchQueueHelper.delay(bySeconds:6){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6, execute: {
             self.performSegue(withIdentifier: "main_segue", sender: nil)
-        }
-        /*
-         view.addSubview(loadingGif)
-        loadingGif.bindFrameToSuperviewBounds()
-        
-        DispatchQueueHelper.delay(bySeconds:8){
-            self.performSegue(withIdentifier: "main_segue", sender: nil)
-            self.loadingGif.removeFromSuperview()
-        }
-        */
-
+        })
     }
 
 

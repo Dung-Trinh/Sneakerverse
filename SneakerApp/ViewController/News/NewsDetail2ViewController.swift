@@ -17,11 +17,11 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var reminderBtn: UIButton!
     
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
     var reminderOn:Bool = false
+    var savePost=false
     let animator = CustomAnimator()
 
     override func viewDidLoad() {
@@ -78,13 +78,13 @@ class NewsDetailViewController: UIViewController {
     ///create a calendar reminder for special events
     @IBAction func calenderReminder(_ sender: UIButton) {
         if(reminderOn == true){
-            reminderBtn.tintColor = .lightGray
+            sender.tintColor = .lightGray
             reminderOn = false
             return
         }
         reminderOn = true
 
-        animator.buttonScaleAnimation(notificationBtn: self.reminderBtn,color: UIColor(red:0.16, green:0.55, blue:0.30, alpha:1.0)
+        animator.buttonScaleAnimation(notificationBtn:sender,color: UIColor(red:0.16, green:0.55, blue:0.30, alpha:1.0)
 )
         let eventStore:EKEventStore = EKEventStore()
 
@@ -109,6 +109,12 @@ class NewsDetailViewController: UIViewController {
     }
    
     @IBAction func savePost(_ sender: UIButton) {
+        if(savePost == true){
+            sender.tintColor = .lightGray
+            savePost = false
+            return
+        }
+        savePost=true
         animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
         // TODO Speichern von BlogPost
     }

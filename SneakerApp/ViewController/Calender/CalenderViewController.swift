@@ -16,6 +16,47 @@ class CalenderViewController: UIViewController {
     var sneakerCalenderTop : [Sneaker] = []
     var sneakerCalenderBottom: [Sneaker] = []
    
+    func sortSneaker(){
+        self.sneakerCalenderTop.sort {
+            let splitLine: [String]?
+            let splitLine2 : [String]?
+
+            if $0.releaseDate.contains("."){
+                splitLine = $0.releaseDate.components(separatedBy: ".")
+            }else{
+                splitLine = $0.releaseDate.components(separatedBy: "/")
+            }
+            
+            
+            if $1.releaseDate.contains("."){
+                splitLine2 = $1.releaseDate.components(separatedBy: ".")
+            }else{
+                splitLine2 = $1.releaseDate.components(separatedBy: "/")
+            }
+            return splitLine![1] < splitLine2![1]
+            
+        }
+        self.sneakerCalenderBottom.sort {
+            let splitLine: [String]?
+            let splitLine2 : [String]?
+
+            if $0.releaseDate.contains("."){
+                splitLine = $0.releaseDate.components(separatedBy: ".")
+            }else{
+                splitLine = $0.releaseDate.components(separatedBy: "/")
+            }
+            
+            
+            if $1.releaseDate.contains("."){
+                splitLine2 = $1.releaseDate.components(separatedBy: ".")
+            }else{
+                splitLine2 = $1.releaseDate.components(separatedBy: "/")
+            }
+            return splitLine![1] < splitLine2![1]
+            
+        }
+    }
+    
     func setSneakerArray(){
         var top: [Sneaker] = []
         var bottom: [Sneaker] = []
@@ -30,6 +71,7 @@ class CalenderViewController: UIViewController {
             }
         sneakerCalenderTop=top
         sneakerCalenderBottom=bottom
+        sortSneaker()
         }
     
     
@@ -71,6 +113,7 @@ class CalenderViewController: UIViewController {
             DispatchQueue.main.async {
             self.calenderTop.reloadData()
             self.calenderBottom.reloadData()
+                self.sortSneaker()
             }
         }
 
@@ -114,25 +157,7 @@ class CalenderViewController: UIViewController {
         if sender.selectedSegmentIndex == 0{
             setSneakerArray()
             //self.sneakerCalenderTop = allSneaker;
-            self.sneakerCalenderTop.sort {
-                let splitLine: [String]?
-                let splitLine2 : [String]?
 
-                if $0.releaseDate.contains("."){
-                    splitLine = $0.releaseDate.components(separatedBy: ".")
-                }else{
-                    splitLine = $0.releaseDate.components(separatedBy: "/")
-                }
-                
-                
-                if $1.releaseDate.contains("."){
-                    splitLine2 = $1.releaseDate.components(separatedBy: ".")
-                }else{
-                    splitLine2 = $1.releaseDate.components(separatedBy: "/")
-                }
-                return splitLine![1] < splitLine2![1]
-                
-            }
             calenderTop.reloadData()
             calenderBottom.reloadData()
         }
@@ -155,8 +180,8 @@ class CalenderViewController: UIViewController {
         else if sender.selectedSegmentIndex == 3{
             setSneakerArray()
 
-            self.sneakerCalenderTop=allSneaker.filter{$0.brand == "Puma"}
-            self.sneakerCalenderBottom=allSneaker.filter{$0.brand == "Puma"}
+            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
+            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
 
             calenderTop.reloadData()
             calenderBottom.reloadData()

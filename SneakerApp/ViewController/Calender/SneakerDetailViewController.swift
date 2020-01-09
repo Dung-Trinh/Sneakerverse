@@ -17,9 +17,11 @@ class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var retailPrice: UILabel!
     @IBOutlet weak var notificationBtn: UIButton!
     
-    
-    var background = BackgroundColor()
+    let animator = CustomAnimator()
+    let background = BackgroundColor()
     var sneaker : Sneaker?
+    var savePost = false
+    var notificationOn = false
     
     func updateUI(){
         textBox.text = sneaker?.description
@@ -44,15 +46,25 @@ class SneakerDetailViewController: UIViewController {
 
         
     }
+    @IBAction func save(_ sender: UIButton) {
+        if(savePost == true){
+            sender.tintColor = .lightGray
+            savePost = false
+            return
+        }
+        savePost=true
+        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+    }
     
-    @IBAction func turnOnNotification(_ sender: Any) {
-
-//        UIView.animate(withDuration: 0.4) {
-//                self.notificationBtn.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-//             }
-//        UIView.animate(withDuration: 0.4) {
-//           self.notificationBtn.transform = CGAffineTransform.identity
-//        }
+    @IBAction func turnOnNotification(_ sender: UIButton) {
+        if(notificationOn == true){
+            sender.tintColor = .lightGray
+            notificationOn = false
+            return
+        }
+        notificationOn = true
+        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.16, green:0.55, blue:0.30, alpha:1.0))
+        
         var popUpMessage = ToastMessage(message: "Benachrichtigung wurden angeschaltet👟✅ ", view: self.view)
         let center = UNUserNotificationCenter.current()
 
