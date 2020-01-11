@@ -27,7 +27,8 @@
 		B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64868D123A7E47200D2496A /* LoadingViewController.swift */; };
 		B64868D623A7E50700D2496A /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B64868D523A7E4D100D2496A /* intro.mp4 */; };
 		B6558E4223A8EC4000776BDA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558E4123A8EC4000776BDA /* DataController.swift */; };
-		B65619B623C7AF6600E03364 /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B523C7AF6600E03364 /* PageControlViewController.swift */; };
+		B65619B823C7D50000E03364 /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B723C7D50000E03364 /* GuideCollectionViewCell.swift */; };
+		B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B923C7D5B200E03364 /* GuideViewController.swift */; };
 		B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670CEDF239EF04C00648B38 /* SearchViewController.swift */; };
 		B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2A23B0DF8500C6287E /* RefreshView.xib */; };
 		B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */; };
@@ -67,7 +68,8 @@
 		B64868D123A7E47200D2496A /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B64868D523A7E4D100D2496A /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		B6558E4123A8EC4000776BDA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		B65619B523C7AF6600E03364 /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
+		B65619B723C7D50000E03364 /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		B65619B923C7D5B200E03364 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		B670CEDF239EF04C00648B38 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B68EEF2A23B0DF8500C6287E /* RefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		B6204D6B239433DF003B8E81 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B663D27C23C82DEA007CCA00 /* LoadingView */,
 				B65619B223C7A84A00E03364 /* Guide */,
 				B611902423A845400067E0A5 /* Profil */,
 				B6D24B51239693A700D4D6AC /* News */,
@@ -159,9 +162,18 @@
 		B65619B223C7A84A00E03364 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				B65619B523C7AF6600E03364 /* PageControlViewController.swift */,
+				B65619B723C7D50000E03364 /* GuideCollectionViewCell.swift */,
+				B65619B923C7D5B200E03364 /* GuideViewController.swift */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		B663D27C23C82DEA007CCA00 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				B64868D123A7E47200D2496A /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		B670CEDE239EF02F00648B38 /* Search */ = {
@@ -232,7 +244,6 @@
 				B64868CF23A7E41100D2496A /* Main.storyboard */,
 				B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */,
 				B633129923A01A2C001A63E1 /* FetchData.swift */,
-				B64868D123A7E47200D2496A /* LoadingViewController.swift */,
 				B64868D523A7E4D100D2496A /* intro.mp4 */,
 				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
 				B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */,
@@ -357,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
+				B65619B823C7D50000E03364 /* GuideCollectionViewCell.swift in Sources */,
 				B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */,
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
@@ -372,13 +384,13 @@
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
-				B65619B623C7AF6600E03364 /* PageControlViewController.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
 				B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */,
 				B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */,
 				B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */,
 				B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */,
+				B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */,
 				B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */,

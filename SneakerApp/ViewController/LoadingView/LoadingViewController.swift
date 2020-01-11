@@ -50,8 +50,8 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadVideo()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6, execute: {
-            self.performSegue(withIdentifier: "main_segue", sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 7, execute: {
+            self.performSegue(withIdentifier: "toGuide_segue", sender: nil)
         })
     }
 

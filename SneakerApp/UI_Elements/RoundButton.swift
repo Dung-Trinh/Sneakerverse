@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@IBDesignable class RoundButton: UIButton {
+class RoundButton: UIButton {
     
     /// The attribute for the radius of the corner
     @IBInspectable var cornerRadius: CGFloat = 15 {

@@ -17,6 +17,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
@@ -125,6 +126,7 @@ class NewsDetailViewController: UIViewController {
 extension NewsDetailViewController :UICollectionViewDataSource,UICollectionViewDelegate{
     ///create a certain number of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.pageControl.numberOfPages = self.imgArray.count
         return imgArray.count
     }
     
@@ -134,6 +136,11 @@ extension NewsDetailViewController :UICollectionViewDataSource,UICollectionViewD
 
         cell?.img.image = imgArray[indexPath.row]
         return cell!
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x/scrollView.frame.width
+        pageControl.currentPage = Int(page)
     }
     
     
