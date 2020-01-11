@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F251FD23CA24CF00881B2A /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251F423CA24CF00881B2A /* CameraPreviewViewController.swift */; };
+		01F251FE23CA24CF00881B2A /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251F523CA24CF00881B2A /* MyCollectionViewController.swift */; };
+		01F251FF23CA24CF00881B2A /* myCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F251F623CA24CF00881B2A /* myCollectionViewCell.xib */; };
+		01F2520023CA24CF00881B2A /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251F723CA24CF00881B2A /* PhotoPopupViewController.swift */; };
+		01F2520123CA24CF00881B2A /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251F823CA24CF00881B2A /* myCollectionViewCell.swift */; };
+		01F2520223CA24CF00881B2A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251F923CA24CF00881B2A /* CameraViewController.swift */; };
+		01F2520323CA24CF00881B2A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251FA23CA24CF00881B2A /* UploadViewController.swift */; };
+		01F2520423CA24CF00881B2A /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251FB23CA24CF00881B2A /* collectionDetailViewController.swift */; };
+		01F2520523CA24CF00881B2A /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F251FC23CA24CF00881B2A /* MyProfilViewController.swift */; };
 		AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */; };
 		B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */; };
 		B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */; };
-		B611902823A845610067E0A5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902523A845600067E0A5 /* CameraViewController.swift */; };
-		B611902923A845610067E0A5 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902623A845610067E0A5 /* CameraPreviewViewController.swift */; };
-		B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902723A845610067E0A5 /* MyProfilViewController.swift */; };
 		B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902B23A846820067E0A5 /* BackgroundColor.swift */; };
 		B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902D23A846A40067E0A5 /* ToastMessage.swift */; };
 		B614800C23881E810018DA71 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800B23881E810018DA71 /* Post.swift */; };
@@ -46,14 +52,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01F251F423CA24CF00881B2A /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
+		01F251F523CA24CF00881B2A /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
+		01F251F623CA24CF00881B2A /* myCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myCollectionViewCell.xib; sourceTree = "<group>"; };
+		01F251F723CA24CF00881B2A /* PhotoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPopupViewController.swift; sourceTree = "<group>"; };
+		01F251F823CA24CF00881B2A /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
+		01F251F923CA24CF00881B2A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		01F251FA23CA24CF00881B2A /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		01F251FB23CA24CF00881B2A /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
+		01F251FC23CA24CF00881B2A /* MyProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
 		291FCB0E6C83781688CF6259 /* Pods-SneakerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.release.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.release.xcconfig"; sourceTree = "<group>"; };
 		938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SneakerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.debug.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoPlayer.swift; sourceTree = "<group>"; };
 		B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetail2ViewController.swift; sourceTree = "<group>"; };
-		B611902523A845600067E0A5 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		B611902623A845610067E0A5 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
-		B611902723A845610067E0A5 /* MyProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
 		B611902B23A846820067E0A5 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
 		B611902D23A846A40067E0A5 /* ToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		B614800B23881E810018DA71 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -101,15 +113,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B611902423A845400067E0A5 /* Profil */ = {
+		01F251F323CA24CF00881B2A /* Profil */ = {
 			isa = PBXGroup;
 			children = (
-				B611902623A845610067E0A5 /* CameraPreviewViewController.swift */,
-				B611902523A845600067E0A5 /* CameraViewController.swift */,
-				B611902723A845610067E0A5 /* MyProfilViewController.swift */,
+				01F251F423CA24CF00881B2A /* CameraPreviewViewController.swift */,
+				01F251F523CA24CF00881B2A /* MyCollectionViewController.swift */,
+				01F251F623CA24CF00881B2A /* myCollectionViewCell.xib */,
+				01F251F723CA24CF00881B2A /* PhotoPopupViewController.swift */,
+				01F251F823CA24CF00881B2A /* myCollectionViewCell.swift */,
+				01F251F923CA24CF00881B2A /* CameraViewController.swift */,
+				01F251FA23CA24CF00881B2A /* UploadViewController.swift */,
+				01F251FB23CA24CF00881B2A /* collectionDetailViewController.swift */,
+				01F251FC23CA24CF00881B2A /* MyProfilViewController.swift */,
 			);
-			path = Profil;
-			sourceTree = "<group>";
+			name = Profil;
+			path = "/Users/frank/Mobile Computing/FinalSneakerverse/../../Documents/Sneakerverse2/SneakerApp/ViewController/Profil";
+			sourceTree = "<absolute>";
 		};
 		B614800A23881E3C0018DA71 /* Models */ = {
 			isa = PBXGroup;
@@ -140,9 +159,9 @@
 		B6204D6B239433DF003B8E81 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				01F251F323CA24CF00881B2A /* Profil */,
 				B663D27C23C82DEA007CCA00 /* LoadingView */,
 				B65619B223C7A84A00E03364 /* Guide */,
-				B611902423A845400067E0A5 /* Profil */,
 				B6D24B51239693A700D4D6AC /* News */,
 				B6204D6C23943690003B8E81 /* Calender */,
 				B670CEDE239EF02F00648B38 /* Search */,
@@ -331,6 +350,7 @@
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
 				B64868D023A7E41100D2496A /* Main.storyboard in Resources */,
+				01F251FF23CA24CF00881B2A /* myCollectionViewCell.xib in Resources */,
 				B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,26 +393,31 @@
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
+				01F2520423CA24CF00881B2A /* collectionDetailViewController.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
 				B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */,
 				B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,
-				B611902823A845610067E0A5 /* CameraViewController.swift in Sources */,
-				B611902923A845610067E0A5 /* CameraPreviewViewController.swift in Sources */,
+				01F2520223CA24CF00881B2A /* CameraViewController.swift in Sources */,
+				01F2520323CA24CF00881B2A /* UploadViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
-				B611902A23A845610067E0A5 /* MyProfilViewController.swift in Sources */,
 				B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */,
 				B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */,
+				01F2520123CA24CF00881B2A /* myCollectionViewCell.swift in Sources */,
 				B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */,
+				01F2520023CA24CF00881B2A /* PhotoPopupViewController.swift in Sources */,
+				01F2520523CA24CF00881B2A /* MyProfilViewController.swift in Sources */,
 				B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */,
+				01F251FE23CA24CF00881B2A /* MyCollectionViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */,
+				01F251FD23CA24CF00881B2A /* CameraPreviewViewController.swift in Sources */,
 				B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */,
 				B633129A23A01A2C001A63E1 /* FetchData.swift in Sources */,
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
