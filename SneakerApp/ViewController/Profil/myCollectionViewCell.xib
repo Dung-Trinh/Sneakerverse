@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCollectionViewCell" id="gTV-IL-0wX" customClass="myCollectionViewCell" customModule="SneakerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-jy-lKm">
+                        <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DiB-jy-lKm" secondAttribute="bottom" id="Izx-0m-wm0"/>
+                <constraint firstItem="DiB-jy-lKm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOK-wc-M27"/>
+                <constraint firstItem="DiB-jy-lKm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iLx-BO-fuO"/>
+                <constraint firstAttribute="trailing" secondItem="DiB-jy-lKm" secondAttribute="trailing" id="u1z-rZ-1AH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="115" height="115"/>
+            <connections>
+                <outlet property="imageView" destination="DiB-jy-lKm" id="gfM-bx-swe"/>
+            </connections>
+            <point key="canvasLocation" x="184.78260869565219" y="131.58482142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
