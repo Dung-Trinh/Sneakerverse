@@ -923,7 +923,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sneakercon" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373.00000000000011" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="174" id="cbx-So-Zrg"/>
                                                     </constraints>
@@ -1009,7 +1009,6 @@
         <!--Profil-->
         <scene sceneID="HLC-gC-Qk2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pYp-ns-E8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9E5-BS-ZJk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profil" image="person.crop.circle" catalog="system" id="WND-NH-yI4"/>
                     <toolbarItems/>
@@ -1025,6 +1024,7 @@
                         <segue destination="xoV-Ve-3ug" kind="relationship" relationship="rootViewController" id="H9Q-mc-GIl"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYp-ns-E8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2970" y="-382"/>
         </scene>
