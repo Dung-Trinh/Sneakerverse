@@ -952,7 +952,7 @@
                                                     <constraint firstAttribute="width" constant="414" id="zkO-2l-1m9"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jordan 1 Retro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-6R-iPM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Jordan 1 Retro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-6R-iPM">
                                                 <rect key="frame" x="8" y="291.5" width="208" height="37"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                                 <nil key="textColor"/>
@@ -1074,7 +1074,7 @@
                                             <constraint firstAttribute="trailing" secondItem="VJp-Pm-jAC" secondAttribute="trailing" constant="8" id="Xpl-Bl-bqT"/>
                                             <constraint firstAttribute="trailing" secondItem="wfU-eF-SIq" secondAttribute="trailing" constant="8" id="Xxr-CN-jPc"/>
                                             <constraint firstItem="ka8-sk-LSQ" firstAttribute="top" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="15.5" id="aeI-E0-p0C"/>
-                                            <constraint firstItem="ka8-sk-LSQ" firstAttribute="leading" secondItem="CxU-6R-iPM" secondAttribute="trailing" constant="88" id="cYb-L5-WNC"/>
+                                            <constraint firstItem="ka8-sk-LSQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CxU-6R-iPM" secondAttribute="trailing" constant="10" id="cYb-L5-WNC"/>
                                             <constraint firstAttribute="trailing" secondItem="1jR-G9-LoS" secondAttribute="trailing" id="cbz-qK-mCL"/>
                                             <constraint firstItem="CxU-6R-iPM" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" constant="8" id="fwQ-vr-Vf3"/>
                                             <constraint firstItem="WTw-nw-nmD" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="g2z-d8-Kw8"/>
@@ -1856,6 +1856,6 @@ SNEAKERVERSE</string>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Du5-kz-VA0"/>
+        <segue reference="Mb6-av-IA4"/>
     </inferredMetricsTieBreakers>
 </document>
