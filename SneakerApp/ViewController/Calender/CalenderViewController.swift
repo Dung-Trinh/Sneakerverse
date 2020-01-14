@@ -229,7 +229,13 @@ extension CalenderViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "SneakerDetailViewController") as? SneakerDetailViewController
 
+        if(collectionView == calenderBottom){
+            vc?.sneaker = sneakerCalenderBottom[indexPath.row]
+            self.navigationController?.pushViewController(vc!,animated:true)
+            return
+        }
         /// push the DetailViewController on the stack
+        
         vc?.sneaker = sneakerCalenderTop[indexPath.row]
 self.navigationController?.pushViewController(vc!,animated:true)
 
