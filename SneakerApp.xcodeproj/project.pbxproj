@@ -39,7 +39,6 @@
 		B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2A23B0DF8500C6287E /* RefreshView.xib */; };
 		B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */; };
 		B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2E23B0E18900C6287E /* Assets.xcassets */; };
-		B694A85023CDD699008DFE9F /* Night DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B694A84F23CDD68E008DFE9F /* Night DEMO.ttf */; };
 		B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A388CB23B55877005206B7 /* CustomAnimator.swift */; };
 		B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */; };
 		B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */; };
@@ -93,7 +92,6 @@
 		B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		B68EEF2E23B0E18900C6287E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SneakerApp.entitlements; sourceTree = "<group>"; };
-		B694A84F23CDD68E008DFE9F /* Night DEMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Night DEMO.ttf"; sourceTree = "<group>"; };
 		B6A388CB23B55877005206B7 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 		B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDetail.swift; sourceTree = "<group>"; };
 		B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = SneakerApp/ViewController/Profil/CameraViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -228,7 +226,6 @@
 		B694A84D23CDD52C008DFE9F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B694A84F23CDD68E008DFE9F /* Night DEMO.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -379,7 +376,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B694A85023CDD699008DFE9F /* Night DEMO.ttf in Resources */,
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
