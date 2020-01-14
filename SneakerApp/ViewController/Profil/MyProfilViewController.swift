@@ -139,21 +139,27 @@ class MyProfilViewController: UIViewController {
 extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showCollection.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! myCollectionViewCell
-        
         cell.imageView.image = showCollection[indexPath.item].imageName
+        cell.sneakerCount.text = ""
+        cell.imageView.alpha = 1
 
+        if(indexPath.row == 5){
+            cell.sneakerCount.text = "+\(showCollection.count)"
+            cell.sneakerCount.textAlignment = .center
+            cell.imageView.alpha = 0.5
+        }
         return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var allItems = showCollection
-        if indexPath.row == showCollection.count-1{
+        if indexPath.row == 5{
             performSegue(withIdentifier: "MyCollection_Segue", sender: allItems)
         }
     }

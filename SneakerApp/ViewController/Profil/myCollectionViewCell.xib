@@ -16,6 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-6i-mlA">
+                        <rect key="frame" x="36" y="47" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-jy-lKm">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                     </imageView>
@@ -31,6 +38,7 @@
             <size key="customSize" width="115" height="115"/>
             <connections>
                 <outlet property="imageView" destination="DiB-jy-lKm" id="gfM-bx-swe"/>
+                <outlet property="sneakerCount" destination="OgE-6i-mlA" id="CMG-pk-ynU"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="131.58482142857142"/>
         </collectionViewCell>

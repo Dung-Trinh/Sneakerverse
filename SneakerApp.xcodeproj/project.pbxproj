@@ -125,6 +125,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0105BE3E23CDBBE900CA4508 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */,
+				B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */,
+				B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */,
+				B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		01E0C58E23CA3DD500DBDA9C /* Profil */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,13 +611,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SneakerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -622,13 +633,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SneakerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
