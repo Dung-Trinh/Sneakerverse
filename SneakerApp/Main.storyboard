@@ -1508,11 +1508,11 @@
             </objects>
             <point key="canvasLocation" x="-311.59420289855075" y="432.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Popup View Controller-->
         <scene sceneID="hhZ-TR-Gdl">
             <objects>
-                <viewController id="p2b-1p-Aht" sceneMemberID="viewController">
-                    <view key="view" alpha="0.5" contentMode="scaleToFill" id="JQs-3e-Wlb">
+                <viewController id="p2b-1p-Aht" customClass="PhotoPopupViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQs-3e-Wlb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1524,28 +1524,43 @@
                                         <rect key="frame" x="33" y="22" width="174" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V79-3f-EmF">
                                         <rect key="frame" x="38" y="80" width="69" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Collection"/>
+                                        <state key="normal" title="Collection">
+                                            <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveCollection:" destination="p2b-1p-Aht" eventType="touchUpInside" id="69y-kq-EXk"/>
+                                            <segue destination="vwr-KP-YYe" kind="unwind" identifier="unwindCollection_Segue" unwindAction="unwindToProfile:" id="aUz-K7-pwp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNE-Qg-TNH">
                                         <rect key="frame" x="140" y="80" width="40" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Grails"/>
+                                        <state key="normal" title="Grails">
+                                            <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveGrails:" destination="vwr-KP-YYe" eventType="touchUpInside" id="CHE-Nd-aos"/>
+                                            <action selector="saveGrails:" destination="p2b-1p-Aht" eventType="touchUpInside" id="wUk-hy-vxo"/>
+                                            <segue destination="vwr-KP-YYe" kind="unwind" identifier="unwindGrails_Segue" unwindAction="unwindToProfile:" id="yg7-GJ-nyW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="0.29746868116740088" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pPx-Sq-Lex"/>
                     </view>
+                    <navigationItem key="navigationItem" id="87o-e9-T4Q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWt-Mk-UaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vwr-KP-YYe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2017.3913043478262" y="1088.1696428571429"/>
         </scene>
@@ -1617,6 +1632,15 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <segue destination="3J6-kz-UMa" kind="unwind" unwindAction="unwindToProfile:" id="Smn-YF-dp5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z20-MP-aUw">
+                                <rect key="frame" x="260" y="751" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save to"/>
+                                <connections>
+                                    <action selector="saveTo:" destination="zBm-o0-RCE" eventType="touchUpInside" id="kA5-3G-XYB"/>
+                                    <segue destination="p2b-1p-Aht" kind="presentation" identifier="saveTo_Segue" modalPresentationStyle="overCurrentContext" id="r6H-9j-b0C"/>
                                 </connections>
                             </button>
                         </subviews>
