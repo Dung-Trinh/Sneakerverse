@@ -1,0 +1,90 @@
+[{
+    "name":"BSTN Store",
+    "latitude": 48.149074,
+    "longitude": 11.577902,
+    "logoName": "bstn_logo",
+    "locationType":"store",
+    "address": "Amalienstraße 44, 80799 München"
+},
+{
+    "name":"Sneakersnstuff",
+    "latitude": 52.529693,
+    "longitude": 13.410475,
+    "logoName": "sns_logo",
+    "locationType":"store",
+    "address": "Schönhauser Allee 6-7, 10119 Berlin"
+
+},
+{
+    "name":"Orange Jungle",
+    "latitude": 50.977765,
+    "longitude": 11.036738,
+    "logoName": "orangeJungle_logo",
+    "locationType":"store",
+    "address": "Anger 1, 99084 Erfurt"
+
+},
+{
+    "name":"Bonkers Shop",
+    "latitude": 50.105221,
+    "longitude": 8.690937,
+    "logoName": "bonkers_logo",
+    "locationType":"store",
+    "address": "Klappergasse 11, 60594 Frankfurt am Main"
+
+},
+{
+    "name":"AFEW STORE",
+    "latitude": 51.226102,
+    "longitude": 6.788904,
+    "logoName": "afew_logo",
+    "locationType":"store",
+    "address": "Oststraße 36, 40211 Düsseldorf"
+
+},
+{
+    "name":"43einhalb",
+    "latitude": 50.550455,
+    "longitude": 9.679205,
+    "logoName": "43einhalb_logo",
+    "locationType":"store",
+    "address": "Peterstor 7, 36037 Fulda"
+
+},
+{
+    "name":"Asphaltgold",
+    "latitude": 49.873516,
+    "longitude": 9.947738,
+    "logoName": "asphaltgold_logo",
+    "locationType":"store",
+    "address": "Friedenspl. 4, 64283 Darmstadt"
+
+},
+{
+    "name":"Sneakerness [03.02.2020]",
+    "latitude": 50.952753,
+    "longitude": 6.947340,
+    "logoName": "sneakerness_logo",
+    "locationType":"event",
+    "address": "Gladbacher Wall 5, 50670 Köln"
+
+},
+{
+    "name":"HYPERCON [22.05.2020]",
+    "latitude": 50.111554,
+    "longitude": 8.652810,
+    "logoName": "hypercon_logo",
+    "locationType":"event",
+    "address": "Ludwig-Erhard-Anlage 1, 60327 Frankfurt am Main"
+
+},
+{
+    "name":"Sneaker Con [30.11.2020]",
+    "latitude": 53.556632,
+    "longitude": 9.929090,
+    "logoName": "sneakercon_logo",
+    "locationType":"event",
+    "address": "Barnerstraße 36, 22765 Hamburg"
+
+}
+]
