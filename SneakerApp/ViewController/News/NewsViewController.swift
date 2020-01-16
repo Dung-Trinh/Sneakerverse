@@ -122,13 +122,8 @@ extension NewsViewController:UITableViewDataSource{
     /// fill the cell with content
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "blogpostCell",for: indexPath) as! BlogPostTableViewCell
-            
         cell.modell = blogPosts[indexPath.row]
-        cell.layer.masksToBounds = false
 
-
-        
-        
         return cell
     }
  

@@ -62,7 +62,6 @@ class MapViewController: UIViewController {
     
     
     func fetchJsonData(){
-        print("FETCH")
         do{
             let url = Bundle.main.url(forResource: "locationPins", withExtension: "json")
             
@@ -148,9 +147,7 @@ extension MapViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
          if currentCell is MapTableViewCell {
-             let cell = currentCell as! MapTableViewCell
-            print(cell.modell?.latitude)
-         
+             let cell = currentCell as! MapTableViewCell         
             var model_latitude = cell.modell?.latitude
             var model_longitude = cell.modell?.longitude
             let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(model_latitude!, model_longitude!)

@@ -22,10 +22,10 @@ class BlogPostTableViewCell: UITableViewCell {
     }
     
     func updateUI(){
+        self.layer.masksToBounds = false
         loadImage(url: modell!.cover)
         Imagetext.text = modell?.description
         title.text = modell?.title
-        
     }
     
     func loadImage(url:String) {
