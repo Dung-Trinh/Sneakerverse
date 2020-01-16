@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */; };
 		01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */; };
 		01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */; };
 		01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sneakerverse_cover.png; sourceTree = "<group>"; };
 		01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
 		01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPopupViewController.swift; sourceTree = "<group>"; };
@@ -123,17 +125,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0105BE3E23CDBBE900CA4508 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */,
-				B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */,
-				B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */,
-				B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		01E0C58E23CA3DD500DBDA9C /* Profil */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +256,7 @@
 				B6FA71B72384734B002DA281 /* Products */,
 				B6FA71B82384734B002DA281 /* SneakerApp */,
 				B68EEF2E23B0E18900C6287E /* Assets.xcassets */,
+				013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */,
 				CD7958A6F396EEAAF621C7CD /* Pods */,
 				ECF9975D0382F4DD15462407 /* Frameworks */,
 				B6FB793123CCC29C00497AC9 /* Recovered References */,
@@ -388,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
+				013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
 				B64868D023A7E41100D2496A /* Main.storyboard in Resources */,

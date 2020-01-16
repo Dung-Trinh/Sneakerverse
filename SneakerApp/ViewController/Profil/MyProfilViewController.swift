@@ -40,20 +40,6 @@ class MyProfilViewController: UIViewController {
         
     }
     
-    func createGradientBackground() {
-        let gradientLayer = CAGradientLayer()
-              
-        gradientLayer.frame = self.view.bounds
-        let blau = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
-        let pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
-        let blau2 = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
-
-        gradientLayer.colors = [pink,blau,blau2]
-              
-        self.view.layer.addSublayer(gradientLayer)
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-
-       }
 
     @IBAction func addSneaker(_ sender: UIButton) {
         performSegue(withIdentifier: "showAddSneaker_Segue", sender: self)
@@ -65,7 +51,9 @@ class MyProfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        createGradientBackground()
+        
+        let background = BackgroundColor()
+        background.createGradientBackground(view: self.view)
         
         
 

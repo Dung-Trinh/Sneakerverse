@@ -17,6 +17,8 @@ class MyCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        let background = BackgroundColor()
+        background.createGradientBackground(view: self.view)
         
         // Do any additional setup after loading the view.
     }
