@@ -30,7 +30,6 @@ class RoundButton: UIButton {
     
     /// Set the background(bg) color
     func refreshColor(color: UIColor) {
-        print("refreshColor(): \(color)")
         let size: CGSize = CGSize(width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(size, true, 0.0) // create 1x1 px img
         color.setFill() // set color for the any following  draw operation
@@ -42,20 +41,17 @@ class RoundButton: UIButton {
     }
     /// Initialize the button
     override init(frame: CGRect) {
-        print("init(frame:)")
         super.init(frame: frame);
         createButton()
     }
         
     /// create button for Storyboard
     required init?(coder aDecoder: NSCoder) {
-        print("init?(coder:)")
         super.init(coder: aDecoder)
         createButton()
         }
     /// rendering button
     override func prepareForInterfaceBuilder() {
-        print("prepareForInterfaceBuilder()")
         createButton()
         }
     

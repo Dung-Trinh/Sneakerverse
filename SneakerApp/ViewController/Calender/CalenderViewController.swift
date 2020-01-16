@@ -95,7 +95,6 @@ class CalenderViewController: UIViewController {
             switch res {
             case .success(let article):
                article.forEach({ (article) in
-                print(article.position)
 
                     self.allSneaker.append(article)
                 })
