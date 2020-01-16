@@ -36,12 +36,17 @@
 		B64868D623A7E50700D2496A /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B64868D523A7E4D100D2496A /* intro.mp4 */; };
 		B6558E4223A8EC4000776BDA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6558E4123A8EC4000776BDA /* DataController.swift */; };
 		B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65619B923C7D5B200E03364 /* GuideViewController.swift */; };
-		B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670CEDF239EF04C00648B38 /* SearchViewController.swift */; };
 		B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2A23B0DF8500C6287E /* RefreshView.xib */; };
 		B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */; };
 		B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68EEF2E23B0E18900C6287E /* Assets.xcassets */; };
+		B694A85223CDE051008DFE9F /* Arenq.otf in Resources */ = {isa = PBXBuildFile; fileRef = B694A85123CDE051008DFE9F /* Arenq.otf */; };
+		B694A85423CDE831008DFE9F /* grease__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B694A85323CDE831008DFE9F /* grease__.ttf */; };
+		B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694A85523CDEBB3008DFE9F /* MapViewController.swift */; };
 		B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A388CB23B55877005206B7 /* CustomAnimator.swift */; };
 		B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */; };
+		B6D1F73C23CE7368004938BD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */; };
+		B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
+		B6D1F73F23CF082E004938BD /* locationPins.json in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
 		B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */; };
 		B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */; };
 		B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */; };
@@ -89,13 +94,17 @@
 		B64868D523A7E4D100D2496A /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		B6558E4123A8EC4000776BDA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B65619B923C7D5B200E03364 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
-		B670CEDF239EF04C00648B38 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B68EEF2A23B0DF8500C6287E /* RefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		B68EEF2C23B0DFAF00C6287E /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		B68EEF2E23B0E18900C6287E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68F2454238C1F2F00AAAC8E /* SneakerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SneakerApp.entitlements; sourceTree = "<group>"; };
+		B694A85123CDE051008DFE9F /* Arenq.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arenq.otf; sourceTree = "<group>"; };
+		B694A85323CDE831008DFE9F /* grease__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = grease__.ttf; sourceTree = "<group>"; };
+		B694A85523CDEBB3008DFE9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B6A388CB23B55877005206B7 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 		B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDetail.swift; sourceTree = "<group>"; };
+		B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		B6D1F73D23CF00E0004938BD /* locationPins.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = locationPins.json; sourceTree = "<group>"; };
 		B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = SneakerApp/ViewController/Profil/CameraViewController.swift; sourceTree = SOURCE_ROOT; };
 		B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = collectionDetailViewController.swift; path = SneakerApp/ViewController/Profil/collectionDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraPreviewViewController.swift; path = SneakerApp/ViewController/Profil/CameraPreviewViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -171,12 +180,12 @@
 		B6204D6B239433DF003B8E81 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				01E0C58E23CA3DD500DBDA9C /* Profil */,
 				B663D27C23C82DEA007CCA00 /* LoadingView */,
 				B65619B223C7A84A00E03364 /* Guide */,
+				01E0C58E23CA3DD500DBDA9C /* Profil */,
 				B6D24B51239693A700D4D6AC /* News */,
 				B6204D6C23943690003B8E81 /* Calender */,
-				B670CEDE239EF02F00648B38 /* Search */,
+				B670CEDE239EF02F00648B38 /* Map */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -208,12 +217,14 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		B670CEDE239EF02F00648B38 /* Search */ = {
+		B670CEDE239EF02F00648B38 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				B670CEDF239EF04C00648B38 /* SearchViewController.swift */,
+				B694A85523CDEBB3008DFE9F /* MapViewController.swift */,
+				B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */,
+				B6D1F73D23CF00E0004938BD /* locationPins.json */,
 			);
-			path = Search;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		B68EEF2923B0DEB300C6287E /* RefreshView */ = {
@@ -228,6 +239,8 @@
 		B694A84D23CDD52C008DFE9F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B694A85323CDE831008DFE9F /* grease__.ttf */,
+				B694A85123CDE051008DFE9F /* Arenq.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -380,10 +393,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
+				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
 				013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
+				B694A85223CDE051008DFE9F /* Arenq.otf in Resources */,
 				B64868D023A7E41100D2496A /* Main.storyboard in Resources */,
+				B694A85423CDE831008DFE9F /* grease__.ttf in Resources */,
 				01E0C59D23CA3DE600DBDA9C /* myCollectionViewCell.xib in Resources */,
 				B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */,
 			);
@@ -421,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D1F73F23CF082E004938BD /* locationPins.json in Sources */,
 				01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */,
 				01E0C59F23CA3DE600DBDA9C /* UploadViewController.swift in Sources */,
 				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
@@ -436,7 +453,6 @@
 				01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
 				B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */,
-				B670CEE0239EF04C00648B38 /* SearchViewController.swift in Sources */,
 				01E0C59E23CA3DE600DBDA9C /* MyProfilViewController.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
@@ -445,6 +461,7 @@
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */,
+				B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
 				B6FB793323CCC6E200497AC9 /* OnboardingViewController.swift in Sources */,
@@ -460,6 +477,7 @@
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
 				B6148010238829F40018DA71 /* NewsViewController.swift in Sources */,
 				01E0C59B23CA3DE600DBDA9C /* MyCollectionViewController.swift in Sources */,
+				B6D1F73C23CE7368004938BD /* MapTableViewCell.swift in Sources */,
 				B642950723CD20FB00377CEA /* LastPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,13 +618,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -622,13 +640,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
