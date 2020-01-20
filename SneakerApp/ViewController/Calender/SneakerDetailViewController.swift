@@ -57,6 +57,8 @@ class SneakerDetailViewController: UIViewController {
     }
     
     @IBAction func turnOnNotification(_ sender: UIButton) {
+        var center = UNUserNotificationCenter.current()
+        
         if(notificationOn == true){
             sender.tintColor = .lightGray
             notificationOn = false
@@ -66,7 +68,7 @@ class SneakerDetailViewController: UIViewController {
         animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.16, green:0.55, blue:0.30, alpha:1.0))
         
         var popUpMessage = ToastMessage(message: "Benachrichtigung wurden angeschaltet👟✅ ", view: self.view)
-        let center = UNUserNotificationCenter.current()
+        center = UNUserNotificationCenter.current()
 
         let content = UNMutableNotificationContent()
         content.title = "🚨Jordan 1 Release in einer Stunde🚨"
@@ -96,10 +98,11 @@ class SneakerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view,colors: nil)
         
         /// for notification in forderground
         UNUserNotificationCenter.current().delegate = self
+
        
         updateUI()
     }

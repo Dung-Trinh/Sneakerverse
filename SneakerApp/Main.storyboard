@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -795,7 +795,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3F0-jf-piX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Release Calender" id="pCg-FD-bDI"/>
+                    <navigationItem key="navigationItem" title="Release Calender" id="pCg-FD-bDI">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="s4q-rR-F8l">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b9b-Cj-aP8">
+                                <rect key="frame" x="319" y="5" width="75" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="reload🔁"/>
+                                <connections>
+                                    <action selector="reloadData:" destination="lrb-YN-NCr" eventType="touchUpInside" id="ITU-jM-ngj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calenderBottom" destination="YvT-xw-M78" id="xyr-RQ-L3H"/>
                         <outlet property="calenderTop" destination="UA3-XA-qGG" id="yc4-bV-9CL"/>
@@ -874,7 +885,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sneakercon" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="373.00000000000011" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="174" id="cbx-So-Zrg"/>
                                                     </constraints>
@@ -1000,17 +1011,20 @@
                                                     <constraint firstAttribute="width" constant="414" id="zkO-2l-1m9"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Jordan 1 Retro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-6R-iPM">
-                                                <rect key="frame" x="8" y="291.5" width="208" height="37"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Jordan 1 Retro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-6R-iPM">
+                                                <rect key="frame" x="8" y="291.5" width="265" height="122.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="265" id="oci-p1-qzx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-eF-SIq">
-                                                <rect key="frame" x="8" y="343" width="398" height="183"/>
+                                                <rect key="frame" x="8" y="421" width="398" height="105"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="183" id="GfL-zc-BXY"/>
+                                                    <constraint firstAttribute="height" constant="105" id="GfL-zc-BXY"/>
                                                 </constraints>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1110,10 +1124,10 @@
                                             <constraint firstAttribute="bottom" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="903.5" id="1Vj-tV-0pL"/>
                                             <constraint firstAttribute="bottom" secondItem="WTw-nw-nmD" secondAttribute="bottom" id="5h5-LK-Q2y"/>
                                             <constraint firstAttribute="trailing" secondItem="6Wm-dR-08S" secondAttribute="trailing" id="7hn-XU-Z45"/>
-                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="d3k-bD-shQ" secondAttribute="bottom" constant="22" id="G84-CS-Cbv"/>
+                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="d3k-bD-shQ" secondAttribute="bottom" constant="100" id="G84-CS-Cbv"/>
                                             <constraint firstItem="6Wm-dR-08S" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="J0P-BE-Pxj"/>
                                             <constraint firstItem="VJp-Pm-jAC" firstAttribute="leading" secondItem="d3k-bD-shQ" secondAttribute="trailing" constant="8" id="KyJ-Ad-rsr"/>
-                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="CxU-6R-iPM" secondAttribute="bottom" constant="14.5" id="Lk8-ix-V77"/>
+                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="CxU-6R-iPM" secondAttribute="bottom" constant="7" id="Lk8-ix-V77"/>
                                             <constraint firstItem="VJp-Pm-jAC" firstAttribute="leading" secondItem="ka8-sk-LSQ" secondAttribute="trailing" constant="45" id="NEj-cX-Rwb"/>
                                             <constraint firstItem="wfU-eF-SIq" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" constant="8" id="OjV-hR-gaJ"/>
                                             <constraint firstItem="6Wm-dR-08S" firstAttribute="top" secondItem="7M4-cP-KFv" secondAttribute="top" id="SsY-Fi-BLY"/>
@@ -1126,11 +1140,11 @@
                                             <constraint firstAttribute="trailing" secondItem="1jR-G9-LoS" secondAttribute="trailing" id="cbz-qK-mCL"/>
                                             <constraint firstItem="CxU-6R-iPM" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" constant="8" id="fwQ-vr-Vf3"/>
                                             <constraint firstItem="WTw-nw-nmD" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="g2z-d8-Kw8"/>
-                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="VJp-Pm-jAC" secondAttribute="bottom" constant="21" id="gyV-N3-T5S"/>
+                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="VJp-Pm-jAC" secondAttribute="bottom" constant="99" id="gyV-N3-T5S"/>
                                             <constraint firstItem="1jR-G9-LoS" firstAttribute="top" secondItem="wfU-eF-SIq" secondAttribute="bottom" constant="123" id="hnH-nh-gkP"/>
                                             <constraint firstItem="WTw-nw-nmD" firstAttribute="top" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="-1" id="jbg-Uk-qsz"/>
                                             <constraint firstItem="CxU-6R-iPM" firstAttribute="top" secondItem="6Wm-dR-08S" secondAttribute="bottom" constant="18" id="lnH-PH-vJJ"/>
-                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="ka8-sk-LSQ" secondAttribute="bottom" constant="22" id="n8x-r7-LrV"/>
+                                            <constraint firstItem="wfU-eF-SIq" firstAttribute="top" secondItem="ka8-sk-LSQ" secondAttribute="bottom" constant="100" id="n8x-r7-LrV"/>
                                             <constraint firstItem="1jR-G9-LoS" firstAttribute="leading" secondItem="7M4-cP-KFv" secondAttribute="leading" id="pEf-qN-bjo"/>
                                             <constraint firstAttribute="bottom" secondItem="1jR-G9-LoS" secondAttribute="bottom" constant="273" id="pL5-zq-dVg"/>
                                             <constraint firstItem="d3k-bD-shQ" firstAttribute="leading" secondItem="ka8-sk-LSQ" secondAttribute="trailing" constant="8" id="tn2-ve-Xv2"/>
@@ -1716,7 +1730,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sneakerverse_cover.png" translatesAutoresizingMaskIntoConstraints="NO" id="p8b-Y3-DKV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-5" width="414" height="901"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="D8M-9f-jvt">
@@ -1864,23 +1878,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bevorstehende Yeezy, Jordan und Off-White releases übersichtlich in unserem release calender" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-g9-cGR">
-                                <rect key="frame" x="58" y="568" width="324" height="86"/>
+                                <rect key="frame" x="44" y="573" width="324" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.23140776160000001" green="0.22553124620000001" blue="0.23026797509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verpasse keine releases mehr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGC-sQ-UvH">
-                                <rect key="frame" x="26" y="537" width="362" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alarmierend" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-l0-9E0">
                                 <rect key="frame" x="58" y="236" width="324" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verpasse keine releases mehr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGC-sQ-UvH">
+                                <rect key="frame" x="26" y="535" width="362" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="u5U-zo-v8r"/>
@@ -1898,10 +1912,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD1-aX-erk">
-                                <rect key="frame" x="124" y="771" width="167" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD1-aX-erk" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
+                                <rect key="frame" x="29" y="759" width="357" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="START NOW"/>
+                                <state key="normal" title="START NOW">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.40639632939999998" green="0.46128976350000001" blue="0.91471189259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="startBtn:" destination="WqD-Wp-3Dr" eventType="touchUpInside" id="aFk-U0-RpQ"/>
                                 </connections>
@@ -1918,18 +1935,18 @@
                                 <rect key="frame" x="45" y="231" width="324" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fotos von deinen Sneakern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fo-9k-Ugs">
-                                <rect key="frame" x="54" y="535" width="332" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Newsfeeds und vieles mehr kannst du ganz einfach favorisieren und abspeichern" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-SR-5l8">
-                                <rect key="frame" x="42" y="557" width="357" height="86"/>
+                                <rect key="frame" x="29" y="579" width="357" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.23140776160000001" green="0.22553124620000001" blue="0.23026797509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fotos von deinen Sneakern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fo-9k-Ugs">
+                                <rect key="frame" x="41" y="535" width="332" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

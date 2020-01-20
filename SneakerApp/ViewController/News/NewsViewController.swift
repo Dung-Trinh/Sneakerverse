@@ -12,8 +12,16 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var blogPosts : [BlogPost] = []
     var refreshControl: UIRefreshControl!
+    var activityView = CustomActivityIndicator()
+    var customAlert = CustomAlert()
 
-
+    func showAlert(title:String,message:String,type:AlertType){
+        DispatchQueue.main.async {
+            self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
+            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
+            }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +29,40 @@ class NewsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+
         ///create background color
         let background = BackgroundColor()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view, colors: nil)
         
-        
+        activityView.showLoadingScreen(superview: self.view)
         ///fetch data
         fetchCoursesJSON { (res) in
              switch res {
              case .success(let article):
                  article.forEach({ (article) in
                      self.blogPosts.append(article)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                        self.showAlert(title: "JUST DO IT", message: "View the latest news and breaking news in the sneaker world.", type: .fetch_successful)
+                    }
                  })
              case .failure(let err):
+                
             print("Failed to fetch courses:", err)
+            self.showAlert(title: "E R R O R", message: err.localizedDescription, type: .error)
+
+            
+            
+
+            
              }
             DispatchQueue.main.async {
             self.tableView.reloadData()
+                self.activityView.stopAnimation(uiView: self.view)
+                
+
             }
+
+
          }
         self.tableView.reloadData()
         
@@ -46,14 +70,19 @@ class NewsViewController: UIViewController {
             }
     /// create "Pull to refresh"
     func createRefreshGesture(){
+
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
-    
+    func tapped(){
+        customAlert.remove()
+    }
     /// function for refreshing
      @objc func refresh(_ sender: Any) {
+       
+       
         tableView.reloadData()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -144,3 +173,4 @@ extension NewsViewController: UITableViewDelegate{
 
  
  }
+

@@ -53,7 +53,7 @@ class MyProfilViewController: UIViewController {
         setupCollectionView()
         
         let background = BackgroundColor()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view,colors: nil)
         
         
 

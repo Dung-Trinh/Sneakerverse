@@ -28,7 +28,7 @@ class NewsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let background = BackgroundColor()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view,colors: nil)
         
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
