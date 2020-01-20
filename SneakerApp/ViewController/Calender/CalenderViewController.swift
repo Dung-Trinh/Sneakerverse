@@ -98,25 +98,26 @@ class CalenderViewController: UIViewController {
         calenderBottom.dataSource = self
         calenderBottom.delegate = self
         
-        self.activityI.showLoadingScreen(superview: self.view)
-        fetchDate()
+        
+        fetchData()
 
         
     }
     @IBAction func reloadData(_ sender: Any) {
-        self.activityI.showLoadingScreen(superview: self.view)
+        
         allSneaker.removeAll()
         sneakerCalenderTop.removeAll()
         sneakerCalenderBottom.removeAll()
         self.calenderTop.reloadData()
         self.calenderBottom.reloadData()
-        fetchDate()
+        fetchData()
 
 
         
     }
     
-    func fetchDate(){
+    func fetchData(){
+        self.activityI.showLoadingScreen(superview: self.view)
          fetchSneaker { (res) in
              switch res {
              case .success(let article):
