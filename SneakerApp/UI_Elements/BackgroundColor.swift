@@ -29,6 +29,13 @@ class BackgroundColor{
             gradientLayer.colors = cg_colors
 
         }
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "space")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        backgroundImage.alpha = 0.2
+        view.insertSubview(backgroundImage, at: 0)
+
+
         gradientLayer.frame = view.bounds
         view.layer.addSublayer(gradientLayer)
         view.layer.insertSublayer(gradientLayer, at: 0)

@@ -13,6 +13,10 @@ enum AlertType{
     case notification
     case fetch_successful
 }
+protocol AlertDelegate {
+    func okTapped()
+}
+
 class CustomAlert: UIView {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -21,6 +25,7 @@ class CustomAlert: UIView {
     @IBOutlet var parentView: UIView!
     
     @IBOutlet weak var alertView: UIView!
+    var delegate : AlertDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,6 +77,9 @@ class CustomAlert: UIView {
 
     }
     
+    @IBAction func button_click(_ sender: UIButton) {
+        delegate?.okTapped()
+    }
     
 
 }

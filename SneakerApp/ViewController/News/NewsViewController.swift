@@ -14,18 +14,42 @@ class NewsViewController: UIViewController {
     var refreshControl: UIRefreshControl!
     var activityView = CustomActivityIndicator()
     var customAlert = CustomAlert()
+    var refreshView = RefreshView()
+
+    var tableViewRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = .clear
+        refreshControl.tintColor = .clear
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        return refreshControl
+    }()
+    
+        @objc func refreshTableView() {
+            refreshView.startAnimation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.refreshView.stopAnimation()
+                self.tableViewRefreshControl.endRefreshing()
+            }
+        }
+    
 
     func showAlert(title:String,message:String,type:AlertType){
         DispatchQueue.main.async {
+            self.customAlert.delegate = self
             self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
-            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
+//            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
             }
         
     }
     
+    func prepareUI() {
+        // Adding 'tableViewRefreshControl' to tableView
+        tableView.refreshControl = tableViewRefreshControl
+        // Getting the nib from bundle
+        createRefreshGesture()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        createRefreshGesture()
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -65,16 +89,28 @@ class NewsViewController: UIViewController {
 
          }
         self.tableView.reloadData()
-        
+        tableView.refreshControl = tableViewRefreshControl
+        createRefreshGesture()
+
 
             }
     /// create "Pull to refresh"
     func createRefreshGesture(){
+//
+//        refreshControl = UIRefreshControl()
+//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+//        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        tableView.addSubview(refreshControl)
 
-        refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+            if let objOfRefreshView = Bundle.main.loadNibNamed("RefreshView", owner: self, options: nil)?.first as? RefreshView {
+                // Initializing the 'refreshView'
+                refreshView = objOfRefreshView
+                // Giving the frame as per 'tableViewRefreshControl'
+                refreshView.frame = tableView.refreshControl!.frame
+                // Adding the 'refreshView' to 'tableViewRefreshControl'
+                tableView.refreshControl!.addSubview(refreshView)
+            }
+        
     }
     func tapped(){
         customAlert.remove()
@@ -132,6 +168,7 @@ extension NewsViewController:UITableViewDataSource{
     /// animation if the cell is displayed
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha=0
+        
         UIView.animate(withDuration: 0.4, animations: {
             cell.alpha=1
         })
@@ -174,3 +211,8 @@ extension NewsViewController: UITableViewDelegate{
  
  }
 
+extension NewsViewController : AlertDelegate{
+    func okTapped(){
+        self.tapped()
+    }
+}

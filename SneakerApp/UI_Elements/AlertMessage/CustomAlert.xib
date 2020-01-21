@@ -65,6 +65,9 @@
                                             <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="button_click:" destination="-1" eventType="touchUpInside" id="yGa-bg-tpU"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="err_img" translatesAutoresizingMaskIntoConstraints="NO" id="ipe-p4-lKP">
                                     <rect key="frame" x="70" y="8" width="149" height="97"/>
