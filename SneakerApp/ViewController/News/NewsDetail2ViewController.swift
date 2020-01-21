@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import AVKit
 import EventKit
+import CoreData
 
 class NewsDetailViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
@@ -109,16 +110,85 @@ class NewsDetailViewController: UIViewController {
         var message = ToastMessage(message: "Das Event ist in deinem Kalender vermerkt! ✅", view: self.view)
     }
    
-    @IBAction func savePost(_ sender: UIButton) {
-        if(savePost == true){
-            sender.tintColor = .lightGray
-            savePost = false
-            return
+    func delete(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                   return
+               }
+               let context = appDelegate.persistentContainer.viewContext
+               let entityName="BlogpostData"
+
+               // Anfrage stellen
+               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            guard results.count > 0 else {
+                return
+            }
+            for blogpo in results as! [NSManagedObject]{
+              
+                if(blogpo.value(forKey: "title") as! String == blogPost?.title ){
+                    context.delete(blogpo)
+                }
+
+                do{
+                    try context.save()
+                    print("Gelöscht: Datensatz '\(blogpo)'")
+                }catch{
+                    print(error)
+                }
+                
+            }
+        }catch{
+            print(error)
         }
-        savePost=true
-        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
-        // TODO Speichern von BlogPost
     }
+    @IBAction func savePost(_ sender: UIButton) {
+         if(savePost == true){
+             sender.tintColor = .lightGray
+             savePost = false
+            delete()
+             return
+         }
+         savePost=true
+         animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+         // TODO Speichern von BlogPost
+         // Kontext identifizieren
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+              return
+          }
+         let context = appDelegate.persistentContainer.viewContext
+          let entityName="BlogpostData" // Tabellenname im Datenmodell
+         // Neuen Datensatz anlegen
+          guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+              return
+          }
+          let savedBlogpost = NSManagedObject(entity:newEntity,insertInto: context)
+          
+           let title=blogPost?.title
+           let text = blogPost?.description
+           let category = blogPost?.category
+           let contentPictures = blogPost?.contentPictures
+           let contentVideo = blogPost?.contentVideo
+           let cover = blogPost?.cover
+           let shareLink = blogPost?.shareLink
+          
+           savedBlogpost.setValue(title, forKey: "title")
+           savedBlogpost.setValue(text, forKey: "text")
+           savedBlogpost.setValue(category, forKey: "category")
+           savedBlogpost.setValue(contentVideo, forKey: "contentVideo")
+           savedBlogpost.setValue(cover, forKey: "cover")
+           savedBlogpost.setValue(shareLink, forKey: "shareLink")
+           savedBlogpost.setValue(contentPictures, forKey: "contentPictures")
+           
+           do{
+               try context.save()
+                 print("Gespeichert")
+                 print(savedBlogpost)
+           }catch{
+               print(error)
+           }
+     }
+    
     
 }
 

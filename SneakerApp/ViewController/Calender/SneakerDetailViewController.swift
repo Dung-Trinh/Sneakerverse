@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import CoreData
 class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var sneakerName: UILabel!
     @IBOutlet weak var textBox: UITextView!
@@ -47,13 +48,89 @@ class SneakerDetailViewController: UIViewController {
         
     }
     @IBAction func save(_ sender: UIButton) {
-        if(savePost == true){
-            sender.tintColor = .lightGray
-            savePost = false
-            return
+             if(savePost == true){
+                 sender.tintColor = .lightGray
+                 savePost = false
+                delete()
+                 return
+             }
+             else{
+             savePost=true
+             animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+             // Kontext identifizieren
+              guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+                  return
+              }
+             let context = appDelegate.persistentContainer.viewContext
+              let entityName="SneakerData" // Tabellenname im Datenmodell
+             // Neuen Datensatz anlegen
+              guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+                  return
+              }
+              let savedSneaker = NSManagedObject(entity:newEntity,insertInto: context)
+              
+             let title=sneaker?.title
+             let text = sneaker?.description
+             let brand = sneaker?.brand
+             let imgArray = sneaker?.imgArray
+             let imageURL = sneaker?.imageURL
+             let position = sneaker?.position
+             let priceSpan = sneaker?.priceSpan
+             let releaseDate = sneaker?.releaseDate
+             let retailPrice = sneaker?.retailPrice
+                      
+           savedSneaker.setValue(title, forKey: "title")
+           savedSneaker.setValue(text, forKey: "text")
+           savedSneaker.setValue(brand, forKey: "brand")
+           savedSneaker.setValue(imageURL, forKey: "imageURL")
+           savedSneaker.setValue(position, forKey: "position")
+           savedSneaker.setValue(priceSpan, forKey: "priceSpan")
+                savedSneaker.setValue(releaseDate, forKey: "releaseDate")
+                savedSneaker.setValue(retailPrice, forKey: "retailPrice")
+                savedSneaker.setValue(imgArray, forKey: "imgArray")
+           
+           do{
+               try context.save()
+                 print("Gespeichert")
+                 print(savedSneaker)
+    //             context.delete(savedSneaker)
+    //             print("Gelöscht")
+           }catch{
+               print(error)
+           }
         }
-        savePost=true
-        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+    }
+        
+         func delete(){
+               guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                   return
+               }
+               let context = appDelegate.persistentContainer.viewContext
+               let entityName="SneakerData"
+
+               // Anfrage stellen
+               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            guard results.count > 0 else {
+                return
+            }
+            for snkr in results as! [NSManagedObject]{
+                if(snkr.value(forKey: "title") as! String == sneaker?.title ){
+                    context.delete(snkr)
+                }
+
+                do{
+                    try context.save()
+                    print("Gelöscht: Datensatz '\(snkr)'")
+                }catch{
+                    print(error)
+                }
+                
+            }
+        }catch{
+            print(error)
+        }
     }
     
     @IBAction func turnOnNotification(_ sender: UIButton) {
