@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -538,6 +538,7 @@
                         <outlet property="imageCollectionView" destination="DOZ-NQ-wPp" id="NMm-wh-INt"/>
                         <outlet property="navigationBar" destination="gSp-MQ-WTn" id="ThL-qB-Rtb"/>
                         <outlet property="pageControl" destination="R4Y-P0-GeN" id="36R-dp-oac"/>
+                        <outlet property="saveBtn" destination="aKA-71-7KX" id="XzM-rd-5s0"/>
                         <outlet property="shareBtn" destination="qkY-ed-p5z" id="J5m-fl-xq3"/>
                         <outlet property="textView" destination="MFF-tb-Owe" id="DL9-BS-Hj0"/>
                         <outlet property="webView" destination="vfU-c6-cR4" id="TgD-Xf-8GP"/>
@@ -1183,6 +1184,7 @@
                         <outlet property="priceSpan" destination="IIy-iF-ZiY" id="Nbv-za-KJd"/>
                         <outlet property="releaseDate" destination="v2g-7g-xNq" id="2BP-9n-JM4"/>
                         <outlet property="retailPrice" destination="kiI-tC-21e" id="4xg-7q-gVv"/>
+                        <outlet property="saveBtn" destination="VJp-Pm-jAC" id="Dh9-Hl-OWb"/>
                         <outlet property="sneakerName" destination="CxU-6R-iPM" id="f37-Sb-JFb"/>
                         <outlet property="textBox" destination="wfU-eF-SIq" id="FBP-nX-24d"/>
                         <outletCollection property="images" destination="6Wm-dR-08S" collectionClass="NSMutableArray" id="9Fr-ed-eIc"/>
@@ -1970,7 +1972,7 @@
         <image name="Image" width="960" height="540"/>
         <image name="Image-2" width="340.5" height="579"/>
         <image name="Image-5" width="450" height="598"/>
-        <image name="Komp 1_3" width="1080" height="1080"/>
+        <image name="Komp 1_3" width="540" height="540"/>
         <image name="Sneakerverse_cover.png" width="2048" height="2732"/>
         <image name="alarmierend" width="512" height="512"/>
         <image name="arrow.right.circle.fill" catalog="system" width="64" height="60"/>

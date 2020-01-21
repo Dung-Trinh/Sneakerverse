@@ -17,6 +17,7 @@ class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var priceSpan: UILabel!
     @IBOutlet weak var retailPrice: UILabel!
     @IBOutlet weak var notificationBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
     
     let animator = CustomAnimator()
     let background = BackgroundColor()
@@ -91,7 +92,7 @@ class SneakerDetailViewController: UIViewController {
            
            do{
                try context.save()
-                 print("Gespeichert")
+                var popUpMessage = ToastMessage(message: "Der Sneaker wurde in deiner Collection gespeichert✅ ", view: self.view)
                  print(savedSneaker)
     //             context.delete(savedSneaker)
     //             print("Gelöscht")
@@ -122,11 +123,39 @@ class SneakerDetailViewController: UIViewController {
 
                 do{
                     try context.save()
-                    print("Gelöscht: Datensatz '\(snkr)'")
+                    var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
                 }catch{
                     print(error)
                 }
                 
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+        func checkSaved(){
+             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                   return
+               }
+               let context = appDelegate.persistentContainer.viewContext
+               let entityName="SneakerData"
+
+               // Anfrage stellen
+               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            guard results.count > 0 else {
+                return
+            }
+            for snkr in results as! [NSManagedObject]{
+                if(snkr.value(forKey: "title") as! String == sneaker?.title ){
+                        savePost=true
+                        animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+                }else{
+                    savePost=false
+                    saveBtn.tintColor = .lightGray
+                }
             }
         }catch{
             print(error)
@@ -182,6 +211,7 @@ class SneakerDetailViewController: UIViewController {
 
        
         updateUI()
+        checkSaved()
     }
 
     

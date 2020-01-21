@@ -19,6 +19,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var saveBtn: UIButton!
     
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
@@ -34,6 +35,7 @@ class NewsDetailViewController: UIViewController {
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
         updateUI()
+        checkSaved()
         
     }
     
@@ -109,7 +111,33 @@ class NewsDetailViewController: UIViewController {
         }
         var message = ToastMessage(message: "Das Event ist in deinem Kalender vermerkt! ✅", view: self.view)
     }
-   
+    func checkSaved(){
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                  return
+              }
+              let context = appDelegate.persistentContainer.viewContext
+              let entityName="BlogpostData"
+
+              // Anfrage stellen
+              let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+       do{
+           let results = try context.fetch(request)
+           guard results.count > 0 else {
+               return
+           }
+           for blopo in results as! [NSManagedObject]{
+               if(blopo.value(forKey: "title") as! String == blogPost?.title ){
+                       savePost=true
+                       animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+               }else{
+                   savePost=false
+                   saveBtn.tintColor = .lightGray
+               }
+           }
+       }catch{
+           print(error)
+       }
+   }
     func delete(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                    return
@@ -132,7 +160,7 @@ class NewsDetailViewController: UIViewController {
 
                 do{
                     try context.save()
-                    print("Gelöscht: Datensatz '\(blogpo)'")
+                    var popUpMessage = ToastMessage(message: "Der Artikel wurde aus deiner Collection entfernt✅ ", view: self.view)
                 }catch{
                     print(error)
                 }
@@ -182,7 +210,7 @@ class NewsDetailViewController: UIViewController {
            
            do{
                try context.save()
-                 print("Gespeichert")
+                 var popUpMessage = ToastMessage(message: "Der Artikel wurde in deiner Collection gespeichert✅ ", view: self.view)
                  print(savedBlogpost)
            }catch{
                print(error)
