@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MyCollectionViewController: UIViewController {
-    
+class MyCollectionViewController: UIViewController{
+    var selectedImage: Item?
+    var selectedIndexPath: IndexPath!
     var items: [Item]!
     let cellIdentifier = "myCollectionViewCell"
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -17,19 +18,19 @@ class MyCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-       
         
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let item = sender as! Item
+        
         if segue.identifier == "CollectionDetail_Segue" {
+            let item = sender as! Item
             if let vc = segue.destination as? collectionDetailViewController{
                 vc.collectionImage = item.imageName
             }
         }
     }
+    
     
 
    private func setupCollectionView(){
@@ -40,7 +41,9 @@ class MyCollectionViewController: UIViewController {
             
         }
         
-        override func viewWillLayoutSubviews() {
+    @IBAction func backButton(_ sender: Any) {
+    }
+    override func viewWillLayoutSubviews() {
             super.viewWillLayoutSubviews()
             setupCollectionViewItemSize()
         }
@@ -70,8 +73,9 @@ class MyCollectionViewController: UIViewController {
      
     }
 
-    extension MyCollectionViewController: UICollectionViewDelegate,UICollectionViewDataSource{
-        
+
+extension MyCollectionViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return items.count
         }
@@ -86,7 +90,28 @@ class MyCollectionViewController: UIViewController {
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let item = items[indexPath.item]
-            performSegue(withIdentifier: "CollectionDetail_Segue", sender: item)
+            selectedImage = items[indexPath.item]
+            self.selectedIndexPath = indexPath
+            
+            self.performSegue(withIdentifier: "CollectionDetail_Segue", sender: selectedImage)
             }
+        
+        
     }
+
+
+extension MyCollectionViewController : ZoomingViewController{
+    func zoomingBackgroundView(for transition: PopAnimator) -> UIView? {
+        return nil
+    }
+    
+    func zoomingImageView(for transition: PopAnimator) -> UIImageView? {
+        if let indexPath = selectedIndexPath{
+            let cell = myCollection_cv?.cellForItem(at: indexPath) as! myCollectionViewCell
+            return cell.imageView
+        }
+        
+        return nil
+        
+    }
+}
