@@ -17,6 +17,7 @@ class CalenderViewController: UIViewController {
     var sneakerCalenderBottom: [Sneaker] = []
     var activityI:CustomActivityIndicator = CustomActivityIndicator()
     var customAlert = CustomAlert()
+    var logoLoadingScreen : LogoLoadingScreen?
     
     func showAlert(title:String,message:String,type:AlertType){
         DispatchQueue.main.async {
@@ -117,7 +118,9 @@ class CalenderViewController: UIViewController {
     }
     
     func fetchData(){
-        self.activityI.showLoadingScreen(superview: self.view)
+        logoLoadingScreen = LogoLoadingScreen()
+        //self.activityI.showLoadingScreen(superview: self.view)
+        self.logoLoadingScreen!.startLoadingAnimation(view: self.view)
          fetchSneaker { (res) in
              switch res {
              case .success(let article):
@@ -141,7 +144,8 @@ class CalenderViewController: UIViewController {
              self.calenderTop.reloadData()
              self.calenderBottom.reloadData()
                  self.sortSneaker()
-                 self.activityI.stopAnimation(uiView: self.view)
+                 //self.activityI.stopAnimation(uiView: self.view)
+                self.logoLoadingScreen!.remove()
                 
 
              }
