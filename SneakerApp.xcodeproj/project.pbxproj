@@ -45,8 +45,13 @@
 		B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694A85523CDEBB3008DFE9F /* MapViewController.swift */; };
 		B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A388CB23B55877005206B7 /* CustomAnimator.swift */; };
 		B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */; };
-		B6B456BA23D24A0B00CBBF3A /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B456B923D24A0B00CBBF3A /* CustomActivityIndicator.swift */; };
-		B6CA4F6D23DA1BFE0049003A /* LogoLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CA4F6C23DA1BFE0049003A /* LogoLoadingScreen.swift */; };
+		B6C5FDCD23DA35670083619D /* BlogPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDCC23DA35670083619D /* BlogPostCollectionViewCell.swift */; };
+		B6C5FDCF23DA35890083619D /* SneakerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDCE23DA35890083619D /* SneakerCollectionViewCell.swift */; };
+		B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C5FDD123DA36790083619D /* CustomAlert.xib */; };
+		B6C5FDD423DA36790083619D /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDD223DA36790083619D /* CustomAlert.swift */; };
+		B6C5FDD623DA36950083619D /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDD523DA36950083619D /* CustomActivityIndicator.swift */; };
+		B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDD923DA42FF0083619D /* LogoLoadingScreen.swift */; };
+		B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C5FDDB23DA432A0083619D /* LogoLoadingScreen.xib */; };
 		B6D1F73C23CE7368004938BD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */; };
 		B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
 		B6D1F73F23CF082E004938BD /* locationPins.json in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
@@ -54,9 +59,7 @@
 		B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */; };
 		B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */; };
 		B6D688FA23CA9E6E0019B443 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */; };
-		B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */; };
 		B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */; };
-		B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */; };
 		B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F71239320B4007FDB10 /* Sneaker.swift */; };
 		B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71B92384734B002DA281 /* AppDelegate.swift */; };
 		B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71BB2384734B002DA281 /* SceneDelegate.swift */; };
@@ -107,7 +110,13 @@
 		B694A85523CDEBB3008DFE9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B6A388CB23B55877005206B7 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 		B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDetail.swift; sourceTree = "<group>"; };
-		B6B456B923D24A0B00CBBF3A /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		B6C5FDCC23DA35670083619D /* BlogPostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogPostCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6C5FDCE23DA35890083619D /* SneakerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SneakerCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6C5FDD123DA36790083619D /* CustomAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
+		B6C5FDD223DA36790083619D /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		B6C5FDD523DA36950083619D /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		B6C5FDD923DA42FF0083619D /* LogoLoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoLoadingScreen.swift; sourceTree = "<group>"; };
+		B6C5FDDB23DA432A0083619D /* LogoLoadingScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoLoadingScreen.xib; sourceTree = "<group>"; };
 		B6CA4F6C23DA1BFE0049003A /* LogoLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLoadingScreen.swift; sourceTree = "<group>"; };
 		B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		B6D1F73D23CF00E0004938BD /* locationPins.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = locationPins.json; sourceTree = "<group>"; };
@@ -173,6 +182,9 @@
 		B614801123888F940018DA71 /* UI_Elements */ = {
 			isa = PBXGroup;
 			children = (
+				B6C5FDD523DA36950083619D /* CustomActivityIndicator.swift */,
+				B6C5FDD023DA36790083619D /* AlertMessage */,
+				B6C5FDC723DA34FE0083619D /* LogoLoadingScreen */,
 				B694A84D23CDD52C008DFE9F /* Fonts */,
 				B68EEF2923B0DEB300C6287E /* RefreshView */,
 				B6F14F6E23931B49007FDB10 /* CollectionViewCell */,
@@ -200,28 +212,11 @@
 		B6204D6C23943690003B8E81 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
+				B6C5FDCE23DA35890083619D /* SneakerCollectionViewCell.swift */,
 				B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */,
 				B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */,
 			);
 			path = Calender;
-			sourceTree = "<group>";
-		};
-		B625973523D742C9004D8B0E /* LogoLoadingScreen */ = {
-			isa = PBXGroup;
-			children = (
-				B625973623D74369004D8B0E /* LogoLoadingScreen.xib */,
-				B6CA4F6C23DA1BFE0049003A /* LogoLoadingScreen.swift */,
-			);
-			path = LogoLoadingScreen;
-			sourceTree = "<group>";
-		};
-		B63E152F23D27A96007FAA82 /* AlertMessage */ = {
-			isa = PBXGroup;
-			children = (
-				B63E153023D27AC4007FAA82 /* CustomAlert.xib */,
-				B67CDAEF23D3A56F00BD7280 /* CustomAlert.swift */,
-			);
-			path = AlertMessage;
 			sourceTree = "<group>";
 		};
 		B65619B223C7A84A00E03364 /* Guide */ = {
@@ -270,9 +265,28 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B6C5FDC723DA34FE0083619D /* LogoLoadingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5FDD923DA42FF0083619D /* LogoLoadingScreen.swift */,
+				B6C5FDDB23DA432A0083619D /* LogoLoadingScreen.xib */,
+			);
+			path = LogoLoadingScreen;
+			sourceTree = "<group>";
+		};
+		B6C5FDD023DA36790083619D /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5FDD223DA36790083619D /* CustomAlert.swift */,
+				B6C5FDD123DA36790083619D /* CustomAlert.xib */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
 		B6D24B51239693A700D4D6AC /* News */ = {
 			isa = PBXGroup;
 			children = (
+				B6C5FDCC23DA35670083619D /* BlogPostCollectionViewCell.swift */,
 				B614800F238829F40018DA71 /* NewsViewController.swift */,
 				B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */,
 			);
@@ -337,6 +351,7 @@
 				B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */,
 				B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */,
 				B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */,
+				B6CA4F6C23DA1BFE0049003A /* LogoLoadingScreen.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -418,7 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
+				B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */,
 				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
+				B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */,
 				013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
@@ -471,20 +488,22 @@
 				B6D688FA23CA9E6E0019B443 /* myCollectionViewCell.swift in Sources */,
 				B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */,
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
+				B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
 				B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
-				B6CA4F6D23DA1BFE0049003A /* LogoLoadingScreen.swift in Sources */,
 				0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */,
 				01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
-				B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */,
+				B6C5FDCD23DA35670083619D /* BlogPostCollectionViewCell.swift in Sources */,
+				B6C5FDD623DA36950083619D /* CustomActivityIndicator.swift in Sources */,
 				01E0C59E23CA3DE600DBDA9C /* MyProfilViewController.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
 				01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */,
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
+				B6C5FDCF23DA35890083619D /* SneakerCollectionViewCell.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */,
@@ -498,9 +517,9 @@
 				B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */,
-				B6D7183F2390826000E2C0A2 /* BlogPostCollectionViewCell.swift in Sources */,
 				B633129A23A01A2C001A63E1 /* FetchData.swift in Sources */,
 				B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */,
+				B6C5FDD423DA36790083619D /* CustomAlert.swift in Sources */,
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
 				B6148010238829F40018DA71 /* NewsViewController.swift in Sources */,
 				01E0C59B23CA3DE600DBDA9C /* MyCollectionViewController.swift in Sources */,

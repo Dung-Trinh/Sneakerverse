@@ -16,6 +16,7 @@ class LogoLoadingScreen:UIView{
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityI: UIActivityIndicatorView!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var background_img: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +31,8 @@ class LogoLoadingScreen:UIView{
     func commonInit(){
         parentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        //alertView.layer.cornerRadius = 15
-
+        loadingView.layer.cornerRadius = 15
+        background_img.layer.cornerRadius = 15
         
     }
     

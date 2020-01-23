@@ -55,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C1FA3165-E677-4D61-8DF4-65A15A47C08B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SneakerApp/UI_Elements/LogoLoadingScreen/LogoLoadingScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(frame:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C1FA3165-E677-4D61-8DF4-65A15A47C08B - 153cf351b1b933c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SneakerApp.LogoLoadingScreen.__allocating_init(frame: __C.CGRect) -&gt; SneakerApp.LogoLoadingScreen"
-                  moduleName = "SneakerApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dung/Desktop/SneakerverseFINAL/SneakerApp/UI_Elements/LogoLoadingScreen/LogoLoadingScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "10">
-               </Location>
-               <Location
-                  uuid = "C1FA3165-E677-4D61-8DF4-65A15A47C08B - d2ed5d8339981e0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SneakerApp.LogoLoadingScreen.init(frame: __C.CGRect) -&gt; SneakerApp.LogoLoadingScreen"
-                  moduleName = "SneakerApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dung/Desktop/SneakerverseFINAL/SneakerApp/UI_Elements/LogoLoadingScreen/LogoLoadingScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "176">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "64855FA0-F29D-4275-94A0-4E1D5307302E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
