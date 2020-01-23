@@ -12,52 +12,14 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//    static var coreDataContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-//
-//    static var viewContext: NSManagedObjectContext {
-//        return coreDataContainer.viewContext
-//    }
-//    let context = AppDelegate.viewContext
-    
+
      func applicationDidBecomeActive(_ application: UIApplication) {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
-//
-//        var dataController = DataController()
-//        dataController.initalizeStack()
-//        dataController.createSneaker(name: "Dung", brand: "Nike", date: "1.1.2020")
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "SneakerObj", in: context)
-//        let sneaker = SneakerObj(context: context)
-//        sneaker.brand = "Nike"
-//        sneaker.date = "12.12.12"
-//        sneaker.name = "travis "
-//
-//
-//
-//        do {
-//           try context.save()
-//            print("safe")
-//          } catch {
-//           print("Failed saving")
-//        }
-//
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SneakerObj")
-//        //request.predicate = NSPredicate(format: "age = %@", "12")
-//        request.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(request)
-//            for data in result as! [NSManagedObject] {
-//              //print(data.value(forKey: "name") as! String)
-//          }
-//
-//        } catch {
-//
-//            print("Failed")
-//        }
+        
+
         return true
     }
 
@@ -130,3 +92,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response.notification.request.content.userInfo)
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+}

@@ -69,7 +69,7 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
         super.viewDidLoad()
     imagePicker.delegate = self
     let background = BackgroundColor()
-    background.createGradientBackground(view: self.view)
+    background.createGradientBackground(view: self.view,colors: nil)
         // Do any additional setup after loading the view.
     }
     

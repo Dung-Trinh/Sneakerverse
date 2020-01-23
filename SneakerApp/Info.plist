@@ -28,6 +28,8 @@
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This App use Maps to show the sneaker stores</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This App will use your current location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Fotos werden benutzt</string>
 	<key>UIAppFonts</key>

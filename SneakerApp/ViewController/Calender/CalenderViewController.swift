@@ -15,7 +15,16 @@ class CalenderViewController: UIViewController {
     var allSneaker : [Sneaker] = []
     var sneakerCalenderTop : [Sneaker] = []
     var sneakerCalenderBottom: [Sneaker] = []
-   
+    var activityI:CustomActivityIndicator = CustomActivityIndicator()
+    var customAlert = CustomAlert()
+    
+    func showAlert(title:String,message:String,type:AlertType){
+        DispatchQueue.main.async {
+            self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
+            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
+            }
+    }
+    
     func sortSneaker(){
         self.sneakerCalenderTop.sort {
             let splitLine: [String]?
@@ -74,55 +83,75 @@ class CalenderViewController: UIViewController {
         sortSneaker()
         }
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundColor = BackgroundColor()
-        backgroundColor.createGradientBackground(view: self.view)
+        backgroundColor.createGradientBackground(view: self.view,colors: nil)
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+                   // handle error if there is one
+               })
         calenderTop.dataSource = self
         calenderTop.delegate = self
         
         calenderBottom.dataSource = self
         calenderBottom.delegate = self
         
-//        allSneaker.append(Sneaker(title: "Nike schuh", date: "12.12", img: UIImage(named: "j1")!,brand:"Nike"))
-//        allSneaker.append(Sneaker(title: "adidas schuh", date: "12.12", img: UIImage(named: "y1")!,brand:"Adidas"))
-//        allSneaker.append(Sneaker(title: "puma schuh", date: "12.12", img: UIImage(named: "p1")!,brand:"Puma"))
         
+        fetchData()
 
-        fetchSneaker { (res) in
-            switch res {
-            case .success(let article):
-               article.forEach({ (article) in
+        
+    }
+    @IBAction func reloadData(_ sender: Any) {
+        
+        allSneaker.removeAll()
+        sneakerCalenderTop.removeAll()
+        sneakerCalenderBottom.removeAll()
+        self.calenderTop.reloadData()
+        self.calenderBottom.reloadData()
+        fetchData()
 
-                    self.allSneaker.append(article)
-                })
-            case .failure(let err):
-                print("Failed to fetch courses:", err)
-            }
-            //einfügen der schuhe
-            for s in self.allSneaker{
-              if s.position == "bottom"{
-                self.sneakerCalenderBottom.append(s)
-              }else if s.position == "top"{
-                self.sneakerCalenderTop.append(s)
-                }
-          }
-            DispatchQueue.main.async {
-            self.calenderTop.reloadData()
-            self.calenderBottom.reloadData()
-                self.sortSneaker()
-            }
-        }
-
-       
-        //self.sneakerCalenderTop=allSneaker
 
         
     }
     
-  
+    func fetchData(){
+        self.activityI.showLoadingScreen(superview: self.view)
+         fetchSneaker { (res) in
+             switch res {
+             case .success(let article):
+                article.forEach({ (article) in
+                     self.allSneaker.append(article)
+                 
+                 })
+             case .failure(let err):
+                 print("Failed to fetch courses:", err)
+                
+             }
+             //einfügen der schuhe
+             for s in self.allSneaker{
+               if s.position == "bottom"{
+                 self.sneakerCalenderBottom.append(s)
+               }else if s.position == "top"{
+                 self.sneakerCalenderTop.append(s)
+                 }
+           }
+             DispatchQueue.main.async {
+             self.calenderTop.reloadData()
+             self.calenderBottom.reloadData()
+                 self.sortSneaker()
+                 self.activityI.stopAnimation(uiView: self.view)
+                
+
+             }
+             
+         }
+
+        
+         self.sneakerCalenderTop=allSneaker
+         self.sneakerCalenderBottom=allSneaker
+    }
     
     fileprivate func fetchSneaker(completion:@escaping(Result<[Sneaker],Error>)-> Void){
         let urlString = "https://flasksneakerapi.herokuapp.com/sneakers"

@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import CoreData
 
 struct Item {
     var imageName: UIImage!
@@ -39,6 +40,54 @@ class MyProfilViewController: UIViewController {
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){
         
     }
+    func loadSavedSneakers(){
+        //Kontentx identifizieren
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let entityName="SneakerData"
+        
+        // Anfrage stellen
+        let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            
+            
+            for snkr in results{
+              print("Geladen: ", snkr)
+            }
+            print ("Geladen: '\(results.count)' Ergebnisse")
+        }
+        
+        catch{
+            print(error)
+        }
+    }
+    func loadSavedBlogposts(){
+        //Kontentx identifizieren
+             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                 return
+             }
+             let context = appDelegate.persistentContainer.viewContext
+             let entityName="BlogpostData"
+             
+             // Anfrage stellen
+             let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+             do{
+                 let results = try context.fetch(request)
+                 
+                 
+                 for blogpo in results{
+                   print("Geladen: ", blogpo)
+                 }
+                 print ("Geladen: '\(results.count)' Ergebnisse")
+             }
+             
+             catch{
+                 print(error)
+             }
+    }
     
 
     @IBAction func addSneaker(_ sender: UIButton) {
@@ -51,12 +100,11 @@ class MyProfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+        loadSavedSneakers()
+        loadSavedBlogposts()
         let background = BackgroundColor()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view,colors: nil)
         
-        
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

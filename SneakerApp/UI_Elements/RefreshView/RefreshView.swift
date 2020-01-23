@@ -20,23 +20,36 @@ extension RefreshView {
     fileprivate func initializeGradientView() {
         gradientView = UIView(frame: CGRect(x: -30, y: 0, width: 100, height: 60))
         logo.addSubview(gradientView)
-        gradientView.layer.insertSublayer(gradientColor(frame: gradientView.bounds), at: 0)
+        
+        
         gradientView.backgroundColor = UIColor.clear
-    }
-    
-    fileprivate func gradientColor(frame: CGRect) -> CAGradientLayer {
-        let layer = CAGradientLayer()
-        layer.frame = frame
-        layer.startPoint = CGPoint(x: 0.5, y: 0.5)
-        layer.endPoint = CGPoint(x: 0, y: 0.5)
-        layer.colors = [UIColor.white.withAlphaComponent(0).cgColor, UIColor.white.withAlphaComponent(0.7).cgColor, UIColor.white.withAlphaComponent(0).cgColor]
-        return layer
     }
     
     func startAnimation() {
         initializeGradientView()
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.autoreverse, .repeat], animations: {
-            self.gradientView.frame.origin.x = 100
+//        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.autoreverse, .repeat], animations: {
+//            self.gradientView.frame.origin.x = 100
+//            self.logo.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+//            UIView.animate(withDuration: 0.6) {
+//                self.logo.transform = CGAffineTransform.identity
+//            }
+//        }, completion: nil)
+        
+        UIView.animate(withDuration: 02.0,
+                       delay: 0,
+                       options: [.repeat, .autoreverse, .beginFromCurrentState],
+                       animations: {
+                        
+                        UIView.animate(withDuration: 0.2) {
+                        self.logo.transform = CGAffineTransform.identity
+                                    }
+                        UIView.animate(withDuration: 0.2) {
+                        self.logo.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+                                    }
+                        UIView.animate(withDuration: 0.2) {
+                        self.logo.transform = CGAffineTransform.identity
+                                    }
+
         }, completion: nil)
     }
     
@@ -44,4 +57,6 @@ extension RefreshView {
         gradientView.layer.removeAllAnimations()
         gradientView = nil
     }
+    
+    
 }

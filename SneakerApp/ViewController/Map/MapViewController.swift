@@ -41,9 +41,24 @@ class MapViewController: UIViewController {
     
     var allLocations: [MapLocation] = []
     var shownLocation:[MapLocation] = []
-    let locationManager = CLLocationManager()
+    fileprivate let locationManager: CLLocationManager = {
+        let manager = CLLocationManager()
+        manager.requestWhenInUseAuthorization()
+        return manager
+    }()
 
 
+    func currentLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        if #available(iOS 11.0, *) {
+           locationManager.showsBackgroundLocationIndicator = true
+        } else {
+           // Fallback on earlier versions
+        }
+        locationManager.startUpdatingLocation()
+     }
+     
     
     func createAnnotation(title:String,latitude:Double,longitude :Double){
         let annotation = MKPointAnnotation()
@@ -54,10 +69,14 @@ class MapViewController: UIViewController {
     
     @IBAction func zoomOut(_ sender: UIButton) {
         // display the map of germany
-        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.048463, 10.295628)
-            let span = MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)
-            let region = MKCoordinateRegion(center: coordinate, span: span)
-            self.mapView.setRegion(region, animated: true)
+//        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.048463, 10.295628)
+//            let span = MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)
+//            let region = MKCoordinateRegion(center: coordinate, span: span)
+//            self.mapView.setRegion(region, animated: true)
+        self.mapView.showsUserLocation = true
+        self.mapView.showsCompass = true
+        self.mapView.showsScale = true
+        currentLocation()
     }
     
     
@@ -157,6 +176,18 @@ extension MapViewController: UITableViewDelegate{
         
      }
     }
-
-
 }
+extension MapViewController: CLLocationManagerDelegate {
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let currentLocation = location.coordinate
+        let coordinateRegion = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
+        mapView.setRegion(coordinateRegion, animated: true)
+        locationManager.stopUpdatingLocation()
+     }
+     
+     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+     }
+}
+

@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import AVKit
 import EventKit
+import CoreData
 
 class NewsDetailViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
@@ -18,6 +19,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var saveBtn: UIButton!
     
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
@@ -28,11 +30,12 @@ class NewsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let background = BackgroundColor()
-        background.createGradientBackground(view: self.view)
+        background.createGradientBackground(view: self.view,colors: nil)
         
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.delegate = self
         updateUI()
+        checkSaved()
         
     }
     
@@ -108,17 +111,112 @@ class NewsDetailViewController: UIViewController {
         }
         var message = ToastMessage(message: "Das Event ist in deinem Kalender vermerkt! ✅", view: self.view)
     }
-   
-    @IBAction func savePost(_ sender: UIButton) {
-        if(savePost == true){
-            sender.tintColor = .lightGray
-            savePost = false
-            return
+    func checkSaved(){
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                  return
+              }
+              let context = appDelegate.persistentContainer.viewContext
+              let entityName="BlogpostData"
+
+              // Anfrage stellen
+              let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+       do{
+           let results = try context.fetch(request)
+           guard results.count > 0 else {
+               return
+           }
+           for blopo in results as! [NSManagedObject]{
+               if(blopo.value(forKey: "title") as! String == blogPost?.title ){
+                       savePost=true
+                       animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+               }else{
+                   savePost=false
+                   saveBtn.tintColor = .lightGray
+               }
+           }
+       }catch{
+           print(error)
+       }
+   }
+    func delete(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                   return
+               }
+               let context = appDelegate.persistentContainer.viewContext
+               let entityName="BlogpostData"
+
+               // Anfrage stellen
+               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            guard results.count > 0 else {
+                return
+            }
+            for blogpo in results as! [NSManagedObject]{
+              
+                if(blogpo.value(forKey: "title") as! String == blogPost?.title ){
+                    context.delete(blogpo)
+                }
+
+                do{
+                    try context.save()
+                    var popUpMessage = ToastMessage(message: "Der Artikel wurde aus deiner Collection entfernt✅ ", view: self.view)
+                }catch{
+                    print(error)
+                }
+                
+            }
+        }catch{
+            print(error)
         }
-        savePost=true
-        animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
-        // TODO Speichern von BlogPost
     }
+    @IBAction func savePost(_ sender: UIButton) {
+         if(savePost == true){
+             sender.tintColor = .lightGray
+             savePost = false
+            delete()
+             return
+         }
+         savePost=true
+         animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+         // TODO Speichern von BlogPost
+         // Kontext identifizieren
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+              return
+          }
+         let context = appDelegate.persistentContainer.viewContext
+          let entityName="BlogpostData" // Tabellenname im Datenmodell
+         // Neuen Datensatz anlegen
+          guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+              return
+          }
+          let savedBlogpost = NSManagedObject(entity:newEntity,insertInto: context)
+          
+           let title=blogPost?.title
+           let text = blogPost?.description
+           let category = blogPost?.category
+           let contentPictures = blogPost?.contentPictures
+           let contentVideo = blogPost?.contentVideo
+           let cover = blogPost?.cover
+           let shareLink = blogPost?.shareLink
+          
+           savedBlogpost.setValue(title, forKey: "title")
+           savedBlogpost.setValue(text, forKey: "text")
+           savedBlogpost.setValue(category, forKey: "category")
+           savedBlogpost.setValue(contentVideo, forKey: "contentVideo")
+           savedBlogpost.setValue(cover, forKey: "cover")
+           savedBlogpost.setValue(shareLink, forKey: "shareLink")
+           savedBlogpost.setValue(contentPictures, forKey: "contentPictures")
+           
+           do{
+               try context.save()
+                 var popUpMessage = ToastMessage(message: "Der Artikel wurde in deiner Collection gespeichert✅ ", view: self.view)
+                 print(savedBlogpost)
+           }catch{
+               print(error)
+           }
+     }
+    
     
 }
 
