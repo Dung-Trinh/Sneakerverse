@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHK-iA-sAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2017.3913043478262" y="354.91071428571428"/>
+            <point key="canvasLocation" x="-2209" y="380"/>
         </scene>
         <!--Item-->
         <scene sceneID="7Si-mQ-PXq">
@@ -935,6 +935,25 @@
             </objects>
             <point key="canvasLocation" x="885.50724637681162" y="-1293.0803571428571"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8qR-H3-p53">
+            <objects>
+                <navigationController id="Iwb-4D-f11" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zNy-HB-mCM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sl1-6J-Iws">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="delegate" destination="9F0-aJ-05t" id="LGX-uU-1aZ"/>
+                        <segue destination="0d3-L2-XYi" kind="relationship" relationship="rootViewController" id="6Gm-Uw-0da"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9JT-Ht-JXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="9F0-aJ-05t" customClass="PopAnimator" customModule="SneakerApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-2049" y="-372"/>
+        </scene>
         <!--Calender-->
         <scene sceneID="DYL-rG-YsL">
             <objects>
@@ -977,7 +996,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYp-ns-E8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2970" y="-382"/>
+            <point key="canvasLocation" x="-3729" y="-372"/>
         </scene>
         <!--Sneaker Details-->
         <scene sceneID="8rI-wC-x0T">
@@ -1269,12 +1288,12 @@
                         <outlet property="myCollection_cv" destination="ihd-kk-x3C" id="Jkt-kW-R3A"/>
                         <outlet property="myFeeds_cv" destination="Vwe-VE-ISA" id="jZ2-dD-xV6"/>
                         <outlet property="switcher" destination="gWL-h7-qVw" id="VWB-CS-KaS"/>
-                        <segue destination="0d3-L2-XYi" kind="show" identifier="MyCollection_Segue" id="D3i-kt-150"/>
+                        <segue destination="Iwb-4D-f11" kind="show" identifier="MyCollection_Segue" id="bQw-tR-psO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h47-0f-qOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2017" y="-371"/>
+            <point key="canvasLocation" x="-2939" y="-360"/>
         </scene>
         <!--My Collection View Controller-->
         <scene sceneID="Z8U-JS-IZS">
@@ -1304,6 +1323,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkX-cz-JGB">
+                                <rect key="frame" x="183" y="768" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Zurück"/>
+                                <connections>
+                                    <action selector="backButton:" destination="0d3-L2-XYi" eventType="touchUpInside" id="XaR-Fi-sFi"/>
+                                    <segue destination="GYe-sT-D1V" kind="unwind" unwindAction="unwindToProfile:" id="1DG-RI-E9e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1316,13 +1344,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="oGd-3l-2bE"/>
                     <connections>
-                        <outlet property="myCollection_cv" destination="X7k-Q0-Y7E" id="Nfe-b4-Cil"/>
+                        <outlet property="myCollection_cv" destination="X7k-Q0-Y7E" id="34P-ua-fCA"/>
                         <segue destination="uYC-Xc-Cgk" kind="show" identifier="CollectionDetail_Segue" id="gAg-Fr-VUE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXS-MH-1af" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GYe-sT-D1V" userLabel="Exit" sceneMemberID="exit"/>
+                <customObject id="sEw-0j-Feh" customClass="PopAnimator" customModule="SneakerApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-1012" y="-348"/>
+            <point key="canvasLocation" x="-1129" y="-322"/>
         </scene>
         <!--Camera Preview View Controller-->
         <scene sceneID="LcN-kl-I3f">
@@ -1442,7 +1472,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-8o-tps">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-8o-tps">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1609,7 +1639,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSk-mR-PO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="3J6-kz-UMa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2852.1739130434785" y="350.89285714285711"/>
+            <point key="canvasLocation" x="-3194" y="463"/>
         </scene>
         <!--Item-->
         <scene sceneID="LcF-6C-lDC">
@@ -1685,7 +1715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gE-Mp-Hw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2017" y="355"/>
+            <point key="canvasLocation" x="-2209" y="380"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Kvo-3s-xRk">
@@ -1974,6 +2004,6 @@
         <image name="zeitung" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Du5-kz-VA0"/>
+        <segue reference="Mb6-av-IA4"/>
     </inferredMetricsTieBreakers>
 </document>

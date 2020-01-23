@@ -37,3 +37,14 @@ class collectionDetailViewController: UIViewController {
     */
 
 }
+
+extension collectionDetailViewController : ZoomingViewController{
+    
+    func zoomingBackgroundView(for transition: PopAnimator) -> UIView? {
+        return nil
+    }
+    
+    func zoomingImageView(for transition: PopAnimator) -> UIImageView? {
+        return image
+    }
+}

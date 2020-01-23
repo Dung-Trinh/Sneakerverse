@@ -63,7 +63,9 @@ class MyProfilViewController: UIViewController {
         var allItems = sender as? [Item]
         
         if segue.identifier == "MyCollection_Segue"{
-            if let vc = segue.destination as? MyCollectionViewController{
+            let navVC = segue.destination as? UINavigationController
+            
+            if let vc = navVC?.viewControllers.first as? MyCollectionViewController{
                 vc.items = allItems
             }
         }

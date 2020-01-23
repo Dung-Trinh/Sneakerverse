@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125DD4A23D62E5200BE77AB /* PopAnimator.swift */; };
 		013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */; };
 		01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */; };
 		01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0125DD4A23D62E5200BE77AB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sneakerverse_cover.png; sourceTree = "<group>"; };
 		01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
 		01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				01E0C59523CA3DE600DBDA9C /* MyProfilViewController.swift */,
 				01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */,
 				01E0C59623CA3DE600DBDA9C /* UploadViewController.swift */,
+				0125DD4A23D62E5200BE77AB /* PopAnimator.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
+				0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */,
 				01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
 				B6F14F7023931C48007FDB10 /* SneakerCollectionViewCell.swift in Sources */,
@@ -618,13 +622,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp4;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -640,13 +644,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp4;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
