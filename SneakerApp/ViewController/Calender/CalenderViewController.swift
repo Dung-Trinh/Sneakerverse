@@ -69,9 +69,14 @@ class CalenderViewController: UIViewController {
         logoLoadingScreen?.startLoadingAnimation(view: self.view)
         /// queue because waiting for the fetchSneakerData function
         DispatchQueue.global(qos: .userInitiated).async {
+            print("fetch start")
             self.dataFetcher.fetchSneakerData()
             group.leave()
-            
+            print("fetch fenito")
+            self.setSneakerArray()
+            self.calenderTop.reloadData()
+            self.calenderBottom.reloadData()
+
             if self.dataFetcher.fetchSuccessfull == false{
                 self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
             }
@@ -79,8 +84,13 @@ class CalenderViewController: UIViewController {
             /// in main queue to refresh the view
               DispatchQueue.main.async {
                 self.allSneaker = self.dataFetcher.allSneaker
-                self.sneakerCalenderTop = self.dataFetcher.sneakerCalenderTop
-                self.sneakerCalenderBottom = self.dataFetcher.sneakerCalenderBottom
+                self.setSneakerArray()
+                print(self.sneakerCalenderTop)
+                print(self.sneakerCalenderBottom)
+                print(self.allSneaker)
+                self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderBottom)
+                self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderTop)
+
                 self.calenderTop.reloadData()
                 self.calenderBottom.reloadData()
                 self.logoLoadingScreen!.remove()
@@ -88,6 +98,7 @@ class CalenderViewController: UIViewController {
             }
         }
     }
+
     
     @IBAction func reloadData(_ sender: Any) {
         allSneaker.removeAll()
