@@ -67,6 +67,7 @@
 		B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71C22384734B002DA281 /* SneakerApp.xcdatamodeld */; };
 		B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */; };
 		B6FB793323CCC6E200497AC9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB793223CCC6E200497AC9 /* OnboardingViewController.swift */; };
+		DF643FB923DCB198006276CB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF643FB823DCB198006276CB /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		B6FA71C82384734E002DA281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6FA71CA2384734E002DA281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FB793223CCC6E200497AC9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		DF643FB823DCB198006276CB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 				B64868D523A7E4D100D2496A /* intro.mp4 */,
 				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
 				B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */,
+				DF643FB823DCB198006276CB /* CoreDataManager.swift */,
 			);
 			path = SneakerApp;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */,
 				B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */,
+				DF643FB923DCB198006276CB /* CoreDataManager.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
 				B6FB793323CCC6E200497AC9 /* OnboardingViewController.swift in Sources */,
