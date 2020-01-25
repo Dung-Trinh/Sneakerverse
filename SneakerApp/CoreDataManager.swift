@@ -13,6 +13,75 @@ import UIKit
 
 class CoreDataManager{
     
+    func loadSavedBlogposts() ->[BlogPost]{
+        var savedBlogpost :[BlogPost]=[]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entityName="BlogpostData"
+        
+        // Anfrage stellen
+        let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            
+            
+            for blogpo in results as! [NSManagedObject]{
+               let title=blogpo.value(forKey: "title") as! String
+               let text = blogpo.value(forKey: "text") as! String
+               let category = blogpo.value(forKey: "category") as! String
+               let contentPictures = blogpo.value(forKey: "contentPictures") as! [String]
+               let contentVideo = blogpo.value(forKey: "contentVideo") as! String
+               let cover = blogpo.value(forKey: "cover") as! String
+               let shareLink = blogpo.value(forKey:"shareLink") as! String
+               let blogpost=BlogPost(title: title, cover: cover, category: category, description: text, contentPictures: contentPictures, shareLink: shareLink, contentVideo: contentVideo)
+               savedBlogpost.append(blogpost)
+               
+            }
+            print ("Geladen: '\(results.count)' Blogpost Ergebnisse")
+           print(savedBlogpost)
+        }
+        
+        catch{
+            print(error)
+        }
+        return savedBlogpost
+       }
+    
+    func loadSavedSneakers()->[Sneaker]{
+        var savedSneaker :[Sneaker]=[]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entityName="SneakerData"
+        
+        let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do{
+            let results = try context.fetch(request)
+            
+            
+               for snkr in results as! [NSManagedObject]{
+                let title=snkr.value(forKey: "title") as! String
+                let text = snkr.value(forKey: "text") as! String
+                let retailPrice = snkr.value(forKey:"retailPrice") as! String
+                let imageURL = snkr.value(forKey: "imageURL") as! String
+                let imageArray = snkr.value(forKey: "imgArray") as! [String]
+                let priceSpan = snkr.value(forKey: "priceSpan") as! String
+                let releaseDate = snkr.value(forKey: "releaseDate") as! String
+                let position = snkr.value(forKey:"position") as! String
+                let brand = snkr.value(forKey:"brand") as! String
+                let sneaker = Sneaker(title: title, imageURL: imageURL, retailPrice: retailPrice, priceSpan: priceSpan, releaseDate: releaseDate, imgArray: imageArray, brand: brand, description: text, position: position)
+                         savedSneaker.append(sneaker)
+                         
+                      }
+            print ("Geladen: '\(results.count)' Sneaker Ergebnisse")
+            print(savedSneaker)
+        }
+        
+        catch{
+            print(error)
+        }
+        return savedSneaker
+    }
+    
     func saveBlogpost(blogPost:BlogPost?){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
                    return
