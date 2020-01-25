@@ -58,8 +58,6 @@ class CalenderViewController: UIViewController {
         calenderBottom.dataSource = self
         calenderBottom.delegate = self
         
-        
-        //fetchData()
         fetchData()
         
     }
@@ -69,18 +67,10 @@ class CalenderViewController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         logoLoadingScreen?.startLoadingAnimation(view: self.view)
-        /// queue because waiting for the fetchSneakerData fuction
+        /// queue because waiting for the fetchSneakerData function
         DispatchQueue.global(qos: .userInitiated).async {
             self.dataFetcher.fetchSneakerData()
-            
             group.leave()
-            print(self.dataFetcher.allSneaker.count)
-            print(self.dataFetcher.sneakerCalenderTop)
-            print(self.dataFetcher.sneakerCalenderBottom)
-
-            self.allSneaker = self.dataFetcher.allSneaker
-            self.sneakerCalenderTop = self.dataFetcher.sneakerCalenderTop
-            self.sneakerCalenderBottom = self.dataFetcher.sneakerCalenderBottom
             
             if self.dataFetcher.fetchSuccessfull == false{
                 self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
@@ -88,9 +78,12 @@ class CalenderViewController: UIViewController {
             
             /// in main queue to refresh the view
               DispatchQueue.main.async {
-                    self.calenderTop.reloadData()
-                    self.calenderBottom.reloadData()
-                    self.logoLoadingScreen!.remove()
+                self.allSneaker = self.dataFetcher.allSneaker
+                self.sneakerCalenderTop = self.dataFetcher.sneakerCalenderTop
+                self.sneakerCalenderBottom = self.dataFetcher.sneakerCalenderBottom
+                self.calenderTop.reloadData()
+                self.calenderBottom.reloadData()
+                self.logoLoadingScreen!.remove()
 
             }
         }
@@ -107,12 +100,8 @@ class CalenderViewController: UIViewController {
         self.calenderTop.reloadData()
         self.calenderBottom.reloadData()
         fetchData()
-
-        
     }
     
-
-
     @IBAction func switchViews(_ sender: UISegmentedControl) {
         setSneakerArray()
         switch(sender.selectedSegmentIndex){
@@ -128,48 +117,13 @@ class CalenderViewController: UIViewController {
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
         default:
-            print("")
+            break
         }
         calenderTop.reloadData()
         calenderBottom.reloadData()
-        
-//        if sender.selectedSegmentIndex == 0{
-//            setSneakerArray()
-//            //self.sneakerCalenderTop = allSneaker;
-//
-//            calenderTop.reloadData()
-//            calenderBottom.reloadData()
-//        }
-//        else if sender.selectedSegmentIndex == 1{
-//            setSneakerArray()
-//
-//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Nike"}
-//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Nike"}
-//            calenderTop.reloadData()
-//            calenderBottom.reloadData()
-//        }
-//        else if sender.selectedSegmentIndex == 2{
-//            setSneakerArray()
-//
-//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Adidas"}
-//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Adidas"}
-//            calenderTop.reloadData()
-//            calenderBottom.reloadData()
-//        }
-//        else if sender.selectedSegmentIndex == 3{
-//            setSneakerArray()
-//
-//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
-//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
-//
-//            calenderTop.reloadData()
-//            calenderBottom.reloadData()
-//               }
-        
     }
     
 }
-
 
 extension CalenderViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -185,40 +139,31 @@ extension CalenderViewController : UICollectionViewDataSource{
             cell.sneaker = sneakerCalenderBottom[indexPath.row]
             return cell
         }
-        
         if(sneakerCalenderTop.count>0){
         cell.sneaker = sneakerCalenderTop[indexPath.row]
         }
         return cell
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-                cell.alpha=0
+        cell.alpha=0
         UIView.animate(withDuration: 0.4, animations: {
             cell.alpha=1
         })
-
     }
-    
-    
 }
 //TODO: zur detail view wechseln
 extension CalenderViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "SneakerDetailViewController") as? SneakerDetailViewController
-
         if(collectionView == calenderBottom){
             vc?.sneaker = sneakerCalenderBottom[indexPath.row]
             self.navigationController?.pushViewController(vc!,animated:true)
             return
         }
         /// push the DetailViewController on the stack
-        
         vc?.sneaker = sneakerCalenderTop[indexPath.row]
-self.navigationController?.pushViewController(vc!,animated:true)
-
-
+        self.navigationController?.pushViewController(vc!,animated:true)
     }
 }
 
