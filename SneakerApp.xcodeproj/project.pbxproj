@@ -21,6 +21,7 @@
 		AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */; };
 		B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */; };
 		B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */; };
+		B610C99D23DB739B003C7BD8 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C99C23DB739B003C7BD8 /* MapLocation.swift */; };
 		B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902B23A846820067E0A5 /* BackgroundColor.swift */; };
 		B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611902D23A846A40067E0A5 /* ToastMessage.swift */; };
 		B614800C23881E810018DA71 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614800B23881E810018DA71 /* Post.swift */; };
@@ -85,6 +86,7 @@
 		94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.debug.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoPlayer.swift; sourceTree = "<group>"; };
 		B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetail2ViewController.swift; sourceTree = "<group>"; };
+		B610C99C23DB739B003C7BD8 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		B611902B23A846820067E0A5 /* BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
 		B611902D23A846A40067E0A5 /* ToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		B614800B23881E810018DA71 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				B694A85523CDEBB3008DFE9F /* MapViewController.swift */,
 				B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */,
 				B6D1F73D23CF00E0004938BD /* locationPins.json */,
+				B610C99C23DB739B003C7BD8 /* MapLocation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
 				0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */,
+				B610C99D23DB739B003C7BD8 /* MapLocation.swift in Sources */,
 				01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
 				B6C5FDCD23DA35670083619D /* BlogPostCollectionViewCell.swift in Sources */,
@@ -664,13 +668,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -686,13 +690,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

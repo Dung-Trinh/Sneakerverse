@@ -9,32 +9,6 @@
 import UIKit
 import MapKit
 
-struct MapLocation:Decodable {
-    var name:String
-    var latitude : Double
-    var longitude : Double
-    var logoName : String //name of image
-    var locationType : String
-    var address : String
-    
-    init(name:String,latitude:Double,longitude : Double,logoName:String,locationType:String,address:String) {
-        self.name = name
-        self.latitude = latitude
-        self.longitude = longitude
-        self.logoName = logoName
-        self.locationType = locationType
-        self.address = address
-    }
-    init(json : [String:Any]){
-        self.name = json["name"] as? String ?? ""
-        self.latitude = json["latitude"] as? Double ?? -1.0
-        self.longitude = json["longitude"] as? Double ?? -1.0
-        self.logoName = json["logoName"] as? String ?? "error_img"
-        self.locationType = json["locationType"] as? String ?? "Error"
-        self.address = json["address"] as? String ?? "Error"
-    }
-}
-
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationTV: UITableView!
@@ -59,7 +33,7 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
      }
      
-    
+    /// create pins
     func createAnnotation(title:String,latitude:Double,longitude :Double){
         let annotation = MKPointAnnotation()
         annotation.title = title
@@ -67,18 +41,21 @@ class MapViewController: UIViewController {
         self.mapView.addAnnotation(annotation)
     }
     
+    ///display the map of germany
     @IBAction func zoomOut(_ sender: UIButton) {
-        // display the map of germany
-//        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.048463, 10.295628)
-//            let span = MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)
-//            let region = MKCoordinateRegion(center: coordinate, span: span)
-//            self.mapView.setRegion(region, animated: true)
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(51.048463, 10.295628)
+            let span = MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            self.mapView.setRegion(region, animated: true)
+
+    }
+    
+    @IBAction func showMyLocation(_ sender: UIButton) {
         self.mapView.showsUserLocation = true
         self.mapView.showsCompass = true
         self.mapView.showsScale = true
         currentLocation()
     }
-    
     
     func fetchJsonData(){
         do{
@@ -99,6 +76,7 @@ class MapViewController: UIViewController {
         let annotations = self.mapView.annotations
         self.mapView.removeAnnotations(annotations)
     }
+    /// sort locations
     @IBAction func switchCategory(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:

@@ -239,11 +239,11 @@
             </objects>
             <point key="canvasLocation" x="-2591.304347826087" y="-2025"/>
         </scene>
-        <!--Search-->
+        <!--Sneaker Stores-->
         <scene sceneID="XSp-zg-thK">
             <objects>
                 <navigationController id="yRI-c7-JJ7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="BsX-iT-HKB"/>
+                    <tabBarItem key="tabBarItem" title="Sneaker Stores" image="mappin.and.ellipse" catalog="system" id="BsX-iT-HKB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h0y-5d-gaV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -339,22 +339,29 @@
                                     <action selector="switchCategory:" destination="6lD-zU-I0Z" eventType="valueChanged" id="aPb-Nu-nm2"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mIM-0t-VVJ">
+                                <rect key="frame" x="354" y="487" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78158392070000005" green="0.80548064720000001" blue="0.7729210218" alpha="0.59918129279999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="showMyLocation:" destination="6lD-zU-I0Z" eventType="touchUpInside" id="9rc-eF-faG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yht-Rf-093">
+                                <rect key="frame" x="354" y="439" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.78158392070000005" green="0.80548064720000001" blue="0.7729210218" alpha="0.59918129279999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="map.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="6lD-zU-I0Z" eventType="touchUpInside" id="ReM-KV-wFP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JhF-eA-cf1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="2QT-Hy-SCr">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="2ux-W8-MZJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kN9-xI-uai">
-                                <rect key="frame" x="373" y="11" width="21" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="location" catalog="system"/>
-                                <connections>
-                                    <action selector="zoomOut:" destination="6lD-zU-I0Z" eventType="touchUpInside" id="K7n-wp-FNe"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map" id="2QT-Hy-SCr"/>
                     <connections>
                         <outlet property="locationTV" destination="M3H-nw-bzn" id="opb-ps-Qx5"/>
                         <outlet property="mapView" destination="seh-PR-ueQ" id="vYL-ir-GEA"/>
@@ -1946,8 +1953,9 @@
         <image name="chicago3" width="1024" height="768"/>
         <image name="galaxy" width="364" height="647"/>
         <image name="j1" width="750" height="450"/>
-        <image name="location" catalog="system" width="64" height="56"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="map.fill" catalog="system" width="64" height="56"/>
+        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
         <image name="sneaker" width="512" height="512"/>
         <image name="sneakercon" width="496.33334350585938" height="279"/>

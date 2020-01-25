@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogoLoadingScreen" customModule="SneakerApp" customModuleProvider="target">
             <connections>
                 <outlet property="activityI" destination="Hcx-jD-CLj" id="pMZ-K7-3jf"/>
+                <outlet property="astronaut" destination="wyg-iF-m68" id="CIj-Gc-NyL"/>
                 <outlet property="background_img" destination="3JU-2O-b9x" id="Tow-Bf-mF8"/>
                 <outlet property="loadingView" destination="4Mg-2A-ft4" id="eKE-4I-ype"/>
                 <outlet property="logo" destination="4PE-GR-I9i" id="i9g-7a-Nhy"/>
@@ -49,7 +50,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="wyg-iF-m68">
-                                    <rect key="frame" x="208" y="31" width="144" height="75"/>
+                                    <rect key="frame" x="261" y="53" width="144" height="75"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -61,15 +62,15 @@
                                 <constraint firstItem="Hcx-jD-CLj" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="66" id="FZT-k6-h8c"/>
                                 <constraint firstAttribute="trailing" secondItem="JrK-4e-lp7" secondAttribute="trailing" constant="209" id="GGl-WT-QjI"/>
                                 <constraint firstAttribute="trailing" secondItem="4PE-GR-I9i" secondAttribute="trailing" constant="193" id="IOm-pU-44R"/>
-                                <constraint firstAttribute="trailing" secondItem="wyg-iF-m68" secondAttribute="trailing" constant="41" id="ObG-Lt-1qc"/>
+                                <constraint firstAttribute="trailing" secondItem="wyg-iF-m68" secondAttribute="trailing" constant="-12" id="ObG-Lt-1qc"/>
                                 <constraint firstItem="4PE-GR-I9i" firstAttribute="leading" secondItem="Hcx-jD-CLj" secondAttribute="trailing" constant="-65" id="UQp-5u-BfO"/>
-                                <constraint firstItem="wyg-iF-m68" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="31" id="Uaq-81-uO1"/>
+                                <constraint firstItem="wyg-iF-m68" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="53" id="Uaq-81-uO1"/>
                                 <constraint firstAttribute="bottom" secondItem="Hcx-jD-CLj" secondAttribute="bottom" constant="15" id="Zdk-Kb-XC3"/>
                                 <constraint firstItem="JrK-4e-lp7" firstAttribute="leading" secondItem="Hcx-jD-CLj" secondAttribute="trailing" constant="9" id="aZ9-K3-RBN"/>
                                 <constraint firstItem="JrK-4e-lp7" firstAttribute="top" secondItem="4PE-GR-I9i" secondAttribute="bottom" constant="8" id="j51-ET-jcA"/>
-                                <constraint firstAttribute="bottom" secondItem="wyg-iF-m68" secondAttribute="bottom" constant="22" id="kQG-LN-Bz3"/>
+                                <constraint firstAttribute="bottom" secondItem="wyg-iF-m68" secondAttribute="bottom" id="kQG-LN-Bz3"/>
                                 <constraint firstAttribute="bottom" secondItem="4PE-GR-I9i" secondAttribute="bottom" constant="57" id="kyS-a8-Hqw"/>
-                                <constraint firstItem="wyg-iF-m68" firstAttribute="leading" secondItem="JrK-4e-lp7" secondAttribute="trailing" constant="24" id="pGq-bE-cnT"/>
+                                <constraint firstItem="wyg-iF-m68" firstAttribute="leading" secondItem="JrK-4e-lp7" secondAttribute="trailing" constant="77" id="pGq-bE-cnT"/>
                                 <constraint firstItem="Hcx-jD-CLj" firstAttribute="leading" secondItem="4Mg-2A-ft4" secondAttribute="leading" constant="39" id="ybR-Rb-B2P"/>
                             </constraints>
                         </view>

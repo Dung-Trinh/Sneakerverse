@@ -23,9 +23,9 @@ class SneakerCollectionViewCell: UICollectionViewCell {
     func updateUI(){
         let url = URL(string: sneaker.imageURL)
          // TODO: try catch einbauen !
-        let data = try? Data(contentsOf: url!)
+        var data = try? Data(contentsOf: url!)
         if data == nil{
-            img.image = UIImage(named:"error_img")
+            img.image = UIImage(named:"no_shoeIMG")
         }else{
             img.image = UIImage(data: data!)
         }

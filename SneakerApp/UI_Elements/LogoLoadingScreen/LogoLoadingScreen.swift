@@ -17,6 +17,7 @@ class LogoLoadingScreen:UIView{
     @IBOutlet weak var activityI: UIActivityIndicatorView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var background_img: UIImageView!
+    @IBOutlet weak var astronaut: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +39,9 @@ class LogoLoadingScreen:UIView{
     
     func startLoadingAnimation(view:UIView){
         activityI.startAnimating()
+        UIView.animate(withDuration: 8, delay: 0.0, options: [], animations: {
+            self.astronaut.transform = CGAffineTransform(translationX: -70, y: -15)
+        })
         view.addSubview(parentView)
     }
     
