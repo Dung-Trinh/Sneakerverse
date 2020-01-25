@@ -13,28 +13,55 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Komp 1_3" translatesAutoresizingMaskIntoConstraints="NO" id="SVA-Li-kR3">
-                    <rect key="frame" x="0.0" y="171" width="375" height="218"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HON-jI-tTj">
+                    <rect key="frame" x="67.5" y="226" width="240" height="128"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_kombi" translatesAutoresizingMaskIntoConstraints="NO" id="SVA-Li-kR3">
+                            <rect key="frame" x="0.0" y="42" width="123" height="44.000000000000028"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="123" id="poC-Q9-xrc"/>
+                                <constraint firstAttribute="height" constant="44" id="vK8-GM-lJI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpJ-eu-79I">
+                            <rect key="frame" x="131" y="54" width="70" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.39322131869999999" green="0.0" blue="0.98742622140000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="375" id="XjQ-6E-Iym"/>
-                        <constraint firstAttribute="height" constant="218" id="b0M-J4-g6t"/>
+                        <constraint firstAttribute="height" constant="128" id="Cgh-Ob-J4J"/>
+                        <constraint firstItem="OpJ-eu-79I" firstAttribute="top" secondItem="SVA-Li-kR3" secondAttribute="bottom" constant="-32" id="DRz-Ms-Vrm"/>
+                        <constraint firstItem="SVA-Li-kR3" firstAttribute="leading" secondItem="HON-jI-tTj" secondAttribute="leading" id="Gpt-Tn-BOu"/>
+                        <constraint firstItem="SVA-Li-kR3" firstAttribute="top" secondItem="HON-jI-tTj" secondAttribute="top" constant="42" id="QiE-BK-H8J"/>
+                        <constraint firstAttribute="bottom" secondItem="OpJ-eu-79I" secondAttribute="bottom" constant="53" id="cHT-BZ-9Yo"/>
+                        <constraint firstAttribute="width" constant="240" id="jya-ww-3EH"/>
+                        <constraint firstAttribute="trailing" secondItem="OpJ-eu-79I" secondAttribute="trailing" constant="39" id="sxW-II-gh6"/>
+                        <constraint firstAttribute="trailing" secondItem="SVA-Li-kR3" secondAttribute="trailing" constant="117" id="vuF-Ir-IVr"/>
+                        <constraint firstItem="OpJ-eu-79I" firstAttribute="leading" secondItem="HON-jI-tTj" secondAttribute="leading" constant="131" id="xuA-JC-3of"/>
+                        <constraint firstItem="OpJ-eu-79I" firstAttribute="top" secondItem="SVA-Li-kR3" secondAttribute="bottom" constant="-32" id="zhP-cW-seQ"/>
                     </constraints>
-                </imageView>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="SVA-Li-kR3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FsT-EY-F9B"/>
-                <constraint firstItem="SVA-Li-kR3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="qBS-OJ-Zoz"/>
+                <constraint firstItem="HON-jI-tTj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d0M-G0-5ht"/>
+                <constraint firstItem="HON-jI-tTj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dnm-rh-5WS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="loadingView" destination="HON-jI-tTj" id="MMP-HE-nVr"/>
+                <outlet property="loading_label" destination="OpJ-eu-79I" id="dNz-Mv-QF5"/>
                 <outlet property="logo" destination="SVA-Li-kR3" id="yQG-oU-Xtt"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="95.758928571428569"/>
         </view>
     </objects>
     <resources>
-        <image name="Komp 1_3" width="540" height="540"/>
+        <image name="logo_kombi" width="401" height="118.5"/>
     </resources>
 </document>

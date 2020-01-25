@@ -18,53 +18,13 @@ class CalenderViewController: UIViewController {
     var activityI:CustomActivityIndicator = CustomActivityIndicator()
     var customAlert = CustomAlert()
     var logoLoadingScreen : LogoLoadingScreen?
-    
+    var dataFetcher = SneakerDataFetcher()
+
     func showAlert(title:String,message:String,type:AlertType){
         DispatchQueue.main.async {
             self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
             self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
             }
-    }
-    
-    func sortSneaker(){
-        self.sneakerCalenderTop.sort {
-            let splitLine: [String]?
-            let splitLine2 : [String]?
-
-            if $0.releaseDate.contains("."){
-                splitLine = $0.releaseDate.components(separatedBy: ".")
-            }else{
-                splitLine = $0.releaseDate.components(separatedBy: "/")
-            }
-            
-            
-            if $1.releaseDate.contains("."){
-                splitLine2 = $1.releaseDate.components(separatedBy: ".")
-            }else{
-                splitLine2 = $1.releaseDate.components(separatedBy: "/")
-            }
-            return splitLine![1] < splitLine2![1]
-            
-        }
-        self.sneakerCalenderBottom.sort {
-            let splitLine: [String]?
-            let splitLine2 : [String]?
-
-            if $0.releaseDate.contains("."){
-                splitLine = $0.releaseDate.components(separatedBy: ".")
-            }else{
-                splitLine = $0.releaseDate.components(separatedBy: "/")
-            }
-            
-            
-            if $1.releaseDate.contains("."){
-                splitLine2 = $1.releaseDate.components(separatedBy: ".")
-            }else{
-                splitLine2 = $1.releaseDate.components(separatedBy: "/")
-            }
-            return splitLine![1] < splitLine2![1]
-            
-        }
     }
     
     func setSneakerArray(){
@@ -81,7 +41,6 @@ class CalenderViewController: UIViewController {
             }
         sneakerCalenderTop=top
         sneakerCalenderBottom=bottom
-        sortSneaker()
         }
     
 
@@ -100,124 +59,112 @@ class CalenderViewController: UIViewController {
         calenderBottom.delegate = self
         
         
+        //fetchData()
         fetchData()
-
-        
-    }
-    @IBAction func reloadData(_ sender: Any) {
-        
-        allSneaker.removeAll()
-        sneakerCalenderTop.removeAll()
-        sneakerCalenderBottom.removeAll()
-        self.calenderTop.reloadData()
-        self.calenderBottom.reloadData()
-        fetchData()
-
-
         
     }
     
     func fetchData(){
         logoLoadingScreen = LogoLoadingScreen()
-        //self.activityI.showLoadingScreen(superview: self.view)
-        self.logoLoadingScreen!.startLoadingAnimation(view: self.view)
-         fetchSneaker { (res) in
-             switch res {
-             case .success(let article):
-                article.forEach({ (article) in
-                     self.allSneaker.append(article)
-                 
-                 })
-             case .failure(let err):
-                 print("Failed to fetch courses:", err)
-                
-             }
-             //einfügen der schuhe
-             for s in self.allSneaker{
-               if s.position == "bottom"{
-                 self.sneakerCalenderBottom.append(s)
-               }else if s.position == "top"{
-                 self.sneakerCalenderTop.append(s)
-                 }
-           }
-             DispatchQueue.main.async {
-             self.calenderTop.reloadData()
-             self.calenderBottom.reloadData()
-                 self.sortSneaker()
-                 //self.activityI.stopAnimation(uiView: self.view)
-                self.logoLoadingScreen!.remove()
-                
+        let group = DispatchGroup()
+        group.enter()
+        logoLoadingScreen?.startLoadingAnimation(view: self.view)
+        /// queue because waiting for the fetchSneakerData fuction
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.dataFetcher.fetchSneakerData()
+            
+            group.leave()
+            print(self.dataFetcher.allSneaker.count)
+            print(self.dataFetcher.sneakerCalenderTop)
+            print(self.dataFetcher.sneakerCalenderBottom)
 
-             }
-             
-         }
+            self.allSneaker = self.dataFetcher.allSneaker
+            self.sneakerCalenderTop = self.dataFetcher.sneakerCalenderTop
+            self.sneakerCalenderBottom = self.dataFetcher.sneakerCalenderBottom
+            
+            if self.dataFetcher.fetchSuccessfull == false{
+                self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
+            }
+            
+            /// in main queue to refresh the view
+              DispatchQueue.main.async {
+                    self.calenderTop.reloadData()
+                    self.calenderBottom.reloadData()
+                    self.logoLoadingScreen!.remove()
 
-        
-         self.sneakerCalenderTop=allSneaker
-         self.sneakerCalenderBottom=allSneaker
+            }
+        }
     }
     
-    fileprivate func fetchSneaker(completion:@escaping(Result<[Sneaker],Error>)-> Void){
-        let urlString = "https://flasksneakerapi.herokuapp.com/sneakers"
-        guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-                       
-                       if let err = err {
-                           completion(.failure(err))
-                           return
-                       }
-                       
-                       // successful
-                       do {
-                        let article = try JSONDecoder().decode([Sneaker].self, from: data!)
-                           completion(.success(article))
-           //                completion(courses, nil)
-                           
-                       } catch let jsonError {
-                           completion(.failure(jsonError))
-           //                completion(nil, jsonError)
-                       }
-                       
-                       
-                   }.resume()
+    @IBAction func reloadData(_ sender: Any) {
+        allSneaker.removeAll()
+        sneakerCalenderTop.removeAll()
+        sneakerCalenderBottom.removeAll()
+        
+        self.sneakerCalenderTop=allSneaker
+        self.sneakerCalenderBottom=allSneaker
+        
+        self.calenderTop.reloadData()
+        self.calenderBottom.reloadData()
+        fetchData()
+
+        
     }
-     
+    
+
 
     @IBAction func switchViews(_ sender: UISegmentedControl) {
-        
-        
-        if sender.selectedSegmentIndex == 0{
-            setSneakerArray()
-            //self.sneakerCalenderTop = allSneaker;
-
-            calenderTop.reloadData()
-            calenderBottom.reloadData()
-        }
-        else if sender.selectedSegmentIndex == 1{
-            setSneakerArray()
-
+        setSneakerArray()
+        switch(sender.selectedSegmentIndex){
+        case 0:
+            break
+        case 1:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Nike"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Nike"}
-            calenderTop.reloadData()
-            calenderBottom.reloadData()
-        }
-        else if sender.selectedSegmentIndex == 2{
-            setSneakerArray()
-
+        case 2:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Adidas"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Adidas"}
-            calenderTop.reloadData()
-            calenderBottom.reloadData()
-        }
-        else if sender.selectedSegmentIndex == 3{
-            setSneakerArray()
-
+        case 3:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
-
-            calenderTop.reloadData()
-            calenderBottom.reloadData()
-               }
+        default:
+            print("")
+        }
+        calenderTop.reloadData()
+        calenderBottom.reloadData()
+        
+//        if sender.selectedSegmentIndex == 0{
+//            setSneakerArray()
+//            //self.sneakerCalenderTop = allSneaker;
+//
+//            calenderTop.reloadData()
+//            calenderBottom.reloadData()
+//        }
+//        else if sender.selectedSegmentIndex == 1{
+//            setSneakerArray()
+//
+//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Nike"}
+//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Nike"}
+//            calenderTop.reloadData()
+//            calenderBottom.reloadData()
+//        }
+//        else if sender.selectedSegmentIndex == 2{
+//            setSneakerArray()
+//
+//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Adidas"}
+//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Adidas"}
+//            calenderTop.reloadData()
+//            calenderBottom.reloadData()
+//        }
+//        else if sender.selectedSegmentIndex == 3{
+//            setSneakerArray()
+//
+//            self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
+//            self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
+//
+//            calenderTop.reloadData()
+//            calenderBottom.reloadData()
+//               }
         
     }
     
@@ -275,3 +222,8 @@ self.navigationController?.pushViewController(vc!,animated:true)
     }
 }
 
+extension CalenderViewController : AlertDelegate{
+    func okTapped(){
+        customAlert.remove()
+    }
+}

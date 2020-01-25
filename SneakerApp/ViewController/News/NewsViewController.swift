@@ -37,7 +37,7 @@ class NewsViewController: UIViewController {
         DispatchQueue.main.async {
             self.customAlert.delegate = self
             self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
-//            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
+
             }
         
     }
@@ -111,9 +111,6 @@ class NewsViewController: UIViewController {
                 tableView.refreshControl!.addSubview(refreshView)
             }
         
-    }
-    func tapped(){
-        customAlert.remove()
     }
     /// function for refreshing
      @objc func refresh(_ sender: Any) {
@@ -213,6 +210,6 @@ extension NewsViewController: UITableViewDelegate{
 
 extension NewsViewController : AlertDelegate{
     func okTapped(){
-        self.tapped()
+        customAlert.remove()
     }
 }

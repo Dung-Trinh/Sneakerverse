@@ -13,7 +13,9 @@ class RefreshView:UIView{
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var logo: UIImageView!
     var gradientView: UIView!
-
+    @IBOutlet weak var loading_label: UILabel!
+    @IBOutlet weak var loadingView: UIView!
+    
 }
 extension RefreshView {
     
@@ -26,7 +28,6 @@ extension RefreshView {
     }
     
     func startAnimation() {
-        initializeGradientView()
 //        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.autoreverse, .repeat], animations: {
 //            self.gradientView.frame.origin.x = 100
 //            self.logo.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
@@ -34,28 +35,29 @@ extension RefreshView {
 //                self.logo.transform = CGAffineTransform.identity
 //            }
 //        }, completion: nil)
-        
-        UIView.animate(withDuration: 02.0,
+
+        UIView.animate(withDuration: 1.0,
                        delay: 0,
-                       options: [.repeat, .autoreverse, .beginFromCurrentState],
+                       options: [.repeat, .autoreverse],
                        animations: {
                         
-                        UIView.animate(withDuration: 0.2) {
-                        self.logo.transform = CGAffineTransform.identity
-                                    }
-                        UIView.animate(withDuration: 0.2) {
-                        self.logo.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-                                    }
-                        UIView.animate(withDuration: 0.2) {
-                        self.logo.transform = CGAffineTransform.identity
-                                    }
+  
+
+                        self.loadingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                    
+
+                     
+                            self.loadingView.transform = CGAffineTransform.identity
+                            
+            
+
 
         }, completion: nil)
     }
     
     func stopAnimation() {
-        gradientView.layer.removeAllAnimations()
-        gradientView = nil
+        loadingView.layer.removeAllAnimations()
+
     }
     
     

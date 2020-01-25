@@ -145,8 +145,8 @@ extension MapViewController: UITableViewDelegate{
          let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
          if currentCell is MapTableViewCell {
              let cell = currentCell as! MapTableViewCell         
-            var model_latitude = cell.modell?.latitude
-            var model_longitude = cell.modell?.longitude
+            let model_latitude = cell.modell?.latitude
+            let model_longitude = cell.modell?.longitude
             let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(model_latitude!, model_longitude!)
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             let region = MKCoordinateRegion(center: coordinate, span: span)
