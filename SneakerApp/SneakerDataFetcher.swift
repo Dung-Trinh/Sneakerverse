@@ -26,7 +26,7 @@ class SneakerDataFetcher{
             case .success(let article):
                article.forEach({ (article) in
                     self.allSneaker.append(article)
-                print("schuh gefetch")
+                self.fetchSuccessfull = true
                 })
             case .failure(let err):
                 print("Failed to fetch courses:", err)

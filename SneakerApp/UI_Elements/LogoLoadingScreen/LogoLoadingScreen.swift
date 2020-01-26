@@ -39,10 +39,14 @@ class LogoLoadingScreen:UIView{
     
     func startLoadingAnimation(view:UIView){
         activityI.startAnimating()
+
+        view.addSubview(parentView)
         UIView.animate(withDuration: 12, delay: 0.0, options: [], animations: {
             self.astronaut.transform = CGAffineTransform(translationX: -104, y: -41)
+            self.background_img.transform = CGAffineTransform(translationX: 25, y: 50)
+
+            
         })
-        view.addSubview(parentView)
     }
     
     @objc func remove(){

@@ -24,7 +24,7 @@ class BlogPostDataFetcher {
              case .success(let article):
                  article.forEach({ (article) in
                      self.blogPosts.append(article)
-                    print("FERTIG")
+                    self.fetchSuccessfull = true
                  })
              case .failure(let err):
             print("Failed to fetch courses:", err)
