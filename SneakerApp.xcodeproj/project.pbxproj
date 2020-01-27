@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125DD4A23D62E5200BE77AB /* PopAnimator.swift */; };
-		013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */; };
 		01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */; };
 		01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */; };
 		01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */; };
@@ -30,7 +29,6 @@
 		B6148013238890900018DA71 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148012238890900018DA71 /* RoundButton.swift */; };
 		B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */; };
 		B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */; };
-		B633129A23A01A2C001A63E1 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633129923A01A2C001A63E1 /* FetchData.swift */; };
 		B633129E23A03837001A63E1 /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633129D23A03837001A63E1 /* NewsPost.swift */; };
 		B642950723CD20FB00377CEA /* LastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642950623CD20FB00377CEA /* LastPageViewController.swift */; };
 		B64868D023A7E41100D2496A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64868CF23A7E41100D2496A /* Main.storyboard */; };
@@ -74,7 +72,6 @@
 
 /* Begin PBXFileReference section */
 		0125DD4A23D62E5200BE77AB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
-		013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sneakerverse_cover.png; sourceTree = "<group>"; };
 		01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
 		01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPopupViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		B6148012238890900018DA71 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostTableViewCell.swift; sourceTree = "<group>"; };
 		B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDetailViewController.swift; sourceTree = "<group>"; };
-		B633129923A01A2C001A63E1 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		B633129D23A03837001A63E1 /* NewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPost.swift; sourceTree = "<group>"; };
 		B642950623CD20FB00377CEA /* LastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageViewController.swift; sourceTree = "<group>"; };
 		B64868CF23A7E41100D2496A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -306,7 +302,6 @@
 				B6FA71B72384734B002DA281 /* Products */,
 				B6FA71B82384734B002DA281 /* SneakerApp */,
 				B68EEF2E23B0E18900C6287E /* Assets.xcassets */,
-				013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */,
 				CD7958A6F396EEAAF621C7CD /* Pods */,
 				ECF9975D0382F4DD15462407 /* Frameworks */,
 				B6FB793123CCC29C00497AC9 /* Recovered References */,
@@ -334,7 +329,6 @@
 				B6FA71BB2384734B002DA281 /* SceneDelegate.swift */,
 				B64868CF23A7E41100D2496A /* Main.storyboard */,
 				B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */,
-				B633129923A01A2C001A63E1 /* FetchData.swift */,
 				B6E214C823DCE4EA004407DF /* CoreDataManager.swift */,
 				B64868D523A7E4D100D2496A /* intro.mp4 */,
 				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
@@ -438,7 +432,6 @@
 				B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */,
 				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
 				B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */,
-				013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
 				B694A85223CDE051008DFE9F /* Arenq.otf in Resources */,
@@ -523,7 +516,6 @@
 				B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */,
-				B633129A23A01A2C001A63E1 /* FetchData.swift in Sources */,
 				B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */,
 				B6C5FDD423DA36790083619D /* CustomAlert.swift in Sources */,
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,

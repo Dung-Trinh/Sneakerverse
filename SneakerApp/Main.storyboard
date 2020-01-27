@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -1943,7 +1943,7 @@
         <image name="Image-5" width="450" height="598"/>
         <image name="Komp 1_3" width="540" height="540"/>
         <image name="Sneakerverse_cover.png" width="2048" height="2732"/>
-        <image name="alarmierend" width="512" height="512"/>
+        <image name="alarmierend" width="256" height="256"/>
         <image name="arrow.right.circle.fill" catalog="system" width="64" height="60"/>
         <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="64" height="60"/>
         <image name="bell.fill" catalog="system" width="64" height="62"/>
@@ -1958,12 +1958,12 @@
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
-        <image name="sneaker" width="512" height="512"/>
+        <image name="sneaker" width="256" height="256"/>
         <image name="sneakercon" width="496.33334350585938" height="279"/>
         <image name="star.circle.fill" catalog="system" width="64" height="60"/>
         <image name="zeitung" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mb6-av-IA4"/>
+        <segue reference="Du5-kz-VA0"/>
     </inferredMetricsTieBreakers>
 </document>

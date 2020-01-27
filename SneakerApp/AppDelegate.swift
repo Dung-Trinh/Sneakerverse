@@ -80,13 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func saveState(state : String){
-        /*
-        let newEntry = SneakerObj(context: persistentContainer.viewContext)
-        newEntry.name = state
-        newEntry.img = "Scott"
-        newEntry.date = "12.12.12"
-           saveContext()
- */
+
     }
 
     
