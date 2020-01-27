@@ -26,12 +26,22 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-jy-lKm">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHQ-Op-N9A">
+                        <rect key="frame" x="20" y="44" width="74" height="26"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="kHQ-Op-N9A" secondAttribute="bottom" constant="45" id="BKc-V2-gTl"/>
                 <constraint firstAttribute="bottom" secondItem="DiB-jy-lKm" secondAttribute="bottom" id="Izx-0m-wm0"/>
+                <constraint firstItem="kHQ-Op-N9A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Mhj-r1-8EG"/>
+                <constraint firstItem="kHQ-Op-N9A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="44" id="Obd-Hx-UYm"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOK-wc-M27"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iLx-BO-fuO"/>
+                <constraint firstAttribute="trailing" secondItem="kHQ-Op-N9A" secondAttribute="trailing" constant="21" id="lvi-Mu-4sZ"/>
                 <constraint firstAttribute="trailing" secondItem="DiB-jy-lKm" secondAttribute="trailing" id="u1z-rZ-1AH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -39,6 +49,7 @@
             <connections>
                 <outlet property="imageView" destination="DiB-jy-lKm" id="gfM-bx-swe"/>
                 <outlet property="sneakerCount" destination="OgE-6i-mlA" id="CMG-pk-ynU"/>
+                <outlet property="sneakerName" destination="kHQ-Op-N9A" id="0K7-wy-er3"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="131.58482142857142"/>
         </collectionViewCell>

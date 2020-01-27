@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125DD4A23D62E5200BE77AB /* PopAnimator.swift */; };
+		0129974423DE13E200E23456 /* MyGrailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */; };
+		0129974923DE1A5900E23456 /* myGrailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */; };
+		0129974A23DE1A5900E23456 /* myGrailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0129974823DE1A5900E23456 /* myGrailsCollectionViewCell.xib */; };
+		013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */; };
+		01D342EB23DCA1F400D165A0 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D342E923DCA1F400D165A0 /* ProfilViewController.swift */; };
+		01D342EC23DCA1F400D165A0 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */; };
+		01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */; };
 		01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */; };
 		01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */; };
 		01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */; };
@@ -72,6 +79,13 @@
 
 /* Begin PBXFileReference section */
 		0125DD4A23D62E5200BE77AB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrailsCollectionViewController.swift; sourceTree = "<group>"; };
+		0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGrailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0129974823DE1A5900E23456 /* myGrailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myGrailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sneakerverse_cover.png; sourceTree = "<group>"; };
+		01D342E923DCA1F400D165A0 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
 		01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPopupViewController.swift; sourceTree = "<group>"; };
@@ -161,10 +175,16 @@
 				01E0C59323CA3DE600DBDA9C /* myCollectionViewCell.swift */,
 				01E0C59423CA3DE600DBDA9C /* myCollectionViewCell.xib */,
 				01E0C59223CA3DE600DBDA9C /* MyCollectionViewController.swift */,
+				0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */,
 				01E0C59523CA3DE600DBDA9C /* MyProfilViewController.swift */,
 				01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */,
 				01E0C59623CA3DE600DBDA9C /* UploadViewController.swift */,
 				0125DD4A23D62E5200BE77AB /* PopAnimator.swift */,
+				01D342E923DCA1F400D165A0 /* ProfilViewController.swift */,
+				01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */,
+				01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */,
+				0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */,
+				0129974823DE1A5900E23456 /* myGrailsCollectionViewCell.xib */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -433,6 +453,7 @@
 				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
 				B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
+				0129974A23DE1A5900E23456 /* myGrailsCollectionViewCell.xib in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
 				B694A85223CDE051008DFE9F /* Arenq.otf in Resources */,
 				B64868D023A7E41100D2496A /* Main.storyboard in Resources */,
@@ -474,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D342EB23DCA1F400D165A0 /* ProfilViewController.swift in Sources */,
 				B6D1F73F23CF082E004938BD /* locationPins.json in Sources */,
 				01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */,
 				01E0C59F23CA3DE600DBDA9C /* UploadViewController.swift in Sources */,
@@ -486,6 +508,7 @@
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
 				B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
+				0129974923DE1A5900E23456 /* myGrailsCollectionViewCell.swift in Sources */,
 				B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
@@ -503,12 +526,14 @@
 				01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */,
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
 				B6C5FDCF23DA35890083619D /* SneakerCollectionViewCell.swift in Sources */,
+				01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
 				B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */,
 				B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
+				0129974423DE13E200E23456 /* MyGrailsCollectionViewController.swift in Sources */,
 				B6FB793323CCC6E200497AC9 /* OnboardingViewController.swift in Sources */,
 				B64868D223A7E47200D2496A /* LoadingViewController.swift in Sources */,
 				B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */,
@@ -519,6 +544,7 @@
 				B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */,
 				B6C5FDD423DA36790083619D /* CustomAlert.swift in Sources */,
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
+				01D342EC23DCA1F400D165A0 /* FeedTableViewCell.swift in Sources */,
 				B6148010238829F40018DA71 /* NewsViewController.swift in Sources */,
 				01E0C59B23CA3DE600DBDA9C /* MyCollectionViewController.swift in Sources */,
 				B6D1F73C23CE7368004938BD /* MapTableViewCell.swift in Sources */,
@@ -662,13 +688,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -684,13 +710,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZHUB5Y443W;
+				DEVELOPMENT_TEAM = R62L8TFXJ4;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

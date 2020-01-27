@@ -9,9 +9,9 @@
 import UIKit
 
 class MyCollectionViewController: UIViewController{
-    var selectedImage: Item?
+    var selectedImage: savedPhoto?
     var selectedIndexPath: IndexPath!
-    var items: [Item]!
+    var items: [savedPhoto]!
     let cellIdentifier = "myCollectionViewCell"
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var myCollection_cv: UICollectionView!
@@ -22,9 +22,8 @@ class MyCollectionViewController: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "CollectionDetail_Segue" {
-            let item = sender as! Item
+            let item = sender as! savedPhoto
             if let vc = segue.destination as? collectionDetailViewController{
                 vc.collectionImage = item.imageName
             }
@@ -83,6 +82,8 @@ extension MyCollectionViewController: UICollectionViewDelegate,UICollectionViewD
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! myCollectionViewCell
             
+            cell.sneakerName.text = items[indexPath.item].sneakerName
+            cell.sneakerName.center = self.view.center
             cell.imageView.image = items[indexPath.item].imageName
 
             return cell

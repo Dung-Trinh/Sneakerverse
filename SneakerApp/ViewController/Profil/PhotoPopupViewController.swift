@@ -10,16 +10,17 @@ import UIKit
 
 class PhotoPopupViewController: UIViewController {
     var uploadImage: UIImage?
+    var uploadName: String?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! MyProfilViewController
         if segue.identifier == "unwindCollection_Segue"{
-            destVC.myCollection.append(Item(imageName: uploadImage))
+            destVC.myCollection.append(savedPhoto(imageName: uploadImage,sneakerName: uploadName))
             destVC.switcher.selectedSegmentIndex = 0
             destVC.switchView(destVC.switcher)
         }
         else if segue.identifier == "unwindGrails_Segue"{
-            destVC.myGrails.append(Item(imageName: uploadImage))
+            destVC.myGrails.append(savedPhoto(imageName: uploadImage,sneakerName: uploadName))
             destVC.switcher.selectedSegmentIndex = 1
             destVC.switchView(destVC.switcher)
             
