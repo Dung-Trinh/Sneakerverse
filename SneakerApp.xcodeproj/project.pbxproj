@@ -66,6 +66,9 @@
 		B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */; };
 		B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */; };
 		B6D688FA23CA9E6E0019B443 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */; };
+		B6E214C723DCDA1C004407DF /* SneakerDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */; };
+		B6E214C923DCE4EB004407DF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214C823DCE4EA004407DF /* CoreDataManager.swift */; };
+		B6E214CC23DCE6C2004407DF /* BlogPostDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */; };
 		B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */; };
 		B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F14F71239320B4007FDB10 /* Sneaker.swift */; };
 		B6FA71BA2384734B002DA281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA71B92384734B002DA281 /* AppDelegate.swift */; };
@@ -138,9 +141,10 @@
 		B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = collectionDetailViewController.swift; path = SneakerApp/ViewController/Profil/collectionDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraPreviewViewController.swift; path = SneakerApp/ViewController/Profil/CameraPreviewViewController.swift; sourceTree = SOURCE_ROOT; };
 		B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = myCollectionViewCell.swift; path = SneakerApp/ViewController/Profil/myCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerDataFetcher.swift; sourceTree = "<group>"; };
+		B6E214C823DCE4EA004407DF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostDataFetcher.swift; sourceTree = "<group>"; };
 		B6F14F6C2393144A007FDB10 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
-		B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakerCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6F14F71239320B4007FDB10 /* Sneaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sneaker.swift; sourceTree = "<group>"; };
 		B6FA71B62384734B002DA281 /* SneakerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FA71B92384734B002DA281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		B6FA71C82384734E002DA281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6FA71CA2384734E002DA281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6FB793223CCC6E200497AC9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		DF643FB823DCB198006276CB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +212,6 @@
 				B6C5FDC723DA34FE0083619D /* LogoLoadingScreen */,
 				B694A84D23CDD52C008DFE9F /* Fonts */,
 				B68EEF2923B0DEB300C6287E /* RefreshView */,
-				B6F14F6E23931B49007FDB10 /* CollectionViewCell */,
 				B6148012238890900018DA71 /* RoundButton.swift */,
 				B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */,
 				B611902D23A846A40067E0A5 /* ToastMessage.swift */,
@@ -314,15 +318,6 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		B6F14F6E23931B49007FDB10 /* CollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				B6D7183E2390826000E2C0A2 /* BlogPostCollectionViewCell.swift */,
-				B6F14F6F23931C48007FDB10 /* SneakerCollectionViewCell.swift */,
-			);
-			path = CollectionViewCell;
-			sourceTree = "<group>";
-		};
 		B6FA71AD2384734B002DA281 = {
 			isa = PBXGroup;
 			children = (
@@ -358,9 +353,12 @@
 				B64868CF23A7E41100D2496A /* Main.storyboard */,
 				B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */,
 				B633129923A01A2C001A63E1 /* FetchData.swift */,
+				B6E214C823DCE4EA004407DF /* CoreDataManager.swift */,
 				B64868D523A7E4D100D2496A /* intro.mp4 */,
 				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
 				B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */,
+				B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */,
+				B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */,
 			);
 			path = SneakerApp;
 			sourceTree = "<group>";
@@ -373,6 +371,7 @@
 				B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */,
 				B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */,
 				B6CA4F6C23DA1BFE0049003A /* LogoLoadingScreen.swift */,
+				DF643FB823DCB198006276CB /* CoreDataManager.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -509,6 +508,7 @@
 				01E0C59C23CA3DE600DBDA9C /* myCollectionViewCell.swift in Sources */,
 				01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */,
 				B6D688FA23CA9E6E0019B443 /* myCollectionViewCell.swift in Sources */,
+				B6E214C723DCDA1C004407DF /* SneakerDataFetcher.swift in Sources */,
 				B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */,
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
 				B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */,
@@ -520,8 +520,10 @@
 				0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */,
 				B610C99D23DB739B003C7BD8 /* MapLocation.swift in Sources */,
 				01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */,
+				B6E214C923DCE4EB004407DF /* CoreDataManager.swift in Sources */,
 				B614800C23881E810018DA71 /* Post.swift in Sources */,
 				B6C5FDCD23DA35670083619D /* BlogPostCollectionViewCell.swift in Sources */,
+				B6E214CC23DCE6C2004407DF /* BlogPostDataFetcher.swift in Sources */,
 				B6C5FDD623DA36950083619D /* CustomActivityIndicator.swift in Sources */,
 				01E0C59E23CA3DE600DBDA9C /* MyProfilViewController.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,

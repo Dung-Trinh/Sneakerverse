@@ -15,6 +15,9 @@ class NewsViewController: UIViewController {
     var activityView = CustomActivityIndicator()
     var customAlert = CustomAlert()
     var refreshView = RefreshView()
+    var dataFetcher = BlogPostDataFetcher()
+    var logoLoadingScreen : LogoLoadingScreen?
+
 
     var tableViewRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -26,10 +29,14 @@ class NewsViewController: UIViewController {
     
         @objc func refreshTableView() {
             refreshView.startAnimation()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                
                 self.refreshView.stopAnimation()
+                self.tableView.reloadData()
                 self.tableViewRefreshControl.endRefreshing()
+                print(self.blogPosts.count)
             }
+            
         }
     
 
@@ -37,9 +44,39 @@ class NewsViewController: UIViewController {
         DispatchQueue.main.async {
             self.customAlert.delegate = self
             self.customAlert.showAlert(title: title, message: message, alertType: type,view: self.view)
-//            self.customAlert.okBtn.target(forAction: Selector(("tapped")), withSender: self)
+
             }
         
+    }
+    func fetchData(){
+        logoLoadingScreen = LogoLoadingScreen()
+        let group = DispatchGroup()
+        group.enter()
+        logoLoadingScreen?.startLoadingAnimation(view: self.view)
+        /// queue because waiting for the fetchData function
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("fetcht jetzt")
+            self.dataFetcher.fetchBlogPostData()
+            group.leave()
+            print("fetch fertig")
+            
+            
+            
+            if self.dataFetcher.fetchSuccessfull == false{
+                self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
+            }else{
+                  self.showAlert(title: "JUST DO IT", message: "View the latest news and breaking news in the sneaker world.", type: .fetch_successful)
+            }
+            
+            /// in main queue to refresh the view
+              DispatchQueue.main.async {
+                print(self.blogPosts)
+                self.blogPosts = self.dataFetcher.blogPosts
+                self.tableView.reloadData()
+                self.logoLoadingScreen!.remove()
+
+            }
+        }
     }
     
     func prepareUI() {
@@ -57,38 +94,8 @@ class NewsViewController: UIViewController {
         ///create background color
         let background = BackgroundColor()
         background.createGradientBackground(view: self.view, colors: nil)
-        
-        activityView.showLoadingScreen(superview: self.view)
-        ///fetch data
-        fetchCoursesJSON { (res) in
-             switch res {
-             case .success(let article):
-                 article.forEach({ (article) in
-                     self.blogPosts.append(article)
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-                        self.showAlert(title: "JUST DO IT", message: "View the latest news and breaking news in the sneaker world.", type: .fetch_successful)
-                    }
-                 })
-             case .failure(let err):
-                
-            print("Failed to fetch courses:", err)
-            self.showAlert(title: "E R R O R", message: err.localizedDescription, type: .error)
+        fetchData()
 
-            
-            
-
-            
-             }
-            DispatchQueue.main.async {
-            self.tableView.reloadData()
-                self.activityView.stopAnimation(uiView: self.view)
-                
-
-            }
-
-
-         }
-        self.tableView.reloadData()
         tableView.refreshControl = tableViewRefreshControl
         createRefreshGesture()
 
@@ -96,37 +103,27 @@ class NewsViewController: UIViewController {
             }
     /// create "Pull to refresh"
     func createRefreshGesture(){
-//
-//        refreshControl = UIRefreshControl()
-//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-//        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        tableView.addSubview(refreshControl)
-
             if let objOfRefreshView = Bundle.main.loadNibNamed("RefreshView", owner: self, options: nil)?.first as? RefreshView {
-                // Initializing the 'refreshView'
                 refreshView = objOfRefreshView
-                // Giving the frame as per 'tableViewRefreshControl'
                 refreshView.frame = tableView.refreshControl!.frame
-                // Adding the 'refreshView' to 'tableViewRefreshControl'
                 tableView.refreshControl!.addSubview(refreshView)
             }
         
     }
-    func tapped(){
-        customAlert.remove()
-    }
+
     /// function for refreshing
      @objc func refresh(_ sender: Any) {
        
-       
-        tableView.reloadData()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.refreshControl.endRefreshing()
-        })
+    DispatchQueue.global(qos: .userInitiated).async {
+        self.refreshView.startAnimation()
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.refreshControl.endRefreshing()
+            
+        })
+        self.fetchData()
         }
-  
+    }
            
             fileprivate func fetchCoursesJSON(completion: @escaping (Result<[BlogPost], Error>) -> ()) {
                 let urlString = "https://flasksneakerapi.herokuapp.com/blog"
@@ -213,6 +210,6 @@ extension NewsViewController: UITableViewDelegate{
 
 extension NewsViewController : AlertDelegate{
     func okTapped(){
-        self.tapped()
+        customAlert.remove()
     }
 }

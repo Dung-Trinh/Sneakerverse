@@ -24,6 +24,7 @@ class SneakerDetailViewController: UIViewController {
     var sneaker : Sneaker?
     var savePost = false
     var notificationOn = false
+    var coreDataManager = CoreDataManager()
     
     func updateUI(){
         textBox.text = sneaker?.description
@@ -58,108 +59,24 @@ class SneakerDetailViewController: UIViewController {
              else{
              savePost=true
              animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
-             // Kontext identifizieren
-              guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-                  return
-              }
-             let context = appDelegate.persistentContainer.viewContext
-              let entityName="SneakerData" // Tabellenname im Datenmodell
-             // Neuen Datensatz anlegen
-              guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
-                  return
-              }
-              let savedSneaker = NSManagedObject(entity:newEntity,insertInto: context)
-              
-             let title=sneaker?.title
-             let text = sneaker?.description
-             let brand = sneaker?.brand
-             let imgArray = sneaker?.imgArray
-             let imageURL = sneaker?.imageURL
-             let position = sneaker?.position
-             let priceSpan = sneaker?.priceSpan
-             let releaseDate = sneaker?.releaseDate
-             let retailPrice = sneaker?.retailPrice
-                      
-           savedSneaker.setValue(title, forKey: "title")
-           savedSneaker.setValue(text, forKey: "text")
-           savedSneaker.setValue(brand, forKey: "brand")
-           savedSneaker.setValue(imageURL, forKey: "imageURL")
-           savedSneaker.setValue(position, forKey: "position")
-           savedSneaker.setValue(priceSpan, forKey: "priceSpan")
-                savedSneaker.setValue(releaseDate, forKey: "releaseDate")
-                savedSneaker.setValue(retailPrice, forKey: "retailPrice")
-                savedSneaker.setValue(imgArray, forKey: "imgArray")
-           
-           do{
-               try context.save()
+                coreDataManager.saveSneaker(sneaker: sneaker)
                 var popUpMessage = ToastMessage(message: "Der Sneaker wurde in deiner Collection gespeichert✅ ", view: self.view)
-                 print(savedSneaker)
-    //             context.delete(savedSneaker)
-    //             print("Gelöscht")
-           }catch{
-               print(error)
-           }
         }
     }
         
          func delete(){
-               guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                   return
-               }
-               let context = appDelegate.persistentContainer.viewContext
-               let entityName="SneakerData"
-
-               // Anfrage stellen
-               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        do{
-            let results = try context.fetch(request)
-            guard results.count > 0 else {
-                return
-            }
-            for snkr in results as! [NSManagedObject]{
-                if(snkr.value(forKey: "title") as! String == sneaker?.title ){
-                    context.delete(snkr)
-                }
-
-                do{
-                    try context.save()
-                    var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
-                }catch{
-                    print(error)
-                }
-                
-            }
-        }catch{
-            print(error)
-        }
+            coreDataManager.deleteSneaker(sneaker: sneaker)
+            var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
     }
     
         func checkSaved(){
-             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                   return
-               }
-               let context = appDelegate.persistentContainer.viewContext
-               let entityName="SneakerData"
-
-               // Anfrage stellen
-               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        do{
-            let results = try context.fetch(request)
-            guard results.count > 0 else {
-                return
-            }
-            for snkr in results as! [NSManagedObject]{
-                if(snkr.value(forKey: "title") as! String == sneaker?.title ){
-                        savePost=true
-                        animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
-                }else{
-                    savePost=false
-                    saveBtn.tintColor = .lightGray
-                }
-            }
-        }catch{
-            print(error)
-        }
+            if(coreDataManager.checkSavedSneaker(sneaker: sneaker)){
+                 savePost = true
+                  animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
+             }else{
+                 savePost = false
+                 saveBtn.tintColor = .lightGray
+             }
     }
     
     @IBAction func turnOnNotification(_ sender: UIButton) {

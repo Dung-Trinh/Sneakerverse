@@ -72,7 +72,15 @@ class CustomAlert: UIView {
             self.okBtn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         }
         
+         self.alertView.transform = CGAffineTransform(translationX: 0, y: 50)
+        self.alertView.alpha = 0
         view.addSubview(parentView)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.2, options: [.curveEaseIn], animations: {
+            self.alertView.transform = CGAffineTransform.identity
+            self.alertView.alpha = 1
+
+        })
       parentView.superview?.bringSubviewToFront(parentView)
 
     }
