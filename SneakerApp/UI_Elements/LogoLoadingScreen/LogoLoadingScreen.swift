@@ -51,7 +51,6 @@ class LogoLoadingScreen:UIView{
     
     @objc func remove(){
         activityI.stopAnimating()
-        print("remove")
         parentView.removeFromSuperview()
     }
     

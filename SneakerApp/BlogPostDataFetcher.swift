@@ -27,13 +27,11 @@ class BlogPostDataFetcher {
                     self.fetchSuccessfull = true
                  })
              case .failure(let err):
-            print("Failed to fetch courses:", err)
                 self.fetchSuccessfull = false
 
 
              }
 
-            print(self.blogPosts)
 
          }
         semaphore.wait()

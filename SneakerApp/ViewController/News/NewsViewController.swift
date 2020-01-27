@@ -34,7 +34,6 @@ class NewsViewController: UIViewController {
                 self.refreshView.stopAnimation()
                 self.tableView.reloadData()
                 self.tableViewRefreshControl.endRefreshing()
-                print(self.blogPosts.count)
             }
             
         }
@@ -55,12 +54,8 @@ class NewsViewController: UIViewController {
         logoLoadingScreen?.startLoadingAnimation(view: self.view)
         /// queue because waiting for the fetchData function
         DispatchQueue.global(qos: .userInitiated).async {
-            print("fetcht jetzt")
             self.dataFetcher.fetchBlogPostData()
             group.leave()
-            print("fetch fertig")
-            
-            
             
             if self.dataFetcher.fetchSuccessfull == false{
                 self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
@@ -70,7 +65,6 @@ class NewsViewController: UIViewController {
             
             /// in main queue to refresh the view
               DispatchQueue.main.async {
-                print(self.blogPosts)
                 self.blogPosts = self.dataFetcher.blogPosts
                 self.tableView.reloadData()
                 self.logoLoadingScreen!.remove()

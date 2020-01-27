@@ -63,7 +63,6 @@ class SneakerDataFetcher{
                        
                        // successful
                        do {
-                        print("ERFOLLG")
                         let article = try JSONDecoder().decode([Sneaker].self, from: data!)
                            completion(.success(article))
            //                completion(courses, nil)
@@ -82,22 +81,34 @@ class SneakerDataFetcher{
     /// inout to
     func sortSneaker(sneakers:inout [Sneaker]){
         sneakers.sort {
-            let splitLine: [String]?
-            let splitLine2 : [String]?
+            var splitLine: [String] = []
+            var splitLine2 : [String] = []
+            var date1:Int=0
+            var date2:Int=0
 
             if $0.releaseDate.contains("."){
                 splitLine = $0.releaseDate.components(separatedBy: ".")
+//                if splitLine[0].prefix(1) == "0" {
+//                    let index = splitLine[0].index(splitLine[0].startIndex, offsetBy: 1)
+//                    date1 = Int(String(splitLine[0].suffix(from: index)))!
+//                }
+                date1 = Int(splitLine[0])!
             }else{
                 splitLine = $0.releaseDate.components(separatedBy: "/")
+                date1 = Int(splitLine[1])!
             }
             
             
             if $1.releaseDate.contains("."){
                 splitLine2 = $1.releaseDate.components(separatedBy: ".")
+                date2 = Int(splitLine2[0])!
+
             }else{
                 splitLine2 = $1.releaseDate.components(separatedBy: "/")
+                date2 = Int(splitLine2[1])!
+
             }
-            return splitLine![1] < splitLine2![1]
+            return date1 < date2
             
         }
 }

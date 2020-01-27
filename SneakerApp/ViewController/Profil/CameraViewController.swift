@@ -75,7 +75,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate {
         } catch let error1 as NSError{
             error = error1
             input = nil
-            print(error!.localizedDescription)
         }
         
         if error == nil && session!.canAddInput(input) {

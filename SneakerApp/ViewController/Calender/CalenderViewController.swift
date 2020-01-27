@@ -12,6 +12,8 @@ class CalenderViewController: UIViewController {
     @IBOutlet weak var switcher: UISegmentedControl!
     @IBOutlet weak var calenderTop: UICollectionView!
     @IBOutlet weak var calenderBottom: UICollectionView!
+    @IBOutlet weak var reloadBtn: UIBarButtonItem!
+    
     var allSneaker : [Sneaker] = []
     var sneakerCalenderTop : [Sneaker] = []
     var sneakerCalenderBottom: [Sneaker] = []
@@ -69,10 +71,8 @@ class CalenderViewController: UIViewController {
         logoLoadingScreen?.startLoadingAnimation(view: self.view)
         /// queue because waiting for the fetchSneakerData function
         DispatchQueue.global(qos: .userInitiated).async {
-            print("fetch start")
             self.dataFetcher.fetchSneakerData()
             group.leave()
-            print("fetch fenito")
             self.setSneakerArray()
             self.calenderTop.reloadData()
             self.calenderBottom.reloadData()
@@ -85,22 +85,20 @@ class CalenderViewController: UIViewController {
               DispatchQueue.main.async {
                 self.allSneaker = self.dataFetcher.allSneaker
                 self.setSneakerArray()
-                print(self.sneakerCalenderTop)
-                print(self.sneakerCalenderBottom)
-                print(self.allSneaker)
                 self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderBottom)
                 self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderTop)
 
                 self.calenderTop.reloadData()
                 self.calenderBottom.reloadData()
                 self.logoLoadingScreen!.remove()
-
+                self.reloadBtn.isEnabled = true
             }
         }
     }
 
     
-    @IBAction func reloadData(_ sender: Any) {
+    @IBAction func reloadData(_ sender: UIButton) {
+        reloadBtn.isEnabled = false
         allSneaker.removeAll()
         sneakerCalenderTop.removeAll()
         sneakerCalenderBottom.removeAll()
@@ -111,6 +109,8 @@ class CalenderViewController: UIViewController {
         self.calenderTop.reloadData()
         self.calenderBottom.reloadData()
         fetchData()
+        print("disable")
+
     }
     
     @IBAction func switchViews(_ sender: UISegmentedControl) {
