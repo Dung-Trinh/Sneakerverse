@@ -12,20 +12,19 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     var image: UIImage?
     let imagePicker = UIImagePickerController()
     
-    @IBOutlet weak var sneakernameLabel: UILabel!
-    @IBOutlet weak var brandLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var sneakerNameField: UITextField!
     @IBOutlet weak var photo: UIImageView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "showCamera_Segue", segue.identifier != "saveTo_Segue"{
         let destVC = segue.destination as! MyProfilViewController
-        destVC.self.showCollection.append(Item(imageName: image))
+        destVC.self.showCollection.append(savedPhoto(imageName: image))
         destVC.myCollection_cv.reloadData()
     }
         else if segue.identifier == "saveTo_Segue"{
             let destVC = segue.destination as! PhotoPopupViewController
             destVC.uploadImage = image
+            destVC.uploadName = sneakerNameField.text
         }
     }
   
@@ -64,24 +63,33 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
             dismiss(animated: true, completion: nil)
     }
     
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UploadViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap() {
+        print("Handle tap was called")
+        view.endEditing(true)
+        
+    }
     
  override func viewDidLoad() {
         super.viewDidLoad()
     imagePicker.delegate = self
+    sneakerNameField.delegate = self
+    configureTapGesture()
+    
     let background = BackgroundColor()
     background.createGradientBackground(view: self.view,colors: nil)
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UploadViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
 }
