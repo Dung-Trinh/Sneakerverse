@@ -66,6 +66,7 @@ class CalenderViewController: UIViewController {
     
     func fetchData(){
         logoLoadingScreen = LogoLoadingScreen()
+        controll_tabbar(setBool: false)
         let group = DispatchGroup()
         group.enter()
         logoLoadingScreen?.startLoadingAnimation(view: self.view)
@@ -74,9 +75,10 @@ class CalenderViewController: UIViewController {
             self.dataFetcher.fetchSneakerData()
             group.leave()
             self.setSneakerArray()
+            DispatchQueue.main.async {
             self.calenderTop.reloadData()
             self.calenderBottom.reloadData()
-
+            }
             if self.dataFetcher.fetchSuccessfull == false{
                 self.showAlert(title: "E R R O R", message: "FETCH ERROR", type: .error)
             }
@@ -92,6 +94,8 @@ class CalenderViewController: UIViewController {
                 self.calenderBottom.reloadData()
                 self.logoLoadingScreen!.remove()
                 self.reloadBtn.isEnabled = true
+                self.controll_tabbar(setBool: true)
+
             }
         }
     }
@@ -109,7 +113,6 @@ class CalenderViewController: UIViewController {
         self.calenderTop.reloadData()
         self.calenderBottom.reloadData()
         fetchData()
-        print("disable")
 
     }
     
@@ -132,6 +135,12 @@ class CalenderViewController: UIViewController {
         }
         calenderTop.reloadData()
         calenderBottom.reloadData()
+    }
+    
+    func controll_tabbar(setBool:Bool){
+        if let items = tabBarController?.tabBar.items {
+                items.forEach { $0.isEnabled = setBool }
+        }
     }
     
 }

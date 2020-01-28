@@ -29,6 +29,7 @@ class NewsViewController: UIViewController {
     
         @objc func refreshTableView() {
             refreshView.startAnimation()
+            self.fetchData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 
                 self.refreshView.stopAnimation()

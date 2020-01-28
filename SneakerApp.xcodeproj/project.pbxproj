@@ -11,7 +11,6 @@
 		0129974423DE13E200E23456 /* MyGrailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */; };
 		0129974923DE1A5900E23456 /* myGrailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */; };
 		0129974A23DE1A5900E23456 /* myGrailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0129974823DE1A5900E23456 /* myGrailsCollectionViewCell.xib */; };
-		013C12E923CE12F700FD83F3 /* Sneakerverse_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */; };
 		01D342EB23DCA1F400D165A0 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D342E923DCA1F400D165A0 /* ProfilViewController.swift */; };
 		01D342EC23DCA1F400D165A0 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */; };
 		01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */; };
@@ -82,7 +81,6 @@
 		0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrailsCollectionViewController.swift; sourceTree = "<group>"; };
 		0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGrailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0129974823DE1A5900E23456 /* myGrailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myGrailsCollectionViewCell.xib; sourceTree = "<group>"; };
-		013C12E823CE12F600FD83F3 /* Sneakerverse_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sneakerverse_cover.png; sourceTree = "<group>"; };
 		01D342E923DCA1F400D165A0 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
@@ -688,13 +686,13 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp2;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -710,7 +708,7 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

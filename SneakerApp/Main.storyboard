@@ -639,13 +639,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNKRS OF DECEMBER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lm-oM-6rQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNKRS OF FEBRUARY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lm-oM-6rQ">
                                 <rect key="frame" x="20" y="516" width="374" height="25.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNKRS OF NOVEMBER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uYU-QF-hEY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNKRS OF JANUARY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uYU-QF-hEY">
                                 <rect key="frame" x="3" y="190" width="406" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
@@ -1182,7 +1182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-1y-R95">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1329"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="1277"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7M4-cP-KFv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1277"/>
@@ -2191,7 +2191,7 @@
         <image name="Komp 1_3" width="540" height="540"/>
         <image name="Sneakerverse_cover.png" width="2048" height="2732"/>
         <image name="af2" width="400" height="267.5"/>
-        <image name="alarmierend" width="512" height="512"/>
+        <image name="alarmierend" width="256" height="256"/>
         <image name="arrow.right.circle.fill" catalog="system" width="64" height="60"/>
         <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="64" height="60"/>
         <image name="bell.fill" catalog="system" width="64" height="62"/>
@@ -2209,13 +2209,13 @@
         <image name="photo" catalog="system" width="64" height="46"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
-        <image name="sneaker" width="512" height="512"/>
+        <image name="sneaker" width="256" height="256"/>
         <image name="sneakercon" width="496.33334350585938" height="279"/>
         <image name="star.circle.fill" catalog="system" width="64" height="60"/>
         <image name="zeitung" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jsG-Tm-MJ5"/>
+        <segue reference="nHs-tf-87n"/>
         <segue reference="I4E-27-dmh"/>
         <segue reference="ZzR-20-eCw"/>
         <segue reference="ssn-IE-0zw"/>

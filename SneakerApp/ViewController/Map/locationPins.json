@@ -1,4 +1,12 @@
 [{
+    "name":"Foot Locker Wiesbaden",
+    "latitude": 50.080591,
+    "longitude": 8.237907,
+    "logoName": "fl_logo",
+    "locationType":"store",
+    "address": "Kirchgasse 38, 65183 Wiesbaden"
+},
+{
     "name":"BSTN Store",
     "latitude": 48.149074,
     "longitude": 11.577902,
@@ -61,7 +69,7 @@
 
 },
 {
-    "name":"Sneakerness [03.02.2020]",
+    "name":"Sneakerness (03.02.2020)",
     "latitude": 50.952753,
     "longitude": 6.947340,
     "logoName": "sneakerness_logo",
@@ -70,7 +78,7 @@
 
 },
 {
-    "name":"HYPERCON [22.05.2020]",
+    "name":"HYPERCON (22.05.2020)",
     "latitude": 50.111554,
     "longitude": 8.652810,
     "logoName": "hypercon_logo",
@@ -79,7 +87,7 @@
 
 },
 {
-    "name":"Sneaker Con [30.11.2020]",
+    "name":"Sneaker Con (30.11.2020)",
     "latitude": 53.556632,
     "longitude": 9.929090,
     "logoName": "sneakercon_logo",
