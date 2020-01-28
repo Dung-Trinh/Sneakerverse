@@ -25,7 +25,7 @@ class MyCollectionViewController: UIViewController{
         if segue.identifier == "CollectionDetail_Segue" {
             let item = sender as! savedPhoto
             if let vc = segue.destination as? collectionDetailViewController{
-                vc.collectionImage = item.imageName
+                vc.collectionImage = item.picture
             }
         }
     }
@@ -84,7 +84,7 @@ extension MyCollectionViewController: UICollectionViewDelegate,UICollectionViewD
             
             cell.sneakerName.text = items[indexPath.item].sneakerName
             cell.sneakerName.center = self.view.center
-            cell.imageView.image = items[indexPath.item].imageName
+            cell.imageView.image = items[indexPath.item].picture
 
             return cell
             

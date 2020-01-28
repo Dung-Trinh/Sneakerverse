@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1111,89 +1111,6 @@
             </objects>
             <point key="canvasLocation" x="-3570" y="408"/>
         </scene>
-        <!--Profil View Controller-->
-        <scene sceneID="JbT-zL-hGI">
-            <objects>
-                <viewController id="QVq-M5-2o2" customClass="ProfilViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="akx-hL-Dwk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="c82-RS-tcx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQJ-WO-M7g">
-                                        <rect key="frame" x="138" y="29" width="140" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                        <color key="textColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9O2-KA-TTb">
-                                <rect key="frame" x="0.0" y="148" width="414" height="261"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1U-Sa-e21">
-                                        <rect key="frame" x="8" y="8" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwT-2C-hgs">
-                                        <rect key="frame" x="18" y="18" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-NO-dCC">
-                                        <rect key="frame" x="28" y="28" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pnm-3F-qj1">
-                                        <rect key="frame" x="38" y="38" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVv-W1-nlc">
-                                <rect key="frame" x="0.0" y="417" width="414" height="445"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="af2" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-4Q-cTg">
-                                        <rect key="frame" x="8" y="111" width="398" height="223"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc5-S5-ADf">
-                                        <rect key="frame" x="8" y="111" width="398" height="223"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                        <state key="normal" title="My Feeds">
-                                            <color key="titleColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="DlD-wg-oWb" kind="show" id="vAD-i0-fUM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="HRC-QC-bqP"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="gox-H9-x9r"/>
-                    <connections>
-                        <outletCollection property="previewImages" destination="pnm-3F-qj1" collectionClass="NSMutableArray" id="2E9-CR-Tom"/>
-                        <outletCollection property="previewImages" destination="bPa-NO-dCC" collectionClass="NSMutableArray" id="5oy-TF-h1V"/>
-                        <outletCollection property="previewImages" destination="pwT-2C-hgs" collectionClass="NSMutableArray" id="UoX-ed-l5a"/>
-                        <outletCollection property="previewImages" destination="d1U-Sa-e21" collectionClass="NSMutableArray" id="Vgv-Fn-frE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f7I-BP-nqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5401" y="-389"/>
-        </scene>
         <!--Profil-->
         <scene sceneID="HLC-gC-Qk2">
             <objects>
@@ -1405,39 +1322,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-h7-qVw">
-                                <rect key="frame" x="45" y="133" width="324" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="My Collection"/>
-                                    <segment title="My Grails"/>
-                                </segments>
-                                <connections>
-                                    <action selector="switchView:" destination="xoV-Ve-3ug" eventType="valueChanged" id="dSJ-kw-wRw"/>
-                                </connections>
-                            </segmentedControl>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ihd-kk-x3C">
-                                <rect key="frame" x="20" y="182" width="374" height="252"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gbm-t7-Sc3">
-                                    <size key="itemSize" width="92" height="92"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ox9-st-dKD">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IBs-xJ-R8J">
-                                            <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="92" height="92"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUq-7g-2he">
                                 <rect key="frame" x="0.0" y="454" width="414" height="454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1578,9 +1462,7 @@
                     <connections>
                         <outlet property="feedButton" destination="bnE-bU-56J" id="Grv-ms-l6Q"/>
                         <outlet property="feedPreview" destination="hx3-5Y-CL3" id="yLs-dV-R3Y"/>
-                        <outlet property="myCollection_cv" destination="ihd-kk-x3C" id="Jkt-kW-R3A"/>
                         <outlet property="myFeeds_view" destination="BUq-7g-2he" id="CUE-mp-tia"/>
-                        <outlet property="switcher" destination="gWL-h7-qVw" id="VWB-CS-KaS"/>
                         <outletCollection property="previewGrails" destination="Unr-n0-O6Z" collectionClass="NSMutableArray" id="BK5-iT-Kxn"/>
                         <outletCollection property="previewGrails" destination="5YL-4T-Mlf" collectionClass="NSMutableArray" id="ESr-a4-flh"/>
                         <outletCollection property="previewGrails" destination="tkc-PM-8NP" collectionClass="NSMutableArray" id="5gm-dS-JEG"/>
@@ -2362,7 +2244,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nHs-tf-87n"/>
-        <segue reference="I4E-27-dmh"/>
         <segue reference="ZzR-20-eCw"/>
         <segue reference="ssn-IE-0zw"/>
         <segue reference="Du5-kz-VA0"/>

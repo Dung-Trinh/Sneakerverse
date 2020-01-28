@@ -10,15 +10,11 @@ import UIKit
 import UserNotifications
 import CoreData
 
-struct savedPhoto {
-    var imageName: UIImage!
-    var sneakerName: String?
-}
+
 
 class MyProfilViewController: UIViewController {
 
     @IBOutlet weak var myCollection_cv: UICollectionView!
-    @IBOutlet weak var switcher: UISegmentedControl!
     @IBOutlet weak var feedButton: UIButton!
     @IBOutlet weak var feedPreview: UIImageView!
     @IBOutlet weak var myFeeds_view: UIView!
@@ -27,22 +23,17 @@ class MyProfilViewController: UIViewController {
     
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     let cellIdentifier = "myCollectionViewCell"
-    var uploadedImage: savedPhoto?
-    var myCollection: [savedPhoto] = [savedPhoto(imageName: UIImage(named: "af1")),
-                         savedPhoto(imageName: UIImage(named: "af2")),
-                         savedPhoto(imageName: UIImage(named: "af3")),
-                         savedPhoto(imageName: UIImage(named: "af4")),
-                         savedPhoto(imageName: UIImage(named: "af5")),
-                         savedPhoto(imageName: UIImage(named: "af5"))]
-    var myGrails: [savedPhoto] = [savedPhoto(imageName: UIImage(named: "af1")),
-                            savedPhoto(imageName: UIImage(named: "af1")),
-                            savedPhoto(imageName: UIImage(named: "af1")),
-                            savedPhoto(imageName: UIImage(named: "af1")),
-                            savedPhoto(imageName: UIImage(named: "af1")),
-                            savedPhoto(imageName: UIImage(named: "af1"))]
-    lazy var showCollection : [savedPhoto] = myCollection
+    var myCollection: [savedPhoto] =
+        [savedPhoto(picture: UIImage(named: "af1"),sneakerName: "testi1"),
+        savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi1"),
+        savedPhoto(picture: UIImage(named: "af3"),sneakerName: "testi1"),
+        savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi1"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1")]
+    
     var savedSneaker : [Sneaker]=[]
     var savedBlogpost: [BlogPost]=[]
+    var savedCollection: [savedPhoto]=[]
      var coreDataManager = CoreDataManager()
     
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){
@@ -62,14 +53,26 @@ class MyProfilViewController: UIViewController {
         performSegue(withIdentifier: "showAddSneaker_Segue", sender: self)
 
     }
+    func loadSavedCollection(){
+        savedCollection = coreDataManager.loadSavedCollection()
+    }
     
-    
+    func deleteCollection(){
+        coreDataManager.deleteEntireCollection()
+    }
+    func saveTestColletion(){
+        for en in myCollection{
+            coreDataManager.saveCollectionPhoto(collectionPhoto: en)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSavedSneakers()
         loadSavedBlogposts()
-        setupCollectionView()
+        saveTestColletion()
+        loadSavedCollection()
+        deleteCollection()
         setupFeedPreview()
         setupGrailPreview()
         setupCollectionPreview()
@@ -100,21 +103,6 @@ class MyProfilViewController: UIViewController {
                 vc.items = savedSneaker
             }
         }
-    }
-    
-    private func setupCollectionView(){
-        myCollection_cv.delegate = self
-        myCollection_cv.dataSource = self
-        
-        
-        let nib = UINib(nibName: "myCollectionViewCell", bundle: nil)
-        myCollection_cv.register(nib, forCellWithReuseIdentifier: cellIdentifier)
-        
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        setupCollectionViewItemSize()
     }
     
     private func setupGrailPreview(){
@@ -163,7 +151,7 @@ class MyProfilViewController: UIViewController {
                             }
                             
                             preview.contentMode =  .scaleAspectFill
-                            preview.image = myCollection[counter].imageName
+                            preview.image = myCollection[counter].picture
                 //            preview.image = UIImage(data: data!)
                             preview.layer.cornerRadius = 8.0
                             preview.layer.masksToBounds = true
@@ -195,66 +183,6 @@ class MyProfilViewController: UIViewController {
         
     }
     
-    private func setupCollectionViewItemSize() {
-        if collectionViewFlowLayout == nil {
-            let numberOfItemForRow: CGFloat = 3
-            let lineSpacing: CGFloat = 5
-            let interItemSpacing: CGFloat = 5
-            
-            let width = (myCollection_cv.frame.width - (numberOfItemForRow - 1) * interItemSpacing)/numberOfItemForRow
-            let height = width
-            
-            collectionViewFlowLayout = UICollectionViewFlowLayout()
-            collectionViewFlowLayout.scrollDirection = .vertical
-        
-            collectionViewFlowLayout.itemSize = CGSize(width: width, height: height)
-            collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
-            collectionViewFlowLayout.scrollDirection = .vertical
-            collectionViewFlowLayout.minimumLineSpacing = lineSpacing
-            collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
-            
-            myCollection_cv.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
-        }
-    }
-    @IBAction func switchView(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0{
-            self.showCollection = myCollection
-            myCollection_cv.reloadData()
-        }
-        else if sender.selectedSegmentIndex == 1{
-            self.showCollection = myGrails
-            myCollection_cv.reloadData()
-        }
-    }
-    
- 
-}
+   }
 
-extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! myCollectionViewCell
-        cell.imageView.image = showCollection[indexPath.item].imageName
-        cell.sneakerCount.text = ""
-        cell.imageView.alpha = 1
 
-        if(indexPath.row == 5){
-            cell.sneakerCount.text = "+\(showCollection.count)"
-            cell.sneakerCount.textAlignment = .center
-            cell.imageView.alpha = 0.5
-        }
-        return cell
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let allItems = showCollection
-        if indexPath.row == 5{
-            performSegue(withIdentifier: "MyCollection_Segue", sender: allItems)
-        }
-    }
-}

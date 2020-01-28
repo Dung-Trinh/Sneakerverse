@@ -18,7 +18,7 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "showCamera_Segue", segue.identifier != "saveTo_Segue"{
         let destVC = segue.destination as! MyProfilViewController
-        destVC.self.showCollection.append(savedPhoto(imageName: image))
+            destVC.self.myCollection.append(savedPhoto(picture: image, sneakerName: sneakerNameField.text))
         destVC.myCollection_cv.reloadData()
     }
         else if segue.identifier == "saveTo_Segue"{
