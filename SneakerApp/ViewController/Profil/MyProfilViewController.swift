@@ -90,9 +90,8 @@ class MyProfilViewController: UIViewController {
         }
         
         else if segue.identifier == "myFeeds_Segue"{
-            let blogposts = sender as? [BlogPost]
             if let vc = segue.destination as? FeedTableViewController {
-                vc.blogPosts = savedBlogpost
+                    vc.blogPosts = savedBlogpost
             }
         }
         
@@ -121,24 +120,32 @@ class MyProfilViewController: UIViewController {
     private func setupGrailPreview(){
         var counter = 0
         for preview in previewGrails{
-            let url = URL(string: savedSneaker[counter].imageURL)
-            let data = try? Data(contentsOf: url!)
+            if counter < savedSneaker.count {
+                let url = URL(string: savedSneaker[counter].imageURL)
+                    let data = try? Data(contentsOf: url!)
+                    
+                    if counter == 0 {
+                        var tintView = UIView()
+                        tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
+                        tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
+                        preview.addSubview(tintView)
+                    }
+                    
+                    preview.contentMode =  .scaleAspectFill
+                    preview.image = UIImage(data: data!)
+                    preview.layer.cornerRadius = 8.0
+                    preview.layer.masksToBounds = true
+
+                    counter += 1
+                    
+                }
             
-            if counter == 0 {
-                let tintView = UIView()
-                tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
-                tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
-                preview.addSubview(tintView)
+            else {
+                //preview.image = UIImage(contentsOfFile: "photo")
+                preview.layer.cornerRadius = 8.0
+            }
             }
             
-            preview.contentMode =  .scaleAspectFill
-            preview.image = UIImage(data: data!)
-            preview.layer.cornerRadius = 8.0
-            preview.layer.masksToBounds = true
-
-            counter += 1
-            
-        }
     }
     
     private func setupCollectionPreview(){
@@ -147,22 +154,29 @@ class MyProfilViewController: UIViewController {
 //            let url = URL(string: savedSneaker[counter].imageURL)
 //            let data = try? Data(contentsOf: url!)
             
-            if counter == 0 {
-                let tintView = UIView()
-                tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
-                tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
-                preview.addSubview(tintView)
+            if counter < myCollection.count {
+                if counter == 0 {
+                                var tintView = UIView()
+                                tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
+                                tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
+                                preview.addSubview(tintView)
+                            }
+                            
+                            preview.contentMode =  .scaleAspectFill
+                            preview.image = myCollection[counter].imageName
+                //            preview.image = UIImage(data: data!)
+                            preview.layer.cornerRadius = 8.0
+                            preview.layer.masksToBounds = true
+
+                            counter += 1
+                            
+                        }
+            else{
+                preview.layer.cornerRadius = 8.0
+            }
+                
             }
             
-            preview.contentMode =  .scaleAspectFill
-            preview.image = myCollection[counter].imageName
-//            preview.image = UIImage(data: data!)
-            preview.layer.cornerRadius = 8.0
-            preview.layer.masksToBounds = true
-
-            counter += 1
-            
-        }
     }
     
     private func setupFeedPreview() {
