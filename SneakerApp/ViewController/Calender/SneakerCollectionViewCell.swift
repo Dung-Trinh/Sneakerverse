@@ -34,10 +34,14 @@ class SneakerCollectionViewCell: UICollectionViewCell {
         let array : [String]?
         if sneaker.releaseDate.contains("."){
             array = sneaker.releaseDate.components(separatedBy: ".")
+            date.text = array?[0]
+
         }else{
             array = sneaker.releaseDate.components(separatedBy: "/")
+            date.text = array?[1]
+
         }
-        date.text = array?[1]
+        //date.text = array?[1]
         
         backgroundLayer.layer.cornerRadius = 10
         backgroundLayer.layer.masksToBounds = true

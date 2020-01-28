@@ -125,7 +125,7 @@ class MyProfilViewController: UIViewController {
             let data = try? Data(contentsOf: url!)
             
             if counter == 0 {
-                var tintView = UIView()
+                let tintView = UIView()
                 tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
                 tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
                 preview.addSubview(tintView)
@@ -148,7 +148,7 @@ class MyProfilViewController: UIViewController {
 //            let data = try? Data(contentsOf: url!)
             
             if counter == 0 {
-                var tintView = UIView()
+                let tintView = UIView()
                 tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
                 tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
                 preview.addSubview(tintView)
@@ -166,7 +166,7 @@ class MyProfilViewController: UIViewController {
     }
     
     private func setupFeedPreview() {
-        var tintView = UIView()
+        let tintView = UIView()
         tintView.backgroundColor = UIColor.init(red: 43/255, green: 17/255, blue: 187/255, alpha: 0.5)
         tintView.frame = CGRect(x: 0, y: 0, width: feedPreview.frame.width, height: feedPreview.frame.height)
         
@@ -238,7 +238,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var allItems = showCollection
+        let allItems = showCollection
         if indexPath.row == 5{
             performSegue(withIdentifier: "MyCollection_Segue", sender: allItems)
         }

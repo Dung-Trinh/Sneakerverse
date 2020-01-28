@@ -85,27 +85,30 @@ class SneakerDataFetcher{
             var splitLine2 : [String] = []
             var date1:Int=0
             var date2:Int=0
-
+            var trimmedString : String = ""
+            
+            
             if $0.releaseDate.contains("."){
                 splitLine = $0.releaseDate.components(separatedBy: ".")
-//                if splitLine[0].prefix(1) == "0" {
-//                    let index = splitLine[0].index(splitLine[0].startIndex, offsetBy: 1)
-//                    date1 = Int(String(splitLine[0].suffix(from: index)))!
-//                }
-                date1 = Int(splitLine[0])!
-            }else{
+
+                trimmedString = splitLine[0].trimmingCharacters(in: .whitespaces)
+                date1 = Int(trimmedString)!
+            }else if $0.releaseDate.contains("/") {
                 splitLine = $0.releaseDate.components(separatedBy: "/")
-                date1 = Int(splitLine[1])!
+                trimmedString = splitLine[1].trimmingCharacters(in: .whitespaces)
+                date1 = Int(trimmedString)!
             }
             
             
             if $1.releaseDate.contains("."){
                 splitLine2 = $1.releaseDate.components(separatedBy: ".")
-                date2 = Int(splitLine2[0])!
+                trimmedString = splitLine2[0].trimmingCharacters(in: .whitespaces)
+                date2 = Int(trimmedString)!
 
-            }else{
+            }else if $1.releaseDate.contains("/"){
                 splitLine2 = $1.releaseDate.components(separatedBy: "/")
-                date2 = Int(splitLine2[1])!
+                trimmedString = splitLine2[1].trimmingCharacters(in: .whitespaces)
+                date2 = Int(trimmedString)!
 
             }
             return date1 < date2
