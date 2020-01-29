@@ -63,12 +63,6 @@
 		B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDD923DA42FF0083619D /* LogoLoadingScreen.swift */; };
 		B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C5FDDB23DA432A0083619D /* LogoLoadingScreen.xib */; };
 		B6D1F73C23CE7368004938BD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73B23CE7368004938BD /* MapTableViewCell.swift */; };
-		B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
-		B6D1F73F23CF082E004938BD /* locationPins.json in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
-		B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EE23CA9E6E0019B443 /* CameraViewController.swift */; };
-		B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688EF23CA9E6E0019B443 /* collectionDetailViewController.swift */; };
-		B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F023CA9E6E0019B443 /* CameraPreviewViewController.swift */; };
-		B6D688FA23CA9E6E0019B443 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D688F123CA9E6E0019B443 /* myCollectionViewCell.swift */; };
 		B6E214C723DCDA1C004407DF /* SneakerDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */; };
 		B6E214C923DCE4EB004407DF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214C823DCE4EA004407DF /* CoreDataManager.swift */; };
 		B6E214CC23DCE6C2004407DF /* BlogPostDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */; };
@@ -484,9 +478,9 @@
 			files = (
 				0102DCFF23E08CB2005A1E64 /* LemonMilk.otf in Resources */,
 				B69A3ABE23E0A69E0098E048 /* locationPins.json in Resources */,
+				B69A3ABE23E0A69E0098E048 /* locationPins.json in Resources */,
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
 				B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */,
-				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
 				0102DD0223E08CB2005A1E64 /* LemonMilkitalic.otf in Resources */,
 				B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
@@ -535,8 +529,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D342EB23DCA1F400D165A0 /* ProfilViewController.swift in Sources */,
-				B6D1F73F23CF082E004938BD /* locationPins.json in Sources */,
 				01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */,
 				01E0C59F23CA3DE600DBDA9C /* UploadViewController.swift in Sources */,
 				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
@@ -548,7 +540,6 @@
 				B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
 				0129974923DE1A5900E23456 /* myGrailsCollectionViewCell.swift in Sources */,
-				B6D688F823CA9E6E0019B443 /* collectionDetailViewController.swift in Sources */,
 				B6148013238890900018DA71 /* RoundButton.swift in Sources */,
 				B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */,
 				0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */,
@@ -569,7 +560,6 @@
 				01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */,
 				B68EEF2D23B0DFAF00C6287E /* RefreshView.swift in Sources */,
 				B611902C23A846820067E0A5 /* BackgroundColor.swift in Sources */,
-				B6D688F923CA9E6E0019B443 /* CameraPreviewViewController.swift in Sources */,
 				B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */,
 				B6FA71C42384734B002DA281 /* SneakerApp.xcdatamodeld in Sources */,
 				B633129E23A03837001A63E1 /* NewsPost.swift in Sources */,
@@ -581,7 +571,6 @@
 				B65619BA23C7D5B200E03364 /* GuideViewController.swift in Sources */,
 				B6FA71BC2384734B002DA281 /* SceneDelegate.swift in Sources */,
 				B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */,
-				B6D688F723CA9E6E0019B443 /* CameraViewController.swift in Sources */,
 				B6C5FDD423DA36790083619D /* CustomAlert.swift in Sources */,
 				B611902E23A846A40067E0A5 /* ToastMessage.swift in Sources */,
 				01D342EC23DCA1F400D165A0 /* FeedTableViewCell.swift in Sources */,
