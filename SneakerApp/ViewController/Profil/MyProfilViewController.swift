@@ -13,7 +13,7 @@ import CoreData
 
 
 class MyProfilViewController: UIViewController {
-
+    
     @IBOutlet weak var myCollection_cv: UICollectionView!
     @IBOutlet weak var feedButton: UIButton!
     @IBOutlet weak var feedPreview: UIImageView!

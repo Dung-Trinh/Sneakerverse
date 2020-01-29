@@ -34,6 +34,21 @@
 	<string>Fotos werden benutzt</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Montserrat-ThinItalic.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-MediumItalic.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Light.ttf</string>
+		<string>Montserrat-LightItalic.ttf</string>
+		<string>Montserrat-Italic.ttf</string>
+		<string>Montserrat-ExtraLightItalic.ttf</string>
+		<string>Montserrat-ExtraLight.ttf</string>
+		<string>LemonMilklight.otf</string>
+		<string>LemonMilkitalic.otf</string>
+		<string>LemonMilkbolditalic.otf</string>
+		<string>LemonMilkbold.otf</string>
+		<string>LemonMilk.otf</string>
 		<string>Arenq.otf</string>
 		<string>grease__.ttf</string>
 	</array>
