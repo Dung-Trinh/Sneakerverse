@@ -9,6 +9,10 @@
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="MyCollectionData" representedClassName="MyCollectionData" syncable="YES" codeGenerationType="class">
+        <attribute name="picture" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="sneakerName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="SneakerData" representedClassName="SneakerData" syncable="YES" codeGenerationType="class">
         <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="imageURL" optional="YES" attributeType="String"/>
@@ -23,5 +27,6 @@
     <elements>
         <element name="BlogpostData" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="SneakerData" positionX="-63" positionY="36" width="128" height="178"/>
+        <element name="MyCollectionData" positionX="-36" positionY="108" width="128" height="73"/>
     </elements>
 </model>

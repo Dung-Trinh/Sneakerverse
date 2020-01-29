@@ -13,12 +13,12 @@ class FeedTableViewController: UITableViewController {
         
     var blogPosts : [BlogPost] = []
 
-        var myCollection: [savedPhoto] = [savedPhoto(imageName: UIImage(named: "af1")),
-                                    savedPhoto(imageName: UIImage(named: "af2")),
-                                    savedPhoto(imageName: UIImage(named: "af3")),
-                                    savedPhoto(imageName: UIImage(named: "af4")),
-                                    savedPhoto(imageName: UIImage(named: "af5")),
-                                    savedPhoto(imageName: UIImage(named: "af5"))]
+        var myCollection: [savedPhoto] = [savedPhoto(picture: UIImage(named: "af1")),
+                                    savedPhoto(picture: UIImage(named: "af2")),
+                                    savedPhoto(picture: UIImage(named: "af3")),
+                                    savedPhoto(picture: UIImage(named: "af4")),
+                                    savedPhoto(picture: UIImage(named: "af5")),
+                                    savedPhoto(picture: UIImage(named: "af5"))]
         
     //    @IBOutlet weak var headerLabel: UILabel!
                 

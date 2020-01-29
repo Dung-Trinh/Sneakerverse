@@ -12,7 +12,117 @@ import UIKit
 
 
 class CoreDataManager{
+    func loadSavedCollection()->[savedPhoto]{
+        var savedCollection : [savedPhoto] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          let entityName="MyCollectionData"
+          
+          // Anfrage stellen
+          let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+          do{
+              let results = try context.fetch(request)
+              for collectionData in results as! [NSManagedObject]{
+                let sneakerName = collectionData.value(forKey: "sneakerName") as! String
+                let data = collectionData.value(forKey: "picture")
+                let picture = UIImage.init(data: data as! Data)
+                 let collectionPhoto=savedPhoto(picture: picture, sneakerName: sneakerName)
+                savedCollection.append(collectionPhoto)
+                 
+              }
+              print ("Geladen: '\(results.count)' Collection Ergebnisse")
+             print(savedCollection)
+          }
+          
+          catch{
+              print(error)
+          }
+        return savedCollection
+    }
+    func deleteEntireCollection(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                           return
+                       }
+                       let context = appDelegate.persistentContainer.viewContext
+                       let entityName="MyCollectionData"
+
+                       // Anfrage stellen
+                       let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+                do{
+                    let results = try context.fetch(request)
+                    guard results.count > 0 else {
+                        return
+                    }
+                    for collectionData in results as! [NSManagedObject]{
+                            context.delete(collectionData)
+
+                        do{
+                            try context.save()
+                        }catch{
+                            print(error)
+                        }
+                    }
+                }catch{
+                    print(error)
+                }
+    }
+    func deleteSavedCollection(collectionPhoto:savedPhoto){
+         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                    return
+                }
+                let context = appDelegate.persistentContainer.viewContext
+                let entityName="MyCollectionData"
+
+                // Anfrage stellen
+                let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+         do{
+             let results = try context.fetch(request)
+             guard results.count > 0 else {
+                 return
+             }
+             for collectionData in results as! [NSManagedObject]{
+               
+                 if(collectionData.value(forKey: "sneakerName") as! String == collectionPhoto.sneakerName ){
+                     context.delete(collectionData)
+                 }
+
+                 do{
+                     try context.save()
+                 }catch{
+                     print(error)
+                 }
+             }
+         }catch{
+             print(error)
+         }
+    }
+    func saveCollectionPhoto(collectionPhoto:savedPhoto){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+       let context = appDelegate.persistentContainer.viewContext
+        let entityName="MyCollectionData" // Tabellenname im Datenmodell
+       // Neuen Datensatz anlegen
+        guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+            return
+        }
+        let collectionData = NSManagedObject(entity:newEntity,insertInto: context)
+        
+         let sneakerName = collectionPhoto.sneakerName
+        let picture = collectionPhoto.picture.jpegData(compressionQuality: 1)
+      
+        
+         collectionData.setValue(sneakerName, forKey: "sneakerName")
+         collectionData.setValue(picture, forKey: "picture")
     
+         
+         do{
+             try context.save()
+               print(collectionData)
+         }catch{
+             print(error)
+         }
+    }
     func loadSavedBlogposts() ->[BlogPost]{
         var savedBlogpost :[BlogPost]=[]
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

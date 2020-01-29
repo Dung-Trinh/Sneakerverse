@@ -8,9 +8,6 @@
 import UIKit
 class CameraPreviewViewController: UIViewController {
     var image: UIImage!
-    @IBOutlet weak var sneakernameLabel: UILabel!
-    @IBOutlet weak var sneakerdateLabel: UILabel!
-    @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var photo: UIImageView!
     @IBAction func saveButton(_ sender: UIButton) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -24,7 +21,7 @@ class CameraPreviewViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! MyProfilViewController
-        destVC.self.showCollection.append(savedPhoto(imageName: image))
+        destVC.self.myCollection.append(savedPhoto(picture: image, sneakerName: ""))
         destVC.myCollection_cv.reloadData()
     }
     
