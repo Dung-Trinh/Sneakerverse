@@ -32,46 +32,39 @@
                                     <rect key="frame" x="-61" y="-102" width="454" height="266"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-jD-CLj">
-                                    <rect key="frame" x="39" y="66" width="37" height="47"/>
-                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </activityIndicatorView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_kombi" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-GR-I9i">
-                                    <rect key="frame" x="11" y="27" width="189" height="44"/>
+                                    <rect key="frame" x="112" y="8" width="169" height="44"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="189" id="439-k9-7vB"/>
+                                        <constraint firstAttribute="width" constant="169" id="aDP-NM-f7D"/>
                                         <constraint firstAttribute="height" constant="43.999999999999972" id="jiC-WR-5h5"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading . . ." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrK-4e-lp7">
-                                    <rect key="frame" x="85" y="79" width="99" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="wyg-iF-m68">
-                                    <rect key="frame" x="311" y="79" width="144" height="75"/>
+                                    <rect key="frame" x="306.5" y="79" width="148.5" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="tDg-fj-W6l"/>
+                                        <constraint firstAttribute="width" constant="148.5" id="xBH-xj-Mg6"/>
+                                    </constraints>
                                 </imageView>
+                                <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-jD-CLj">
+                                    <rect key="frame" x="178" y="49" width="37" height="47"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="37" id="7jc-tE-Stu"/>
+                                        <constraint firstAttribute="height" constant="47" id="f1v-BZ-GY8"/>
+                                    </constraints>
+                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="JrK-4e-lp7" secondAttribute="bottom" constant="28" id="2ta-Wo-aAk"/>
                                 <constraint firstAttribute="height" constant="128" id="3Jy-ey-zYK"/>
-                                <constraint firstItem="4PE-GR-I9i" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="27" id="6Mr-0D-cdR"/>
-                                <constraint firstItem="4PE-GR-I9i" firstAttribute="leading" secondItem="Hcx-jD-CLj" secondAttribute="trailing" constant="-65" id="Bje-wo-KQA"/>
-                                <constraint firstItem="Hcx-jD-CLj" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="66" id="FZT-k6-h8c"/>
-                                <constraint firstAttribute="trailing" secondItem="JrK-4e-lp7" secondAttribute="trailing" constant="209" id="GGl-WT-QjI"/>
-                                <constraint firstAttribute="trailing" secondItem="4PE-GR-I9i" secondAttribute="trailing" constant="193" id="IOm-pU-44R"/>
                                 <constraint firstAttribute="trailing" secondItem="wyg-iF-m68" secondAttribute="trailing" constant="-62" id="ObG-Lt-1qc"/>
-                                <constraint firstItem="4PE-GR-I9i" firstAttribute="leading" secondItem="Hcx-jD-CLj" secondAttribute="trailing" constant="-65" id="UQp-5u-BfO"/>
                                 <constraint firstItem="wyg-iF-m68" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="79" id="Uaq-81-uO1"/>
-                                <constraint firstAttribute="bottom" secondItem="Hcx-jD-CLj" secondAttribute="bottom" constant="15" id="Zdk-Kb-XC3"/>
-                                <constraint firstItem="JrK-4e-lp7" firstAttribute="leading" secondItem="Hcx-jD-CLj" secondAttribute="trailing" constant="9" id="aZ9-K3-RBN"/>
-                                <constraint firstItem="JrK-4e-lp7" firstAttribute="top" secondItem="4PE-GR-I9i" secondAttribute="bottom" constant="8" id="j51-ET-jcA"/>
+                                <constraint firstItem="Hcx-jD-CLj" firstAttribute="centerX" secondItem="4Mg-2A-ft4" secondAttribute="centerX" id="a53-4U-80p"/>
+                                <constraint firstItem="4PE-GR-I9i" firstAttribute="top" secondItem="4Mg-2A-ft4" secondAttribute="top" constant="8" id="aNp-55-zAv"/>
                                 <constraint firstAttribute="bottom" secondItem="wyg-iF-m68" secondAttribute="bottom" constant="-26" id="kQG-LN-Bz3"/>
-                                <constraint firstAttribute="bottom" secondItem="4PE-GR-I9i" secondAttribute="bottom" constant="57" id="kyS-a8-Hqw"/>
-                                <constraint firstItem="wyg-iF-m68" firstAttribute="leading" secondItem="JrK-4e-lp7" secondAttribute="trailing" constant="127" id="pGq-bE-cnT"/>
-                                <constraint firstItem="Hcx-jD-CLj" firstAttribute="leading" secondItem="4Mg-2A-ft4" secondAttribute="leading" constant="39" id="ybR-Rb-B2P"/>
+                                <constraint firstItem="4PE-GR-I9i" firstAttribute="centerX" secondItem="4Mg-2A-ft4" secondAttribute="centerX" id="mGP-0h-BSV"/>
+                                <constraint firstItem="Hcx-jD-CLj" firstAttribute="top" secondItem="4PE-GR-I9i" secondAttribute="bottom" constant="-3" id="z9a-Wz-Uug"/>
                             </constraints>
                         </view>
                     </subviews>

@@ -28,9 +28,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-KJ-hC3">
                             <rect key="frame" x="61" y="96" width="288" height="280"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_popup2" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-7Q-x7u">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_popup2" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-7Q-x7u">
                                     <rect key="frame" x="0.0" y="0.0" width="288" height="105"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="105" id="vEv-xK-jYC"/>
+                                    </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ooops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPR-ML-Ndk">
                                     <rect key="frame" x="20" y="122" width="248" height="21"/>
@@ -79,12 +81,15 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Ge6-7Q-x7u" secondAttribute="trailing" id="4YY-0M-kOn"/>
                                 <constraint firstItem="TPR-ML-Ndk" firstAttribute="leading" secondItem="FWi-KJ-hC3" secondAttribute="leading" constant="20" id="94w-Y6-CDo"/>
                                 <constraint firstAttribute="trailing" secondItem="89W-cz-Cqf" secondAttribute="trailing" constant="20" id="FO3-Ng-ZaW"/>
                                 <constraint firstItem="TPR-ML-Ndk" firstAttribute="top" secondItem="ipe-p4-lKP" secondAttribute="bottom" constant="17" id="JQh-fn-d9X"/>
                                 <constraint firstAttribute="bottom" secondItem="FrZ-4S-6s1" secondAttribute="bottom" constant="51" id="Kb1-g0-mAV"/>
                                 <constraint firstAttribute="trailing" secondItem="ipe-p4-lKP" secondAttribute="trailing" constant="69" id="NUy-48-ZfU"/>
+                                <constraint firstItem="Ge6-7Q-x7u" firstAttribute="top" secondItem="FWi-KJ-hC3" secondAttribute="top" id="TG7-mB-oxj"/>
                                 <constraint firstItem="FrZ-4S-6s1" firstAttribute="top" secondItem="TPR-ML-Ndk" secondAttribute="bottom" constant="8" id="VkD-h2-Af8"/>
+                                <constraint firstItem="Ge6-7Q-x7u" firstAttribute="leading" secondItem="FWi-KJ-hC3" secondAttribute="leading" id="ZZ8-f7-f3L"/>
                                 <constraint firstItem="89W-cz-Cqf" firstAttribute="top" secondItem="FrZ-4S-6s1" secondAttribute="bottom" constant="8" id="afz-E4-Pkx"/>
                                 <constraint firstItem="FrZ-4S-6s1" firstAttribute="leading" secondItem="FWi-KJ-hC3" secondAttribute="leading" constant="20" id="b0X-xS-j5t"/>
                                 <constraint firstItem="ipe-p4-lKP" firstAttribute="leading" secondItem="FWi-KJ-hC3" secondAttribute="leading" constant="70" id="btm-yo-D1l"/>
