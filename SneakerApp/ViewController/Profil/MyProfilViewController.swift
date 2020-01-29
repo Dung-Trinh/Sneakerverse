@@ -16,7 +16,7 @@ struct savedPhoto {
 }
 
 class MyProfilViewController: UIViewController {
-
+    
     @IBOutlet weak var myCollection_cv: UICollectionView!
     @IBOutlet weak var switcher: UISegmentedControl!
     @IBOutlet weak var feedButton: UIButton!
@@ -27,7 +27,6 @@ class MyProfilViewController: UIViewController {
     
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     let cellIdentifier = "myCollectionViewCell"
-    var uploadedImage: savedPhoto?
     var myCollection: [savedPhoto] = [savedPhoto(imageName: UIImage(named: "af1")),
                          savedPhoto(imageName: UIImage(named: "af2")),
                          savedPhoto(imageName: UIImage(named: "af3")),

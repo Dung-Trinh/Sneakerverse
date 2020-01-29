@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0102DCFE23E08CB2005A1E64 /* LemonMilkbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0102DCF923E08CB1005A1E64 /* LemonMilkbold.otf */; };
+		0102DCFF23E08CB2005A1E64 /* LemonMilk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0102DCFA23E08CB2005A1E64 /* LemonMilk.otf */; };
+		0102DD0023E08CB2005A1E64 /* LemonMilkbolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0102DCFB23E08CB2005A1E64 /* LemonMilkbolditalic.otf */; };
+		0102DD0123E08CB2005A1E64 /* LemonMilklight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0102DCFC23E08CB2005A1E64 /* LemonMilklight.otf */; };
+		0102DD0223E08CB2005A1E64 /* LemonMilkitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0102DCFD23E08CB2005A1E64 /* LemonMilkitalic.otf */; };
 		0125DD4B23D62E5200BE77AB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125DD4A23D62E5200BE77AB /* PopAnimator.swift */; };
 		0129974423DE13E200E23456 /* MyGrailsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */; };
 		0129974923DE1A5900E23456 /* myGrailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */; };
@@ -77,6 +82,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0102DCF923E08CB1005A1E64 /* LemonMilkbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilkbold.otf; sourceTree = "<group>"; };
+		0102DCFA23E08CB2005A1E64 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
+		0102DCFB23E08CB2005A1E64 /* LemonMilkbolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilkbolditalic.otf; sourceTree = "<group>"; };
+		0102DCFC23E08CB2005A1E64 /* LemonMilklight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilklight.otf; sourceTree = "<group>"; };
+		0102DCFD23E08CB2005A1E64 /* LemonMilkitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilkitalic.otf; sourceTree = "<group>"; };
+		0102DD0523E08FAF005A1E64 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		0102DD0623E08FB0005A1E64 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		0102DD0723E08FB0005A1E64 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		0102DD0823E08FB0005A1E64 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		0102DD0923E08FB0005A1E64 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		0102DD0A23E08FB0005A1E64 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0102DD0B23E08FB0005A1E64 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		0102DD0C23E08FB0005A1E64 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0102DD0D23E08FB1005A1E64 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		0102DD0E23E08FB1005A1E64 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0125DD4A23D62E5200BE77AB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrailsCollectionViewController.swift; sourceTree = "<group>"; };
 		0129974723DE1A5900E23456 /* myGrailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGrailsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -280,6 +300,21 @@
 		B694A84D23CDD52C008DFE9F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0102DD0523E08FAF005A1E64 /* Montserrat-ExtraLight.ttf */,
+				0102DD0B23E08FB0005A1E64 /* Montserrat-ExtraLightItalic.ttf */,
+				0102DD0823E08FB0005A1E64 /* Montserrat-Italic.ttf */,
+				0102DD0923E08FB0005A1E64 /* Montserrat-Light.ttf */,
+				0102DD0623E08FB0005A1E64 /* Montserrat-LightItalic.ttf */,
+				0102DD0723E08FB0005A1E64 /* Montserrat-Medium.ttf */,
+				0102DD0A23E08FB0005A1E64 /* Montserrat-MediumItalic.ttf */,
+				0102DD0C23E08FB0005A1E64 /* Montserrat-Regular.ttf */,
+				0102DD0D23E08FB1005A1E64 /* Montserrat-Thin.ttf */,
+				0102DD0E23E08FB1005A1E64 /* Montserrat-ThinItalic.ttf */,
+				0102DCFA23E08CB2005A1E64 /* LemonMilk.otf */,
+				0102DCF923E08CB1005A1E64 /* LemonMilkbold.otf */,
+				0102DCFB23E08CB2005A1E64 /* LemonMilkbolditalic.otf */,
+				0102DCFD23E08CB2005A1E64 /* LemonMilkitalic.otf */,
+				0102DCFC23E08CB2005A1E64 /* LemonMilklight.otf */,
 				B694A85323CDE831008DFE9F /* grease__.ttf */,
 				B694A85123CDE051008DFE9F /* Arenq.otf */,
 			);
@@ -446,17 +481,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0102DCFF23E08CB2005A1E64 /* LemonMilk.otf in Resources */,
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
 				B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */,
 				B6D1F73E23CF00E0004938BD /* locationPins.json in Resources */,
+				0102DD0223E08CB2005A1E64 /* LemonMilkitalic.otf in Resources */,
 				B6C5FDD323DA36790083619D /* CustomAlert.xib in Resources */,
 				B64868D623A7E50700D2496A /* intro.mp4 in Resources */,
 				0129974A23DE1A5900E23456 /* myGrailsCollectionViewCell.xib in Resources */,
+				0102DD0023E08CB2005A1E64 /* LemonMilkbolditalic.otf in Resources */,
 				B6FA71C92384734E002DA281 /* LaunchScreen.storyboard in Resources */,
+				0102DD0123E08CB2005A1E64 /* LemonMilklight.otf in Resources */,
 				B694A85223CDE051008DFE9F /* Arenq.otf in Resources */,
 				B64868D023A7E41100D2496A /* Main.storyboard in Resources */,
 				B694A85423CDE831008DFE9F /* grease__.ttf in Resources */,
 				01E0C59D23CA3DE600DBDA9C /* myCollectionViewCell.xib in Resources */,
+				0102DCFE23E08CB2005A1E64 /* LemonMilkbold.otf in Resources */,
 				B68EEF2B23B0DF8500C6287E /* RefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
