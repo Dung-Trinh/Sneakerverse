@@ -13,7 +13,7 @@ import EventKit
 import CoreData
 
 class NewsDetailViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBar: UINavigationItem!

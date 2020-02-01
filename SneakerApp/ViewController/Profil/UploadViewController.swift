@@ -80,8 +80,8 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     sneakerNameField.delegate = self
     configureTapGesture()
     
-    let background = BackgroundColor()
-    background.createGradientBackground(view: self.view,colors: nil)
+    //let background = BackgroundColor()
+    //background.createGradientBackground(view: self.view,colors: nil)
         // Do any additional setup after loading the view.
     }
 

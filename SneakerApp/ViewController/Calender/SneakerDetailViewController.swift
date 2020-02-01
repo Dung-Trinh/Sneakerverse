@@ -11,7 +11,7 @@ import EventKit
 import CoreData
 class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var sneakerName: UILabel!
-    @IBOutlet weak var textBox: UITextView!
+    @IBOutlet weak var textBox: UILabel!
     @IBOutlet var images: [UIImageView]!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var priceSpan: UILabel!

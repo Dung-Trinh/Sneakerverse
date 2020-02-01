@@ -39,6 +39,9 @@
 		B6148013238890900018DA71 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148012238890900018DA71 /* RoundButton.swift */; };
 		B61480152388B16D0018DA71 /* BlogPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */; };
 		B6204D6E239436B8003B8E81 /* SneakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */; };
+		B632F86C23E4BBD600A083D2 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A388CB23B55877005206B7 /* CustomAnimator.swift */; };
+		B632F86D23E4C64D00A083D2 /* locationPins.json in Sources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
+		B632F86E23E4C68900A083D2 /* locationPins.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
 		B633129E23A03837001A63E1 /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633129D23A03837001A63E1 /* NewsPost.swift */; };
 		B642950723CD20FB00377CEA /* LastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642950623CD20FB00377CEA /* LastPageViewController.swift */; };
 		B64868D023A7E41100D2496A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64868CF23A7E41100D2496A /* Main.storyboard */; };
@@ -52,8 +55,6 @@
 		B694A85223CDE051008DFE9F /* Arenq.otf in Resources */ = {isa = PBXBuildFile; fileRef = B694A85123CDE051008DFE9F /* Arenq.otf */; };
 		B694A85423CDE831008DFE9F /* grease__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B694A85323CDE831008DFE9F /* grease__.ttf */; };
 		B694A85623CDEBB3008DFE9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694A85523CDEBB3008DFE9F /* MapViewController.swift */; };
-		B69A3ABE23E0A69E0098E048 /* locationPins.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D1F73D23CF00E0004938BD /* locationPins.json */; };
-		B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A388CB23B55877005206B7 /* CustomAnimator.swift */; };
 		B6AF0A1423AF9DE500A44082 /* SneakerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF0A1323AF9DE500A44082 /* SneakerDetail.swift */; };
 		B6C5FDCD23DA35670083619D /* BlogPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDCC23DA35670083619D /* BlogPostCollectionViewCell.swift */; };
 		B6C5FDCF23DA35890083619D /* SneakerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5FDCE23DA35890083619D /* SneakerCollectionViewCell.swift */; };
@@ -218,15 +219,14 @@
 		B614801123888F940018DA71 /* UI_Elements */ = {
 			isa = PBXGroup;
 			children = (
-				B6C5FDD523DA36950083619D /* CustomActivityIndicator.swift */,
 				B6C5FDD023DA36790083619D /* AlertMessage */,
 				B6C5FDC723DA34FE0083619D /* LogoLoadingScreen */,
 				B694A84D23CDD52C008DFE9F /* Fonts */,
 				B68EEF2923B0DEB300C6287E /* RefreshView */,
 				B6148012238890900018DA71 /* RoundButton.swift */,
-				B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */,
 				B611902D23A846A40067E0A5 /* ToastMessage.swift */,
 				B611902B23A846820067E0A5 /* BackgroundColor.swift */,
+				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
 			);
 			path = UI_Elements;
 			sourceTree = "<group>";
@@ -252,6 +252,16 @@
 				B6204D6D239436B8003B8E81 /* SneakerDetailViewController.swift */,
 			);
 			path = Calender;
+			sourceTree = "<group>";
+		};
+		B632F86B23E4849B00A083D2 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */,
+				B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */,
+				B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 		B65619B223C7A84A00E03364 /* Guide */ = {
@@ -319,6 +329,7 @@
 		B6C5FDC723DA34FE0083619D /* LogoLoadingScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B6C5FDD523DA36950083619D /* CustomActivityIndicator.swift */,
 				B6C5FDD923DA42FF0083619D /* LogoLoadingScreen.swift */,
 				B6C5FDDB23DA432A0083619D /* LogoLoadingScreen.xib */,
 			);
@@ -337,6 +348,7 @@
 		B6D24B51239693A700D4D6AC /* News */ = {
 			isa = PBXGroup;
 			children = (
+				B61480142388B16D0018DA71 /* BlogPostTableViewCell.swift */,
 				B6C5FDCC23DA35670083619D /* BlogPostCollectionViewCell.swift */,
 				B614800F238829F40018DA71 /* NewsViewController.swift */,
 				B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */,
@@ -373,16 +385,13 @@
 				B6204D6B239433DF003B8E81 /* ViewController */,
 				B614801123888F940018DA71 /* UI_Elements */,
 				B614800A23881E3C0018DA71 /* Models */,
+				B632F86B23E4849B00A083D2 /* Business */,
 				B6FA71B92384734B002DA281 /* AppDelegate.swift */,
 				B6FA71BB2384734B002DA281 /* SceneDelegate.swift */,
 				B64868CF23A7E41100D2496A /* Main.storyboard */,
 				B6FA71C72384734E002DA281 /* LaunchScreen.storyboard */,
 				B6E214C823DCE4EA004407DF /* CoreDataManager.swift */,
 				B64868D523A7E4D100D2496A /* intro.mp4 */,
-				B6A388CB23B55877005206B7 /* CustomAnimator.swift */,
-				B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */,
-				B6E214C623DCDA1C004407DF /* SneakerDataFetcher.swift */,
-				B6E214CB23DCE6C2004407DF /* BlogPostDataFetcher.swift */,
 			);
 			path = SneakerApp;
 			sourceTree = "<group>";
@@ -476,9 +485,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B632F86E23E4C68900A083D2 /* locationPins.json in Resources */,
 				0102DCFF23E08CB2005A1E64 /* LemonMilk.otf in Resources */,
-				B69A3ABE23E0A69E0098E048 /* locationPins.json in Resources */,
-				B69A3ABE23E0A69E0098E048 /* locationPins.json in Resources */,
 				B68EEF3023B0E40800C6287E /* Assets.xcassets in Resources */,
 				B6C5FDDC23DA432A0083619D /* LogoLoadingScreen.xib in Resources */,
 				0102DD0223E08CB2005A1E64 /* LemonMilkitalic.otf in Resources */,
@@ -529,13 +537,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B632F86D23E4C64D00A083D2 /* locationPins.json in Sources */,
+				B632F86C23E4BBD600A083D2 /* CustomAnimator.swift in Sources */,
 				01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */,
 				01E0C59F23CA3DE600DBDA9C /* UploadViewController.swift in Sources */,
 				B6F14F6D2393144A007FDB10 /* CalenderViewController.swift in Sources */,
 				01E0C59C23CA3DE600DBDA9C /* myCollectionViewCell.swift in Sources */,
 				01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */,
 				B6E214C723DCDA1C004407DF /* SneakerDataFetcher.swift in Sources */,
-				B6A388CC23B55877005206B7 /* CustomAnimator.swift in Sources */,
 				B6558E4223A8EC4000776BDA /* DataController.swift in Sources */,
 				B6C5FDDA23DA42FF0083619D /* LogoLoadingScreen.swift in Sources */,
 				B6F14F72239320B4007FDB10 /* Sneaker.swift in Sources */,
