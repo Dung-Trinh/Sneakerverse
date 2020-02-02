@@ -45,15 +45,22 @@ class NewsDetailViewController: UIViewController {
         textView.text = blogPost?.description
         YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)
         
-        var url = URL(string: blogPost!.cover)
+        let url = URL(string: blogPost!.cover)
         let data = try? Data(contentsOf: url!)
+        if(data == nil){
+            imgArray.insert(UIImage(named: "error_img")!, at: 0)
+        }else{
         imgArray.insert(UIImage(data: data!)!, at: 0)
-        
+        }
         for i in blogPost!.contentPictures{
-            var url = URL(string: i)
+            let url = URL(string: i)
              // TODO: try catch einbauen !
             let data = try? Data(contentsOf: url!)
+            if(data == nil){
+                imgArray.append(UIImage(named: "error_img")!)
+            }else{
             imgArray.append(UIImage(data: data!)!)
+            }
         }
     }
 
