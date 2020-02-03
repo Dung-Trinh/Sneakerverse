@@ -13,6 +13,7 @@ class myCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var sneakerName: UILabel!
     @IBOutlet weak var sneakerCount: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

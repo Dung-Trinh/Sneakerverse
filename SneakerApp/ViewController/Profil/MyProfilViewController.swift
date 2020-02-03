@@ -10,19 +10,23 @@ import UIKit
 import UserNotifications
 import CoreData
 
-
-
 class MyProfilViewController: UIViewController {
     
     @IBOutlet weak var myCollection_cv: UICollectionView!
+    @IBOutlet weak var myGrails_cv: UICollectionView!
     @IBOutlet weak var feedButton: UIButton!
     @IBOutlet weak var feedPreview: UIImageView!
     @IBOutlet weak var myFeeds_view: UIView!
-    @IBOutlet var previewGrails:[UIImageView]!
-    @IBOutlet var previewCollection:[UIImageView]!
+    
+    lazy var xAchse: CGFloat = myCollection_cv.frame.width/8
+    lazy var yAchse: CGFloat = myCollection_cv.frame.height/8
+    
+    lazy var xGrailAchse: CGFloat = myGrails_cv.frame.width/8
+    lazy var yGrailAchse: CGFloat = myGrails_cv.frame.height/8
     
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     let cellIdentifier = "myCollectionViewCell"
+    let grailIdentifier = "myGrailsCollectionViewCell"
     var myCollection: [savedPhoto] =
         [savedPhoto(picture: UIImage(named: "af1"),sneakerName: "testi1"),
         savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi1"),
@@ -33,13 +37,19 @@ class MyProfilViewController: UIViewController {
     
     var savedSneaker : [Sneaker]=[]
     var savedBlogpost: [BlogPost]=[]
-    var savedCollection: [savedPhoto]=[]
-     var coreDataManager = CoreDataManager()
+    var savedCollection: [savedPhoto]?=[]
+    var coreDataManager = CoreDataManager()
+    var counter = 0
     
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){
         
     }
    
+    @IBAction func reloadData(_ sender: Any) {
+        loadSavedSneakers()
+        loadSavedBlogposts()
+        loadSavedCollection()
+    }
     func loadSavedSneakers(){
         self.savedSneaker = coreDataManager.loadSavedSneakers()
    
@@ -73,9 +83,9 @@ class MyProfilViewController: UIViewController {
         saveTestColletion()
         loadSavedCollection()
         deleteCollection()
+        setupCollectionView()
+        setupCollectionViewItemSize()
         setupFeedPreview()
-        setupGrailPreview()
-        setupCollectionPreview()
         
         let background = BackgroundColor()
         background.createGradientBackground(view: self.view,colors: nil)
@@ -94,7 +104,7 @@ class MyProfilViewController: UIViewController {
         
         else if segue.identifier == "myFeeds_Segue"{
             if let vc = segue.destination as? FeedTableViewController {
-                    vc.blogPosts = savedBlogpost
+                vc.blogPosts = savedBlogpost
             }
         }
         
@@ -105,76 +115,65 @@ class MyProfilViewController: UIViewController {
         }
     }
     
-    private func setupGrailPreview(){
-        var counter = 0
-        for preview in previewGrails{
-            if counter < savedSneaker.count {
-                let url = URL(string: savedSneaker[counter].imageURL)
-                    let data = try? Data(contentsOf: url!)
-                    
-                    if counter == 0 {
-                        var tintView = UIView()
-                        tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
-                        tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
-                        preview.addSubview(tintView)
-                    }
-                    
-                    preview.contentMode =  .scaleAspectFill
-                    preview.image = UIImage(data: data!)
-                    preview.layer.cornerRadius = 8.0
-                    preview.layer.masksToBounds = true
-
-                    counter += 1
-                    
-                }
-            
-            else {
-                //preview.image = UIImage(contentsOfFile: "photo")
-                preview.layer.cornerRadius = 8.0
-            }
-            }
-            
+    private func setupCollectionView(){
+        
+        
+        myCollection_cv.dataSource = self
+        myCollection_cv.delegate = self
+        
+        myGrails_cv.dataSource = self
+        myGrails_cv.dataSource = self
+        
+        
+        let nib = UINib(nibName: "myCollectionViewCell", bundle: nil)
+        myCollection_cv.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+        
+        let grailNib = UINib(nibName: "myGrailsCollectionViewCell", bundle: nil)
+        myGrails_cv.register(grailNib, forCellWithReuseIdentifier: grailIdentifier)
     }
     
-    private func setupCollectionPreview(){
-        var counter = 0
-        for preview in previewCollection{
-//            let url = URL(string: savedSneaker[counter].imageURL)
-//            let data = try? Data(contentsOf: url!)
+    
+    
+    private func setupCollectionViewItemSize(){
+        if collectionViewFlowLayout == nil {
+            let numberOfItemForRow: CGFloat = 2
+            let lineSpacing: CGFloat = 0
+            let interItemSpacing: CGFloat = 0
             
-            if counter < myCollection.count {
-                if counter == 0 {
-                                var tintView = UIView()
-                                tintView.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 0.5)
-                                tintView.frame = CGRect(x: 0, y: 0, width: preview.frame.width, height: preview.frame.height)
-                                preview.addSubview(tintView)
-                            }
-                            
-                            preview.contentMode =  .scaleAspectFill
-                            preview.image = myCollection[counter].picture
-                //            preview.image = UIImage(data: data!)
-                            preview.layer.cornerRadius = 8.0
-                            preview.layer.masksToBounds = true
-
-                            counter += 1
-                            
-                        }
-            else{
-                preview.layer.cornerRadius = 8.0
-            }
-                
-            }
+            let width = myCollection_cv.frame.width/numberOfItemForRow
+            let height = width
             
+            myCollection_cv.isScrollEnabled = false
+            collectionViewFlowLayout = UICollectionViewFlowLayout()
+            
+            
+            collectionViewFlowLayout.itemSize = CGSize(width: 125, height: 125)
+            collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
+            collectionViewFlowLayout.minimumLineSpacing = lineSpacing
+            collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
+            
+            myCollection_cv.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+            myGrails_cv.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+            
+       }
     }
+    
     
     private func setupFeedPreview() {
         let tintView = UIView()
         tintView.backgroundColor = UIColor.init(red: 43/255, green: 17/255, blue: 187/255, alpha: 0.5)
         tintView.frame = CGRect(x: 0, y: 0, width: feedPreview.frame.width, height: feedPreview.frame.height)
+        tintView.translatesAutoresizingMaskIntoConstraints = false
         
         //feedPreview.layer.cornerRadius = 8.0
         feedPreview.addSubview(tintView)
         feedPreview.layer.masksToBounds = true
+        tintView.leftAnchor.constraint(equalTo: feedPreview.leftAnchor).isActive = true
+        tintView.rightAnchor.constraint(equalTo: feedPreview.rightAnchor).isActive = true
+        tintView.bottomAnchor.constraint(equalTo: feedPreview.bottomAnchor).isActive = true
+        tintView.topAnchor.constraint(equalTo: feedPreview.topAnchor).isActive = true
+        tintView.widthAnchor.constraint(equalTo: feedPreview.widthAnchor).isActive = true
+        tintView.heightAnchor.constraint(equalTo: feedPreview.heightAnchor).isActive = true
         
         myFeeds_view.layer.cornerRadius = 15
         myFeeds_view.backgroundColor = UIColor.init(red: 249/250, green: 241/250, blue: 254/250, alpha: 1)
@@ -184,5 +183,88 @@ class MyProfilViewController: UIViewController {
     }
     
    }
+
+extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 3
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == self.myCollection_cv{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! myCollectionViewCell
+            
+            if let collectionImage = myCollection[indexPath.row].picture{
+                cell.imageView.image = collectionImage
+                cell.imageView.clipsToBounds = true
+                
+                cell.frame = CGRect(x: xAchse, y: yAchse, width: cell.frame.width, height: cell.frame.height)
+                cell.layer.cornerRadius = 8
+                xAchse += 10
+                yAchse += 10
+                
+            }
+            
+            else{
+                cell.imageView.image = UIImage(named: "photo.fill")
+            }
+            
+            
+            return cell
+            
+        }
+        
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: grailIdentifier, for: indexPath) as! myGrailsCollectionViewCell
+            
+            if indexPath.row < savedSneaker.count{
+                let grail = savedSneaker[indexPath.row]
+                cell.grail = grail
+                cell.sneakerName.text = ""
+                cell.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 1)
+                cell.frame = CGRect(x: xGrailAchse, y: yGrailAchse, width: cell.frame.width, height: cell.frame.height)
+                cell.layer.cornerRadius = 8
+                xGrailAchse += 10
+                yGrailAchse += 10
+                
+            }
+            
+            
+            else{
+                cell.grailImage.image = UIImage(named: "af2")
+                cell.grailImage.contentMode = .scaleAspectFill
+                cell.frame = CGRect(x: xGrailAchse, y: yGrailAchse, width: cell.frame.width, height: cell.frame.height)
+                cell.sneakerName.text = ""
+                cell.layer.cornerRadius = 8
+                xGrailAchse += 10
+                yGrailAchse += 10
+            }
+            
+            
+            
+            return cell
+        }
+        
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        
+        if collectionView == self.myCollection_cv{
+            if indexPath.row == 2 {
+                performSegue(withIdentifier: "MyCollection_Segue", sender: self)
+            }
+        }
+        
+        else{
+                performSegue(withIdentifier: "myGrails_Segue", sender: self)
+        }
+        
+    }
+}
 
 

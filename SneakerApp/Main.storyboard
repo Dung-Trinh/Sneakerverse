@@ -1537,19 +1537,6 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="af2" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-5Y-CL3">
                                         <rect key="frame" x="0.0" y="79" width="414" height="267.5"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnE-bU-56J">
-                                        <rect key="frame" x="0.0" y="79" width="414" height="51"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="51" id="0d2-ob-8HY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                        <state key="normal" title="Custom Feeds">
-                                            <color key="titleColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="DlD-wg-oWb" kind="show" identifier="myFeeds_Segue" id="I4E-27-dmh"/>
-                                        </connections>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="awB-hK-mG2">
                                         <rect key="frame" x="361" y="182.5" width="35" height="31.5"/>
                                         <color key="tintColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1559,7 +1546,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Feeds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq7-GD-8M3">
-                                        <rect key="frame" x="152" y="22.5" width="110" height="29.5"/>
+                                        <rect key="frame" x="148.5" y="22.5" width="117.5" height="29.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29.5" id="QTC-Ub-5El"/>
                                         </constraints>
@@ -1567,6 +1554,19 @@
                                         <color key="textColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnE-bU-56J">
+                                        <rect key="frame" x="0.0" y="79" width="414" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="236" id="0d2-ob-8HY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <state key="normal" title="Custom Feeds">
+                                            <color key="titleColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="DlD-wg-oWb" kind="show" identifier="myFeeds_Segue" id="I4E-27-dmh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1587,68 +1587,73 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b22-7a-00v">
                                 <rect key="frame" x="0.0" y="88" width="414" height="353"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="spU-D9-VjP">
-                                        <rect key="frame" x="37" y="129" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-LW-uuI">
-                                        <rect key="frame" x="27" y="119" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rN6-RN-8wY">
-                                        <rect key="frame" x="17" y="110" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9C-Gj-RLQ">
-                                        <rect key="frame" x="37" y="286" width="109" height="32"/>
+                                        <rect key="frame" x="56" y="270" width="109" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                         <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sux-t9-rwE">
-                                        <rect key="frame" x="17" y="118" width="168" height="151"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" image="photo.on.rectangle" catalog="system"/>
-                                        <connections>
-                                            <segue destination="Iwb-4D-f11" kind="show" identifier="MyCollection_Segue" id="ZzR-20-eCw"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tkc-PM-8NP">
-                                        <rect key="frame" x="248" y="129" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5YL-4T-Mlf">
-                                        <rect key="frame" x="238" y="119" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Unr-n0-O6Z">
-                                        <rect key="frame" x="228" y="110" width="148" height="148"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grails" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-y0-MTm">
-                                        <rect key="frame" x="269" y="285" width="66" height="32"/>
+                                        <rect key="frame" x="279" y="270" width="66" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                         <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-EX-N9Z">
-                                        <rect key="frame" x="228" y="109" width="168" height="160"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-Ml-bde">
+                                        <rect key="frame" x="163" y="45" width="100" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="25"/>
+                                        <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-IU-6VX">
+                                        <rect key="frame" x="0.0" y="89" width="198" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UZc-Qz-3Or">
+                                            <size key="itemSize" width="109" height="109"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TLH-Dw-Oru">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bSe-T0-TaB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-kt-MOs">
+                                        <rect key="frame" x="216" y="89" width="198" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="uAf-0t-jfL">
+                                            <size key="itemSize" width="109" height="109"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CbU-TS-Y9M">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TQT-e6-1wS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-EX-N9Z">
+                                        <rect key="frame" x="238" y="116" width="150" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" image="photo.on.rectangle" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1657,13 +1662,15 @@
                                             <segue destination="0P7-4a-Tk0" kind="show" identifier="myGrails_Segue" id="cu9-o1-HfU"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-Ml-bde">
-                                        <rect key="frame" x="163" y="45" width="100" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGi-3C-DpU">
+                                        <rect key="frame" x="355" y="12" width="20" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="25"/>
-                                        <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="gobackward" catalog="system"/>
+                                        <connections>
+                                            <action selector="reloadData:" destination="xoV-Ve-3ug" eventType="touchUpInside" id="071-Qz-DSO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1702,13 +1709,9 @@
                     <connections>
                         <outlet property="feedButton" destination="bnE-bU-56J" id="Grv-ms-l6Q"/>
                         <outlet property="feedPreview" destination="hx3-5Y-CL3" id="yLs-dV-R3Y"/>
+                        <outlet property="myCollection_cv" destination="e8s-IU-6VX" id="JuL-7j-qlt"/>
                         <outlet property="myFeeds_view" destination="BUq-7g-2he" id="CUE-mp-tia"/>
-                        <outletCollection property="previewGrails" destination="Unr-n0-O6Z" collectionClass="NSMutableArray" id="BK5-iT-Kxn"/>
-                        <outletCollection property="previewGrails" destination="5YL-4T-Mlf" collectionClass="NSMutableArray" id="ESr-a4-flh"/>
-                        <outletCollection property="previewGrails" destination="tkc-PM-8NP" collectionClass="NSMutableArray" id="5gm-dS-JEG"/>
-                        <outletCollection property="previewCollection" destination="rN6-RN-8wY" collectionClass="NSMutableArray" id="9iR-EM-mG3"/>
-                        <outletCollection property="previewCollection" destination="HgZ-LW-uuI" collectionClass="NSMutableArray" id="Jvx-vg-L8G"/>
-                        <outletCollection property="previewCollection" destination="spU-D9-VjP" collectionClass="NSMutableArray" id="VqW-Y5-zqU"/>
+                        <outlet property="myGrails_cv" destination="fGu-kt-MOs" id="UgJ-ax-3mf"/>
                         <segue destination="Iwb-4D-f11" kind="show" identifier="MyCollection_Segue" id="bQw-tR-psO"/>
                     </connections>
                 </viewController>
@@ -2045,7 +2048,7 @@
                                         <rect key="frame" x="0.0" y="99" width="300" height="30"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
-                                            <segue destination="3J6-kz-UMa" kind="unwind" unwindAction="unwindToProfile:" id="Smn-YF-dp5"/>
+                                            <segue destination="3J6-kz-UMa" kind="unwind" identifier="saveProfile_Segue" unwindAction="unwindToProfile:" id="Smn-YF-dp5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2567,13 +2570,13 @@
         <image name="chicago1" width="390" height="273.5"/>
         <image name="chicago3" width="1024" height="768"/>
         <image name="galaxy" width="364" height="647"/>
+        <image name="gobackward" catalog="system" width="60" height="64"/>
         <image name="j1" width="750" height="450"/>
         <image name="largecircle.fill.circle" catalog="system" width="64" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
-        <image name="photo" catalog="system" width="64" height="46"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
@@ -2584,7 +2587,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nHs-tf-87n"/>
-        <segue reference="ZzR-20-eCw"/>
         <segue reference="ssn-IE-0zw"/>
         <segue reference="Mb6-av-IA4"/>
     </inferredMetricsTieBreakers>
