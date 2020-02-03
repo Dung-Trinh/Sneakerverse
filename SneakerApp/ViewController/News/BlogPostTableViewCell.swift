@@ -29,7 +29,11 @@ class BlogPostTableViewCell: UITableViewCell {
     }
     
     func loadImage(url:String) {
+        if(url == nil){
+            img.image = UIImage(named: "error_img")
+        }else{
         img.load(url: NSURL(string: url) as! URL)
+        }
         //img.layer.cornerRadius = 40
         //img.clipsToBounds = true
         

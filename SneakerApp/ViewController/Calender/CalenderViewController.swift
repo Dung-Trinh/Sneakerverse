@@ -43,6 +43,7 @@ class CalenderViewController: UIViewController {
             }
         sneakerCalenderTop=top
         sneakerCalenderBottom=bottom
+        self.sortSneakerArray()
         }
     
 
@@ -62,6 +63,10 @@ class CalenderViewController: UIViewController {
         
         fetchData()
         
+    }
+    func sortSneakerArray(){
+        self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderBottom)
+        self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderTop)
     }
     
     func fetchData(){
@@ -87,8 +92,7 @@ class CalenderViewController: UIViewController {
               DispatchQueue.main.async {
                 self.allSneaker = self.dataFetcher.allSneaker
                 self.setSneakerArray()
-                self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderBottom)
-                self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderTop)
+                self.sortSneakerArray()
 
                 self.calenderTop.reloadData()
                 self.calenderBottom.reloadData()
@@ -124,12 +128,15 @@ class CalenderViewController: UIViewController {
         case 1:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Nike"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Nike"}
+            self.sortSneakerArray()
         case 2:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Adidas"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Adidas"}
+            self.sortSneakerArray()
         case 3:
             self.sneakerCalenderTop=sneakerCalenderTop.filter{$0.brand == "Puma"}
             self.sneakerCalenderBottom=sneakerCalenderBottom.filter{$0.brand == "Puma"}
+            self.sortSneakerArray()
         default:
             break
         }

@@ -35,14 +35,24 @@ class SneakerDetailViewController: UIViewController {
         
         let url = URL(string:sneaker!.imageURL)
         let data = try? Data(contentsOf: url!)
-        images[0].image = UIImage(data: data!)
+        if data == nil{
+            images[0].image = UIImage(named:"no_shoeIMG")
+        }else{
+            images[0].image = UIImage(data: data!)
+        }
+        
         
         var k : Int = 1
         for i in sneaker!.imgArray{
             let url = URL(string: i)
              // TODO: try catch einbauen !
             let data = try? Data(contentsOf: url!)
-            images[k].image = UIImage(data: data!)
+            if data == nil{
+                images[k].image = UIImage(named:"error_img")
+            }else{
+                images[k].image = UIImage(data: data!)
+            }
+            
             k = k+1
             
         }
