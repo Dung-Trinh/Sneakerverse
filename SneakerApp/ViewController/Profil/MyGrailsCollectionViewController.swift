@@ -22,7 +22,7 @@ class MyGrailsCollectionViewController: UIViewController{
             super.viewDidLoad()
             nc.addObserver(self, selector: #selector(reloadItems), name: Notification.Name("reloadGrails"), object: nil)
             setupCollectionView()
-            navigationItem.leftBarButtonItem = editButtonItem
+            navigationItem.rightBarButtonItem = editButtonItem
             
         }
     
@@ -126,8 +126,10 @@ class MyGrailsCollectionViewController: UIViewController{
 extension MyGrailsCollectionViewController: myGrailsDelegate{
     func delete(cell: myGrailsCollectionViewCell) {
         if let indexPath = myGrails_cv?.indexPath(for: cell) {
+            coreDataManager.deleteSneaker(sneaker: items[indexPath.row])
             items.remove(at: indexPath.item)
             myGrails_cv?.deleteItems(at: [indexPath])
+            
         }
     }
     

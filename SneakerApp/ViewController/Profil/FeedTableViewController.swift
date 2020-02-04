@@ -86,6 +86,7 @@ class FeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
+            coreDataManager.deleteBlogpost(blogPost: blogPosts[indexPath.row])
             self.blogPosts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
