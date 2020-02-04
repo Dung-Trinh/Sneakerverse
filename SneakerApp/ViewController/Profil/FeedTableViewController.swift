@@ -78,12 +78,34 @@ class FeedTableViewController: UITableViewController {
          dest.blogPost = blogPosts[indexPath.row]
      }
     }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
         
+        if let indexPaths = myfeeds_tv.indexPathsForVisibleRows {
+            for indexPath in indexPaths {
+                if let cell = myfeeds_tv?.cellForRow(at: indexPath) as? FeedTableViewCell {
+                    cell.isEditing = editing
+                    cell.reloadInputViews()
+                }
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        if editingStyle == .delete {
+            self.blogPosts.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+        
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             myfeeds_tv.dataSource = self
             myfeeds_tv.delegate = self
+            navigationItem.rightBarButtonItem = editButtonItem
       
 
         }
@@ -92,3 +114,5 @@ class FeedTableViewController: UITableViewController {
         
 
     }
+
+

@@ -26,6 +26,7 @@ class myCollectionViewCell: UICollectionViewCell {
             deleteButtonBackgroundView.isHidden = !isEditing
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupDeleteButton()

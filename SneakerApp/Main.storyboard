@@ -995,7 +995,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sneakercon" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373.00000000000011" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="174" id="cbx-So-Zrg"/>
                                                     </constraints>
@@ -1220,7 +1220,9 @@
                             <outlet property="delegate" destination="DlD-wg-oWb" id="QFa-jM-x3X"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gtm-fr-pF0"/>
+                    <navigationItem key="navigationItem" id="gtm-fr-pF0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="pcB-ig-r2j"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="myfeeds_tv" destination="s7l-Ho-wWN" id="6dm-a1-vUF"/>
                     </connections>
@@ -2110,17 +2112,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWN-3r-9vJ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy" translatesAutoresizingMaskIntoConstraints="NO" id="P1h-fH-pG6">
-                                        <rect key="frame" x="0.0" y="59" width="414" height="647"/>
+                                        <rect key="frame" x="0.0" y="59" width="414" height="834.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Lk-b6-YNq">
-                                        <rect key="frame" x="0.0" y="-17" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="-17" width="414" height="100.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-Xa-t9A">
-                                        <rect key="frame" x="177" y="615.5" width="60" height="59"/>
+                                        <rect key="frame" x="177" y="816.5" width="60" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="5Ig-tq-rgK"/>

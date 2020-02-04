@@ -18,6 +18,7 @@ class MyGrailsCollectionViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             setupCollectionView()
+            navigationItem.leftBarButtonItem = editButtonItem
             
         }
         
@@ -30,6 +31,19 @@ class MyGrailsCollectionViewController: UIViewController {
                 }
             }
         }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        if let indexPaths = myGrails_cv?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                if let cell = myGrails_cv?.cellForItem(at: indexPath) as? myGrailsCollectionViewCell {
+                    cell.isEditing = editing
+                    cell.reloadInputViews()
+                }
+            }
+        }
+    }
         
         
 
@@ -85,6 +99,7 @@ class MyGrailsCollectionViewController: UIViewController {
                 
                 let grail = items[indexPath.item]
                 cell.grail = grail
+                cell.delegate = self
 
                 return cell
                 
@@ -98,6 +113,17 @@ class MyGrailsCollectionViewController: UIViewController {
             
             
         }
+
+extension MyGrailsCollectionViewController: myGrailsDelegate{
+    func delete(cell: myGrailsCollectionViewCell) {
+        if let indexPath = myGrails_cv?.indexPath(for: cell) {
+            items.remove(at: indexPath.item)
+            myGrails_cv?.deleteItems(at: [indexPath])
+        }
+    }
+    
+    
+}
 
 
     

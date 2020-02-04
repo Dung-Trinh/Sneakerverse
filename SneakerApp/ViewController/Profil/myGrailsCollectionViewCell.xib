@@ -25,6 +25,28 @@
                         <color key="textColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBG-gq-ypf">
+                        <rect key="frame" x="10" y="10" width="22" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="XVm-9X-P6j">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Za9-Gn-BAj">
+                                    <rect key="frame" x="-4" y="-6" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                    <state key="normal" title="x">
+                                        <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="41G-J4-3WS"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <blurEffect style="extraLight"/>
+                    </visualEffectView>
                 </subviews>
             </view>
             <constraints>
@@ -39,6 +61,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="buttonBackgroundView" destination="cBG-gq-ypf" id="JiL-zT-SoJ"/>
                 <outlet property="grailImage" destination="pgU-6M-er7" id="F7d-Me-xM1"/>
                 <outlet property="sneakerName" destination="Gwx-Id-Fyh" id="b9U-8A-iYU"/>
             </connections>

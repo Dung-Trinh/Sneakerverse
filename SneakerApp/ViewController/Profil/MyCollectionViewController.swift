@@ -140,6 +140,7 @@ extension MyCollectionViewController : myCollectionCellDelegate {
             
             //2. entfernt die Zelle am indexPath
             myCollection_cv?.deleteItems(at: [indexPath])
+            
         }
     }
 }

@@ -12,9 +12,8 @@ class FeedTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var feedImage: UIImageView!
-    
     @IBOutlet weak var feedLabel: UILabel!
-    
+        
     let tintView = UIView()
     
     
@@ -23,6 +22,7 @@ class FeedTableViewCell: UITableViewCell {
             updateUI()
         }
     }
+    
     
     func updateUI(){
         
@@ -60,5 +60,4 @@ class FeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
 }

@@ -8,10 +8,22 @@
 
 import UIKit
 
+protocol myGrailsDelegate: class {
+    func delete(cell: myGrailsCollectionViewCell)
+}
+
 class myGrailsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var grailImage: UIImageView!
     @IBOutlet weak var sneakerName: UILabel!
+    @IBOutlet weak var buttonBackgroundView: UIVisualEffectView!
+    weak var delegate: myGrailsDelegate!
+    
+    var isEditing: Bool = false {
+        didSet {
+            buttonBackgroundView.isHidden = !isEditing
+        }
+    }
     
     var grail: Sneaker! {
         didSet{
@@ -19,6 +31,9 @@ class myGrailsCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    @IBAction func didTapButton(_ sender: Any) {
+        delegate?.delete(cell: self)
+    }
     func updateUI(){
         
         let url = URL(string: grail!.imageURL)
@@ -29,8 +44,16 @@ class myGrailsCollectionViewCell: UICollectionViewCell {
         
     }
     
+    private func setupDeleteButton() {
+        buttonBackgroundView.layer.cornerRadius = buttonBackgroundView.bounds.width / 2.0
+        buttonBackgroundView.layer.masksToBounds = true
+        buttonBackgroundView.isHidden = !isEditing
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupDeleteButton()
+        
         // Initialization code
     }
 
