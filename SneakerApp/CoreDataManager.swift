@@ -31,7 +31,6 @@ class CoreDataManager{
                  
               }
               print ("Geladen: '\(results.count)' Collection Ergebnisse")
-             print(savedCollection)
           }
           
           catch{
@@ -55,13 +54,14 @@ class CoreDataManager{
                     }
                     for collectionData in results as! [NSManagedObject]{
                             context.delete(collectionData)
-
-                        do{
-                            try context.save()
-                        }catch{
-                            print(error)
-                        }
                     }
+                    do{
+                        try context.save()
+                        print("Ganze Collection gelöscht")
+                    }catch{
+                        print(error)
+                    }
+
                 }catch{
                     print(error)
                 }
@@ -85,13 +85,13 @@ class CoreDataManager{
                  if(collectionData.value(forKey: "sneakerName") as! String == collectionPhoto.sneakerName ){
                      context.delete(collectionData)
                  }
-
-                 do{
-                     try context.save()
-                 }catch{
-                     print(error)
-                 }
              }
+            do{
+                try context.save()
+                print("Gelöschtes Collection Element")
+            }catch{
+                print(error)
+            }
          }catch{
              print(error)
          }
@@ -118,7 +118,7 @@ class CoreDataManager{
          
          do{
              try context.save()
-               print(collectionData)
+            print("Gespeichert: ",collectionData)
          }catch{
              print(error)
          }
@@ -148,7 +148,6 @@ class CoreDataManager{
                
             }
             print ("Geladen: '\(results.count)' Blogpost Ergebnisse")
-           print(savedBlogpost)
         }
         
         catch{
@@ -183,7 +182,6 @@ class CoreDataManager{
                          
                       }
             print ("Geladen: '\(results.count)' Sneaker Ergebnisse")
-            print(savedSneaker)
         }
         
         catch{
@@ -222,7 +220,7 @@ class CoreDataManager{
                 
                 do{
                     try context.save()
-                      print(savedBlogpost)
+                      print("Gespeichert :",savedBlogpost)
                 }catch{
                     print(error)
                 }
@@ -247,13 +245,13 @@ class CoreDataManager{
                 if(blogpo.value(forKey: "title") as! String == blogPost?.title ){
                     context.delete(blogpo)
                 }
-
-                do{
-                    try context.save()
-                }catch{
-                    print(error)
-                }
             }
+            do{
+             try context.save()
+                print("Blogpost Element Gelöscht")
+         }catch{
+             print(error)
+         }
         }catch{
             print(error)
         }
@@ -322,14 +320,13 @@ class CoreDataManager{
                  if(snkr.value(forKey: "title") as! String == sneaker?.title ){
                      context.delete(snkr)
                  }
-
-                 do{
-                     try context.save()
-                 }catch{
-                     print(error)
-                 }
-                 
              }
+            do{
+               try context.save()
+                print("Gelöschtes Sneaker Element")
+           }catch{
+               print(error)
+           }
          }catch{
              print(error)
          }
@@ -371,7 +368,7 @@ class CoreDataManager{
                  
                  do{
                      try context.save()
-                       print(savedSneaker)
+                       print("Gespeichert: ",savedSneaker)
           //             context.delete(savedSneaker)
           //             print("Gelöscht")
                  }catch{

@@ -8,18 +8,27 @@
 
 import UIKit
 
-class MyGrailsCollectionViewController: UIViewController {
-        
+
+class MyGrailsCollectionViewController: UIViewController{
+
     var selectedSneaker: Sneaker?
         var items: [Sneaker]!
         let cellIdentifier = "myGrailsCollectionViewCell"
         var collectionViewFlowLayout: UICollectionViewFlowLayout!
+        var coreDataManager = CoreDataManager()
         @IBOutlet weak var myGrails_cv: UICollectionView!
+        var nc = NotificationCenter.default
         override func viewDidLoad() {
             super.viewDidLoad()
+            nc.addObserver(self, selector: #selector(reloadItems), name: Notification.Name("reloadGrails"), object: nil)
             setupCollectionView()
             
         }
+    
+    @objc func reloadItems(){
+        self.items = coreDataManager.loadSavedSneakers()
+        myGrails_cv.reloadData()
+    }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
@@ -31,7 +40,6 @@ class MyGrailsCollectionViewController: UIViewController {
             }
         }
         
-        
 
        private func setupCollectionView(){
                 myGrails_cv.delegate = self
@@ -40,6 +48,7 @@ class MyGrailsCollectionViewController: UIViewController {
                 myGrails_cv.register(nib, forCellWithReuseIdentifier: cellIdentifier)
                 
             }
+   
             
         @IBAction func backButton(_ sender: Any) {
         }
