@@ -446,7 +446,7 @@
             </objects>
             <point key="canvasLocation" x="323.1884057971015" y="-2207.8125"/>
         </scene>
-        <!--Item-->
+        <!--Details-->
         <scene sceneID="Yk2-IS-Bdd">
             <objects>
                 <viewController id="v0R-wX-8LH" customClass="NewsDetailViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -455,7 +455,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWx-um-KFy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1029"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="977"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="438-0M-4yS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="977"/>
@@ -641,12 +641,15 @@
                         <viewLayoutGuide key="safeArea" id="w82-ex-aJ5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1LL-dr-oqX"/>
-                    <navigationItem key="navigationItem" id="gSp-MQ-WTn"/>
+                    <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="always" id="gSp-MQ-WTn">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="NeF-Yq-1qT"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="calenderBtn" destination="Fg6-17-Eya" id="17j-5v-HC2"/>
                         <outlet property="imageCollectionView" destination="DOZ-NQ-wPp" id="NMm-wh-INt"/>
                         <outlet property="navigationBar" destination="gSp-MQ-WTn" id="ThL-qB-Rtb"/>
+                        <outlet property="news_title" destination="Miw-X3-C1L" id="8nD-xg-oEK"/>
                         <outlet property="pageControl" destination="R4Y-P0-GeN" id="36R-dp-oac"/>
                         <outlet property="saveBtn" destination="aKA-71-7KX" id="XzM-rd-5s0"/>
                         <outlet property="shareBtn" destination="qkY-ed-p5z" id="J5m-fl-xq3"/>
@@ -1029,7 +1032,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sneakercon" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-P4-d0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="373.00000000000011" height="174"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="174" id="cbx-So-Zrg"/>
                                                     </constraints>
@@ -1292,11 +1295,11 @@
             <objects>
                 <viewController storyboardIdentifier="SneakerDetailViewController" id="jSa-zg-nuY" customClass="SneakerDetailViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hE4-zh-Bwi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1446"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-1y-R95">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1412"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="1277"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7M4-cP-KFv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1297"/>
@@ -1536,7 +1539,7 @@
                         <viewLayoutGuide key="safeArea" id="hF3-iI-lxz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="QOh-nh-Raz"/>
-                    <navigationItem key="navigationItem" title="Sneaker Details" id="fzW-ek-tBc"/>
+                    <navigationItem key="navigationItem" title="Sneaker Details" largeTitleDisplayMode="always" id="fzW-ek-tBc"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="notificationBtn" destination="d3k-bD-shQ" id="F31-WN-iZv"/>
@@ -1564,7 +1567,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUq-7g-2he">
-                                <rect key="frame" x="0.0" y="596" width="414" height="384.5"/>
+                                <rect key="frame" x="0.0" y="523" width="414" height="317"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="af2" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-5Y-CL3">
                                         <rect key="frame" x="0.0" y="56" width="414" height="243"/>
@@ -1611,10 +1614,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b22-7a-00v">
-                                <rect key="frame" x="0.0" y="88" width="414" height="431"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="358"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-vq-yPt" userLabel="mycollectionContainer">
-                                        <rect key="frame" x="0.0" y="108.5" width="198" height="314.5"/>
+                                        <rect key="frame" x="0.0" y="89" width="198" height="261"/>
                                         <subviews>
                                             <collectionView multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-IU-6VX">
                                                 <rect key="frame" x="0.0" y="0.0" width="198" height="261"/>
@@ -1681,7 +1684,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-Ml-bde">
-                                        <rect key="frame" x="140" y="55.5" width="134" height="35.5"/>
+                                        <rect key="frame" x="140" y="42" width="134" height="29.5"/>
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="25"/>
                                         <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -2632,7 +2635,7 @@
         <image name="zeitung" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jsG-Tm-MJ5"/>
+        <segue reference="nHs-tf-87n"/>
         <segue reference="xfM-pY-pPk"/>
         <segue reference="Mb6-av-IA4"/>
     </inferredMetricsTieBreakers>

@@ -21,6 +21,8 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var calenderBtn: UIButton!
+    @IBOutlet weak var news_title: UILabel!
+    
     var coreDataManager = CoreDataManager()
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
@@ -49,7 +51,7 @@ class NewsDetailViewController: UIViewController {
         }else{
             calenderBtn.isEnabled = false
         }
-        navigationBar.title = blogPost?.title
+        news_title.text = blogPost?.title
         textView.text = blogPost?.description
         YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)
         
