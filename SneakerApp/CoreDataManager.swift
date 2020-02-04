@@ -12,16 +12,22 @@ import UIKit
 
 
 class CoreDataManager{
+    var appDelegate:AppDelegate?
+    var context:NSManagedObjectContext?
+    
+    init() {
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = self.appDelegate!.persistentContainer.viewContext
+    }
+    
     func loadSavedCollection()->[savedPhoto]{
         var savedCollection : [savedPhoto] = []
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-          let context = appDelegate.persistentContainer.viewContext
           let entityName="MyCollectionData"
           
           // Anfrage stellen
           let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
           do{
-              let results = try context.fetch(request)
+            let results = try self.context!.fetch(request)
               for collectionData in results as! [NSManagedObject]{
                 let sneakerName = collectionData.value(forKey: "sneakerName") as! String
                 let data = collectionData.value(forKey: "picture")
@@ -31,7 +37,6 @@ class CoreDataManager{
                  
               }
               print ("Geladen: '\(results.count)' Collection Ergebnisse")
-             print(savedCollection)
           }
           
           catch{
@@ -40,70 +45,59 @@ class CoreDataManager{
         return savedCollection
     }
     func deleteEntireCollection(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                           return
-                       }
-                       let context = appDelegate.persistentContainer.viewContext
-                       let entityName="MyCollectionData"
+               let entityName="MyCollectionData"
 
-                       // Anfrage stellen
-                       let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+               // Anfrage stellen
+               let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
                 do{
-                    let results = try context.fetch(request)
+                    let results = try context!.fetch(request)
                     guard results.count > 0 else {
                         return
                     }
                     for collectionData in results as! [NSManagedObject]{
-                            context.delete(collectionData)
-
-                        do{
-                            try context.save()
-                        }catch{
-                            print(error)
-                        }
+                        context!.delete(collectionData)
                     }
+                    do{
+                        try context!.save()
+                        print("Ganze Collection gelöscht")
+                    }catch{
+                        print(error)
+                    }
+
                 }catch{
                     print(error)
                 }
     }
     func deleteSavedCollection(collectionPhoto:savedPhoto){
-         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                    return
-                }
-                let context = appDelegate.persistentContainer.viewContext
                 let entityName="MyCollectionData"
 
                 // Anfrage stellen
                 let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
          do{
-             let results = try context.fetch(request)
+             let results = try context!.fetch(request)
              guard results.count > 0 else {
                  return
              }
              for collectionData in results as! [NSManagedObject]{
                
                  if(collectionData.value(forKey: "sneakerName") as! String == collectionPhoto.sneakerName ){
-                     context.delete(collectionData)
-                 }
-
-                 do{
-                     try context.save()
-                 }catch{
-                     print(error)
+                     context!.delete(collectionData)
                  }
              }
+            do{
+                try context!.save()
+                print("Gelöschtes Collection Element")
+            }catch{
+                print(error)
+            }
          }catch{
              print(error)
          }
     }
     func saveCollectionPhoto(collectionPhoto:savedPhoto){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-            return
-        }
-       let context = appDelegate.persistentContainer.viewContext
         let entityName="MyCollectionData" // Tabellenname im Datenmodell
        // Neuen Datensatz anlegen
-        guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+        guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context!)else{
             return
         }
         let collectionData = NSManagedObject(entity:newEntity,insertInto: context)
@@ -117,22 +111,20 @@ class CoreDataManager{
     
          
          do{
-             try context.save()
-               print(collectionData)
+            try context!.save()
+            print("Gespeichert: ",collectionData)
          }catch{
              print(error)
          }
     }
     func loadSavedBlogposts() ->[BlogPost]{
         var savedBlogpost :[BlogPost]=[]
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let entityName="BlogpostData"
         
         // Anfrage stellen
         let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do{
-            let results = try context.fetch(request)
+            let results = try context!.fetch(request)
             
             
             for blogpo in results as! [NSManagedObject]{
@@ -148,7 +140,6 @@ class CoreDataManager{
                
             }
             print ("Geladen: '\(results.count)' Blogpost Ergebnisse")
-           print(savedBlogpost)
         }
         
         catch{
@@ -159,13 +150,11 @@ class CoreDataManager{
     
     func loadSavedSneakers()->[Sneaker]{
         var savedSneaker :[Sneaker]=[]
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let entityName="SneakerData"
         
         let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do{
-            let results = try context.fetch(request)
+            let results = try context!.fetch(request)
             
             
                for snkr in results as! [NSManagedObject]{
@@ -183,7 +172,6 @@ class CoreDataManager{
                          
                       }
             print ("Geladen: '\(results.count)' Sneaker Ergebnisse")
-            print(savedSneaker)
         }
         
         catch{
@@ -193,13 +181,9 @@ class CoreDataManager{
     }
     
     func saveBlogpost(blogPost:BlogPost?){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-                   return
-               }
-              let context = appDelegate.persistentContainer.viewContext
                let entityName="BlogpostData" // Tabellenname im Datenmodell
               // Neuen Datensatz anlegen
-               guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
+        guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context!)else{
                    return
                }
                let savedBlogpost = NSManagedObject(entity:newEntity,insertInto: context)
@@ -221,39 +205,35 @@ class CoreDataManager{
                 savedBlogpost.setValue(contentPictures, forKey: "contentPictures")
                 
                 do{
-                    try context.save()
-                      print(savedBlogpost)
+                    try context!.save()
+                      print("Gespeichert :",savedBlogpost)
                 }catch{
                     print(error)
                 }
     }
     
     func deleteBlogpost(blogPost:BlogPost?){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                   return
-               }
-               let context = appDelegate.persistentContainer.viewContext
                let entityName="BlogpostData"
 
                // Anfrage stellen
                let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do{
-            let results = try context.fetch(request)
+            let results = try context!.fetch(request)
             guard results.count > 0 else {
                 return
             }
             for blogpo in results as! [NSManagedObject]{
               
                 if(blogpo.value(forKey: "title") as! String == blogPost?.title ){
-                    context.delete(blogpo)
-                }
-
-                do{
-                    try context.save()
-                }catch{
-                    print(error)
+                    context!.delete(blogpo)
                 }
             }
+            do{
+                try context!.save()
+                print("Blogpost Element Gelöscht")
+         }catch{
+             print(error)
+         }
         }catch{
             print(error)
         }
@@ -261,14 +241,12 @@ class CoreDataManager{
     
     
     func checkSavedBlogpost(blogPost:BlogPost?) -> Bool{
-             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-               let context = appDelegate.persistentContainer.viewContext
                let entityName="BlogpostData"
 
                // Anfrage stellen
                let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do{
-            let results = try context.fetch(request)
+            let results = try context!.fetch(request)
             if(results.count > 0) {
                 for blopo in results as! [NSManagedObject]{
                   if(blopo.value(forKey: "title") as! String == blogPost?.title ){
@@ -283,14 +261,12 @@ class CoreDataManager{
     }
     
     func checkSavedSneaker(sneaker:Sneaker?) -> Bool{
-               let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                 let context = appDelegate.persistentContainer.viewContext
                  let entityName="SneakerData"
 
                  // Anfrage stellen
                  let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
           do{
-              let results = try context.fetch(request)
+            let results = try context!.fetch(request)
                 if(results.count > 0){
                 for snkr in results as! [NSManagedObject]{
                          if(snkr.value(forKey: "title") as! String == sneaker?.title ){
@@ -305,31 +281,27 @@ class CoreDataManager{
       }
     
     func deleteSneaker(sneaker:Sneaker?){
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                    return
-                }
-                let context = appDelegate.persistentContainer.viewContext
-                let entityName="SneakerData"
 
-                // Anfrage stellen
-                let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let entityName="SneakerData"
+
+        // Anfrage stellen
+        let request=NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
          do{
-             let results = try context.fetch(request)
+            let results = try context!.fetch(request)
              guard results.count > 0 else {
                  return
              }
              for snkr in results as! [NSManagedObject]{
                  if(snkr.value(forKey: "title") as! String == sneaker?.title ){
-                     context.delete(snkr)
+                    context!.delete(snkr)
                  }
-
-                 do{
-                     try context.save()
-                 }catch{
-                     print(error)
-                 }
-                 
              }
+            do{
+                try context!.save()
+                print("Gelöschtes Sneaker Element")
+           }catch{
+               print(error)
+           }
          }catch{
              print(error)
          }
@@ -338,40 +310,36 @@ class CoreDataManager{
     
     
     func saveSneaker(sneaker:Sneaker?){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+        let entityName="SneakerData" // Tabellenname im Datenmodell
+       // Neuen Datensatz anlegen
+        guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context!)else{
                         return
                     }
-                   let context = appDelegate.persistentContainer.viewContext
-                    let entityName="SneakerData" // Tabellenname im Datenmodell
-                   // Neuen Datensatz anlegen
-                    guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)else{
-                        return
-                    }
-                    let savedSneaker = NSManagedObject(entity:newEntity,insertInto: context)
+        let savedSneaker = NSManagedObject(entity:newEntity,insertInto: context)
+            
+           let title=sneaker?.title
+           let text = sneaker?.description
+           let brand = sneaker?.brand
+           let imgArray = sneaker?.imgArray
+           let imageURL = sneaker?.imageURL
+           let position = sneaker?.position
+           let priceSpan = sneaker?.priceSpan
+           let releaseDate = sneaker?.releaseDate
+           let retailPrice = sneaker?.retailPrice
                     
-                   let title=sneaker?.title
-                   let text = sneaker?.description
-                   let brand = sneaker?.brand
-                   let imgArray = sneaker?.imgArray
-                   let imageURL = sneaker?.imageURL
-                   let position = sneaker?.position
-                   let priceSpan = sneaker?.priceSpan
-                   let releaseDate = sneaker?.releaseDate
-                   let retailPrice = sneaker?.retailPrice
-                            
-                 savedSneaker.setValue(title, forKey: "title")
-                 savedSneaker.setValue(text, forKey: "text")
-                 savedSneaker.setValue(brand, forKey: "brand")
-                 savedSneaker.setValue(imageURL, forKey: "imageURL")
-                 savedSneaker.setValue(position, forKey: "position")
-                 savedSneaker.setValue(priceSpan, forKey: "priceSpan")
-                      savedSneaker.setValue(releaseDate, forKey: "releaseDate")
-                      savedSneaker.setValue(retailPrice, forKey: "retailPrice")
-                      savedSneaker.setValue(imgArray, forKey: "imgArray")
-                 
+         savedSneaker.setValue(title, forKey: "title")
+         savedSneaker.setValue(text, forKey: "text")
+         savedSneaker.setValue(brand, forKey: "brand")
+         savedSneaker.setValue(imageURL, forKey: "imageURL")
+         savedSneaker.setValue(position, forKey: "position")
+         savedSneaker.setValue(priceSpan, forKey: "priceSpan")
+              savedSneaker.setValue(releaseDate, forKey: "releaseDate")
+              savedSneaker.setValue(retailPrice, forKey: "retailPrice")
+              savedSneaker.setValue(imgArray, forKey: "imgArray")
+         
                  do{
-                     try context.save()
-                       print(savedSneaker)
+                    try context!.save()
+                       print("Gespeichert: ",savedSneaker)
           //             context.delete(savedSneaker)
           //             print("Gelöscht")
                  }catch{

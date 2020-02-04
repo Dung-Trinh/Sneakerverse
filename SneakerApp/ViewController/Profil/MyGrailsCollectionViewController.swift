@@ -8,18 +8,28 @@
 
 import UIKit
 
-class MyGrailsCollectionViewController: UIViewController {
-        
+
+class MyGrailsCollectionViewController: UIViewController{
+
     var selectedSneaker: Sneaker?
         var items: [Sneaker]!
         let cellIdentifier = "myGrailsCollectionViewCell"
         var collectionViewFlowLayout: UICollectionViewFlowLayout!
+        var coreDataManager = CoreDataManager()
         @IBOutlet weak var myGrails_cv: UICollectionView!
+        var nc = NotificationCenter.default
         override func viewDidLoad() {
             super.viewDidLoad()
+            nc.addObserver(self, selector: #selector(reloadItems), name: Notification.Name("reloadGrails"), object: nil)
             setupCollectionView()
+            navigationItem.rightBarButtonItem = editButtonItem
             
         }
+    
+    @objc func reloadItems(){
+        self.items = coreDataManager.loadSavedSneakers()
+        myGrails_cv.reloadData()
+    }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
@@ -30,7 +40,19 @@ class MyGrailsCollectionViewController: UIViewController {
                 }
             }
         }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
         
+        if let indexPaths = myGrails_cv?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                if let cell = myGrails_cv?.cellForItem(at: indexPath) as? myGrailsCollectionViewCell {
+                    cell.isEditing = editing
+                    cell.reloadInputViews()
+                }
+            }
+        }
+    }
         
 
        private func setupCollectionView(){
@@ -40,6 +62,7 @@ class MyGrailsCollectionViewController: UIViewController {
                 myGrails_cv.register(nib, forCellWithReuseIdentifier: cellIdentifier)
                 
             }
+   
             
         @IBAction func backButton(_ sender: Any) {
         }
@@ -85,6 +108,7 @@ class MyGrailsCollectionViewController: UIViewController {
                 
                 let grail = items[indexPath.item]
                 cell.grail = grail
+                cell.delegate = self
 
                 return cell
                 
@@ -98,6 +122,19 @@ class MyGrailsCollectionViewController: UIViewController {
             
             
         }
+
+extension MyGrailsCollectionViewController: myGrailsDelegate{
+    func delete(cell: myGrailsCollectionViewCell) {
+        if let indexPath = myGrails_cv?.indexPath(for: cell) {
+            coreDataManager.deleteSneaker(sneaker: items[indexPath.row])
+            items.remove(at: indexPath.item)
+            myGrails_cv?.deleteItems(at: [indexPath])
+            
+        }
+    }
+    
+    
+}
 
 
     

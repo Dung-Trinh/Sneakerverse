@@ -29,17 +29,19 @@ class MyProfilViewController: UIViewController {
     let grailIdentifier = "myGrailsCollectionViewCell"
     var myCollection: [savedPhoto] =
         [savedPhoto(picture: UIImage(named: "af1"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af3"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1")]
+        savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi2"),
+        savedPhoto(picture: UIImage(named: "af3"),sneakerName: "testi3"),
+        savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi4"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi5"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi6")]
     
     var savedSneaker : [Sneaker]=[]
     var savedBlogpost: [BlogPost]=[]
     var savedCollection: [savedPhoto]?=[]
     var coreDataManager = CoreDataManager()
     var counter = 0
+   
+    
     
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){
         
@@ -82,9 +84,9 @@ class MyProfilViewController: UIViewController {
         super.viewDidLoad()
         loadSavedSneakers()
         loadSavedBlogposts()
-        saveTestColletion()
+        //saveTestColletion()
         loadSavedCollection()
-        deleteCollection()
+        //deleteCollection()
         setupCollectionView()
         setupCollectionViewItemSize()
         setupFeedPreview()
@@ -100,18 +102,21 @@ class MyProfilViewController: UIViewController {
             let navVC = segue.destination as? UINavigationController
             
             if let vc = navVC?.viewControllers.first as? MyCollectionViewController{
-                vc.items = myCollection
+                loadSavedCollection()
+                vc.items=self.savedCollection
             }
         }
         
         else if segue.identifier == "myFeeds_Segue"{
             if let vc = segue.destination as? FeedTableViewController {
+                loadSavedBlogposts()
                 vc.blogPosts = savedBlogpost
             }
         }
         
         else if segue.identifier == "myGrails_Segue" {
             if let vc = segue.destination as? MyGrailsCollectionViewController {
+                loadSavedSneakers()
                 vc.items = savedSneaker
             }
         }

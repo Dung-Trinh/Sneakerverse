@@ -21,6 +21,7 @@ class CameraPreviewViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! MyProfilViewController
         destVC.self.myCollection.append(savedPhoto(picture: image, sneakerName: ""))
+        
     }
     
     

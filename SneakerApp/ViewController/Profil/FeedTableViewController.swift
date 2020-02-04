@@ -10,19 +10,10 @@ import UIKit
 
 class FeedTableViewController: UITableViewController {
      @IBOutlet weak var myfeeds_tv: UITableView!
-        
     var blogPosts : [BlogPost] = []
-
-        var myCollection: [savedPhoto] = [savedPhoto(picture: UIImage(named: "af1")),
-                                    savedPhoto(picture: UIImage(named: "af2")),
-                                    savedPhoto(picture: UIImage(named: "af3")),
-                                    savedPhoto(picture: UIImage(named: "af4")),
-                                    savedPhoto(picture: UIImage(named: "af5")),
-                                    savedPhoto(picture: UIImage(named: "af5"))]
-        
-    //    @IBOutlet weak var headerLabel: UILabel!
-                
-        let shadowView = UIView()
+    let shadowView = UIView()
+    var nc = NotificationCenter.default
+    var coreDataManager = CoreDataManager()
         
         
         
@@ -78,17 +69,44 @@ class FeedTableViewController: UITableViewController {
          dest.blogPost = blogPosts[indexPath.row]
      }
     }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
         
+        if let indexPaths = myfeeds_tv.indexPathsForVisibleRows {
+            for indexPath in indexPaths {
+                if let cell = myfeeds_tv?.cellForRow(at: indexPath) as? FeedTableViewCell {
+                    cell.isEditing = editing
+                    cell.reloadInputViews()
+                }
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        if editingStyle == .delete {
+            coreDataManager.deleteBlogpost(blogPost: blogPosts[indexPath.row])
+            self.blogPosts.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+        
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
+              nc.addObserver(self, selector: #selector(reloadItems), name: Notification.Name("reloadFeeds"), object: nil)
             myfeeds_tv.dataSource = self
             myfeeds_tv.delegate = self
+            navigationItem.rightBarButtonItem = editButtonItem
       
 
         }
-        
-
-        
-
+    
+    @objc func reloadItems(){
+        self.blogPosts = coreDataManager.loadSavedBlogposts()
+        myfeeds_tv.reloadData()
     }
+    }
+
+

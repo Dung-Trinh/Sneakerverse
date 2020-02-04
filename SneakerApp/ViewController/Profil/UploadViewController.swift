@@ -17,12 +17,14 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     @IBOutlet weak var sneakerNameField: UITextField!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var takePhotoBtn: RoundButton!
+    var coreDataManager = CoreDataManager()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveProfile_Segue"{
-        let destVC = segue.destination as! MyProfilViewController
-            destVC.self.myCollection.append(savedPhoto(picture: image, sneakerName: sneakerNameField.text))
-        //destVC.myCollection_cv.reloadData()
+                    let addedPhoto = savedPhoto(picture: image, sneakerName: sneakerNameField.text)
+                   let destVC = segue.destination as! MyProfilViewController
+                   coreDataManager.saveCollectionPhoto(collectionPhoto: addedPhoto)
+                   destVC.loadSavedCollection()
     }
         else if segue.identifier == "saveTo_Segue"{
             let destVC = segue.destination as! PhotoPopupViewController

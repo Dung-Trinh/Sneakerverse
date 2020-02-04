@@ -18,7 +18,7 @@ class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var retailPrice: UILabel!
     @IBOutlet weak var notificationBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
-    
+    var nc = NotificationCenter.default
     let animator = CustomAnimator()
     let background = BackgroundColor()
     var sneaker : Sneaker?
@@ -71,12 +71,15 @@ class SneakerDetailViewController: UIViewController {
              animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
                 coreDataManager.saveSneaker(sneaker: sneaker)
                 var popUpMessage = ToastMessage(message: "Der Sneaker wurde in deiner Collection gespeichert✅ ", view: self.view)
+                self.nc.post(name: Notification.Name("reloadGrails"), object: nil)
         }
     }
         
          func delete(){
             coreDataManager.deleteSneaker(sneaker: sneaker)
             var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
+            self.nc.post(name: Notification.Name("reloadGrails"), object: nil)
+            
     }
     
         func checkSaved(){
