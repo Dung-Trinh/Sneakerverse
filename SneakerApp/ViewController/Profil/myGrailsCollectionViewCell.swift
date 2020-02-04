@@ -10,6 +10,7 @@ import UIKit
 
 class myGrailsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var blur_effect: UIVisualEffectView!
     @IBOutlet weak var grailImage: UIImageView!
     @IBOutlet weak var sneakerName: UILabel!
     

@@ -124,7 +124,7 @@ class MyProfilViewController: UIViewController {
         myCollection_cv.delegate = self
         
         myGrails_cv.dataSource = self
-        myGrails_cv.dataSource = self
+        myGrails_cv.delegate = self
         
         
         let nib = UINib(nibName: "myCollectionViewCell", bundle: nil)
@@ -149,7 +149,7 @@ class MyProfilViewController: UIViewController {
             collectionViewFlowLayout = UICollectionViewFlowLayout()
             
             
-            collectionViewFlowLayout.itemSize = CGSize(width: 125, height: 125)
+            collectionViewFlowLayout.itemSize = CGSize(width: 150, height: 150)
             collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
             collectionViewFlowLayout.minimumLineSpacing = lineSpacing
             collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
@@ -190,7 +190,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return 2
         
     }
     
@@ -214,6 +214,10 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                 cell.imageView.image = UIImage(named: "photo.fill")
             }
             
+            if indexPath.row == 1{
+                cell.sneakerName.text = "Collection"
+                cell.blur_effect.isHidden = false
+            }
             
             return cell
             
@@ -246,6 +250,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                     xGrailAchse += 10
                     yGrailAchse += 10
                     
+                    
                 }
                 else{
                     cell.grailImage.image = UIImage(named: "af2")
@@ -255,6 +260,11 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                     cell.layer.cornerRadius = 8
                     xGrailAchse += 10
                     yGrailAchse += 10
+                }
+                if indexPath.row == 1{
+                    
+                    cell.sneakerName.text = "Grails"
+                    cell.blur_effect.isHidden = false
                 }
                 
             }
@@ -271,7 +281,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
         print(indexPath)
         
         if collectionView == self.myCollection_cv{
-            if indexPath.row == 2 {
+            if indexPath.row == 1 {
                 performSegue(withIdentifier: "MyCollection_Segue", sender: self)
             }
         }

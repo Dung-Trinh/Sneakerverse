@@ -26,8 +26,16 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-jy-lKm">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHQ-Op-N9A">
-                        <rect key="frame" x="20" y="44" width="74" height="26"/>
+                    <visualEffectView hidden="YES" opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sw-3T-Bhf">
+                        <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Drb-SY-dPT">
+                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="kHQ-Op-N9A">
+                        <rect key="frame" x="8" y="44" width="100" height="26"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -57,18 +65,23 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="4sw-3T-Bhf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2RJ-BA-0qA"/>
                 <constraint firstAttribute="bottom" secondItem="kHQ-Op-N9A" secondAttribute="bottom" constant="45" id="BKc-V2-gTl"/>
                 <constraint firstAttribute="bottom" secondItem="DiB-jy-lKm" secondAttribute="bottom" id="Izx-0m-wm0"/>
-                <constraint firstItem="kHQ-Op-N9A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Mhj-r1-8EG"/>
+                <constraint firstItem="kHQ-Op-N9A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Mhj-r1-8EG"/>
                 <constraint firstItem="kHQ-Op-N9A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="44" id="Obd-Hx-UYm"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOK-wc-M27"/>
+                <constraint firstAttribute="trailing" secondItem="4sw-3T-Bhf" secondAttribute="trailing" id="Zqh-rI-2za"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iLx-BO-fuO"/>
-                <constraint firstAttribute="trailing" secondItem="kHQ-Op-N9A" secondAttribute="trailing" constant="21" id="lvi-Mu-4sZ"/>
+                <constraint firstAttribute="bottom" secondItem="4sw-3T-Bhf" secondAttribute="bottom" id="iU8-Hl-fga"/>
+                <constraint firstAttribute="trailing" secondItem="kHQ-Op-N9A" secondAttribute="trailing" constant="7" id="lvi-Mu-4sZ"/>
                 <constraint firstAttribute="trailing" secondItem="DiB-jy-lKm" secondAttribute="trailing" id="u1z-rZ-1AH"/>
+                <constraint firstItem="4sw-3T-Bhf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xBw-25-j1s"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="115" height="115"/>
             <connections>
+                <outlet property="blur_effect" destination="4sw-3T-Bhf" id="gP9-Bp-afH"/>
                 <outlet property="deleteButtonBackgroundView" destination="eHD-cd-wWi" id="UNq-yp-Uo4"/>
                 <outlet property="imageView" destination="DiB-jy-lKm" id="gfM-bx-swe"/>
                 <outlet property="sneakerCount" destination="OgE-6i-mlA" id="CMG-pk-ynU"/>

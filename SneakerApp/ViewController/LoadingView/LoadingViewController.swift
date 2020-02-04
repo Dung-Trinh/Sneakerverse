@@ -13,18 +13,8 @@ import AVKit
 class LoadingViewController: UIViewController {
     @IBOutlet weak var gif: UIView!
     var player: AVPlayer?
-    /*
-    var loadingGif: UIView = {
-        let view = GIFImageView()
-        view.contentMode = .scaleAspectFit
-        //view.backgroundColor = .red
-        view.animate(withGIFNamed: "sneakerverseGIF")
-        return view
-    }()
-    */
- private func loadVideo() {
 
-        //this line is important to prevent background music stop
+ private func loadVideo() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         } catch { }
