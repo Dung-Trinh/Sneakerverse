@@ -29,10 +29,11 @@ class NewsViewController: UIViewController {
     
         @objc func refreshTableView() {
             refreshView.startAnimation()
-            self.fetchData()
+            //3 sec delay for animation
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 
                 self.refreshView.stopAnimation()
+                self.fetchData(animation: false)
                 self.tableView.reloadData()
                 self.tableViewRefreshControl.endRefreshing()
             }
@@ -48,11 +49,14 @@ class NewsViewController: UIViewController {
             }
         
     }
-    func fetchData(){
-        logoLoadingScreen = LogoLoadingScreen()
+    func fetchData(animation:Bool){
+            logoLoadingScreen = LogoLoadingScreen()
         let group = DispatchGroup()
         group.enter()
-        logoLoadingScreen?.startLoadingAnimation(view: self.view)
+        if animation {
+                    logoLoadingScreen?.startLoadingAnimation(view: self.view)
+
+        }
         /// queue because waiting for the fetchData function
         DispatchQueue.global(qos: .userInitiated).async {
             self.dataFetcher.fetchBlogPostData()
@@ -68,7 +72,10 @@ class NewsViewController: UIViewController {
               DispatchQueue.main.async {
                 self.blogPosts = self.dataFetcher.blogPosts
                 self.tableView.reloadData()
-                self.logoLoadingScreen!.remove()
+                if animation{
+                    self.logoLoadingScreen!.remove()
+                }
+                
 
             }
         }
@@ -89,7 +96,7 @@ class NewsViewController: UIViewController {
         ///create background color
         let background = BackgroundColor()
         background.createGradientBackground(view: self.view, colors: nil)
-        fetchData()
+        fetchData(animation: true)
 
         tableView.refreshControl = tableViewRefreshControl
         createRefreshGesture()
@@ -116,7 +123,7 @@ class NewsViewController: UIViewController {
             self.refreshControl.endRefreshing()
             
         })
-        self.fetchData()
+        self.fetchData(animation: false)
         }
     }
            
