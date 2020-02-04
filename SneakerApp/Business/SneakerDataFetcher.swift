@@ -65,6 +65,7 @@ class SneakerDataFetcher{
                        do {
                         let article = try JSONDecoder().decode([Sneaker].self, from: data!)
                            completion(.success(article))
+                        self.fetchSuccessfull = true
            //                completion(courses, nil)
                            
                        } catch let jsonError {

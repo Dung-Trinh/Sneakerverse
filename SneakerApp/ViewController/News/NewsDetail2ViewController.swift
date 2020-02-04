@@ -20,6 +20,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var calenderBtn: UIButton!
     var coreDataManager = CoreDataManager()
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
@@ -41,6 +42,11 @@ class NewsDetailViewController: UIViewController {
     
     //MARK:- Set the Content of the View
     func updateUI(){
+        if(blogPost?.category == "event"){
+            calenderBtn.isEnabled = true
+        }else{
+            calenderBtn.isEnabled = false
+        }
         navigationBar.title = blogPost?.title
         textView.text = blogPost?.description
         YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)

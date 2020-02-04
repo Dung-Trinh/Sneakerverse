@@ -25,6 +25,8 @@ class ToastMessage{
         textLabel.layer.cornerRadius = 5
         textLabel.clipsToBounds = true
         textLabel.text = message
+        textLabel.adjustsFontSizeToFitWidth = true
+        textLabel.minimumScaleFactor = 0.5
         view.addSubview(textLabel)
         
         UIView.animate(withDuration: 0.6,delay: 0,options: .curveEaseInOut, animations: {

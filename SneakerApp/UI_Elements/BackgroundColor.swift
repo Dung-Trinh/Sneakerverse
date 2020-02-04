@@ -44,8 +44,20 @@ class BackgroundColor{
         gradientLayer.frame = view.bounds
         view.layer.addSublayer(gradientLayer)
         view.layer.insertSublayer(gradientLayer, at: 0)
-
     }
     
+    func createGradient_v2(view :UIView){
+        let layer = CAGradientLayer()
+        layer.frame=view.bounds
+        let c1 = UIColor(red:0.32, green:0.47, blue:0.98, alpha:1.0).cgColor
+        let c2 = UIColor(red:0.66, green:0.25, blue:0.63, alpha:1.0).cgColor
+        layer.colors =
+            [c2,c1]
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.startPoint = CGPoint(x: 0, y: 0.4)
+        view.layer.addSublayer(layer)
+        view.layer.insertSublayer(layer, at: 0)
 
+
+    }
 }
