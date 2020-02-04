@@ -20,12 +20,15 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var calenderBtn: UIButton!
     var coreDataManager = CoreDataManager()
     var blogPost : BlogPost?
     var imgArray : [UIImage] = []
     var reminderOn:Bool = false
     var savePost=false
     let animator = CustomAnimator()
+    var nc = NotificationCenter.default
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,11 @@ class NewsDetailViewController: UIViewController {
     
     //MARK:- Set the Content of the View
     func updateUI(){
+        if(blogPost?.category == "event"){
+            calenderBtn.isEnabled = true
+        }else{
+            calenderBtn.isEnabled = false
+        }
         navigationBar.title = blogPost?.title
         textView.text = blogPost?.description
         YoutubeVideoPlayer(videoID: blogPost!.contentVideo, webView: self.webView)
@@ -132,6 +140,7 @@ class NewsDetailViewController: UIViewController {
        
         coreDataManager.deleteBlogpost(blogPost: blogPost)
         var popUpMessage = ToastMessage(message: "Der Artikel wurde aus deiner Collection entfernt✅ ", view: self.view)
+        self.nc.post(name: Notification.Name("reloadFeeds"), object: nil)
     
     }
     @IBAction func savePost(_ sender: UIButton) {
@@ -145,6 +154,7 @@ class NewsDetailViewController: UIViewController {
          animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
         coreDataManager.saveBlogpost(blogPost: blogPost)
           var popUpMessage = ToastMessage(message: "Der Artikel wurde in deiner Collection gespeichert✅ ", view: self.view)
+          self.nc.post(name: Notification.Name("reloadFeeds"), object: nil)
 
      }
 }

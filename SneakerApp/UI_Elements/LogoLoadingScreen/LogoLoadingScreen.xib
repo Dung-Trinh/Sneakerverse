@@ -32,18 +32,18 @@
                                     <rect key="frame" x="-61" y="-102" width="454" height="266"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_kombi" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-GR-I9i">
-                                    <rect key="frame" x="112" y="8" width="169" height="44"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="169" id="aDP-NM-f7D"/>
-                                        <constraint firstAttribute="height" constant="43.999999999999972" id="jiC-WR-5h5"/>
-                                    </constraints>
-                                </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="wyg-iF-m68">
                                     <rect key="frame" x="306.5" y="79" width="148.5" height="75"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="75" id="tDg-fj-W6l"/>
                                         <constraint firstAttribute="width" constant="148.5" id="xBH-xj-Mg6"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_kombi" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-GR-I9i">
+                                    <rect key="frame" x="112" y="8" width="169" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="169" id="aDP-NM-f7D"/>
+                                        <constraint firstAttribute="height" constant="43.999999999999972" id="jiC-WR-5h5"/>
                                     </constraints>
                                 </imageView>
                                 <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-jD-CLj">

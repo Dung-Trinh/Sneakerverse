@@ -29,17 +29,19 @@ class MyProfilViewController: UIViewController {
     let grailIdentifier = "myGrailsCollectionViewCell"
     var myCollection: [savedPhoto] =
         [savedPhoto(picture: UIImage(named: "af1"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af3"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1"),
-        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi1")]
+        savedPhoto(picture: UIImage(named: "af2"),sneakerName: "testi2"),
+        savedPhoto(picture: UIImage(named: "af3"),sneakerName: "testi3"),
+        savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi4"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi5"),
+        savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi6")]
     
     var savedSneaker : [Sneaker]=[]
     var savedBlogpost: [BlogPost]=[]
     var savedCollection: [savedPhoto]?=[]
     var coreDataManager = CoreDataManager()
     var counter = 0
+   
+    
     
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){
         
@@ -82,9 +84,9 @@ class MyProfilViewController: UIViewController {
         super.viewDidLoad()
         loadSavedSneakers()
         loadSavedBlogposts()
-        saveTestColletion()
+        //saveTestColletion()
         loadSavedCollection()
-        deleteCollection()
+        //deleteCollection()
         setupCollectionView()
         setupCollectionViewItemSize()
         setupFeedPreview()
@@ -100,18 +102,21 @@ class MyProfilViewController: UIViewController {
             let navVC = segue.destination as? UINavigationController
             
             if let vc = navVC?.viewControllers.first as? MyCollectionViewController{
-                vc.items = myCollection
+                loadSavedCollection()
+                vc.items=self.savedCollection
             }
         }
         
         else if segue.identifier == "myFeeds_Segue"{
             if let vc = segue.destination as? FeedTableViewController {
+                loadSavedBlogposts()
                 vc.blogPosts = savedBlogpost
             }
         }
         
         else if segue.identifier == "myGrails_Segue" {
             if let vc = segue.destination as? MyGrailsCollectionViewController {
+                loadSavedSneakers()
                 vc.items = savedSneaker
             }
         }
@@ -124,7 +129,7 @@ class MyProfilViewController: UIViewController {
         myCollection_cv.delegate = self
         
         myGrails_cv.dataSource = self
-        myGrails_cv.dataSource = self
+        myGrails_cv.delegate = self
         
         
         let nib = UINib(nibName: "myCollectionViewCell", bundle: nil)
@@ -149,7 +154,7 @@ class MyProfilViewController: UIViewController {
             collectionViewFlowLayout = UICollectionViewFlowLayout()
             
             
-            collectionViewFlowLayout.itemSize = CGSize(width: 125, height: 125)
+            collectionViewFlowLayout.itemSize = CGSize(width: 150, height: 150)
             collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
             collectionViewFlowLayout.minimumLineSpacing = lineSpacing
             collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
@@ -190,7 +195,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return 2
         
     }
     
@@ -214,6 +219,10 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                 cell.imageView.image = UIImage(named: "photo.fill")
             }
             
+            if indexPath.row == 1{
+                cell.sneakerName.text = "Collection"
+                cell.blur_effect.isHidden = false
+            }
             
             return cell
             
@@ -246,6 +255,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                     xGrailAchse += 10
                     yGrailAchse += 10
                     
+                    
                 }
                 else{
                     cell.grailImage.image = UIImage(named: "af2")
@@ -255,6 +265,11 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                     cell.layer.cornerRadius = 8
                     xGrailAchse += 10
                     yGrailAchse += 10
+                }
+                if indexPath.row == 1{
+                    
+                    cell.sneakerName.text = "Grails"
+                    cell.blur_effect.isHidden = false
                 }
                 
             }
@@ -271,7 +286,7 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
         print(indexPath)
         
         if collectionView == self.myCollection_cv{
-            if indexPath.row == 2 {
+            if indexPath.row == 1 {
                 performSegue(withIdentifier: "MyCollection_Segue", sender: self)
             }
         }

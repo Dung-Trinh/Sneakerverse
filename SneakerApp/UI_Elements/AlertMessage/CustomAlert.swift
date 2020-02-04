@@ -48,7 +48,6 @@ class CustomAlert: UIView {
     }
     
     @objc func remove(){
-        print("remove")
         parentView.removeFromSuperview()
     }
     

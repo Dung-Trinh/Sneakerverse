@@ -13,7 +13,7 @@ class SneakerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundLayer: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
-    
+    let backgroundCreater = BackgroundColor()
     var sneaker: Sneaker!{
         didSet{
             updateUI()
@@ -21,6 +21,7 @@ class SneakerCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI(){
+        backgroundCreater.createGradient_v2(view: backgroundLayer)
         let url = URL(string: sneaker.imageURL)
          // TODO: try catch einbauen !
         var data = try? Data(contentsOf: url!)

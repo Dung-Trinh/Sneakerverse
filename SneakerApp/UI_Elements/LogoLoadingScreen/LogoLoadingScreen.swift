@@ -41,8 +41,15 @@ class LogoLoadingScreen:UIView{
         activityI.startAnimating()
 
         view.addSubview(parentView)
-        UIView.animate(withDuration: 12, delay: 0.0, options: [], animations: {
-            self.astronaut.transform = CGAffineTransform(translationX: -104, y: -41)
+        UIView.animate(withDuration: 15, delay: 0.0, options: [], animations: {
+           // self.astronaut.transform = CGAffineTransform(translationX: -104, y: -41)
+            self.background_img.transform = CGAffineTransform(translationX: 25, y: 50)
+            //306 ,79
+
+            
+        })
+        UIView.animate(withDuration: 20, delay: 0.0, options: [], animations: {
+            self.astronaut.transform = CGAffineTransform(translationX: -450, y: -100)
             self.background_img.transform = CGAffineTransform(translationX: 25, y: 50)
 
             

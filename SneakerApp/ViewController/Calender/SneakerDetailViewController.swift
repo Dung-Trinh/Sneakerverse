@@ -18,7 +18,7 @@ class SneakerDetailViewController: UIViewController {
     @IBOutlet weak var retailPrice: UILabel!
     @IBOutlet weak var notificationBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
-    
+    var nc = NotificationCenter.default
     let animator = CustomAnimator()
     let background = BackgroundColor()
     var sneaker : Sneaker?
@@ -71,12 +71,15 @@ class SneakerDetailViewController: UIViewController {
              animator.buttonScaleAnimation(notificationBtn: sender,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
                 coreDataManager.saveSneaker(sneaker: sneaker)
                 var popUpMessage = ToastMessage(message: "Der Sneaker wurde in deiner Collection gespeichert✅ ", view: self.view)
+                self.nc.post(name: Notification.Name("reloadGrails"), object: nil)
         }
     }
         
          func delete(){
             coreDataManager.deleteSneaker(sneaker: sneaker)
             var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
+            self.nc.post(name: Notification.Name("reloadGrails"), object: nil)
+            
     }
     
         func checkSaved(){
@@ -192,8 +195,6 @@ extension SneakerDetailViewController: UNUserNotificationCenterDelegate {
     //for displaying notification when app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 
-        //If you don't want to show notification when app is open, do something here else and make a return here.
-        //Even you you don't implement this delegate method, you will not see the notification on the specified controller. So, you have to implement this delegate and make sure the below line execute. i.e. completionHandler.
 
         completionHandler([.alert, .badge, .sound])
     }

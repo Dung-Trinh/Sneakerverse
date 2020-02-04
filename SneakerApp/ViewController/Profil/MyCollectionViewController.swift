@@ -12,6 +12,7 @@ class MyCollectionViewController: UIViewController{
     var selectedImage: savedPhoto?
     var selectedIndexPath: IndexPath!
     var items: [savedPhoto]!
+    var coreDataManager = CoreDataManager()
     let cellIdentifier = "myCollectionViewCell"
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var myCollection_cv: UICollectionView!
@@ -136,8 +137,8 @@ extension MyCollectionViewController : myCollectionCellDelegate {
     func delete(cell: myCollectionViewCell) {
         if let indexPath = myCollection_cv?.indexPath(for: cell) {
             //1. entfernt Foto von data source
+            coreDataManager.deleteSavedCollection(collectionPhoto: items[indexPath.row])
             items.remove(at: indexPath.item)
-            
             //2. entfernt die Zelle am indexPath
             myCollection_cv?.deleteItems(at: [indexPath])
             

@@ -19,10 +19,18 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-6M-er7">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwx-Id-Fyh">
+                    <visualEffectView hidden="YES" opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AI-K2-QhK">
+                        <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kRV-s6-Veb">
+                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Gwx-Id-Fyh">
                         <rect key="frame" x="0.0" y="47" width="115" height="21"/>
-                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                        <color key="textColor" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBG-gq-ypf">
@@ -50,17 +58,22 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="0AI-K2-QhK" secondAttribute="bottom" id="2Nb-jv-gTX"/>
                 <constraint firstAttribute="trailing" secondItem="pgU-6M-er7" secondAttribute="trailing" id="C92-22-NCZ"/>
                 <constraint firstItem="Gwx-Id-Fyh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="47" id="LQk-qb-1uL"/>
                 <constraint firstAttribute="bottom" secondItem="Gwx-Id-Fyh" secondAttribute="bottom" constant="47" id="PpN-Ty-JSA"/>
                 <constraint firstAttribute="trailing" secondItem="Gwx-Id-Fyh" secondAttribute="trailing" id="V1y-WA-PbU"/>
                 <constraint firstItem="Gwx-Id-Fyh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ykh-EF-ap4"/>
+                <constraint firstItem="0AI-K2-QhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZxN-rq-5TR"/>
+                <constraint firstAttribute="trailing" secondItem="0AI-K2-QhK" secondAttribute="trailing" id="anq-DG-gjF"/>
                 <constraint firstItem="pgU-6M-er7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cJK-Zz-S6V"/>
                 <constraint firstAttribute="bottom" secondItem="pgU-6M-er7" secondAttribute="bottom" id="h4l-gM-9ks"/>
                 <constraint firstItem="pgU-6M-er7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kPW-bU-7cs"/>
+                <constraint firstItem="0AI-K2-QhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sni-Ph-qg9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="blur_effect" destination="0AI-K2-QhK" id="ZJD-83-ukY"/>
                 <outlet property="buttonBackgroundView" destination="cBG-gq-ypf" id="JiL-zT-SoJ"/>
                 <outlet property="grailImage" destination="pgU-6M-er7" id="F7d-Me-xM1"/>
                 <outlet property="sneakerName" destination="Gwx-Id-Fyh" id="b9U-8A-iYU"/>

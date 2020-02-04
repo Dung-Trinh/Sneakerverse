@@ -14,7 +14,8 @@ protocol myCollectionCellDelegate: class {
 
 
 class myCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var blur_effect: UIVisualEffectView!
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var sneakerName: UILabel!
     @IBOutlet weak var sneakerCount: UILabel!
