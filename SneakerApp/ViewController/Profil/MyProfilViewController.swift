@@ -49,6 +49,8 @@ class MyProfilViewController: UIViewController {
         loadSavedSneakers()
         loadSavedBlogposts()
         loadSavedCollection()
+        feedButton.setTitle("+\(savedBlogpost.count)", for: .normal)
+        
     }
     func loadSavedSneakers(){
         self.savedSneaker = coreDataManager.loadSavedSneakers()
@@ -234,13 +236,27 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
             
             
             else{
-                cell.grailImage.image = UIImage(named: "af2")
-                cell.grailImage.contentMode = .scaleAspectFill
-                cell.frame = CGRect(x: xGrailAchse, y: yGrailAchse, width: cell.frame.width, height: cell.frame.height)
-                cell.sneakerName.text = ""
-                cell.layer.cornerRadius = 8
-                xGrailAchse += 10
-                yGrailAchse += 10
+                if savedSneaker.count != 0 {
+                    let grail = savedSneaker[0]
+                    cell.grail = grail
+                    cell.backgroundColor = UIColor.init(red: 249/255, green: 241/255, blue: 254/255, alpha: 1)
+                    cell.frame = CGRect(x: xGrailAchse, y: yGrailAchse, width: cell.frame.width, height: cell.frame.height)
+                    cell.sneakerName.text = ""
+                    cell.layer.cornerRadius = 8
+                    xGrailAchse += 10
+                    yGrailAchse += 10
+                    
+                }
+                else{
+                    cell.grailImage.image = UIImage(named: "af2")
+                    cell.grailImage.contentMode = .scaleAspectFill
+                    cell.frame = CGRect(x: xGrailAchse, y: yGrailAchse, width: cell.frame.width, height: cell.frame.height)
+                    cell.sneakerName.text = ""
+                    cell.layer.cornerRadius = 8
+                    xGrailAchse += 10
+                    yGrailAchse += 10
+                }
+                
             }
             
             

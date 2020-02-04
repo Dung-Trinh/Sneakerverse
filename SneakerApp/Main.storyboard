@@ -455,7 +455,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWx-um-KFy">
-                                <rect key="frame" x="0.0" y="140" width="414" height="977"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1029"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="438-0M-4yS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="977"/>
@@ -1762,7 +1762,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PG1-Ty-ETK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oGd-3l-2bE"/>
+                    <navigationItem key="navigationItem" id="oGd-3l-2bE">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="zMg-TZ-Y0q">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myCollection_cv" destination="X7k-Q0-Y7E" id="34P-ua-fCA"/>
                         <segue destination="uYC-Xc-Cgk" kind="show" identifier="CollectionDetail_Segue" id="gAg-Fr-VUE"/>
@@ -1957,6 +1961,9 @@
                         <viewLayoutGuide key="safeArea" id="pPx-Sq-Lex"/>
                     </view>
                     <navigationItem key="navigationItem" id="87o-e9-T4Q"/>
+                    <connections>
+                        <outlet property="popupView" destination="AnD-Ix-5Fm" id="ft6-9P-Yt2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWt-Mk-UaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="vwr-KP-YYe" userLabel="Exit" sceneMemberID="exit"/>
@@ -2017,12 +2024,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-nB-Qi4">
                                 <rect key="frame" x="57" y="621" width="300" height="129"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-2f-hRU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-2f-hRU" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                         <state key="normal" title="Take Photo from Camera"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.16862745100000001" green="0.0" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="showCameraButton:" destination="zBm-o0-RCE" eventType="touchUpInside" id="eD0-gk-OkZ"/>
-                                            <segue destination="dvj-Kr-56v" kind="presentation" identifier="showCamera_Segue" id="LGb-ig-5Wd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-qc-1LZ">
@@ -2075,7 +2089,11 @@
                     <navigationItem key="navigationItem" id="9Ff-wg-8Cq"/>
                     <connections>
                         <outlet property="photo" destination="qLu-yu-MSX" id="X42-Wn-hLM"/>
+                        <outlet property="saveBtn" destination="bGs-Jr-sXY" id="h4R-ld-Trn"/>
+                        <outlet property="saveToBtn" destination="z20-MP-aUw" id="v5T-4i-9Ks"/>
                         <outlet property="sneakerNameField" destination="vHR-pG-Dm0" id="cPd-Ia-apC"/>
+                        <outlet property="takePhotoBtn" destination="1nT-2f-hRU" id="sRi-nS-TrC"/>
+                        <outlet property="uploadBtn" destination="qHS-qc-1LZ" id="uXk-mf-mnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSk-mR-PO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2088,11 +2106,11 @@
             <objects>
                 <viewController id="dvj-Kr-56v" customClass="CameraViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgX-Cw-6ZH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWN-3r-9vJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="695"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy" translatesAutoresizingMaskIntoConstraints="NO" id="P1h-fH-pG6">
                                         <rect key="frame" x="0.0" y="59" width="414" height="647"/>

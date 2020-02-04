@@ -32,6 +32,28 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHD-cd-wWi">
+                        <rect key="frame" x="8" y="7" width="22" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="5LO-AD-TCH">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-XG-qZZ">
+                                    <rect key="frame" x="-4" y="-6" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                    <state key="normal" title="x">
+                                        <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deleteButtonDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="XcU-4V-INw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <blurEffect style="extraLight"/>
+                    </visualEffectView>
                 </subviews>
             </view>
             <constraints>
@@ -47,6 +69,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="115" height="115"/>
             <connections>
+                <outlet property="deleteButtonBackgroundView" destination="eHD-cd-wWi" id="UNq-yp-Uo4"/>
                 <outlet property="imageView" destination="DiB-jy-lKm" id="gfM-bx-swe"/>
                 <outlet property="sneakerCount" destination="OgE-6i-mlA" id="CMG-pk-ynU"/>
                 <outlet property="sneakerName" destination="kHQ-Op-N9A" id="0K7-wy-er3"/>

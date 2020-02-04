@@ -11,6 +11,7 @@ import UIKit
 class PhotoPopupViewController: UIViewController {
     var uploadImage: UIImage?
     var uploadName: String?
+    @IBOutlet weak var popupView: UIView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! MyProfilViewController
@@ -20,6 +21,7 @@ class PhotoPopupViewController: UIViewController {
         }
         
     }
+
     @IBAction func saveCollection(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -27,9 +29,20 @@ class PhotoPopupViewController: UIViewController {
     @IBAction func saveGrails(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoPopupViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap() {
+        print("Handle tap was called")
+        dismiss(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        popupView.layer.cornerRadius = 8
+        configureTapGesture()
         // Do any additional setup after loading the view.
     }
     
