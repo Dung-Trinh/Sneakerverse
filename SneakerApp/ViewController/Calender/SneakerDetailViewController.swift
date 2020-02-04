@@ -61,7 +61,7 @@ class SneakerDetailViewController: UIViewController {
     }
     @IBAction func save(_ sender: UIButton) {
              if(savePost == true){
-                 sender.tintColor = .lightGray
+                 sender.tintColor = .darkGray
                  savePost = false
                 delete()
                  return
@@ -85,7 +85,7 @@ class SneakerDetailViewController: UIViewController {
                   animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
              }else{
                  savePost = false
-                 saveBtn.tintColor = .lightGray
+                 saveBtn.tintColor = .darkGray
              }
     }
     
@@ -93,7 +93,7 @@ class SneakerDetailViewController: UIViewController {
         var center = UNUserNotificationCenter.current()
         
         if(notificationOn == true){
-            sender.tintColor = .lightGray
+            sender.tintColor = .darkGray
             notificationOn = false
             return
         }

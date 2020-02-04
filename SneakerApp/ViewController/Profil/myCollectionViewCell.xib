@@ -26,17 +26,17 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-jy-lKm">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                     </imageView>
-                    <visualEffectView hidden="YES" opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sw-3T-Bhf">
+                    <visualEffectView hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sw-3T-Bhf">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Drb-SY-dPT">
                             <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
-                        <blurEffect style="dark"/>
+                        <blurEffect style="systemThickMaterialDark"/>
                     </visualEffectView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="kHQ-Op-N9A">
-                        <rect key="frame" x="8" y="44" width="100" height="26"/>
-                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                        <rect key="frame" x="8" y="89" width="100" height="26"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -66,10 +66,10 @@
             </view>
             <constraints>
                 <constraint firstItem="4sw-3T-Bhf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2RJ-BA-0qA"/>
-                <constraint firstAttribute="bottom" secondItem="kHQ-Op-N9A" secondAttribute="bottom" constant="45" id="BKc-V2-gTl"/>
+                <constraint firstAttribute="bottom" secondItem="kHQ-Op-N9A" secondAttribute="bottom" id="BKc-V2-gTl"/>
                 <constraint firstAttribute="bottom" secondItem="DiB-jy-lKm" secondAttribute="bottom" id="Izx-0m-wm0"/>
                 <constraint firstItem="kHQ-Op-N9A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Mhj-r1-8EG"/>
-                <constraint firstItem="kHQ-Op-N9A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="44" id="Obd-Hx-UYm"/>
+                <constraint firstItem="kHQ-Op-N9A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="89" id="Obd-Hx-UYm"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOK-wc-M27"/>
                 <constraint firstAttribute="trailing" secondItem="4sw-3T-Bhf" secondAttribute="trailing" id="Zqh-rI-2za"/>
                 <constraint firstItem="DiB-jy-lKm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iLx-BO-fuO"/>

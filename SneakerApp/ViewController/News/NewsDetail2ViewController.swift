@@ -95,7 +95,7 @@ class NewsDetailViewController: UIViewController {
     ///create a calendar reminder for special events
     @IBAction func calenderReminder(_ sender: UIButton) {
         if(reminderOn == true){
-            sender.tintColor = .lightGray
+            sender.tintColor = .darkGray
             reminderOn = false
             return
         }
@@ -130,7 +130,7 @@ class NewsDetailViewController: UIViewController {
              animator.buttonScaleAnimation(notificationBtn: saveBtn,color: UIColor(red:0.95, green:0.80, blue:0.02, alpha:1.0))
         }else{
             savePost = false
-            saveBtn.tintColor = .lightGray
+            saveBtn.tintColor = .darkGray
         }
         
     }
@@ -142,7 +142,7 @@ class NewsDetailViewController: UIViewController {
     }
     @IBAction func savePost(_ sender: UIButton) {
          if(savePost == true){
-             sender.tintColor = .lightGray
+             sender.tintColor = .darkGray
              savePost = false
             delete()
              return
