@@ -15,10 +15,11 @@ class MyCollectionViewController: UIViewController{
     let cellIdentifier = "myCollectionViewCell"
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var myCollection_cv: UICollectionView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,6 +69,19 @@ class MyCollectionViewController: UIViewController{
                 myCollection_cv.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
             }
         }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        if let indexPaths = myCollection_cv?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                if let cell = myCollection_cv?.cellForItem(at: indexPath) as? myCollectionViewCell {
+                    cell.isEditing = editing
+                    cell.reloadInputViews()
+                }
+            }
+        }
+    }
 
      
     }
@@ -85,7 +99,8 @@ extension MyCollectionViewController: UICollectionViewDelegate,UICollectionViewD
             cell.sneakerName.text = items[indexPath.item].sneakerName
             cell.sneakerName.center = self.view.center
             cell.imageView.image = items[indexPath.item].picture
-
+            cell.delegate = self
+            
             return cell
             
         }
@@ -114,5 +129,17 @@ extension MyCollectionViewController : ZoomingViewController{
         
         return nil
         
+    }
+}
+
+extension MyCollectionViewController : myCollectionCellDelegate {
+    func delete(cell: myCollectionViewCell) {
+        if let indexPath = myCollection_cv?.indexPath(for: cell) {
+            //1. entfernt Foto von data source
+            items.remove(at: indexPath.item)
+            
+            //2. entfernt die Zelle am indexPath
+            myCollection_cv?.deleteItems(at: [indexPath])
+        }
     }
 }

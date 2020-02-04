@@ -14,10 +14,10 @@ class BackgroundColor{
 //    let pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
 //    let blau2 = UIColor(red:0.24, green:0.28, blue:0.50, alpha:1.0).cgColor
     
-    let blau = UIColor(red:208/250, green:65/250, blue:232/250, alpha:1.0).cgColor
+    let blau = UIColor(red:132/255, green:0/255, blue:255/255, alpha:1.0).cgColor
     //let pink = UIColor(red:0.72, green:0.31, blue:0.59, alpha:1.0).cgColor
-    let pink = UIColor(red:43/250, green:17/250, blue:187/250, alpha:1.0).cgColor
-    let blau2 = UIColor(red:211/250, green:88/250, blue:245/250, alpha:1.0).cgColor
+    let pink = UIColor(red:80/255, green:48/255, blue:187/255, alpha:1.0).cgColor
+    let blau2 = UIColor(red:211/255, green:88/255, blue:245/255, alpha:1.0).cgColor
     
     func createGradientBackground(view:UIView,colors:[UIColor]?) {
         gradientLayer = CAGradientLayer()

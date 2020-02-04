@@ -11,15 +11,18 @@ import UIKit
 class UploadViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var image: UIImage?
     let imagePicker = UIImagePickerController()
-    
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveToBtn: UIButton!
+    @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var sneakerNameField: UITextField!
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var takePhotoBtn: RoundButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showCamera_Segue", segue.identifier != "saveTo_Segue"{
+        if segue.identifier == "saveProfile_Segue"{
         let destVC = segue.destination as! MyProfilViewController
             destVC.self.myCollection.append(savedPhoto(picture: image, sneakerName: sneakerNameField.text))
-        destVC.myCollection_cv.reloadData()
+        //destVC.myCollection_cv.reloadData()
     }
         else if segue.identifier == "saveTo_Segue"{
             let destVC = segue.destination as! PhotoPopupViewController
@@ -54,6 +57,7 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
             [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
                 photo.image = pickedImage
+                photo.contentMode = .scaleAspectFill
                 image = pickedImage
             }
             picker.dismiss(animated: true, completion: nil)
@@ -74,11 +78,32 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
         
     }
     
+    private func setupButtons(button: UIButton!){
+        
+        button.backgroundColor = UIColor.init(red: 43/255, green: 17/255, blue: 187/255, alpha: 1.0)
+        button.layer.cornerRadius = 8
+        button.setTitleColor(.white, for: .normal)
+        
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowRadius = 15
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    
+    
+    
  override func viewDidLoad() {
         super.viewDidLoad()
+    
     imagePicker.delegate = self
     sneakerNameField.delegate = self
     configureTapGesture()
+    setupButtons(button: saveBtn)
+    setupButtons(button: saveToBtn)
+    setupButtons(button: uploadBtn)
+    //setupButtons(button: takePhotoBtn)
+
     
     //let background = BackgroundColor()
     //background.createGradientBackground(view: self.view,colors: nil)
@@ -93,3 +118,4 @@ extension UploadViewController: UITextFieldDelegate {
         return true
     }
 }
+
