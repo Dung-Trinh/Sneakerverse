@@ -50,6 +50,8 @@ class NewsViewController: UIViewController {
         
     }
     func fetchData(animation:Bool){
+        controll_tabbar(setBool: false)
+
             logoLoadingScreen = LogoLoadingScreen()
         let group = DispatchGroup()
         group.enter()
@@ -75,6 +77,8 @@ class NewsViewController: UIViewController {
                 if animation{
                     self.logoLoadingScreen!.remove()
                 }
+                self.controll_tabbar(setBool: true)
+
                 
 
             }
@@ -159,6 +163,11 @@ class NewsViewController: UIViewController {
             dest.blogPost = blogPosts[indexPath.row]
         }
        }
+    func controll_tabbar(setBool:Bool){
+        if let items = tabBarController?.tabBar.items {
+                items.forEach { $0.isEnabled = setBool }
+        }
+    }
 
 
 

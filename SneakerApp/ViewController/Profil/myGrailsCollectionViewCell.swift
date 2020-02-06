@@ -41,6 +41,8 @@ class myGrailsCollectionViewCell: UICollectionViewCell {
         let data = try? Data(contentsOf: url!)
         
         grailImage.image = UIImage(data: data!)
+        sneakerName.textColor = UIColor(red: 43/255, green: 17/255, blue: 187/255, alpha: 1.0)
+        sneakerName.font = sneakerName.font.withSize(15)
         sneakerName.text = grail.title
         
     }

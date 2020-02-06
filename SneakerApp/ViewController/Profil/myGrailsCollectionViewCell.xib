@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-6M-er7">
-                        <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                        <rect key="frame" x="0.0" y="-23" width="115" height="115"/>
                     </imageView>
                     <visualEffectView hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AI-K2-QhK">
                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
@@ -28,7 +28,7 @@
                         <blurEffect style="systemThickMaterialDark"/>
                     </visualEffectView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Gwx-Id-Fyh">
-                        <rect key="frame" x="0.0" y="93" width="115" height="21"/>
+                        <rect key="frame" x="0.0" y="89" width="115" height="21"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -60,14 +60,14 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="0AI-K2-QhK" secondAttribute="bottom" id="2Nb-jv-gTX"/>
                 <constraint firstAttribute="trailing" secondItem="pgU-6M-er7" secondAttribute="trailing" id="C92-22-NCZ"/>
-                <constraint firstItem="Gwx-Id-Fyh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="93" id="LQk-qb-1uL"/>
-                <constraint firstAttribute="bottom" secondItem="Gwx-Id-Fyh" secondAttribute="bottom" constant="1" id="PpN-Ty-JSA"/>
+                <constraint firstItem="Gwx-Id-Fyh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="89" id="LQk-qb-1uL"/>
+                <constraint firstAttribute="bottom" secondItem="Gwx-Id-Fyh" secondAttribute="bottom" constant="5" id="PpN-Ty-JSA"/>
                 <constraint firstAttribute="trailing" secondItem="Gwx-Id-Fyh" secondAttribute="trailing" id="V1y-WA-PbU"/>
                 <constraint firstItem="Gwx-Id-Fyh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ykh-EF-ap4"/>
                 <constraint firstItem="0AI-K2-QhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZxN-rq-5TR"/>
                 <constraint firstAttribute="trailing" secondItem="0AI-K2-QhK" secondAttribute="trailing" id="anq-DG-gjF"/>
-                <constraint firstItem="pgU-6M-er7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cJK-Zz-S6V"/>
-                <constraint firstAttribute="bottom" secondItem="pgU-6M-er7" secondAttribute="bottom" id="h4l-gM-9ks"/>
+                <constraint firstItem="pgU-6M-er7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-23" id="cJK-Zz-S6V"/>
+                <constraint firstAttribute="bottom" secondItem="pgU-6M-er7" secondAttribute="bottom" constant="23" id="h4l-gM-9ks"/>
                 <constraint firstItem="pgU-6M-er7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kPW-bU-7cs"/>
                 <constraint firstItem="0AI-K2-QhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sni-Ph-qg9"/>
             </constraints>

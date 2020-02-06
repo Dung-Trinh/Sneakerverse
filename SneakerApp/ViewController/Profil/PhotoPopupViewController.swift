@@ -12,12 +12,13 @@ class PhotoPopupViewController: UIViewController {
     var uploadImage: UIImage?
     var uploadName: String?
     @IBOutlet weak var popupView: UIView!
-    
+    var coreDataManager = CoreDataManager()
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! MyProfilViewController
         if segue.identifier == "unwindCollection_Segue"{
-            destVC.myCollection.append(savedPhoto(picture: uploadImage,sneakerName: uploadName))
-            
+            coreDataManager.saveCollectionPhoto(collectionPhoto: savedPhoto(picture: uploadImage,sneakerName: uploadName))
+            destVC.loadSavedCollection()
         }
         
     }

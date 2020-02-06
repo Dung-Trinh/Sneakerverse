@@ -241,7 +241,17 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                 xGrailAchse += 10
                 yGrailAchse += 10
                 
+                if indexPath.row == 1{
+
+                    cell.sneakerName.text = "Grails"
+                    cell.sneakerName.textColor = .white
+                    cell.sneakerName.font = cell.sneakerName.font.withSize(23)
+                    cell.blur_effect.isHidden = false
+                }
+                
             }
+                
+            
             
             
             else{
@@ -269,6 +279,8 @@ extension MyProfilViewController: UICollectionViewDelegate,UICollectionViewDataS
                 if indexPath.row == 1{
                     
                     cell.sneakerName.text = "Grails"
+                    cell.sneakerName.font = cell.sneakerName.font.withSize(23)
+                    cell.sneakerName.textColor = .white
                     cell.blur_effect.isHidden = false
                 }
                 

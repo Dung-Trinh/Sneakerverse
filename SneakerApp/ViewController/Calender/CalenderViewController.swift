@@ -63,6 +63,7 @@ class CalenderViewController: UIViewController {
         
         fetchData()
         
+        
     }
     func sortSneakerArray(){
         self.dataFetcher.sortSneaker(sneakers: &self.sneakerCalenderBottom)
