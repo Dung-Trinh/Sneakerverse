@@ -77,7 +77,7 @@ class SneakerDetailViewController: UIViewController {
         
          func delete(){
             coreDataManager.deleteSneaker(sneaker: sneaker)
-            var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt✅ ", view: self.view)
+            var popUpMessage = ToastMessage(message: "Der Sneaker wurde aus deiner Collection entfernt ❌ ", view: self.view)
             self.nc.post(name: Notification.Name("reloadGrails"), object: nil)
             
     }
@@ -107,8 +107,8 @@ class SneakerDetailViewController: UIViewController {
         center = UNUserNotificationCenter.current()
 
         let content = UNMutableNotificationContent()
-        content.title = "🚨Jordan 1 Release in einer Stunde🚨"
-        content.body = "Alle weiteren Informationen findest du in der App."
+        content.title = "🚨Release in einer Stunde🚨"
+        content.body = "Alle Informationen zum "+self.sneaker!.title+" findest du in der App!"
         content.categoryIdentifier = "alarm"
         content.sound = UNNotificationSound.default
 

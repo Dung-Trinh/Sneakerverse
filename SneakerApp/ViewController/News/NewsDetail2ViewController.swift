@@ -141,8 +141,9 @@ class NewsDetailViewController: UIViewController {
     func delete(){
        
         coreDataManager.deleteBlogpost(blogPost: blogPost)
-        var popUpMessage = ToastMessage(message: "Der Artikel wurde aus deiner Collection entfernt✅ ", view: self.view)
+        var popUpMessage = ToastMessage(message: "Der Artikel wurde aus deiner Collection entfernt ❌ ", view: self.view)
         self.nc.post(name: Notification.Name("reloadFeeds"), object: nil)
+        self.nc.post(name: Notification.Name("reloadFeedNumber"), object: nil)
     
     }
     @IBAction func savePost(_ sender: UIButton) {
@@ -157,6 +158,7 @@ class NewsDetailViewController: UIViewController {
         coreDataManager.saveBlogpost(blogPost: blogPost)
           var popUpMessage = ToastMessage(message: "Der Artikel wurde in deiner Collection gespeichert✅ ", view: self.view)
           self.nc.post(name: Notification.Name("reloadFeeds"), object: nil)
+          self.nc.post(name: Notification.Name("reloadFeedNumber"), object: nil)
 
      }
 }

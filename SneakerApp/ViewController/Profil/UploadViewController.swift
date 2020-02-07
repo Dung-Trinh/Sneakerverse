@@ -11,9 +11,6 @@ import UIKit
 class UploadViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var image: UIImage?
     let imagePicker = UIImagePickerController()
-    @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var saveToBtn: UIButton!
-    @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var sneakerNameField: UITextField!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var takePhotoBtn: RoundButton!
@@ -21,16 +18,22 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveProfile_Segue"{
-                    let addedPhoto = savedPhoto(picture: image, sneakerName: sneakerNameField.text)
-                   let destVC = segue.destination as! MyProfilViewController
-                   coreDataManager.saveCollectionPhoto(collectionPhoto: addedPhoto)
-                   destVC.loadSavedCollection()
-    }
-        else if segue.identifier == "saveTo_Segue"{
-            let destVC = segue.destination as! PhotoPopupViewController
-            destVC.uploadImage = image
-            destVC.uploadName = sneakerNameField.text
+            if let addedPhoto = image {
+                let destVC = segue.destination as! MyProfilViewController
+                coreDataManager.saveCollectionPhoto(collectionPhoto: savedPhoto(picture: addedPhoto, sneakerName: sneakerNameField.text))
+                destVC.loadSavedCollection()
+                
+            }
+            
+            else {
+                let alert = CustomAlert()
+                alert.showAlert(title: "Error:", message: "Kein Bild wurde mitgegeben", alertType: .error, view: self.view)
+                
+            }
+            
+                   
         }
+
     }
   
     @IBAction func saveTo(_ sender: Any) {
@@ -80,17 +83,6 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
         
     }
     
-    private func setupButtons(button: UIButton!){
-        
-        button.backgroundColor = UIColor.init(red: 43/255, green: 17/255, blue: 187/255, alpha: 1.0)
-        button.layer.cornerRadius = 8
-        button.setTitleColor(.white, for: .normal)
-        
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowRadius = 15
-        button.layer.shadowOpacity = 0.5
-        button.layer.shadowOffset = CGSize(width: 0, height: 0)
-    }
     
     
     
@@ -101,11 +93,6 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
     imagePicker.delegate = self
     sneakerNameField.delegate = self
     configureTapGesture()
-    setupButtons(button: saveBtn)
-    setupButtons(button: saveToBtn)
-    setupButtons(button: uploadBtn)
-    //setupButtons(button: takePhotoBtn)
-
     
     //let background = BackgroundColor()
     //background.createGradientBackground(view: self.view,colors: nil)

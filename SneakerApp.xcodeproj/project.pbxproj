@@ -20,7 +20,6 @@
 		01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */; };
 		01E0C59823CA3DE600DBDA9C /* collectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */; };
 		01E0C59923CA3DE600DBDA9C /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */; };
-		01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */; };
 		01E0C59B23CA3DE600DBDA9C /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59223CA3DE600DBDA9C /* MyCollectionViewController.swift */; };
 		01E0C59C23CA3DE600DBDA9C /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59323CA3DE600DBDA9C /* myCollectionViewCell.swift */; };
 		01E0C59D23CA3DE600DBDA9C /* myCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E0C59423CA3DE600DBDA9C /* myCollectionViewCell.xib */; };
@@ -101,7 +100,6 @@
 		01D959E423DCD0C900E87AF8 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		01E0C58F23CA3DE500DBDA9C /* collectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionDetailViewController.swift; sourceTree = "<group>"; };
 		01E0C59023CA3DE600DBDA9C /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
-		01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPopupViewController.swift; sourceTree = "<group>"; };
 		01E0C59223CA3DE600DBDA9C /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		01E0C59323CA3DE600DBDA9C /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
 		01E0C59423CA3DE600DBDA9C /* myCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				01E0C59223CA3DE600DBDA9C /* MyCollectionViewController.swift */,
 				0129974323DE13E200E23456 /* MyGrailsCollectionViewController.swift */,
 				01E0C59523CA3DE600DBDA9C /* MyProfilViewController.swift */,
-				01E0C59123CA3DE600DBDA9C /* PhotoPopupViewController.swift */,
 				01E0C59623CA3DE600DBDA9C /* UploadViewController.swift */,
 				0125DD4A23D62E5200BE77AB /* PopAnimator.swift */,
 				01D342EA23DCA1F400D165A0 /* FeedTableViewCell.swift */,
@@ -563,7 +560,6 @@
 				01E0C59E23CA3DE600DBDA9C /* MyProfilViewController.swift in Sources */,
 				B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */,
 				B614800E238821960018DA71 /* NewsArticleRequest.swift in Sources */,
-				01E0C59A23CA3DE600DBDA9C /* PhotoPopupViewController.swift in Sources */,
 				B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */,
 				B6C5FDCF23DA35890083619D /* SneakerCollectionViewCell.swift in Sources */,
 				01D959E523DCD0C900E87AF8 /* FeedTableViewController.swift in Sources */,
@@ -726,14 +722,14 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp2;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -749,14 +745,14 @@
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R62L8TFXJ4;
+				DEVELOPMENT_TEAM = ZHUB5Y443W;
 				INFOPLIST_FILE = SneakerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp2;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.Sneakerapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

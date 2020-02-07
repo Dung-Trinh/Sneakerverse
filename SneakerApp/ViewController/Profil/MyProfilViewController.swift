@@ -34,7 +34,7 @@ class MyProfilViewController: UIViewController {
         savedPhoto(picture: UIImage(named: "af4"),sneakerName: "testi4"),
         savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi5"),
         savedPhoto(picture: UIImage(named: "af5"),sneakerName: "testi6")]
-    
+    var nc = NotificationCenter.default
     var savedSneaker : [Sneaker]=[]
     var savedBlogpost: [BlogPost]=[]
     var savedCollection: [savedPhoto]?=[]
@@ -48,6 +48,8 @@ class MyProfilViewController: UIViewController {
     }
    
     @IBAction func reloadData(_ sender: Any) {
+        let alert = ToastMessage.init(message: "Newsartikel und Sneaker sind auf dem neusten Stand! ✅", view: self.view)
+        
         loadSavedSneakers()
         loadSavedBlogposts()
         loadSavedCollection()
@@ -90,6 +92,7 @@ class MyProfilViewController: UIViewController {
         setupCollectionView()
         setupCollectionViewItemSize()
         setupFeedPreview()
+        nc.addObserver(self, selector: #selector(reloadFeedNumber), name: Notification.Name("reloadFeedNumber"), object: nil)
         
         let background = BackgroundColor()
         background.createGradientBackground(view: self.view,colors: nil)
@@ -121,7 +124,10 @@ class MyProfilViewController: UIViewController {
             }
         }
     }
-    
+    @objc func reloadFeedNumber(){
+        savedBlogpost = coreDataManager.loadSavedBlogposts()
+        feedButton.setTitle("+\(savedBlogpost.count)", for: .normal)
+    }
     private func setupCollectionView(){
         
         

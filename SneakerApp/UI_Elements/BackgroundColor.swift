@@ -36,6 +36,7 @@ class BackgroundColor{
         }
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "space")
+        backgroundImage.clipsToBounds = true
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         backgroundImage.alpha = 0.2
         view.insertSubview(backgroundImage, at: 0)

@@ -14,6 +14,7 @@ class FeedTableViewController: UITableViewController {
     let shadowView = UIView()
     var nc = NotificationCenter.default
     var coreDataManager = CoreDataManager()
+    
         
         
         
@@ -89,6 +90,7 @@ class FeedTableViewController: UITableViewController {
             coreDataManager.deleteBlogpost(blogPost: blogPosts[indexPath.row])
             self.blogPosts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.nc.post(name: Notification.Name("reloadFeedNumber"), object: nil)
     }
         
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKM-tW-Yw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B6k-sc-ydY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -1593,7 +1593,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUq-7g-2he">
-                                <rect key="frame" x="0.0" y="596" width="414" height="384.5"/>
+                                <rect key="frame" x="0.0" y="523" width="414" height="317"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="af2" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-5Y-CL3">
                                         <rect key="frame" x="0.0" y="56" width="414" height="243"/>
@@ -1640,13 +1640,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b22-7a-00v">
-                                <rect key="frame" x="0.0" y="88" width="414" height="431"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="358"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-vq-yPt" userLabel="mycollectionContainer">
-                                        <rect key="frame" x="0.0" y="108.5" width="198" height="314.5"/>
+                                        <rect key="frame" x="0.0" y="89" width="198" height="261"/>
                                         <subviews>
                                             <collectionView multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-IU-6VX">
-                                                <rect key="frame" x="0.0" y="0.0" width="198" height="314.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="261"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UZc-Qz-3Or">
                                                     <size key="itemSize" width="109" height="109"/>
@@ -1677,10 +1677,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-Td-T75" userLabel="myGrailsContainer">
-                                        <rect key="frame" x="216" y="108.5" width="198" height="315.5"/>
+                                        <rect key="frame" x="216" y="89" width="198" height="262"/>
                                         <subviews>
                                             <collectionView multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-kt-MOs">
-                                                <rect key="frame" x="0.0" y="0.0" width="198" height="315.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="262"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="uAf-0t-jfL">
                                                     <size key="itemSize" width="109" height="53"/>
@@ -1710,7 +1710,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-Ml-bde">
-                                        <rect key="frame" x="140" y="55.5" width="134" height="35.5"/>
+                                        <rect key="frame" x="140" y="42" width="134" height="29.5"/>
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="25"/>
                                         <color key="textColor" red="0.97656172510000006" green="0.94444411989999999" blue="0.99609345199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1755,10 +1755,10 @@
                     <navigationItem key="navigationItem" title="Profil" id="fWk-RH-3RR">
                         <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="6os-Eh-Lp0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="imv-aK-jwn">
-                                <rect key="frame" x="20" y="11" width="24" height="22"/>
+                                <rect key="frame" x="20" y="12" width="30" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="camera.fill" catalog="system"/>
+                                <state key="normal" backgroundImage="camera.fill" catalog="system"/>
                                 <connections>
                                     <action selector="addSneaker:" destination="xoV-Ve-3ug" eventType="touchUpInside" id="VeQ-QO-inV"/>
                                 </connections>
@@ -2085,7 +2085,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7c-NK-nQ1" userLabel="sneaker_img">
-                                <rect key="frame" x="0.0" y="88" width="414" height="405"/>
+                                <rect key="frame" x="0.0" y="121" width="414" height="405"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill.on.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qLu-yu-MSX">
                                         <rect key="frame" x="19.5" y="8" width="375" height="377"/>
@@ -2101,15 +2101,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDq-Nc-dvM" userLabel="sneaker_name">
-                                <rect key="frame" x="20" y="517" width="374" height="57"/>
+                                <rect key="frame" x="20" y="550" width="374" height="57"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHR-pG-Dm0">
-                                        <rect key="frame" x="206" y="11" width="160" height="34"/>
+                                        <rect key="frame" x="175" y="11" width="165" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sneakername:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYH-Bz-ufP">
-                                        <rect key="frame" x="8" y="16" width="178" height="24"/>
+                                        <rect key="frame" x="8" y="16" width="155" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2117,21 +2117,36 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vHR-pG-Dm0" secondAttribute="trailing" constant="8" id="BEx-Uc-X9s"/>
+                                    <constraint firstAttribute="trailing" secondItem="vHR-pG-Dm0" secondAttribute="trailing" constant="34" id="BEx-Uc-X9s"/>
                                     <constraint firstItem="FYH-Bz-ufP" firstAttribute="leading" secondItem="SDq-Nc-dvM" secondAttribute="leading" constant="8" id="CnM-JB-2uQ"/>
-                                    <constraint firstItem="vHR-pG-Dm0" firstAttribute="width" secondItem="SDq-Nc-dvM" secondAttribute="width" multiplier="0.395722" constant="12" id="GtN-5X-GXi"/>
+                                    <constraint firstItem="vHR-pG-Dm0" firstAttribute="width" secondItem="SDq-Nc-dvM" secondAttribute="width" multiplier="0.395722" constant="16.999971999999985" id="GtN-5X-GXi"/>
                                     <constraint firstItem="FYH-Bz-ufP" firstAttribute="height" secondItem="SDq-Nc-dvM" secondAttribute="height" multiplier="0.421053" id="KIV-8D-CYd"/>
                                     <constraint firstItem="vHR-pG-Dm0" firstAttribute="height" secondItem="SDq-Nc-dvM" secondAttribute="height" multiplier="0.596491" id="VSc-kt-xGF"/>
                                     <constraint firstItem="FYH-Bz-ufP" firstAttribute="top" secondItem="SDq-Nc-dvM" secondAttribute="top" constant="16" id="ZGw-lh-ySS"/>
-                                    <constraint firstItem="FYH-Bz-ufP" firstAttribute="width" secondItem="SDq-Nc-dvM" secondAttribute="width" multiplier="0.508021" constant="-12" id="e5D-Tw-b98"/>
+                                    <constraint firstItem="FYH-Bz-ufP" firstAttribute="width" secondItem="SDq-Nc-dvM" secondAttribute="width" multiplier="0.508021" constant="-34.999853999999971" id="e5D-Tw-b98"/>
                                     <constraint firstItem="vHR-pG-Dm0" firstAttribute="top" secondItem="SDq-Nc-dvM" secondAttribute="top" constant="11" id="jvI-Iy-Tsl"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-nB-Qi4">
-                                <rect key="frame" x="57" y="621" width="300" height="129"/>
+                                <rect key="frame" x="57" y="654" width="300" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-2f-hRU" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-qc-1LZ" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <state key="normal" title="Upload from Gallery"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.16862745098039217" green="0.066666666666666666" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="uploadButton:" destination="zBm-o0-RCE" eventType="touchUpInside" id="xwl-i6-ikO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-2f-hRU" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="33" width="300" height="30"/>
                                         <state key="normal" title="Take Photo from Camera"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2143,35 +2158,28 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="showCameraButton:" destination="zBm-o0-RCE" eventType="touchUpInside" id="eD0-gk-OkZ"/>
+                                            <segue destination="dvj-Kr-56v" kind="presentation" identifier="showCamera_Segue" id="qd2-Rq-LMZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-qc-1LZ">
-                                        <rect key="frame" x="0.0" y="33" width="300" height="30"/>
-                                        <state key="normal" title="Upload from Gallery"/>
-                                        <connections>
-                                            <action selector="uploadButton:" destination="zBm-o0-RCE" eventType="touchUpInside" id="xwl-i6-ikO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z20-MP-aUw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGs-Jr-sXY" customClass="RoundButton" customModule="SneakerApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="300" height="30"/>
-                                        <state key="normal" title="Save to"/>
-                                        <connections>
-                                            <action selector="saveTo:" destination="zBm-o0-RCE" eventType="touchUpInside" id="kA5-3G-XYB"/>
-                                            <segue destination="p2b-1p-Aht" kind="presentation" identifier="saveTo_Segue" modalPresentationStyle="overCurrentContext" id="r6H-9j-b0C"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGs-Jr-sXY">
-                                        <rect key="frame" x="0.0" y="99" width="300" height="30"/>
                                         <state key="normal" title="Save"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="3J6-kz-UMa" kind="unwind" identifier="saveProfile_Segue" unwindAction="unwindToProfile:" id="Smn-YF-dp5"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="1nT-2f-hRU" firstAttribute="height" secondItem="XTw-nB-Qi4" secondAttribute="height" multiplier="0.232558" id="IuU-Lr-BdZ"/>
-                                    <constraint firstItem="qHS-qc-1LZ" firstAttribute="height" secondItem="XTw-nB-Qi4" secondAttribute="height" multiplier="0.232558" id="ebY-ya-Qx2"/>
-                                    <constraint firstItem="z20-MP-aUw" firstAttribute="height" secondItem="XTw-nB-Qi4" secondAttribute="height" multiplier="0.232558" id="i8j-8H-1wV"/>
+                                    <constraint firstItem="1nT-2f-hRU" firstAttribute="height" secondItem="XTw-nB-Qi4" secondAttribute="height" multiplier="0.3125" id="32Y-Sh-HMR"/>
+                                    <constraint firstItem="qHS-qc-1LZ" firstAttribute="height" secondItem="XTw-nB-Qi4" secondAttribute="height" multiplier="0.3125" id="QYn-Tz-hf1"/>
                                     <constraint firstAttribute="width" constant="300" id="zMy-GL-Aqk"/>
                                 </constraints>
                             </stackView>
@@ -2180,8 +2188,8 @@
                         <constraints>
                             <constraint firstItem="M7c-NK-nQ1" firstAttribute="centerX" secondItem="e8v-B2-uPW" secondAttribute="centerX" id="21f-5O-YMY"/>
                             <constraint firstItem="SDq-Nc-dvM" firstAttribute="centerX" secondItem="e8v-B2-uPW" secondAttribute="centerX" id="6jg-64-Crt"/>
+                            <constraint firstItem="XTw-nB-Qi4" firstAttribute="height" secondItem="e8v-B2-uPW" secondAttribute="height" multiplier="0.107143" id="EOl-Ex-bVl"/>
                             <constraint firstItem="BtL-WW-hWR" firstAttribute="bottom" secondItem="XTw-nB-Qi4" secondAttribute="bottom" constant="63" id="Ez5-ww-ySI"/>
-                            <constraint firstItem="XTw-nB-Qi4" firstAttribute="height" secondItem="e8v-B2-uPW" secondAttribute="height" multiplier="0.143973" id="IL5-QF-rs3"/>
                             <constraint firstItem="SDq-Nc-dvM" firstAttribute="top" secondItem="M7c-NK-nQ1" secondAttribute="bottom" constant="24" id="KPO-1C-e14"/>
                             <constraint firstItem="XTw-nB-Qi4" firstAttribute="top" secondItem="SDq-Nc-dvM" secondAttribute="bottom" constant="47" id="L69-Pr-wPZ"/>
                             <constraint firstItem="SDq-Nc-dvM" firstAttribute="width" secondItem="e8v-B2-uPW" secondAttribute="width" multiplier="0.903382" id="UO8-e8-Sjc"/>
@@ -2195,34 +2203,32 @@
                     <navigationItem key="navigationItem" id="9Ff-wg-8Cq"/>
                     <connections>
                         <outlet property="photo" destination="qLu-yu-MSX" id="X42-Wn-hLM"/>
-                        <outlet property="saveBtn" destination="bGs-Jr-sXY" id="h4R-ld-Trn"/>
-                        <outlet property="saveToBtn" destination="z20-MP-aUw" id="v5T-4i-9Ks"/>
                         <outlet property="sneakerNameField" destination="vHR-pG-Dm0" id="cPd-Ia-apC"/>
                         <outlet property="takePhotoBtn" destination="1nT-2f-hRU" id="sRi-nS-TrC"/>
-                        <outlet property="uploadBtn" destination="qHS-qc-1LZ" id="uXk-mf-mnp"/>
+                        <segue destination="3J6-kz-UMa" kind="unwind" identifier="unwindProfile_Segue" unwindAction="unwindToProfile:" id="hza-l3-GYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSk-mR-PO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="3J6-kz-UMa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2543" y="597"/>
+            <point key="canvasLocation" x="-2543.4782608695655" y="596.65178571428567"/>
         </scene>
         <!--Item-->
         <scene sceneID="LcF-6C-lDC">
             <objects>
                 <viewController id="dvj-Kr-56v" customClass="CameraViewController" customModule="SneakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgX-Cw-6ZH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWN-3r-9vJ">
-                                <rect key="frame" x="0.0" y="-20" width="414" height="916"/>
+                                <rect key="frame" x="0.0" y="-20" width="414" height="862"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P1h-fH-pG6">
-                                        <rect key="frame" x="0.0" y="21" width="414" height="895"/>
+                                        <rect key="frame" x="0.0" y="21" width="414" height="841"/>
                                     </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-Xa-t9A">
-                                        <rect key="frame" x="177" y="783" width="60" height="59"/>
+                                        <rect key="frame" x="177" y="729" width="60" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="5Ig-tq-rgK"/>
@@ -2630,6 +2636,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.40639632939999998" green="0.46128976350000001" blue="0.91471189259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.16862745100000001" green="0.066666666669999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startBtn:" destination="WqD-Wp-3Dr" eventType="touchUpInside" id="aFk-U0-RpQ"/>
                                 </connections>
@@ -2692,6 +2703,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="jsG-Tm-MJ5"/>
         <segue reference="ssn-IE-0zw"/>
-        <segue reference="Mb6-av-IA4"/>
+        <segue reference="Du5-kz-VA0"/>
     </inferredMetricsTieBreakers>
 </document>

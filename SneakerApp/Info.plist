@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Fotos werden in dein Fotoalbum gespeichert</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -32,6 +30,8 @@
 	<string>This App will use your current location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This App use Maps to show the sneaker stores</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Fotos werden in dein Fotoalbum gespeichert</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Fotos werden benutzt</string>
 	<key>UIAppFonts</key>
