@@ -26,7 +26,6 @@
 		01E0C59E23CA3DE600DBDA9C /* MyProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59523CA3DE600DBDA9C /* MyProfilViewController.swift */; };
 		01E0C59F23CA3DE600DBDA9C /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59623CA3DE600DBDA9C /* UploadViewController.swift */; };
 		01E0C5A023CA3DE600DBDA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0C59723CA3DE600DBDA9C /* CameraViewController.swift */; };
-		AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */; };
 		B6091C5B23A91FCB004F32D6 /* YoutubeVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */; };
 		B60962ED23A42E8E0046F8CA /* NewsDetail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */; };
 		B610C99D23DB739B003C7BD8 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C99C23DB739B003C7BD8 /* MapLocation.swift */; };
@@ -106,9 +105,6 @@
 		01E0C59523CA3DE600DBDA9C /* MyProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfilViewController.swift; sourceTree = "<group>"; };
 		01E0C59623CA3DE600DBDA9C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		01E0C59723CA3DE600DBDA9C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		291FCB0E6C83781688CF6259 /* Pods-SneakerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.release.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.release.xcconfig"; sourceTree = "<group>"; };
-		938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SneakerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SneakerApp.debug.xcconfig"; path = "Target Support Files/Pods-SneakerApp/Pods-SneakerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B6091C5A23A91FCB004F32D6 /* YoutubeVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoPlayer.swift; sourceTree = "<group>"; };
 		B60962EC23A42E8E0046F8CA /* NewsDetail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetail2ViewController.swift; sourceTree = "<group>"; };
 		B610C99C23DB739B003C7BD8 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
@@ -171,7 +167,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AACC368387C0CC1FC544659F /* Pods_SneakerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +355,6 @@
 				B6FA71B82384734B002DA281 /* SneakerApp */,
 				B68EEF2E23B0E18900C6287E /* Assets.xcassets */,
 				CD7958A6F396EEAAF621C7CD /* Pods */,
-				ECF9975D0382F4DD15462407 /* Frameworks */,
 				B6FB793123CCC29C00497AC9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -409,18 +403,8 @@
 		CD7958A6F396EEAAF621C7CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */,
-				291FCB0E6C83781688CF6259 /* Pods-SneakerApp.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		ECF9975D0382F4DD15462407 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				938FF386FBC155BDD556B4FD /* Pods_SneakerApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +414,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6FA71CD2384734E002DA281 /* Build configuration list for PBXNativeTarget "SneakerApp" */;
 			buildPhases = (
-				EB592DD2377BB4448F8781E1 /* [CP] Check Pods Manifest.lock */,
 				B6FA71B22384734B002DA281 /* Sources */,
 				B6FA71B32384734B002DA281 /* Frameworks */,
 				B6FA71B42384734B002DA281 /* Resources */,
@@ -503,31 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EB592DD2377BB4448F8781E1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SneakerApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6FA71B22384734B002DA281 /* Sources */ = {
@@ -716,7 +674,6 @@
 		};
 		B6FA71CE2384734E002DA281 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94AA74E98E3A6DAF3057C76E /* Pods-SneakerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
@@ -739,7 +696,6 @@
 		};
 		B6FA71CF2384734E002DA281 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 291FCB0E6C83781688CF6259 /* Pods-SneakerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SneakerApp/SneakerApp.entitlements;
